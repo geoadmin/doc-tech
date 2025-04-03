@@ -1,0 +1,9 @@
+node_modules
+*.zip
+.vscode
+.vite_opt_cache
+
+dist
+cache
+doc
+*.timestamp-*.mjs
