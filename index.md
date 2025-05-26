@@ -11,19 +11,21 @@ hero:
     alt: Geoportal
   actions:
     - theme: alt
-      text: Data Download
+      text: api3.geo.admin.ch
+      link: /api3geoadminch/overview.md
+    - theme: alt
+      text: data.geo.admin.ch
       link: /datageoadminch/overview.md
     - theme: alt
-      text: api3.geo.admin.ch
-      link: /api3geoadminch/sdiservices.md
+      text: CMS
+      link: /cms/overview.md
     - theme: alt
-      text: Visualization Services
-      link: /visualization/overview.md
-
+      text: JS API
+      link: /jsgeoadminch/overview.md
 
 # - theme: alt
-    #   text: API Examples
-    #   link: /api-examples
+#   text: API Examples
+#   link: /api-examples
 
 features:
   - title: OpenAPI Specs
@@ -38,6 +40,4 @@ features:
     details: Copy code snippets for common use cases
     icon:
       src: /static/code.webp
-
 ---
-
