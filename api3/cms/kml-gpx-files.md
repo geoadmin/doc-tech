@@ -150,3 +150,46 @@ In order to better see the lines in [map.geo.admin.ch](https://map.geo.admin.ch/
     <img src="../../static/cms/kml_gpx_11.avif" style="background-color: white">
     <figcaption>Point symbol of a KML element — © PP BGDI</figcaption>
 </figure>
+
+**Attention**: In order to ensure that your symbols are correctly displayed, they have to be CORS conform. The most common problem arises because the URL is not secured and calls from a HTTP site, whereas we only support HTTPS sites. More information on the subject can be found here: https://enable-cors.org/server.html or https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+For more information and instructions on how to edit [KML and GPX files, please visit KML Tutorial | Keyhole Markup Language | Google for Developers](https://developers.google.com/kml/documentation/kml_tut).
+
+## Frequently asked questions concerning the editing, sharing and displaying of KML / GPX files
+
+Many questions regarding the use of KML and GPX files have been sent to us over the time. These have been collected and answered, but only the user asking them could benefit from it. Here we propose a recollection of the most frequently asked questions for you to find a possible answer to your question.
+
+### How come that the KML/GPX file that I drew in map.geo.admin.ch, exported on my laptop and then uploaded back to map.geo.admin.ch is not recognised by the system as my drawing? Why can't I edit my imported KML/GPX file?
+
+[map.geo.admin.ch](https://map.geo.admin.ch/?lang=en) does not have write access to your local computer and thus to the imported file. The file appears in the menu with a red notice indicating that this data set was provided by a third party and can therefore only be viewed.
+
+**Note**: A drawing exported from [map.geo.admin.ch](https://map.geo.admin.ch/?lang=en) is also treated as an external file if it is reimported into [map.geo.admin.ch](https://map.geo.admin.ch/?lang=en).
+
+### If I draw a polygon, can I edit it back to a Line?
+
+No, the system changes the line irreversibly to a polygon. You will need to draw again the layout of the line.
+
+### When I export a text and / or measurement as a GPX file, it’s not displayed. Why not?
+
+GPX files do not support text and therefore measurements, as they contain texts. Texts will be then displayed as a point symbol and the text will be transferred to the description of the point, and the measurement will be displayed as a line or polygon but the measurements will be lost. **When including text and / or measurements, we suggest to download the result as a KML file.**
+
+### When I upload an external KML / GPX file, the line(s) or polygon(s) appear white, while the points appear as yellow thumbtacks. Why doesn’t it show the original style of the drawing?
+
+The most probable cause for this issue is, that the KML / GPX file contains no style parameter, or the style parameter doesn’t follow the KML standard. We suggest you to adapt your KML / GPX dataset adding or adapting the style parameter.
+More information on how to adapt your KML file can be found [here](https://developers.google.com/kml/documentation/kmlreference#kml-fields).
+
+### When I edit some elements in my KML / GPX file, they tend to disappear when I open the file again. Why is that happening?
+
+The most frequent issue could be, that the dataset that you’re trying to edit is seen from the system as a third-party file and it won’t allow you to edit it. Please check in the Maps Displayed section of the menu if the drawing that you’re trying to edit has a red profile. If so, then you’re most probably drawing "over" your file without editing it because it is seen as an external KML / GPX file by the system. Remember, once finished KML / GPX files that have been uploaded or reloaded in [map.geo.admin.ch](https://map.geo.admin.ch/?lang=en) cannot be edited as they’re seen as third-party files.
+
+### My drawings and measurements will be automatically saved for one year. Can I edit the drawing again right before the end of the year to extend the saving period?
+
+Indeed, following the [General Terms of Use and Operating Conditions of the Federal Spatial Data Infrastructure FSDI](https://www.geo.admin.ch/en/general-terms-of-use-fsdi), your finished drawings will be saved for 1 year. Provided your link is editable, every time you edit something it will be saved in the same link and the countdown will be resettled to 1 year.
+
+### If I finished a drawing and exported it as a KML / GPX file, but accidentally reloaded the page, the same file I just draw is recognized as an external dataset. Why?
+
+The [map.geo.admin.ch](https://map.geo.admin.ch/?lang=en) system doesn’t use cookies; the system is therefore not able to detect that drawing as yours. Reloading the page will therefore detect you as a new user and consequently not attribute that drawing as yours.
+
+### What happens if I have multiple editable files in my "Maps displayed" section of the menu and I want to edit one of them. How can I know which one will be edited?
+
+If you find yourself with more than one dataset, only the dataset on the top of the list will be edited as long as it is a KML file generated on [map.geo.admin.ch](https://map.geo.admin.ch/?lang=en) (see the "How does the system differentiate the KML and GPX files?" chapter above). You can drag & drop the desired file to the top of the Maps Displayed section of the menu.

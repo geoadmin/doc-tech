@@ -180,6 +180,24 @@ function cmsItems(): DefaultTheme.SidebarItem[] {
         },
       ],
     },
+    {
+      text: "Geoservices",
+      link: "/api3/cms/geoservices",
+      items: [
+        {
+          text: "Data supply: simple and direct",
+          link: "/api3/cms/data-supply",
+        },
+        {
+          text: "Data Model (MGDM) Registry: Model Repository for basic geodata under the Federal Act on Geoinformation",
+          link: "/api3/cms/mgdm",
+        },
+        {
+          text: "Advice and coordination: implementation of the strategy",
+          link: "/api3/cms/advice-coordination",
+        },
+      ],
+    },
   ];
 }
 
