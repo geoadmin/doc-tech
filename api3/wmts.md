@@ -501,3 +501,139 @@ A tile.
 
 or
 <https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/21781/20/58/70.jpeg>
+
+## Cache Update
+
+As noted in the `wmts_description` service, the Tiles of a given
+\<Time\> dimension might be updated for technical reasons. If you are
+caching Tiles locally, this might result in your cache being outdated.
+Use the Cache Update service to query the Date of the last update for a
+given layer. If your cache is older than the returned Date, you have to
+clear your local cache.
+
+### URL
+
+    GET https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/cacheUpdate
+
+### Example
+
+- The the latest Cache Update for SwissImage Product:
+  [https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate](../../../rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate)
+
+## Supported projections
+
+Four projections are supported. The same tiles are offered in four other
+_tilematrixsets/projection_.
+
+- LV95/CH1903+ (EPSG:2056)  
+  <https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml>
+
+- LV03/CH1903 (EPSG:21781)  
+  <https://wmts.geo.admin.ch/EPSG/21781/1.0.0/WMTSCapabilities.xml>
+
+- Plate-Carrée WGS1984 (EPSG:4326, in **lat/lon order**)  
+  <https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml>
+
+- WGS84/Pseudo-Mercator (EPSG:3857, as used in OSM, Bing, Google Map)  
+  <https://wmts.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml>
+
+Note:
+
+- Partly due to a limitation of the WTMS 1.0.0 recommendations, each
+  _projection_ has its own _GetCapabilities_ document.
+- The same <span class="title-ref">timestamps</span> are available in
+  all projection. New <span class="title-ref">timestamp</span> are
+  added to the former ones.
+- The layer _ch.kantone.cadastralwebmap-farbe_ uses a WMS service as
+  its source.
+- Note that all layers are available at all scales. You have to check
+  for which **tileMatrixSets** a particuliar layer is defined. Your
+  WMTS client may either stretch the tiles from the last available
+  level or display nothing.
+
+## XYZ
+
+XYZ tile layers are layers comprised of multiple tiles. The XYZ tile
+service provides tiles based on a URL template with values substituted
+in for Zoom Level and X and Y counts of the tile. Unlike WMTS that
+follow the OGC standard, the XYZ tile service is often used in Web
+Mapping Context and is therefore a de facto standard. The XYZ tile
+service is provided with a fixed projection ( EPSG:3857).
+
+> [!TIP]
+> We encourage users to use WMTS layer service which provides predefined
+> tiles (like an XYZ service) with an option to use a RESTful templated
+> URL or a KVP request and with a variety of projections and grids.
+> Moreover, using WMTS GetCapabilities provides an up to date Metadata
+> Service for the available layers.
+
+### GetTile
+
+```bash
+GET <Scheme>://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/{z}/{x}/{y}.<FormatExtension>
+```
+
+with the following parameters:
+
+| Parameter                 | Example                        | Explanation                                                                                                                                                                                                                                                                                                                                                               |
+| ------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Scheme ServerName         | https wmts\[0-9\].geo.admin.ch | The scheme type                                                                                                                                                                                                                                                                                                                                                           |
+| Version                   | 1.0.0                          | WMTS protocol version                                                                                                                                                                                                                                                                                                                                                     |
+| Layername                 | ch.bfs.arealstatistik-1997     | See the WMTS [GetCapabilities](//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml) document.                                                                                                                                                                                                                                                                                  |
+| StyleName                 | default                        | Only **default** is supported.                                                                                                                                                                                                                                                                                                                                            |
+| Time                      | 2010, 2010-01                  | Date of tile generation in (ISO-8601) or logical value like **current**. A list of available values is provided in the [GetCapabilities](//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml) document under the \<Dimension\> tag. We recommend to use the value under the \<Default\> tag. Note that these values might change frequently - **check for updates regularly**. |
+| TileMatrixSet {z} {x} {y} | 3857 (constant) {z} {x} {y}    | EPSG code for Webmercator                                                                                                                                                                                                                                                                                                                                                 |
+| FormatExtension           | png                            | Mostly png, except for some raster layer (pixelkarte and swissimage)                                                                                                                                                                                                                                                                                                      |
+
+::: warning
+
+The tiles of a given layer might be updated **without** resulting in
+a new \<Time\> dimension. In case your application is caching tiles
+locally, you need to invalidate your local cache for this layer. To
+check the latest change of any layer, use the [Cache
+Update](#cache-update) service.
+
+:::
+
+### Result
+
+Access to ch.swisstopo.swissimage.
+
+<https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/current/3857/%7Bz%7D/%7Bx%7D/%7By%7D.jpeg>
+
+### Supported projections
+
+Unlike WMTS that follow the OGC standard, the XYZ tile service are often
+used in Web Mapping Context and therefore one projection is supported.
+
+- WGS84/Pseudo-Mercator (EPSG:3857, as used in OSM, Bing, Google Map)  
+  <https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/current/>**3857**/{z}/{x}/{y}.jpeg
+
+## Examples
+
+## Fetch a single tile
+
+```bash
+curl -o demo.jpg https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg
+display demo.jpg
+```
+
+Will display the following image
+
+<img src="https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg" />
+
+## Using WMTS in OpenLayers
+
+- An OpenLayers3 application using the [pseudo-Mercator
+  projection](http://codepen.io/geoadmin/pen/pyzwwL?editors=0010)
+- An OpenLayers3 example showing the [Cadastralwebmap as
+  WMTS](http://codepen.io/geoadmin/pen/xVKLdV?editors=0010)
+- Switzerland is now adopting the new [LV95
+  frame](http://codepen.io/geoadmin/pen/GZKEam?editors=0010).
+- All [available layers as
+  WMTS](http://codepen.io/geoadmin/pen/MyYYXR?editors=0010).
+
+### Example
+
+- An OpenLayers example showing the [Swissimage as
+  XYZ](https://codepen.io/geoadmin/pen/xxYEwjQ)

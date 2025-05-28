@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: alt
       text: api3.geo.admin.ch
-      link: /api3geoadminch/overview.md
+      link: /api3/overview.md
     - theme: alt
       text: data.geo.admin.ch
       link: /datageoadminch/overview.md

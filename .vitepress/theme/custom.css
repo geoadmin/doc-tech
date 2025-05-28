@@ -1,0 +1,19 @@
+#link-with-icon {
+  text-decoration: none;
+  color: var(--vp-c-text-1);
+  display: flex;
+}
+
+#link-with-icon:hover {
+  color: #d8232a;
+}
+
+figcaption {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+}
+
+/* :root {
+  --vp-c-brand-1: red;
+  --vp-c-brand-2: #747bff;
+} */
