@@ -1,5 +1,8 @@
 ---
-outline: [2,3]
+outline: [2, 3]
+prev:
+  text: "Authentication"
+  link: "api3/stac/authentication"
 ---
 
 # Changes and Migration from `v0.9` to `v1`
@@ -19,9 +22,7 @@ the differences
   "type": "image/tiff; application=geotiff",
   "href": "http://data.geo.admin.ch/ch.swisstopo.swissimage/collections/cs/items/CS3-20160503_132130_04/thumb.png",
   "file:checksum": "90e402107a7f2588a85362b9beea2a12d4514d45",
-  "roles": [
-    "thumbnail"
-  ],
+  "roles": ["thumbnail"],
   "geoadmin:variant": "komb",
   "geoadmin:lang": "de",
   "proj:epsg": 2056,
@@ -49,23 +50,13 @@ the differences
 ```json
 {
   "id": "smr200-200-4-2019",
-  "links": [
-    {},
-    {},
-    {},
-    {}
-  ],
+  "links": [{}, {}, {}, {}],
   "assets": {
     "smr50-263-2016-2056-kgrs-2.5.tiff": {},
     "smr50-263-2016-2056-komb-2.5.tiff": {},
     "smr50-263-2016-2056-krel-2.5.tiff": {}
   },
-  "bbox": [
-    7.0906249,
-    45.9160584,
-    7.1035698,
-    45.925093
-  ],
+  "bbox": [7.0906249, 45.9160584, 7.1035698, 45.925093],
   "geometry": {
     "type": "Point",
     "coordinates": []
@@ -182,7 +173,7 @@ The following field have changed from `v0.9` to `v1`:
 
 #### Language information about the referenced asset
 
-It is now possible to specify the language of a `link` target with the parameter 
+It is now possible to specify the language of a `link` target with the parameter
 `hreflang` from the [Language Extension](https://github.com/stac-extensions/language?tab=readme-ov-file#fields-for-links-and-assets)
 
 ```json
@@ -191,7 +182,7 @@ It is now possible to specify the language of a `link` target with the parameter
     {
       "href": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.pixelkarte-farbe-pk50.noscale/items/smr200-200-4-2019/assets/smr50-263-2016-2056-kgrs-2.5.tiff",
       "rel": "self",
-      "hreflang": "de"      // [!code ++]
+      "hreflang": "de" // [!code ++]
     },
     {
       "href": "https://data.geo.admin.ch/api/stac/v0.9/",
