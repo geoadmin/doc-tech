@@ -12,7 +12,7 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       {
-        text: "API Specs",
+        text: "STAC API",
         link: "https://data.geo.admin.ch/api/stac/static/spec/v1/api.html",
       },
     ],
