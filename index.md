@@ -35,21 +35,27 @@ features:
     link: /api3/stac/overview
 ---
 
-<br/>
-
----
-
 <script setup>
-import { data as releases } from './releases.data.ts'
-const latestRelease = releases.at(-1)
+import { data as releases } from './scripts/releases-content.data.ts'
+const latestReleases = releases.slice(1, 6)
+const lastRelease = releases.at(0)
 </script>
 
-# Release Notes
+## Release Notes
 
-<div v-html="latestRelease.html"></div>
+<div class="releases-container">
+  <div class="releases-preview">
+    <div class="releases-preview-content" v-html="lastRelease.html"></div>
+    <p>...</p>
+    <a :href="lastRelease.url">Learn more</a>
+  </div>
 
-<ul>
-  <li v-for="release of releases">
-    <a :href="release.url">Release {{ release.frontmatter.title }}</a>
-  </li>
-</ul>
+  <div class="releases-list">
+      <div v-for="release of latestReleases">
+        <a :href="release.url">
+        <p>Release {{ release.frontmatter.title }}</p>
+        <span>{{ release.frontmatter.date }}</span>
+        </a>
+      </div>
+  </div>
+</div>

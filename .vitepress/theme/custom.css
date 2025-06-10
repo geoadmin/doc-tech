@@ -13,7 +13,54 @@ figcaption {
   color: var(--vp-c-text-2);
 }
 
-/* :root {
+:root {
   --vp-c-brand-1: red;
-  --vp-c-brand-2: #747bff;
-} */
+  --vp-c-brand-2: red;
+  --vp-c-brand-3: #d8232a;
+}
+
+.releases-container {
+  display: flex;
+  gap: 50px;
+}
+
+.releases-list {
+  flex-basis: 30%;
+}
+
+.releases-list a {
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  color: var(--vp-c-text-1);
+}
+
+.releases-list div {
+  height: 80px;
+  border-top: lightgray solid 1px;
+}
+
+.releases-list div:last-child {
+  border-bottom: lightgray solid 1px;
+}
+
+.releases-list p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.releases-preview {
+  flex-basis: 70%;
+}
+
+.releases-preview-content {
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.releases-preview p {
+  margin: 0 0 10px 0;
+}

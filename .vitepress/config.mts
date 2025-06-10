@@ -1,4 +1,5 @@
 import { defineConfig, type DefaultTheme } from "vitepress";
+import fs from "fs";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -19,6 +20,15 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: "API Documentation",
+        items: sidebarApi3(),
+      },
+      {
+        text: "Release Notes",
+        collapsed: true,
+        items: loadReleasesSidebarData(),
+      },
+      {
         text: "Terms of use",
         link: "https://www.geo.admin.ch/en/general-terms-of-use-fsdi",
       },
@@ -31,16 +41,8 @@ export default defineConfig({
         link: "/end-of-life-announcements",
       },
       {
-        text: "Release Notes",
-        link: "/release-notes",
-      },
-      {
         text: "FAQ",
         link: "/faq",
-      },
-      {
-        text: "API Documentation",
-        items: sidebarApi3(),
       },
     ],
     socialLinks: [
@@ -51,16 +53,27 @@ export default defineConfig({
       provider: "local",
     },
   },
-  // your existing vitepress config...
-  // optionally, you can pass MermaidConfig
-  // mermaid: {
-  // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
-  // },
-  // optionally set additional config for plugin itself with MermaidPluginConfig
-  // mermaidPlugin: {
-  // class: "mermaid", // set additional css classes for parent container
-  // },
 });
+
+// loads the sidebar data in releases.json after the script has been run (.scripts/releases-sidebar.ts)
+function loadReleasesSidebarData() {
+  try {
+    if (fs.existsSync("./releases/releases-sidebar.json")) {
+      const sidebarData = JSON.parse(
+        fs.readFileSync("./releases/releases-sidebar.json", "utf-8")
+      ).slice(0, 6);
+      sidebarData.push({
+        text: "All Releases",
+        link: "/releases/release-notes",
+      });
+      return sidebarData;
+    }
+  } catch (error) {
+    console.warn("Failed to load sidebar data:", error);
+  }
+
+  return {};
+}
 
 function expoloreDataItems(): DefaultTheme.SidebarItem[] {
   return [
