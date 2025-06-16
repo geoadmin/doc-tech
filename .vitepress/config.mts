@@ -5,6 +5,7 @@ import fs from "fs";
 export default defineConfig({
   title: "*.geo.admin.ch",
   description: "Technical Documentation about *.geo.admin.ch",
+  head: [["link", { rel: "icon", href: "/static/favicon.ico" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
@@ -117,6 +118,7 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
 
 function visualizeDataItems(): DefaultTheme.SidebarItem[] {
   return [
+    { text: "WMS", link: "/api3/wms" },
     { text: "WMTS", link: "/api3/wmts" },
     {
       text: "Mapbox Vector Tiles",
@@ -155,7 +157,7 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
 
 function mapviewerItems(): DefaultTheme.SidebarItem[] {
   return [
-    { text: "iFrame", link: "stac-api" },
+    { text: "iFrame", link: "/api3/iframe" },
     {
       text: "JS API",
       link: "../datageoadminch/overview",
@@ -246,31 +248,6 @@ function sidebarApi3(): DefaultTheme.SidebarItem[] {
       text: "CMS",
       collapsed: true,
       items: cmsItems(),
-    },
-  ];
-}
-
-function sidebarVisualization(): DefaultTheme.SidebarItem[] {
-  return [
-    {
-      text: "WMTS 1.0.0",
-      collapsed: false,
-      items: [
-        {
-          text: "Overview",
-          link: "overview",
-          items: [
-            { text: "What is WMTS", link: "overview" },
-            { text: "Getting Started", link: "getting-started" },
-          ],
-        },
-        { text: "Examples", link: "examples" },
-      ],
-    },
-    {
-      text: "XYZ",
-      collapsed: false,
-      items: [{ text: "Overview", link: "xyz" }],
     },
   ];
 }

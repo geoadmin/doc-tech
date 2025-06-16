@@ -64,3 +64,16 @@ figcaption {
 .releases-preview p {
   margin: 0 0 10px 0;
 }
+
+.status-announcements-block {
+  display: flex;
+  gap: 50px;
+}
+
+.status-container {
+  flex-basis: 50%;
+}
+
+.status-alert {
+  min-height: 150px;
+}

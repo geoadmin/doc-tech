@@ -1,6 +1,17 @@
-# doc-techdoc
+# doc-tech
 
 Technical Documentation for geoadmin
+
+## Getting started
+
+To build and run the site locally:
+
+1. Make sure Node.js v18 or higher is installed (`node -v`)
+2. Install VitePress following [the setup guide](https://vitepress.dev/guide/getting-started).
+3. Optional: Activate a suitable Node version, e.g. with `nvm use stable`
+   ℹ️ Use `nvm list` to see all available Node versions
+4. Run `npm install` to locally install all the necessary packages
+5. Run `npm run docs:dev` and visit http://localhost:5173/ in your web browser
 
 ## How to Add a Release Note
 
@@ -28,16 +39,40 @@ To add a release note, follow these steps:
    ```
 
 6. Save the file and commit your changes.
-# doc-tech
 
-Technical Documentation for geoadmin
+## How to Edit the Status Page Preview
 
-## Getting started
+1. To edit the status page preview, use the following variables located in the `status.md` file:
+   ```YAML
+   previewType: "info"
+   previewTitle: "Issues in services"
+   previewContent: "Our systems are experiencing issues"
+   ```
+2. Update the `previewType` variable to one of the following values based on the desired message type `info`, `tip`, `warning` or `danger`:
 
-To build and run the site locally:
+   ::: info
+   This is an info box.
+   :::
 
-1. Make sure Node.js v18 or higher is installed (`node -v`)
-2. Install VitePress following [the setup guide](https://vitepress.dev/guide/getting-started).
-3. Optional: Activate a suitable Node version, e.g. with `nvm use stable`
-   ℹ️ Use `nvm list` to see all available Node versions
-4. Run `npm run docs:dev` and visit http://localhost:5173/ in your web browser
+   ::: tip
+   This is a tip.
+   :::
+
+   ::: warning
+   This is a warning.
+   :::
+
+   ::: danger
+   This is a dangerous warning.
+   :::
+
+3. Save the file and commit your changes.
+
+## How to Edit the End-of-Life
+
+1. To edit the end-of-life announces preview, use the following variables located in the `end-of-life-announcements.md` file:
+   ```YAML
+   previewTitle: "Decomissioning of legacy vectortile styles / tiles"
+   previewContent: "Old styles for Light Base Map and Imagery Base Map no longer available from January 2025"
+   ```
+2. Save the file and commit your changes.

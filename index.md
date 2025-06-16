@@ -37,8 +37,13 @@ features:
 
 <script setup>
 import { data as releases } from './scripts/releases-content.data.ts'
+import { data as status } from './scripts/status.data.ts'
+import { data as announcements } from './scripts/announcements.data.ts'
+
 const latestReleases = releases.slice(1, 6)
 const lastRelease = releases.at(0)
+const statusPreview = status[0]
+const announcementsPreview = announcements[0]
 </script>
 
 ## Release Notes
@@ -57,5 +62,24 @@ const lastRelease = releases.at(0)
         <span>{{ release.frontmatter.date }}</span>
         </a>
       </div>
+  </div>
+</div>
+
+<div class="status-announcements-block">
+  <div class="status-container">
+    <h2>Services Status</h2>
+    <div :class="[statusPreview.frontmatter.previewType, 'custom-block status-alert']">
+      <p class="custom-block-title">{{ statusPreview.frontmatter.previewTitle}}</p>
+      <p>{{ statusPreview.frontmatter.previewContent}}</p>
+      <a href="/status">Learn more</a>
+    </div>
+  </div>
+  <div class="status-container">
+    <h2>End-of-Life Announcements</h2>
+    <div>
+      <p class="custom-block-title">{{ announcementsPreview.frontmatter.previewTitle}}</p>
+      <p>{{ announcementsPreview.frontmatter.previewContent}}</p>
+      <a href="/end-of-life-announcements">Learn more</a>
+    </div>
   </div>
 </div>
