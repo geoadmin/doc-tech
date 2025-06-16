@@ -1,8 +1,8 @@
 # doc-tech
 
-Technical Documentation for geoadmin
+Technical documentation for services made available by geo.admin.ch.
 
-## Getting started
+## Getting Started
 
 To build and run the site locally:
 
