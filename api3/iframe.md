@@ -2,9 +2,9 @@
 
 With iFrame, geo.admin.ch offers websites a simple and free way to integrate maps. The description of a location, a map for an event, or even an illustration to support a presentation can now be easily displayed. In addition, the map content can be enhanced and, if necessary, the full application can be integrated using iFrame.
 
-<figure>
-    <img src="../../static/iframe/iframe_01.avif" style="background-color: white">
-</figure>
+The HTML code for integration into your own website is generated automatically and is available via the "Embed" menu item. The size of the map window can be customised via the "Preview". The generated code can be reused directly in the source code of your website.
+
+<iframe src="https://www.youtube.com/embed/lxyuHVf5FMw?si=wV1WLqUlAnNgYFLZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" style="border: 0;width: 100%;height: 300px;max-width: 100%;max-height: 100%;margin-bottom: 50px" allowfullscreen></iframe>
 
 ## Simple Map
 
@@ -27,7 +27,7 @@ The legend can be added to the simple map. Right-click on the Infobox image repr
 
 <p>
   <img
-    src="http://api3.geo.admin.ch/static/images/legends/ch.bafu.grundwasserschutzzonen_de.png"
+    src="https://api3.geo.admin.ch/static/images/legends/ch.bafu.nabelstationen_en.png"
     alt="Légende"
   />
 </p>
@@ -39,7 +39,7 @@ The legend can be added to the simple map. Right-click on the Infobox image repr
 
 <p>
   <img
-    src="http://api3.geo.admin.ch/static/images/legends/ch.bafu.grundwasserschutzzonen_de.png"
+    src="https://api3.geo.admin.ch/static/images/legends/ch.bafu.nabelstationen_en.png"
     alt="Légende"
   />
 </p>
