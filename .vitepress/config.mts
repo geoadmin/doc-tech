@@ -165,57 +165,6 @@ function mapviewerItems(): DefaultTheme.SidebarItem[] {
   ];
 }
 
-function cmsItems(): DefaultTheme.SidebarItem[] {
-  return [
-    { text: "Overview", link: "cms/overview" },
-    {
-      text: "Tutorials and Tools",
-      items: [
-        {
-          text: "Easily generate the coordinates of addresses in Switzerland and display them on map.geo.admin.ch",
-          link: "/api3/cms/coordinates-generator",
-        },
-        {
-          text: "Create a KML and publish it online",
-          link: "/api3/cms/create-kml",
-        },
-      ],
-    },
-    {
-      text: "Map Viewer",
-      link: "/api3/cms/map-viewer",
-      items: [
-        {
-          text: 'Elevation Profile – The "Coastline Paradoxon’s" trap',
-          link: "/api3/cms/elevation-profile",
-        },
-        {
-          text: "Work with KML and GPX files in map.geo.admin.ch",
-          link: "/api3/cms/kml-gpx-files",
-        },
-      ],
-    },
-    {
-      text: "Geoservices",
-      link: "/api3/cms/geoservices",
-      items: [
-        {
-          text: "Data supply: simple and direct",
-          link: "/api3/cms/data-supply",
-        },
-        {
-          text: "Data Model (MGDM) Registry: Model Repository for basic geodata under the Federal Act on Geoinformation",
-          link: "/api3/cms/mgdm",
-        },
-        {
-          text: "Advice and coordination: implementation of the strategy",
-          link: "/api3/cms/advice-coordination",
-        },
-      ],
-    },
-  ];
-}
-
 function sidebarApi3(): DefaultTheme.SidebarItem[] {
   return [
     { text: "Overview", link: "/api3/overview" },
@@ -243,11 +192,6 @@ function sidebarApi3(): DefaultTheme.SidebarItem[] {
       text: "Mapviewer Documentation",
       collapsed: true,
       items: mapviewerItems(),
-    },
-    {
-      text: "CMS",
-      collapsed: true,
-      items: cmsItems(),
     },
   ];
 }
