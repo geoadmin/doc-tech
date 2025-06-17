@@ -22,7 +22,7 @@ export default defineConfig({
     sidebar: [
       {
         text: "API Documentation",
-        items: sidebarApi3(),
+        items: sidebarDocs(),
       },
       {
         text: "Release Notes",
@@ -35,15 +35,11 @@ export default defineConfig({
       },
       {
         text: "Status page",
-        link: "/status",
+        link: "/page/status",
       },
       {
         text: "End-of-Life Announcements",
-        link: "/end-of-life-announcements",
-      },
-      {
-        text: "FAQ",
-        link: "/faq",
+        link: "/page/end-of-life-announcements",
       },
     ],
     socialLinks: [
@@ -78,9 +74,9 @@ function loadReleasesSidebarData() {
 
 function expoloreDataItems(): DefaultTheme.SidebarItem[] {
   return [
-    { text: "Layers Metadata", link: "/api3/layers-metadata" },
-    { text: "Layers Attributes", link: "/api3/layers-attributes" },
-    { text: "Legend Resource", link: "/api3/legend-resource" },
+    { text: "Layers Metadata", link: "/docs/layers-metadata" },
+    { text: "Layers Attributes", link: "/docs/layers-attributes" },
+    { text: "Legend Resource", link: "/docs/legend-resource" },
   ];
 }
 
@@ -91,42 +87,42 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
       items: [
         {
           text: "Identify Features",
-          link: "/api3/identify-features",
+          link: "/docs/identify-features",
         },
-        { text: "Find", link: "/api3/find" },
-        { text: "Feature Resource", link: "/api3/feature-resource" },
+        { text: "Find", link: "/docs/find" },
+        { text: "Feature Resource", link: "/docs/feature-resource" },
         {
           text: "HTMLpopup Resource",
-          link: "/api3/htmlpopup-resource",
+          link: "/docs/htmlpopup-resource",
         },
       ],
     },
     {
       text: "Adress Search",
-      items: [{ text: "Search", link: "/api3/search" }],
+      items: [{ text: "Search", link: "/docs/search" }],
     },
     {
       text: "Elevation & Profile",
       items: [
-        { text: "Height", link: "/api3/height" },
-        { text: "Profile", link: "/api3/profile" },
+        { text: "Height", link: "/docs/height" },
+        { text: "Profile", link: "/docs/profile" },
       ],
     },
-    { text: "SPARQL", link: "/api3/sparql" },
+    { text: "SPARQL", link: "/docs/sparql" },
   ];
 }
 
 function visualizeDataItems(): DefaultTheme.SidebarItem[] {
   return [
-    { text: "WMS", link: "/api3/wms" },
-    { text: "WMTS", link: "/api3/wmts" },
+    { text: "WMS", link: "/docs/wms" },
+    { text: "WMTS", link: "/docs/wmts" },
     {
       text: "Mapbox Vector Tiles",
-      link: "/api3/mapbox-vector-tiles",
+      link: "/docs/mapbox-vector-tiles",
     },
     {
       text: "3D",
-      link: "/api3/3d",
+      link: "/docs/3d",
     },
   ];
 }
@@ -137,11 +133,11 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
       text: "STAC",
       collapsed: true,
       items: [
-        { text: "Overview", link: "/api3/stac/overview" },
-        { text: "Asset Upload Management", link: "/api3/stac/assetupload" },
-        { text: "Caching", link: "/api3/stac/caching" },
-        { text: "Authentication", link: "/api3/stac/authentication" },
-        { text: "Migrate v0.9 to v1.0", link: "/api3/stac/migrate09-10" },
+        { text: "Overview", link: "/docs/stac/overview" },
+        { text: "Asset Upload Management", link: "/docs/stac/assetupload" },
+        { text: "Caching", link: "/docs/stac/caching" },
+        { text: "Authentication", link: "/docs/stac/authentication" },
+        { text: "Migrate v0.9 to v1.0", link: "/docs/stac/migrate09-10" },
         {
           text: "Documentation",
           link: "https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html",
@@ -150,14 +146,14 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
     },
     {
       text: "Atom Feed / Open Search Download Service",
-      link: "/api3/atom",
+      link: "/docs/atom",
     },
   ];
 }
 
 function mapviewerItems(): DefaultTheme.SidebarItem[] {
   return [
-    { text: "iFrame", link: "/api3/iframe" },
+    { text: "iFrame", link: "/docs/iframe" },
     {
       text: "JS API",
       link: "../datageoadminch/overview",
@@ -165,9 +161,9 @@ function mapviewerItems(): DefaultTheme.SidebarItem[] {
   ];
 }
 
-function sidebarApi3(): DefaultTheme.SidebarItem[] {
+function sidebarDocs(): DefaultTheme.SidebarItem[] {
   return [
-    { text: "Overview", link: "/api3/overview" },
+    { text: "Overview", link: "/docs/overview" },
     {
       text: "Explore Data",
       collapsed: true,

@@ -11,7 +11,7 @@ hero:
     alt: Geoportal
   actions:
     - text: Get started
-      link: /api3/overview
+      link: /docs/overview
     - theme: alt
       text: Getting help
       link: http://groups.google.com/group/geoadmin-api
@@ -19,20 +19,20 @@ hero:
 features:
   - title: Explore Data
     details: Get information about layers like Metadata, Attributes and Legend
-    link: /api3/layers-metadata
+    link: /docs/layers-metadata
     icon: ℹ️
   - title: Access Data
     details: Identify, search and retrieve information about features
-    link: /api3/identify-features
+    link: /docs/identify-features
     icon: 🔎
   - title: Visualize Data
     details: Get information about layers like Metadata, Attributes and Legend
     icon: 👁
-    link: /api3/wmts
+    link: /docs/wmts
   - title: Download Data
     details: Get information about layers like Metadata, Attributes and Legend
     icon: ⬇️
-    link: /api3/stac/overview
+    link: /docs/stac/overview
 ---
 
 <script setup>
@@ -71,7 +71,7 @@ const announcementsPreview = announcements[0]
     <div :class="[statusPreview.frontmatter.previewType, 'custom-block status-alert']">
       <p class="custom-block-title">{{ statusPreview.frontmatter.previewTitle}}</p>
       <p>{{ statusPreview.frontmatter.previewContent}}</p>
-      <a href="/status">Learn more</a>
+      <a href="/page/status">Learn more</a>
     </div>
   </div>
   <div class="status-container">
@@ -79,7 +79,7 @@ const announcementsPreview = announcements[0]
     <div>
       <p class="custom-block-title">{{ announcementsPreview.frontmatter.previewTitle}}</p>
       <p>{{ announcementsPreview.frontmatter.previewContent}}</p>
-      <a href="/end-of-life-announcements">Learn more</a>
+      <a href="/page/end-of-life-announcements">Learn more</a>
     </div>
   </div>
 </div>
