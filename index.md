@@ -65,7 +65,7 @@ const announcementsPreview = announcements[0]
   </div>
 </div>
 
-<div class="status-announcements-block">
+<div class="status-announcements-container">
   <div class="status-container">
     <h2>Services Status</h2>
     <div :class="[statusPreview.frontmatter.previewType, 'custom-block status-alert']">
@@ -74,7 +74,7 @@ const announcementsPreview = announcements[0]
       <a href="/page/status">Learn more</a>
     </div>
   </div>
-  <div class="status-container">
+  <div class="announcements-container">
     <h2>End-of-Life Announcements</h2>
     <div>
       <p class="custom-block-title">{{ announcementsPreview.frontmatter.previewTitle}}</p>
