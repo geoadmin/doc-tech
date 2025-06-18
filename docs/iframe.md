@@ -8,8 +8,8 @@ The HTML code for integration into your own website is generated automatically a
 
 ## Simple Map
 
-A l'aide de la fonction Share, une vue prédéfinie de map.geo.admin.ch est créée en tant que code HTML iFrame. Celui-ci peut être intégré dans un site Web .
-[Fonction Share](http://help.geo.admin.ch/?id=52&lang=fr)
+Using the Share function, a predefined view of map.geo.admin.ch is created as an HTML iFrame code. This can be embedded into a website.
+[Share Function](http://help.geo.admin.ch/?id=52&lang=fr)
 
 <figure>
     <img src="../../static/iframe/iframe_02.avif" style="background-color: white">
@@ -79,10 +79,10 @@ If standard functions such as location search, measuring, etc. are needed: the e
 
 ## Integration Examples:
 
-- [www.wildruhezone.ch](www.wildruhezone.ch)
-- [www.respektiere-deine-grenzen.ch](www.respektiere-deine-grenzen.ch)
-- [www.trail.ch](www.trail.ch)
-- [www.geoplanteam.ch](www.geoplanteam.ch)
+- [www.wildruhezone.ch](https://www.wildruhezonen.ch)
+- [www.respektiere-deine-grenzen.ch](https://natur-freizeit.ch/schneesport-mit-ruecksicht)
+- [www.trail.ch](http://www.trail.ch/tour/tamaro/tamaro-lema-karte.htm)
+- [www.geoplanteam.ch](http://www.geoplanteam.ch/firma/kontakt)
 
 ## Flyer
 

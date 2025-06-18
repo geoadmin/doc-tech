@@ -8,8 +8,8 @@ Asset files are uploaded via the STAC API using the API requests described in th
 
 ::: warning
 
-***IMPORTANT NOTES:***
-*Files bigger than 10 MB should use compression, see [Compression](#section/Compression)*
+**_IMPORTANT NOTES:_**
+_Files bigger than 10 MB should use compression, see [Compression](#section/Compression)_
 
 :::
 
@@ -58,87 +58,93 @@ Note this example is only recommended if the upload is recurrent (for example ev
 
 1. Create Asset Upload
 
-    ```text
-    POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads
-    ```
+   ```text
+   POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads
+   ```
 
-    - `201 OK` => Continue to step 2.
-    - `400 Bad Request`
-        - Response is `{"description": "Upload already in progress", "code": 400}` => Abort the upload
-            - To do so first get the `upload_id` of the `in-progress` upload via
+   - `201 OK` => Continue to step 2.
+   - `400 Bad Request`
 
-                ```text
-                GET https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads?status=in-progress
-                ```
+     - Response is `{"description": "Upload already in progress", "code": 400}` => Abort the upload
 
-            - Then using this id abort the upload
+       - To do so first get the `upload_id` of the `in-progress` upload via
 
-                ```text
-                POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/abort
-                ```
+         ```text
+         GET https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads?status=in-progress
+         ```
 
-            - Then restart the step 1.
-        - Another `400 Bad Request` => Cancel upload
+       - Then using this id abort the upload
 
-        Your request is not correct, analyze your request and correct it before retrying the step 1.
+         ```text
+         POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/abort
+         ```
 
-    - `500 Internal Server Error` => Cancel upload
+       - Then restart the step 1.
 
-        This is generally an application crash and should be notify to the service administrator, a retry would usually be useless, simply cancel the upload.
-    - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
+     - Another `400 Bad Request` => Cancel upload
 
-        Service is momentarily not available, wait a short amount of time and retry step 1. the amount of time to wait and the number of retries depends on the upload rate, but a minimum wait time of 100ms is recommended.
+     Your request is not correct, analyze your request and correct it before retrying the step 1.
+
+   - `500 Internal Server Error` => Cancel upload
+
+     This is generally an application crash and should be notify to the service administrator, a retry would usually be useless, simply cancel the upload.
+
+   - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
+
+     Service is momentarily not available, wait a short amount of time and retry step 1. the amount of time to wait and the number of retries depends on the upload rate, but a minimum wait time of 100ms is recommended.
+
 2. Upload the parts via the presigned URL
 
-    ```text
-    PUT {presigned_url}
-    ```
+   ```text
+   PUT {presigned_url}
+   ```
 
-    - `200 OK` => Continue to step 3.
-    - `400 Bad Request` => Abort upload
+   - `200 OK` => Continue to step 3.
+   - `400 Bad Request` => Abort upload
 
-        Abort upload using the current `upload_id` and contact service administrator.
+     Abort upload using the current `upload_id` and contact service administrator.
 
-        ```text
-        POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/abort
-        ```
+     ```text
+     POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/abort
+     ```
 
-    - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
+   - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
 
-        Retry step 2. with a short wait time (min 100ms).
+     Retry step 2. with a short wait time (min 100ms).
 
 3. Complete the upload
 
-    ```text
-    POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/complete
-    ```
+   ```text
+   POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/complete
+   ```
 
-    - `200 OK` => Upload successful
-    - `400 Bad Request` => Cancel upload
+   - `200 OK` => Upload successful
+   - `400 Bad Request` => Cancel upload
 
-        Your request is invalid/incorrect, you need to cancel the upload script and verify its correctness.
-    - `500 Internal Server Error` => Cancel upload
+     Your request is invalid/incorrect, you need to cancel the upload script and verify its correctness.
 
-        This is generally an application crash and should be notify to the service administrator, a retry would usually be useless, simply cancel the upload.
-    - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
+   - `500 Internal Server Error` => Cancel upload
 
-        Service is momentarily not available, wait a short moment (100ms), then retry the request.
+     This is generally an application crash and should be notify to the service administrator, a retry would usually be useless, simply cancel the upload.
+
+   - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
+
+     Service is momentarily not available, wait a short moment (100ms), then retry the request.
 
 The following figure shows the flow of a multipart upload process.
 ![diagram](https://data.geo.admin.ch/api/stac/static/assets/service-stac-upload-process.svg)
 
-
 ## Authentication
 
-POST/PUT requests require authentication as described in [here](#tag/Authentication).
+POST/PUT requests require authentication as described in [here](/docs/stac/authentication).
 
 ## Compression
 
-Files between *1 MB* and *10 MB* are automatically compressed during download using *gzip* or
-*br* based on the `Accept-Encoding` header of the request. But note that this compression is
+Files between _1 MB_ and _10 MB_ are automatically compressed during download using _gzip_ or
+_br_ based on the `Accept-Encoding` header of the request. But note that this compression is
 only done for standard Media Type (see [File types that CloudFront compresses](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html#compressed-content-cloudfront-file-types)).
 
-<span style="color: red">It is highly recommended to upload files bigger than *10 MB* using
+<span style="color: red">It is highly recommended to upload files bigger than _10 MB_ using
 a compressed media type (see [Supported Media Type](#section/Supported-Media-Type)) !
 If this not possible (as e.g. for json directly usd in a browser application), the file should
 be either compressed upfront (see below) or split in smaller files.</span>
@@ -152,10 +158,11 @@ with the `content_encoding` parameter.
 For this you need to first compress the file using gzip or br compression algorithm and then
 use the `content_encoding` parameter in the [Create Asset's multipart upload](#tag/Asset-Upload-Management/operation/createAssetUpload)
 
-***NOTES:***
+**_NOTES:_**
+
 - In this case the file will be always delivered compressed, which means that the client that
-download the file needs to be compatible with the HTTP Compression algorithm defined in
-`Content-Encoding` header.
+  download the file needs to be compatible with the HTTP Compression algorithm defined in
+  `Content-Encoding` header.
 
 ## Example
 
