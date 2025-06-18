@@ -1,11 +1,11 @@
 /**
  * @file releases-sidebar.ts
  *
- * This script generates sidebar items based on Markdown files located in the `./releases/` directory. It reads
- * the frontmatter metadata from each file, filters out files marked to be
+ * This script generates sidebar items based on Markdown files located in the `/releases` directory. It reads
+ * the front matter metadata from each file, filters out files marked to be
  * ignored, and creates a sidebar item for each release. The resulting sidebar
  * configuration is saved as a JSON file (`releases-sidebar.json`) in the
- * `./releases/` directory.
+ * `/releases` directory.
  */
 import glob from "fast-glob";
 import matter from "gray-matter";
@@ -35,7 +35,8 @@ for (const file of files) {
   });
 }
 
+const identation = 2;
 fs.writeFileSync(
   path.join("./releases/", "releases-sidebar.json"),
-  JSON.stringify(releasesSideBar.reverse(), null, 2)
+  JSON.stringify(releasesSideBar.reverse(), null, identation)
 );

@@ -4,8 +4,8 @@ layout: home
 
 hero:
   # name: "*.geo.admin.ch"
-  text: "Welcome to GeoAdmin API’s documentation"
-  tagline: The GeoAdmin API allows the integration in web pages of geospatial information provided by the Swiss Confederation. These pages are dedicated to developer interested in using the API.
+  text: "Welcome to the Tech Docs of geo.admin.ch"
+  tagline: We provide web services and components to interact with the Federal Spatial Data Infrastructure (FSDI). These pages are dedicated to developers using these services.
   image:
     src: /static/home/swisstopo_map.png
     alt: Geoportal

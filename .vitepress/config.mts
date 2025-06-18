@@ -54,113 +54,100 @@ export default defineConfig({
 
 // loads the sidebar data in releases.json after the script has been run (.scripts/releases-sidebar.ts)
 function loadReleasesSidebarData() {
-  try {
-    if (fs.existsSync("./releases/releases-sidebar.json")) {
-      const sidebarData = JSON.parse(
-        fs.readFileSync("./releases/releases-sidebar.json", "utf-8")
-      ).slice(0, 6);
-      sidebarData.push({
-        text: "All Releases",
-        link: "/releases/release-notes",
-      });
-      return sidebarData;
-    }
-  } catch (error) {
-    console.warn("Failed to load sidebar data:", error);
+  const numberOfItems = 6; // Number of items to show in the sidebar
+  if (!fs.existsSync("./releases/releases-sidebar.json")) {
+    return {};
+  } else {
+    const sidebarData = JSON.parse(
+      fs.readFileSync("./releases/releases-sidebar.json", "utf-8")
+    ).slice(0, numberOfItems);
+    sidebarData.push({
+      text: "All Releases",
+      link: "/releases/release-notes",
+    });
+    return sidebarData;
   }
-
-  return {};
 }
 
-function expoloreDataItems(): DefaultTheme.SidebarItem[] {
-  return [
-    { text: "Layers Metadata", link: "/docs/layers-metadata" },
-    { text: "Layers Attributes", link: "/docs/layers-attributes" },
-    { text: "Legend Resource", link: "/docs/legend-resource" },
-  ];
-}
+const exploreDataItems: DefaultTheme.SidebarItem[] = [
+  { text: "Layers Metadata", link: "/docs/layers-metadata" },
+  { text: "Layers Attributes", link: "/docs/layers-attributes" },
+  { text: "Legend Resource", link: "/docs/legend-resource" },
+];
 
-function accessDataItems(): DefaultTheme.SidebarItem[] {
-  return [
-    {
-      text: "Features",
-      items: [
-        {
-          text: "Identify Features",
-          link: "/docs/identify-features",
-        },
-        { text: "Find", link: "/docs/find" },
-        { text: "Feature Resource", link: "/docs/feature-resource" },
-        {
-          text: "HTMLpopup Resource",
-          link: "/docs/htmlpopup-resource",
-        },
-      ],
-    },
-    {
-      text: "Adress Search",
-      items: [{ text: "Search", link: "/docs/search" }],
-    },
-    {
-      text: "Elevation & Profile",
-      items: [
-        { text: "Height", link: "/docs/height" },
-        { text: "Profile", link: "/docs/profile" },
-      ],
-    },
-    { text: "SPARQL", link: "/docs/sparql" },
-  ];
-}
+const accessDataItems: DefaultTheme.SidebarItem[] = [
+  {
+    text: "Features",
+    items: [
+      {
+        text: "Identify Features",
+        link: "/docs/identify-features",
+      },
+      { text: "Find", link: "/docs/find" },
+      { text: "Feature Resource", link: "/docs/feature-resource" },
+      {
+        text: "HTMLpopup Resource",
+        link: "/docs/htmlpopup-resource",
+      },
+    ],
+  },
+  {
+    text: "Adress Search",
+    items: [{ text: "Search", link: "/docs/search" }],
+  },
+  {
+    text: "Elevation & Profile",
+    items: [
+      { text: "Height", link: "/docs/height" },
+      { text: "Profile", link: "/docs/profile" },
+    ],
+  },
+  { text: "SPARQL", link: "/docs/sparql" },
+];
 
-function visualizeDataItems(): DefaultTheme.SidebarItem[] {
-  return [
-    { text: "WMS", link: "/docs/wms" },
-    { text: "WMTS", link: "/docs/wmts" },
-    {
-      text: "Mapbox Vector Tiles",
-      link: "/docs/mapbox-vector-tiles",
-    },
-    {
-      text: "3D",
-      link: "/docs/3d",
-    },
-  ];
-}
+const visualizeDataItems: DefaultTheme.SidebarItem[] = [
+  { text: "WMS", link: "/docs/wms" },
+  { text: "WMTS", link: "/docs/wmts" },
+  {
+    text: "Mapbox Vector Tiles",
+    link: "/docs/mapbox-vector-tiles",
+  },
+  {
+    text: "3D",
+    link: "/docs/3d",
+  },
+];
 
-function downloadDataItems(): DefaultTheme.SidebarItem[] {
-  return [
-    {
-      text: "STAC",
-      collapsed: true,
-      items: [
-        { text: "Overview", link: "/docs/stac/overview" },
-        { text: "Asset Upload Management", link: "/docs/stac/assetupload" },
-        { text: "Caching", link: "/docs/stac/caching" },
-        { text: "Authentication", link: "/docs/stac/authentication" },
-        { text: "Supported Media Types", link: "/docs/stac/supported-media" },
-        { text: "Migrate v0.9 to v1.0", link: "/docs/stac/migrate09-10" },
-        {
-          text: "Documentation",
-          link: "https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html",
-        },
-      ],
-    },
-    {
-      text: "Atom Feed / Open Search Download Service",
-      link: "/docs/atom",
-    },
-  ];
-}
+const downloadDataItems: DefaultTheme.SidebarItem[] = [
+  {
+    text: "STAC",
+    collapsed: true,
+    items: [
+      { text: "Overview", link: "/docs/stac/overview" },
+      { text: "Asset Upload Management", link: "/docs/stac/assetupload" },
+      { text: "Caching", link: "/docs/stac/caching" },
+      { text: "Authentication", link: "/docs/stac/authentication" },
+      { text: "Supported Media Types", link: "/docs/stac/supported-media" },
+      { text: "Migrate v0.9 to v1.0", link: "/docs/stac/migrate09-10" },
+      {
+        text: "Documentation",
+        link: "https://data.geo.admin.ch/api/stac/static/spec/v1/api.html",
+      },
+    ],
+  },
+  {
+    text: "Atom Feed / Open Search Download Service",
+    link: "/docs/atom",
+  },
+];
 
-function mapviewerItems(): DefaultTheme.SidebarItem[] {
-  return [
-    { text: "iFrame", link: "/docs/iframe" },
-    {
-      text: "JS API",
-      link: "../datageoadminch/overview",
-    },
-  ];
-}
+const mapviewerItems: DefaultTheme.SidebarItem[] = [
+  { text: "iFrame", link: "/docs/iframe" },
+  {
+    text: "JS API",
+    link: "../datageoadminch/overview",
+  },
+];
 
 function sidebarDocs(): DefaultTheme.SidebarItem[] {
   return [
@@ -168,27 +155,27 @@ function sidebarDocs(): DefaultTheme.SidebarItem[] {
     {
       text: "Explore Data",
       collapsed: true,
-      items: expoloreDataItems(),
+      items: exploreDataItems,
     },
     {
       text: "Access Data",
       collapsed: true,
-      items: accessDataItems(),
+      items: accessDataItems,
     },
     {
       text: "Visualize Data",
       collapsed: true,
-      items: visualizeDataItems(),
+      items: visualizeDataItems,
     },
     {
       text: "Download Data",
       collapsed: true,
-      items: downloadDataItems(),
+      items: downloadDataItems,
     },
     {
       text: "Mapviewer Documentation",
       collapsed: true,
-      items: mapviewerItems(),
+      items: mapviewerItems,
     },
   ];
 }
