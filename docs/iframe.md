@@ -23,24 +23,24 @@ Using the Share function, a predefined view of map.geo.admin.ch is created as an
 The legend can be added to the simple map. Right-click on the Infobox image representing the legend that appears in “View information of a dataset External page. The content will open in a new window.” This URL can be added to the HTML code in the iFrame section.
 
 ```html
-<b>Légende</b>
+<b>Legend</b>
 
 <p>
   <img
     src="https://api3.geo.admin.ch/static/images/legends/ch.bafu.nabelstationen_en.png"
-    alt="Légende"
+    alt="Legend"
   />
 </p>
 ```
 
 <iframe src="https://map.geo.admin.ch/#/embed?lang=fr&center=2604139.32,1196887.78&z=10&topic=ech&crosshair=bowl,2604057.07,1196890&layers=ch.kantone.cadastralwebmap-farbe&bgLayer=void&catalogNodes=532,614" style="border: 0;width: 688px;height: 300px;max-width: 100%;max-height: 100%;margin-top: 50px;" allow="geolocation"></iframe>
 
-<b>Légende</b>
+<b>Legend</b>
 
 <p>
   <img
     src="https://api3.geo.admin.ch/static/images/legends/ch.bafu.nabelstationen_en.png"
-    alt="Légende"
+    alt="Legend"
   />
 </p>
 

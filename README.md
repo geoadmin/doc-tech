@@ -48,7 +48,7 @@ To add a release note, follow these steps:
    previewTitle: "Issues in services"
    previewContent: "Our systems are experiencing issues"
    ```
-2. Update the `previewType` variable to one of the following values based on the desired message type `info`, `tip`, `warning` or `danger`:
+2. Update the `previewType` variable to one of the following values based on the desired message type `info`, `warning` or `danger`:
 
    ::: info
    This is an info box.
