@@ -19,7 +19,7 @@ To add a release note, follow these steps:
 
 1. Navigate to the `.releases/` folder in the project directory.
 2. Create a new file with the following naming convention: `YYYYMMDD.md` (e.g., `20250514.md`).
-3. Add the following front matter to the file:
+3. Add the following header to the file:
 
    ```markdown
    ---
@@ -30,9 +30,9 @@ To add a release note, follow these steps:
 
    Replace `YYYYMMDD` with the release date, and update the `date` field with the full date in a human-readable format.
 
-4. Add the markdown content for the release note below the front matter.
+4. Add the markdown content for the release note below the header.
 
-5. (Optional) If you do not want the release note to appear in the sidebar menu, add the following variable to the front matter:
+5. (Optional) If you do not want the release note to appear in the sidebar menu, add the following variable to the header:
 
    ```markdown
    ignoreSideBar: true
@@ -52,10 +52,6 @@ To add a release note, follow these steps:
 
    ::: info
    This is an info box.
-   :::
-
-   ::: tip
-   This is a tip.
    :::
 
    ::: warning

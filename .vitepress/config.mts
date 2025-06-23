@@ -57,16 +57,15 @@ function loadReleasesSidebarData() {
   const numberOfItems = 6; // Number of items to show in the sidebar
   if (!fs.existsSync("./releases/releases-sidebar.json")) {
     return {};
-  } else {
-    const sidebarData = JSON.parse(
-      fs.readFileSync("./releases/releases-sidebar.json", "utf-8")
-    ).slice(0, numberOfItems);
-    sidebarData.push({
-      text: "All Releases",
-      link: "/releases/release-notes",
-    });
-    return sidebarData;
   }
+  const sidebarData = JSON.parse(
+    fs.readFileSync("./releases/releases-sidebar.json", "utf-8")
+  ).slice(0, numberOfItems);
+  sidebarData.push({
+    text: "All Releases",
+    link: "/releases/release-notes",
+  });
+  return sidebarData;
 }
 
 const exploreDataItems: DefaultTheme.SidebarItem[] = [
@@ -93,7 +92,7 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: "Adress Search",
+      text: "Address Search",
       items: [{ text: "Search", link: "/docs/search" }],
     },
     {
@@ -152,7 +151,7 @@ function mapviewerItems(): DefaultTheme.SidebarItem[] {
     { text: "iFrame", link: "/docs/iframe" },
     {
       text: "JS API",
-      link: "../datageoadminch/overview",
+      link: "/docs/js-api",
     },
   ];
 }

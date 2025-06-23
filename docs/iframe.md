@@ -12,7 +12,7 @@ Using the Share function, a predefined view of map.geo.admin.ch is created as an
 [Share Function](http://help.geo.admin.ch/?id=52&lang=fr)
 
 <figure>
-    <img src="../../static/iframe/iframe_02.avif" style="background-color: white">
+    <img src="../../static/iframe/iframe_02.jpeg" style="background-color: white">
     <figcaption>Integrate an iFrame — © PP BGDI</figcaption>
 </figure>
 
