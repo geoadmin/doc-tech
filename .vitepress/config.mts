@@ -1,105 +1,188 @@
-import { defineConfig, type DefaultTheme } from 'vitepress'
-
-// .vitepress/config.js
-import { withMermaid } from "vitepress-plugin-mermaid";
-
-// export default withMermaid({
-//     // your existing vitepress config...
-//     // optionally, you can pass MermaidConfig
-//     mermaid: {
-//       // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
-//     },
-//     // optionally set additional config for plugin itself with MermaidPluginConfig
-//     mermaidPlugin: {
-//       class: "mermaid my-class", // set additional css classes for parent container
-//     },
-// });
+import { defineConfig, type DefaultTheme } from "vitepress";
+import fs from "fs";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "*.geo.admin.ch",
   description: "Technical Documentation about *.geo.admin.ch",
+  head: [["link", { rel: "icon", href: "/static/favicon.ico" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
-    logo: { src: '/static/icon-ch.svg', width: 24, height: 24 },
+    logo: { src: "/static/icon-ch.svg", width: 24, height: 24 },
 
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'API Specs', link: 'https://data.geo.admin.ch/api/stac/static/spec/v1/api.html' }
+      { text: "Home", link: "/" },
+      {
+        text: "STAC API",
+        link: "https://data.geo.admin.ch/api/stac/static/spec/v1/api.html",
+      },
     ],
 
-    sidebar: {
-      '/datageoadminch/': { base: '/datageoadminch/', items: sidebarData() },
-      '/visualization/': { base: '/visualization/', items: sidebarVisualization() }
-    },
-
+    sidebar: [
+      {
+        text: "API Documentation",
+        items: sidebarDocs(),
+      },
+      {
+        text: "Release Notes",
+        collapsed: true,
+        items: loadReleasesSidebarData(),
+      },
+      {
+        text: "Terms of use",
+        link: "https://www.geo.admin.ch/en/general-terms-of-use-fsdi",
+      },
+      {
+        text: "Status page",
+        link: "/page/status",
+      },
+      {
+        text: "End-of-Life Announcements",
+        link: "/page/end-of-life-announcements",
+      },
+    ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/geoadmin/doc-techdoc' }
+      { icon: "github", link: "https://github.com/geoadmin/doc-techdoc" },
     ],
 
     search: {
-      provider: 'local',
+      provider: "local",
     },
   },
-    // your existing vitepress config...
-  // optionally, you can pass MermaidConfig
-  mermaid: {
-    // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
-  },
-  // optionally set additional config for plugin itself with MermaidPluginConfig
-  mermaidPlugin: {
-    class: "mermaid", // set additional css classes for parent container
-  },
-})
+});
 
-function sidebarData(): DefaultTheme.SidebarItem[] {
-  return [
-    // {
-    //   text: 'Overview',
-    //   collapsed: false,
-    //   items: [
-    //     { text: 'What is STAC API', link: 'overview' },
-    //     { text: 'Getting Started', link: 'getting-started' },
-    //   ]
-    // },
-    {
-      text: 'Tutorials',
-      collapsed: false,
-      items: [
-        { text: 'Overview', link: 'overview' },
-        { text: 'Authentication', link: 'authentication' },
-        { text: 'Uploading assets', link: 'assetupload'},
-        { text: 'Notest on Caching', link: 'caching'},
-        { text: 'Migrating from v0.9 to v1', link: 'migrate09-10'}
-      ]
-    },
-    // {
-    //   text: 'API Spec',
-    //   collapsed: false,
-    //   items: [
-    //     { text: 'API Specs', link: 'https://data.geo.admin.ch/api/stac/static/spec/v1'}
-    //   ]
-    // }
-  ]
+// loads the sidebar data in releases.json after the script has been run (.scripts/releases-sidebar.ts)
+function loadReleasesSidebarData() {
+  const numberOfItems = 6; // Number of items to show in the sidebar
+  if (!fs.existsSync("./releases/releases-sidebar.json")) {
+    return {};
+  }
+  const sidebarData = JSON.parse(
+    fs.readFileSync("./releases/releases-sidebar.json", "utf-8")
+  ).slice(0, numberOfItems);
+  sidebarData.push({
+    text: "All Releases",
+    link: "/releases/release-notes",
+  });
+  return sidebarData;
 }
 
-function sidebarVisualization(): DefaultTheme.SidebarItem[] {
+const exploreDataItems: DefaultTheme.SidebarItem[] = [
+  { text: "Layers Metadata", link: "/docs/layers-metadata" },
+  { text: "Layers Attributes", link: "/docs/layers-attributes" },
+  { text: "Legend Resource", link: "/docs/legend-resource" },
+];
+
+function accessDataItems(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: 'WMTS 1.0.0',
-      collapsed: false,
+      text: "Features",
       items: [
-        { text: 'Overview', link: 'overview' },
-        { text: 'Examples', link: 'examples' },
-      ]
+        {
+          text: "Identify Features",
+          link: "/docs/identify-features",
+        },
+        { text: "Find", link: "/docs/find" },
+        { text: "Feature Resource", link: "/docs/feature-resource" },
+        {
+          text: "HTMLpopup Resource",
+          link: "/docs/htmlpopup-resource",
+        },
+      ],
     },
     {
-      text: 'XYZ',
-      collapsed: false,
+      text: "Address Search",
+      items: [{ text: "Search", link: "/docs/search" }],
+    },
+    {
+      text: "Elevation & Profile",
       items: [
-        { text: 'Overview', link: 'xyz' },
-      ]
-    }
-  ]
+        { text: "Height", link: "/docs/height" },
+        { text: "Profile", link: "/docs/profile" },
+      ],
+    },
+    { text: "SPARQL", link: "/docs/sparql" },
+  ];
+}
+
+function visualizeDataItems(): DefaultTheme.SidebarItem[] {
+  return [
+    { text: "WMS", link: "/docs/wms" },
+    { text: "WMTS", link: "/docs/wmts" },
+    {
+      text: "Mapbox Vector Tiles",
+      link: "/docs/mapbox-vector-tiles",
+    },
+    {
+      text: "3D",
+      link: "/docs/3d",
+    },
+  ];
+}
+
+function downloadDataItems(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: "STAC",
+      collapsed: true,
+      items: [
+        { text: "Overview", link: "/docs/stac/overview" },
+        { text: "Asset Upload Management", link: "/docs/stac/assetupload" },
+        { text: "Caching", link: "/docs/stac/caching" },
+        { text: "Authentication", link: "/docs/stac/authentication" },
+        { text: "Supported Media Types", link: "/docs/stac/supported-media" },
+        { text: "Migrate v0.9 to v1.0", link: "/docs/stac/migrate09-10" },
+        {
+          text: "Documentation",
+          link: "https://data.geo.admin.ch/api/stac/static/spec/v1/api.html",
+        },
+      ],
+    },
+    {
+      text: "Atom Feed / Open Search Download Service",
+      link: "/docs/atom",
+    },
+  ];
+}
+
+function mapviewerItems(): DefaultTheme.SidebarItem[] {
+  return [
+    { text: "iFrame", link: "/docs/iframe" },
+    {
+      text: "JS API",
+      link: "/docs/js-api",
+    },
+  ];
+}
+
+function sidebarDocs(): DefaultTheme.SidebarItem[] {
+  return [
+    { text: "Overview", link: "/docs/overview" },
+    {
+      text: "Explore Data",
+      collapsed: true,
+      items: exploreDataItems,
+    },
+    {
+      text: "Access Data",
+      collapsed: true,
+      items: accessDataItems(),
+    },
+    {
+      text: "Visualize Data",
+      collapsed: true,
+      items: visualizeDataItems(),
+    },
+    {
+      text: "Download Data",
+      collapsed: true,
+      items: downloadDataItems(),
+    },
+    {
+      text: "Mapviewer Documentation",
+      collapsed: true,
+      items: mapviewerItems(),
+    },
+  ];
 }

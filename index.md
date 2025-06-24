@@ -3,41 +3,83 @@
 layout: home
 
 hero:
-  name: "*.geo.admin.ch"
-  text: "Technical Documentation"
-  # tagline: My great project tagline
+  # name: "*.geo.admin.ch"
+  text: "Welcome to the Tech Docs of geo.admin.ch"
+  tagline: We provide web services and components to interact with the Federal Spatial Data Infrastructure (FSDI). The tech docs are dedicated to developers using these services.
   image:
-    src: https://map.geo.admin.ch/icon.svg
+    src: /static/home/swisstopo_map.png
     alt: Geoportal
   actions:
+    - text: Get started
+      link: /docs/overview
     - theme: alt
-      text: Data Download
-      link: /datageoadminch/overview.md
-    - theme: alt
-      text: api3.geo.admin.ch
-      link: /api3geoadminch/sdiservices.md
-    - theme: alt
-      text: Visualization Services
-      link: /visualization/overview.md
-
-
-# - theme: alt
-    #   text: API Examples
-    #   link: /api-examples
+      text: Getting help
+      link: http://groups.google.com/group/geoadmin-api
 
 features:
-  - title: OpenAPI Specs
-    details: Find OpenAPI specs for most APIs and services
-    icon:
-      src: /static/openapi-1.svg
-  - title: Tutorials
-    details: Find detailed tutorials about how to get certain things done
-    icon:
-      src: /static/tutorial.png
-  - title: Code Snippets
-    details: Copy code snippets for common use cases
-    icon:
-      src: /static/code.webp
-
+  - title: Explore Data
+    details: Get information about layers like Metadata, Attributes and Legend
+    link: /docs/layers-metadata
+    icon: ℹ️
+  - title: Access Data
+    details: Identify, search and retrieve information about features
+    link: /docs/identify-features
+    icon: 🔎
+  - title: Visualize Data
+    details: Get information about layers like Metadata, Attributes and Legend
+    icon: 👁
+    link: /docs/wmts
+  - title: Download Data
+    details: Get information about layers like Metadata, Attributes and Legend
+    icon: ⬇️
+    link: /docs/stac/overview
 ---
 
+<script setup>
+import { data as releases } from './scripts/releases-content.data.ts'
+import { data as status } from './scripts/status.data.ts'
+import { data as announcements } from './scripts/announcements.data.ts'
+
+const latestReleases = releases.slice(1, 6)
+const lastRelease = releases.at(0)
+const statusPreview = status[0]
+const announcementsPreview = announcements[0]
+</script>
+
+## Release Notes
+
+<div class="releases-container">
+  <div class="releases-preview">
+    <div class="releases-preview-content" v-html="lastRelease.html"></div>
+    <p>...</p>
+    <a :href="lastRelease.url">Learn more</a>
+  </div>
+
+  <div class="releases-list">
+      <div v-for="release of latestReleases">
+        <a :href="release.url">
+        <p>Release {{ release.frontmatter.title }}</p>
+        <span>{{ release.frontmatter.date }}</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+<div class="status-announcements-container">
+  <div class="status-container">
+    <h2>Services Status</h2>
+    <div :class="[statusPreview.frontmatter.previewType, 'custom-block status-alert']">
+      <p class="custom-block-title">{{ statusPreview.frontmatter.previewTitle}}</p>
+      <p>{{ statusPreview.frontmatter.previewContent}}</p>
+      <a href="/page/status">Learn more</a>
+    </div>
+  </div>
+  <div class="announcements-container">
+    <h2>End-of-Life Announcements</h2>
+    <div>
+      <p class="custom-block-title">{{ announcementsPreview.frontmatter.previewTitle}}</p>
+      <p>{{ announcementsPreview.frontmatter.previewContent}}</p>
+      <a href="/page/end-of-life-announcements">Learn more</a>
+    </div>
+  </div>
+</div>

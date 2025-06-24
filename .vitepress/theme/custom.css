@@ -1,0 +1,113 @@
+/* ==========================
+   1. Global Styles
+   ========================== */
+:root {
+  --vp-c-brand-1: red;
+  --vp-c-brand-2: red;
+  --vp-c-brand-3: #d8232a;
+}
+
+figcaption {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+}
+
+/* ==========================
+   2. Layout Styles
+   ========================== */
+.releases-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+}
+
+.status-announcements-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-container,
+.announcements-container {
+  flex-basis: 50%;
+}
+
+.status-alert {
+  min-height: 150px;
+}
+
+/* ==========================
+   3. Component Styles
+   ========================== */
+
+/* Releases List */
+.releases-list {
+  flex: 1 1 30%;
+  min-width: 0;
+}
+
+.releases-list a {
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  color: var(--vp-c-text-1);
+}
+
+.releases-list div {
+  height: 80px;
+  border-top: lightgray solid 1px;
+}
+
+.releases-list div:last-child {
+  border-bottom: lightgray solid 1px;
+}
+
+.releases-list p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.releases-preview {
+  flex: 1 1 70%;
+  min-width: 0;
+}
+
+.releases-preview-content {
+  max-height: 400px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.releases-preview p {
+  margin: 0 0 10px 0;
+}
+
+/* ==========================
+   4. Utility Classes
+   ========================== */
+#link-with-icon {
+  text-decoration: none;
+  color: var(--vp-c-text-1);
+  display: flex;
+}
+
+#link-with-icon:hover {
+  color: #d8232a;
+}
+
+/* ==========================
+   5. Media Queries
+   ========================== */
+@media (min-width: 768px) {
+  .releases-container {
+    flex-direction: row;
+  }
+
+  .status-announcements-container {
+    flex-direction: row;
+    gap: 50px;
+  }
+}
