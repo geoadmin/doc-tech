@@ -10,7 +10,16 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
 
     logo: { src: "/static/icon-ch.svg", width: 24, height: 24 },
-
+    lastUpdated: {
+      formatOptions: {
+        dateStyle: "medium",
+        timeStyle: "short",
+      },
+    },
+    editLink: {
+      text: "Edit this page on GitHub",
+      pattern: "https://github.com/geoadmin/doc-tech/edit/master/:path",
+    },
     nav: [
       { text: "Home", link: "/" },
       {
