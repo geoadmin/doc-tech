@@ -21,12 +21,38 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "API Documentation",
-        items: sidebarDocs(),
+        text: "Get Started",
+        collapsed: false,
+        items: [{ text: "Overview", link: "/docs/overview" }],
+      },
+      {
+        text: "Explore Data",
+        collapsed: false,
+        items: exploreDataItems(),
+      },
+      {
+        text: "Access Data",
+        collapsed: false,
+        items: accessDataItems(),
+      },
+      {
+        text: "Visualize Data",
+        collapsed: false,
+        items: visualizeDataItems(),
+      },
+      {
+        text: "Download Data",
+        collapsed: false,
+        items: downloadDataItems(),
+      },
+      {
+        text: "Mapviewer",
+        collapsed: false,
+        items: mapviewerItems(),
       },
       {
         text: "Release Notes",
-        collapsed: true,
+        collapsed: false,
         items: loadReleasesSidebarData(),
       },
       {
@@ -38,8 +64,8 @@ export default defineConfig({
         link: "/page/status",
       },
       {
-        text: "End-of-Life Announcements",
-        link: "/page/end-of-life-announcements",
+        text: "Product Retirements",
+        link: "/page/product-retirements",
       },
     ],
     socialLinks: [
@@ -68,11 +94,13 @@ function loadReleasesSidebarData() {
   return sidebarData;
 }
 
-const exploreDataItems: DefaultTheme.SidebarItem[] = [
-  { text: "Layers Metadata", link: "/docs/layers-metadata" },
-  { text: "Layers Attributes", link: "/docs/layers-attributes" },
-  { text: "Legend Resource", link: "/docs/legend-resource" },
-];
+function exploreDataItems(): DefaultTheme.SidebarItem[] {
+  return [
+    { text: "Layers Metadata", link: "/docs/layers-metadata" },
+    { text: "Layers Attributes", link: "/docs/layers-attributes" },
+    { text: "Legend Resource", link: "/docs/legend-resource" },
+  ];
+}
 
 function accessDataItems(): DefaultTheme.SidebarItem[] {
   return [
@@ -152,37 +180,6 @@ function mapviewerItems(): DefaultTheme.SidebarItem[] {
     {
       text: "JS API",
       link: "/docs/js-api",
-    },
-  ];
-}
-
-function sidebarDocs(): DefaultTheme.SidebarItem[] {
-  return [
-    { text: "Overview", link: "/docs/overview" },
-    {
-      text: "Explore Data",
-      collapsed: true,
-      items: exploreDataItems,
-    },
-    {
-      text: "Access Data",
-      collapsed: true,
-      items: accessDataItems(),
-    },
-    {
-      text: "Visualize Data",
-      collapsed: true,
-      items: visualizeDataItems(),
-    },
-    {
-      text: "Download Data",
-      collapsed: true,
-      items: downloadDataItems(),
-    },
-    {
-      text: "Mapviewer Documentation",
-      collapsed: true,
-      items: mapviewerItems(),
     },
   ];
 }
