@@ -64,9 +64,9 @@ To add a release note, follow these steps:
 
 3. Save the file and commit your changes.
 
-## How to Edit the End-of-Life
+## How to Edit the Product Retirements
 
-1. To edit the end-of-life announces preview, use the following variables located in the `end-of-life-announcements.md` file:
+1. To edit the Product Retirements preview, use the following variables located in the `product-retirements.md` file:
    ```YAML
    previewTitle: "Decomissioning of legacy vectortile styles / tiles"
    previewContent: "Old styles for Light Base Map and Imagery Base Map no longer available from January 2025"

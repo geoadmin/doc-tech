@@ -46,7 +46,7 @@ export default defineConfig({
         items: downloadDataItems(),
       },
       {
-        text: "Mapviewer Documentation",
+        text: "Mapviewer",
         collapsed: false,
         items: mapviewerItems(),
       },
@@ -64,8 +64,8 @@ export default defineConfig({
         link: "/page/status",
       },
       {
-        text: "End-of-Life Announcements",
-        link: "/page/end-of-life-announcements",
+        text: "Product Retirements",
+        link: "/page/product-retirements",
       },
     ],
     socialLinks: [
