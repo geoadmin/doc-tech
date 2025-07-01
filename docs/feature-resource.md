@@ -1,18 +1,27 @@
 # Feature Resource
 
-With an ID (or several in a comma separated list) and a layer ID
+With a Feature ID (or several in a comma separated list) and a layer ID
 (technical name), this service can be used to retrieve a feature
 resource. Here is a [complete list of
 layers](../../../api/faq/index.html#which-layers-have-a-tooltip) for
 which this service is available.
 
-### URL
+```http
+https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId},{featureId}
+```
 
-    GET https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId},{featureId}
-
-### Input Parameters
+## Request Details
 
 RESTFul interface is available.
+
+### Path Parameters
+
+| Parameters                | Description                                               |
+| ------------------------- | --------------------------------------------------------- |
+| **layerBodId (required)** | The id of the layer                                       |
+| **featureId (required)**  | The object’s Id (separated by comma for multiple objects) |
+
+### Query Parameters
 
 | Parameters                    | Description                                                                                                                           |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
@@ -22,12 +31,26 @@ RESTFul interface is available.
 | **lang (optional)**           | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                                                                |
 | **callback (optional)**       | The name of the callback function.                                                                                                    |
 
-### Example
+## Examples
 
-- Get the feature with the ID RIG belonging to ch.bafu.nabelstationen:
-  [https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG](../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG)
-- Get several features with IDs RIG and LAU belonging to
-  ch.bafu.bundesinventar-bln:
-  [https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU](../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU)
-- A <span class="title-ref">GeoJSON</span> in \`EPSG:4326\`:
-  [https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson](../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson)
+Get the feature with the ID `RIG` belonging to the layer `ch.bafu.nabelstationen`:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG
+```
+
+<br>
+
+Get several features with IDs `RIG` and `LAU` belonging to the layer `ch.bafu.nabelstationen`:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU
+```
+
+<br>
+
+A `GeoJSON` in `EPSG:4326`:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson
+```
