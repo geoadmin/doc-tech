@@ -3,13 +3,11 @@
 The search service can be used to search for locations, layers or
 features.
 
-### URL
+```http
+https://api3.geo.admin.ch/rest/services/api/SearchServer
+```
 
-    GET https://api3.geo.admin.ch/rest/services/api/SearchServer
-
-### Description
-
-The search service is separated in 3 various categories or types:
+::: tip The search service is separated in 3 categories or types:
 
 - The **location search** which is composed of the following geocoded
   locations:
@@ -27,55 +25,60 @@ The search service is separated in 3 various categories or types:
   the features. ([Searchable
   layers](../../../api/faq/index.html#which-layers-are-searchable))
 
-### Input parameters
+:::
+
+## Request Details
 
 Only RESTFul interface is available.
 
-**Location Search**
+### Query Parameters
+
+#### Location Search
 
 | Parameters                         | Description                                                                                                                                                                                                                                                                                       |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **searchText (required/optional)** | Must be provided if the <span class="title-ref">bbox</span> is not. The text to search for. Maximum of 10 words.                                                                                                                                                                                  |
-| **type (required)**                | The type of performed search. Specify <span class="title-ref">locations</span> to perform a location search.                                                                                                                                                                                      |
-| **bbox (required/optional)**       | Must be provided if the <span class="title-ref">searchText</span> is not. A comma separated list of 4 coordinates representing the bounding box on which features should be filtered (SRID: 21781 or 2056).                                                                                       |
-| **sortbbox (optional)**            | When <span class="title-ref">bbox</span> is specified and this parameter is "true", then the ranking of the results is performed according to the distance between the locations and the center of the bounding box. Default to "true".                                                           |
+| **searchText (required/optional)** | Must be provided if the `bbox` is not. The text to search for. Maximum of 10 words.                                                                                                                                                                                                               |
+| **type (required)**                | The type of performed search. Specify `locations` to perform a location search.                                                                                                                                                                                                                   |
+| **bbox (required/optional)**       | Must be provided if the `searchText` is not. A comma separated list of 4 coordinates representing the bounding box on which features should be filtered (SRID: 21781 or 2056).                                                                                                                    |
+| **sortbbox (optional)**            | When `bbox` is specified and this parameter is "true", then the ranking of the results is performed according to the distance between the locations and the center of the bounding box. Default to "true".                                                                                        |
 | **returnGeometry (optional)**      | This parameter defines whether the geometry is returned or not. Default to "true".                                                                                                                                                                                                                |
 | **origins (optional)**             | A comma separated list of origins. Possible origins are: zipcode,gg25,district,kantone,gazetteer,address,parcel A description of the origins can be found hereunder. Per default all origins are used.                                                                                            |
 | **limit (optional)**               | The maximum number of results to retrive per request (Max and default limit=50)                                                                                                                                                                                                                   |
 | **sr (optional)**                  | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84) and 3857 (Web Pseudo-Mercator). Defaults to "21781". When a _returnGeometry_ is set, its coordiantes will be returned in this _sr_. When setting a _bbox_, its coordinates have to be in the corresponding _sr_. |
-| **geometryFormat (optional)**      | Set to _geojson_ if you want the service to return a GeoJSON <span class="title-ref">FeatureCollection</span>. Geometries will be returned in the _sr_ projection.                                                                                                                                |
+| **geometryFormat (optional)**      | Set to _geojson_ if you want the service to return a GeoJSON `FeatureCollection`. Geometries will be returned in the _sr_ projection.                                                                                                                                                             |
 | **callback (optional)**            | The name of the callback function.                                                                                                                                                                                                                                                                |
 
-**Layer Search**
+#### Layer Search
 
 | Parameters                    | Description                                                                                                                                                                                                                               |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **searchText (required)**     | The text to search for. Maximum of 10 words allowed.                                                                                                                                                                                      |
-| **type (required)**           | The type of performed search. Specify <span class="title-ref">layers</span> to perform a layer search.                                                                                                                                    |
+| **type (required)**           | The type of performed search. Specify `layers` to perform a layer search.                                                                                                                                                                 |
 | **lang (optional)**           | The language metadata. Supported values: de (default), fr, it, rm, en.                                                                                                                                                                    |
 | **limit (optional)**          | The maximum number of results to retrive per request (Max and default limit=30)                                                                                                                                                           |
 | **sr (optional)**             | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84) and 3857 (Web Pseudo-Mercator). Defaults to "21781". When setting _geometryFormat_ to _geosjon_, the coordinates are returned in the corresponding _sr_. |
-| **geometryFormat (optional)** | Set to _geojson_ if you want the service to return a GeoJSON <span class="title-ref">FeatureCollection</span>. Geometries will be returned in the _sr_ projection.                                                                        |
+| **geometryFormat (optional)** | Set to _geojson_ if you want the service to return a GeoJSON `FeatureCollection`. Geometries will be returned in the _sr_ projection.                                                                                                     |
 | **callback (optional)**       | The name of the callback function.                                                                                                                                                                                                        |
 
-**Feature Search**
+#### Feature Search
 
-| Parameters                    | Description                                                                                                                                                                                                                             |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **searchText (required)**     | The text to search for (in features detail field). Maximum of 10 words allowed.                                                                                                                                                         |
-| **type (required)**           | The type of performed search. Specify <span class="title-ref">featuresearch</span> to perform a feature search.                                                                                                                         |
-| **bbox (optional)**           | A comma separated list of 4 coordinates representing the bounding box according to which features should be ordered (SRID: 21781 or 2056).                                                                                              |
-| **sortbbox (optional)**       | When <span class="title-ref">bbox</span> is specified and this parameter is "true", then the ranking of the results is performed according to the distance between the locations and the center of the bounding box. Default to "true". |
-| **features (required)**       | A comma separated list of technical layer names.                                                                                                                                                                                        |
-| **limit (optional)**          | The maximum number of results to retrive per request (Max and default limit=20)                                                                                                                                                         |
-| **sr (optional)**             | The spatial reference. Supported values: 21781 (LV03) and 2056 (LV95) Defaults to "21781".                                                                                                                                              |
-| **geometryFormat (optional)** | Set to _geojson_ if you want the service to return a GeoJSON <span class="title-ref">FeatureCollection</span>. Geometries will be returned in the _sr_ projection.                                                                      |
-| **callback (optional)**       | The name of the callback function.                                                                                                                                                                                                      |
+| Parameters                    | Description                                                                                                                                                                                                |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **searchText (required)**     | The text to search for (in features detail field). Maximum of 10 words allowed.                                                                                                                            |
+| **type (required)**           | The type of performed search. Specify `featuresearch` to perform a feature search.                                                                                                                         |
+| **bbox (optional)**           | A comma separated list of 4 coordinates representing the bounding box according to which features should be ordered (SRID: 21781 or 2056).                                                                 |
+| **sortbbox (optional)**       | When `bbox` is specified and this parameter is "true", then the ranking of the results is performed according to the distance between the locations and the center of the bounding box. Default to "true". |
+| **features (required)**       | A comma separated list of technical layer names.                                                                                                                                                           |
+| **limit (optional)**          | The maximum number of results to retrive per request (Max and default limit=20)                                                                                                                            |
+| **sr (optional)**             | The spatial reference. Supported values: 21781 (LV03) and 2056 (LV95) Defaults to "21781".                                                                                                                 |
+| **geometryFormat (optional)** | Set to _geojson_ if you want the service to return a GeoJSON `FeatureCollection`. Geometries will be returned in the _sr_ projection.                                                                      |
+| **callback (optional)**       | The name of the callback function.                                                                                                                                                                         |
 
-### Response syntax
+## Response Format
 
-The results are presented as a list of object literals. Here is an
-example of response for location search.
+The results are presented as a list of object literals.
+
+::: details Response Example
 
 ```javascript
 results: [
@@ -98,9 +101,7 @@ results: [
 ];
 ```
 
-or a valid <span class="title-ref">GeoJSON</span> <span
-class="title-ref">FeatureCollection</span> if parameter <span
-class="title-ref">geometryFormat=geojson</span> is present
+or a valid `GeoJSON` `FeatureCollection`if parameter `geometryFormat=geojson` is present
 
 ```javascript
 {
@@ -146,34 +147,24 @@ class="title-ref">geometryFormat=geojson</span> is present
 }
 ```
 
+:::
+
 Here is a description of the data one can find in the above response.
 
-- **id**: This is an internal value and therefore shouldn't be used.
-- **weight**: The <span class="title-ref">weight</span> is dynamically
-  computed according to the <span class="title-ref">searchText</span>
-  that is provided. It informs the user about how close an entry is to
-  the provided <span class="title-ref">searchText</span>.
-- **attrs**: The attributes associated to a given entry.
-  - **origin**: This attribute refers to the type of data an entry
-    stands for.
-  - **layerBodId**: The id of the associated layer (if any)
-  - **featureId**: If available the object's Id can be combined with
-    the <span class="title-ref">layerBodId</span> to collect more
-    information about a feature.
-  - **detail**: The search field
-  - **rank**: A different <span class="title-ref">rank</span> is
-    associated to each origin. Results are always ordered in
-    ascending ranks.
-  - **geom_st_box2d**: This attribute is in is in CH1903 / LV03
-    (EPSG:21781) reference system and represents the bounding box of
-    the associated geometry.
-  - **num**: This attribute is only valid for locations with
-    **address** <span class="title-ref">origin</span>. It refers to
-    the street number.
-  - **x and y**: These attributes represent the coordinates of an
-    entry. If an object's entry is a line or a polygon, those
-    coordinates will always be on the underlying geometry.
-  - **label**: The html label for an entry.
+| **Field**       | **Description**                                                                                                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`            | This is an internal value and therefore shouldn't be used.                                                                                                         |
+| `weight`        | The `weight` is dynamically computed according to the `searchText` that is provided. It informs the user about how close an entry is to the provided `searchText`. |
+| **attrs**       | The attributes associated to a given entry.                                                                                                                        |
+| `origin`        | This attribute refers to the type of data an entry stands for.                                                                                                     |
+| `layerBodId`    | The ID of the associated layer (if any).                                                                                                                           |
+| `featureId`     | If available, the object's ID can be combined with the `layerBodId` to collect more information about a feature.                                                   |
+| `detail`        | The search field.                                                                                                                                                  |
+| `rank`          | A different `rank` is associated to each origin. Results are always ordered in ascending ranks.                                                                    |
+| `geom_st_box2d` | This attribute is in CH1903 / LV03 (EPSG:21781) reference system and represents the bounding box of the associated geometry.                                       |
+| `num`           | This attribute is only valid for locations with `address` `origin`. It refers to the street number.                                                                |
+| `x` and `y`     | These attributes represent the coordinates of an entry. If an object's entry is a line or a polygon, those coordinates will always be on the underlying geometry.  |
+| `label`         | The HTML label for an entry.                                                                                                                                       |
 
 Here is a list of possible origins sorted in ascending ranking order:
 
@@ -182,39 +173,92 @@ Here is a list of possible origins sorted in ascending ranking order:
 - district (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)
 - kantone (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)
 - gazetteer (ch.swisstopo.swissnames3d, ch.bav.haltestellen-oev)
-- address (ch.bfs.gebaeude_wohnungs_register with EGID or use prefix
-  'addresse', 'adresse', 'indirizzo', 'address' without EGID)
-- parcel (use prefix "parcel", "parzelle", "parcelle" or "parcella" in
-  your requests to filter out other origins)
+- address (ch.bfs.gebaeude_wohnungs_register with EGID or use prefix 'addresse', 'adresse', 'indirizzo', 'address' without EGID)
+- parcel (use prefix "parcel", "parzelle", "parcelle" or "parcella" in your requests to filter out other origins)
 
 Prefix filtering cannot be combined with parameter <span
 class="title-ref">origins</span>.
 
-### Examples
+## Examples
 
-- Search for locations matching the word “wabern”:
-  [https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations](../../../rest/services/api/SearchServer?searchText=wabern&type=locations)
-- Search for locations of type "parcel" and "district" (the origins):
-  [https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=bern&origins=parcel,district&type=locations](../../../rest/services/api/SearchServer?searchText=bern&origins=parcel,district&type=locations)
-- Search for locations within a given map extent (the <span
-  class="title-ref">bbox</span>):
-  [https://api3.geo.admin.ch/rest/services/api/SearchServer?bbox=551306.5625,167918.328125,551754.125,168514.625&type=locations](../../../rest/services/api/SearchServer?bbox=551306.5625,167918.328125,551754.125,168514.625&type=locations)
-- Search for layers in French matching the word “géoïde” in their
-  description:
-  [https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr](../../../rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr)
-- Search for features matching word "433" in their description:
-  [https://api3.geo.admin.ch/rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433](../../../rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433)
-- Get a GeoJSON for locations matching the word “wabern”:
-  [https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson](../../../rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson)
-- Get a Webmercator GeoJSON:
-  [https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson&sr=3857](../../../rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson&sr=3857)
-- Input <span class="title-ref">bbox</span> may also be in \`LV95\`:
-  [https://api3.geo.admin.ch/rest/services/api/SearchServer?bbox=2551306.5625,1167918.328125,2551754.125,1168514.625&type=locations&sr=2056](../../../rest/services/api/SearchServer?bbox=2551306.5625,1167918.328125,2551754.125,1168514.625&type=locations&sr=2056)
+Search for locations matching the word “wabern”:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations
+```
+
+<br>
+
+Search for locations of type "parcel" and "district" (the origins):
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=bern&origins=parcel,district&type=locations
+```
+
+<br>
+
+Search for locations within a given map extent the `bbox`:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?bbox=551306.5625,167918.328125,551754.125,168514.625&type=locations
+```
+
+<br>
+
+- Search for layers in French matching the word “géoïde” in their description:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr
+```
+
+<br>
+
+Search for features matching word "433" in their description:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433
+```
+
+<br>
+
+Get a GeoJSON for locations matching the word “wabern”:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson
+```
+
+<br>
+
+Get a Webmercator GeoJSON:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson&sr=3857
+```
+
+<br>
+
+Input `bbox` may also be in `LV95`:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?bbox=2551306.5625,1167918.328125,2551754.125,1168514.625&type=locations&sr=2056
+```
+
+<br>
 
 ### Example of feature search usage with other services
 
-- First: search for addresses using the feature search service:
-  [https://api3.geo.admin.ch/rest/services/api/SearchServer?features=ch.bfs.gebaeude_wohnungs_register&type=featuresearch&searchText=isabelle](../../../rest/services/api/SearchServer?features=ch.bfs.gebaeude_wohnungs_register&type=featuresearch&searchText=isabelle)
-- Then: use "feature_id" found in "attrs" to get detailed information
-  about a feature:
-  [https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/880711_0?returnGeometry=false](../../../rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/880711_0?returnGeometry=false)
+First: search for addresses using the feature search service:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?features=ch.bfs.gebaeude_wohnungs_register&type=featuresearch&searchText=isabelle
+```
+
+<br>
+
+Then: use "feature_id" found in "attrs" to get detailed information about a feature:
+
+```sh
+$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/880711_0?returnGeometry=false
+```
+
+<br>
