@@ -26,11 +26,11 @@ features:
     link: /docs/identify-features
     icon: 🔎
   - title: Visualize Data
-    details: Get information about layers like Metadata, Attributes and Legend
+    details: WMS, WMTS, Mapbox Vector Tiles and 3D services
     icon: 👁
-    link: /docs/wmts
+    link: /docs/wms
   - title: Download Data
-    details: Get information about layers like Metadata, Attributes and Legend
+    details: Geodata from STAC API and Atom Feed / Open Search download service
     icon: ⬇️
     link: /docs/stac/overview
 ---
