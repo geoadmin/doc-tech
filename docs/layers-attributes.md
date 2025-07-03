@@ -70,7 +70,7 @@ To interact with the Layers Attributes service, you need to provide specific par
 
 ## Response Format
 
-The endpoint returns a `JSON` with information about attribute names and their metadata for a given layer. The `field` attribute lists the data types, aliases and possible values for each attribute.
+The endpoint returns a `JSON` with information about attribute names and their metadata for a given layer. Each attribute is accompanied by metadata with its data type, an alias and example values.
 
 Here is a description of the data contained in the response.
 
