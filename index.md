@@ -18,19 +18,19 @@ hero:
 
 features:
   - title: Explore Data
-    details: Get information about layers like Metadata, Attributes and Legend
+    details: Browse additional information about layers, including attributes and other metadata.
     link: /docs/layers-metadata
     icon: ℹ️
   - title: Access Data
-    details: Identify, search and retrieve information about features
+    details: Retrieve location-based features such as geometries, addresses and elevation.
     link: /docs/identify-features
     icon: 🔎
   - title: Visualize Data
-    details: Get information about layers like Metadata, Attributes and Legend
+    details: Access map data (2D and 3D) for visualization in your application.
     icon: 👁
-    link: /docs/wmts
+    link: /docs/wms
   - title: Download Data
-    details: Get information about layers like Metadata, Attributes and Legend
+    details: Download entire datasets for exploration and analysis.
     icon: ⬇️
     link: /docs/stac/overview
 ---
