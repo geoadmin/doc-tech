@@ -1,20 +1,57 @@
-# Layer Attributes
+# Layers Attributes
 
 The endpoint returns attribute metadata for a specified layer. Use this endpoint if you want to list all available attributes of a layer or if you need details about a particular attribute. The endpoint is also useful for querying the [Find endpoint](/docs/find).
 
-```sh
-https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}
-```
+<Suspense>
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}" method="GET" />
+</Suspense>
 
-::: details Request example
+## Request Details
 
-Get attributes for layer `ch.swisstopo.swissboundaries3d-land-flaeche.fill`
+To interact with the Layers Attributes service, you need to provide specific parameters in your request.
+These parameters are divided into **Path Parameters**, which are required and part of the URL, and **Query Parameters**, which are optional and modify the behavior of the request.
+
+### Path Parameters
+
+| Parameters                | Description                         |
+| ------------------------- | ----------------------------------- |
+| **layerBodId (required)** | The technical name or the layer ID. |
+
+### Query Parameters
+
+| Parameters              | Description                                                                                                                                    |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **lang (optional)**     | The language. Supported values: `de`, `fr`, `it`, `rm`, `en`. (Defaults to `de` if browser language does not match any of the possible values) |
+| **callback (optional)** | The name of the callback function.                                                                                                             |
+
+## Response Details
+
+The endpoint returns a **JSON** with information about attribute names and their metadata for a given layer. Each attribute is accompanied by metadata with its data type, an alias and example values.
+
+Here is a description of the data contained in the response.
+
+| **Field** | **Description**                    |
+| --------- | ---------------------------------- |
+| `id`      | The unique identifier of the layer |
+| `name`    | The name of the layer              |
+
+**Fields:** A list of objects, each representing an attribute of the layer. Each object contains:
+| **Field** | **Description** |
+| --------- | ---------------------------------- |
+| `name` | The technical name of the attribute (e.g., `objektart`). |
+| `type` | The data type of the attribute (e.g., `INTEGER`, `VARCHAR`, `FLOAT`). |
+| `alias` | An identifier for the attribute. |
+| `values` | A list of possible values for the attribute (if applicable). |
+
+## Examples
+
+Get all the attributes for layer `ch.swisstopo.swissboundaries3d-land-flaeche.fill`
 
 ```sh
 curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-land-flaeche.fill
 ```
 
-<br>
+Response example:
 
 ```json
 {
@@ -47,52 +84,6 @@ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissbou
     }
   ]
 }
-```
-
-:::
-
-## Request Details
-
-To interact with the Layers Attributes service, you need to provide specific parameters in your request. These parameters are divided into **Path Parameters**, which are required and part of the URL, and **Query Parameters**, which are optional and modify the behavior of the request.
-
-### Path Parameters
-
-| Parameters                | Description                         |
-| ------------------------- | ----------------------------------- |
-| **layerBodId (required)** | The technical name or the layer ID. |
-
-### Query Parameters
-
-| Parameters              | Description                                                                                                                                    |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **lang (optional)**     | The language. Supported values: `de`, `fr`, `it`, `rm`, `en`. (Defaults to `de` if browser language does not match any of the possible values) |
-| **callback (optional)** | The name of the callback function.                                                                                                             |
-
-## Response Format
-
-The endpoint returns a `JSON` with information about attribute names and their metadata for a given layer. Each attribute is accompanied by metadata with its data type, an alias and example values.
-
-Here is a description of the data contained in the response.
-
-| **Field** | **Description**                    |
-| --------- | ---------------------------------- |
-| `id`      | The unique identifier of the layer |
-| `name`    | The name of the layer              |
-
-**Fields**: A list of objects, each representing an attribute of the layer. Each object contains:
-| **Field** | **Description** |
-| --------- | ---------------------------------- |
-| `name` | The technical name of the attribute (e.g., `objektart`). |
-| `type` | The data type of the attribute (e.g., `INTEGER`, `VARCHAR`, `FLOAT`). |
-| `alias` | An identifier for the attribute. |
-| `values` | A list of possible values for the attribute (if applicable). |
-
-## Examples
-
-Get the all the available attributes names of the municipal boundaries:
-
-```sh
-curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill
 ```
 
 <br>

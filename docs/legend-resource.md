@@ -3,21 +3,47 @@
 With a layer ID (or technical name), this service can be used to
 retrieve a legend.
 
+<Suspense>
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/legend" method="GET" />
+</Suspense>
+
+## Request Details
+
+To interact with the Layers Attributes service, you need to provide specific parameters in your request.
+These parameters are divided into **Path Parameters**, which are required and part of the URL, and **Query Parameters**, which are optional and modify the behavior of the request.
+
+### Path Parameters
+
+| Parameters                | Description                         |
+| ------------------------- | ----------------------------------- |
+| **layerBodId (required)** | The technical name or the layer ID. |
+
+### Query Parameters
+
+| Parameters              | Description                                                                                                                                    |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **lang (optional)**     | The language. Supported values: `de`, `fr`, `it`, `rm`, `en`. (Defaults to `de` if browser language does not match any of the possible values) |
+| **callback (optional)** | The name of the callback function.                                                                                                             |
+
+## Response Details
+
+The endpoint returns an **HTML** document containing the legend for the specified layer. The response includes:
+
+- A `title` and `abstract` describing the layer.
+- A `legend image` showing the symbology used in the layer.
+- Additional `metadata` such as the layer ID, valid scale range, and links to detailed descriptions, metadata, and data sources.
+
+No CSS styling is applied by default, allowing you to integrate the legend seamlessly into your own application or website. You can style the HTML response using your custom CSS to match your application's design.
+
+## Examples
+
+Get the legend for `ch.bafu.nabelstationen`:
+
 ```sh
-https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/legend
+$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/legend
 ```
 
-## Request Parameters
-
-| Parameters                | Description                                                                                                                                    |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **layerBodId (required)** | The technical name or BOD ID.                                                                                                                  |
-| **lang (optional)**       | The language. Supported values: `de`, `fr`, `it`, `rm`, `en`. (Defaults to `de` if browser language does not match any of the possible values) |
-| **callback (optional)**   | The name of the callback function.                                                                                                             |
-
-## Response Format
-
-::: details Response Example
+Response example:
 
 ```html
 <div class="legend-container">
@@ -111,23 +137,6 @@ https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/legend
     </table>
   </div>
 </div>
-```
-
-:::
-The endpoint returns an `HTML` document containing the legend for the specified layer. The response includes:
-
-- A `title` and `abstract` describing the layer.
-- A `legend image` showing the symbology used in the layer.
-- Additional `metadata` such as the layer ID, valid scale range, and links to detailed descriptions, metadata, and data sources.
-
-No CSS styling is applied by default, allowing you to integrate the legend seamlessly into your own application or website. You can style the HTML response using your custom CSS to match your application's design.
-
-## Examples
-
-Get the legend for `ch.bafu.nabelstationen`:
-
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/legend
 ```
 
 <br>
