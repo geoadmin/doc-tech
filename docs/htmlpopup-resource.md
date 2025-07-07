@@ -3,9 +3,9 @@
 With an ID and a layer ID (technical name), this service can be used to retrieve an html popup. An html popup is an html formatted representation of the textual information about the feature. Here is a
 [complete list oflayers](../../../api/faq/index.html#which-layers-have-a-tooltip) for which this service is available.
 
-```http
-https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId}/htmlPopup
-```
+<Suspense>
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId}/htmlPopup" method="GET" />
+</Suspense>
 
 ## Request Details
 

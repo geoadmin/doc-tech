@@ -7,9 +7,9 @@ covers XMin: 2443000 YMin: 1024000 XMax: 2895000 YMax: 1340000
 
 See [Height models](https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html) for more details about data used by this service.
 
-```http
-https://api3.geo.admin.ch/rest/services/height
-```
+<Suspense>
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/height" method="GET" />
+</Suspense>
 
 ## Resquest Details
 

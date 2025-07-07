@@ -1,7 +1,3 @@
-<script setup>
-import ApiBlock from '../components/ApiBlock.vue'
-</script>
-
 # Find
 
 This service is used to search the attributes of features. Each result
@@ -10,7 +6,9 @@ and attributes in the form of name-value pair. Here is a [complete list
 of layers](../../../api/faq/index.html#which-layers-have-a-tooltip) for
 which this service is available.
 
-<ApiBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/find/{uuid}" method="GET" />
+<Suspense>
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/find/{uuid}" method="GET" />
+</Suspense>
 
 ::: tip
 One layer, one search text and one attribute.

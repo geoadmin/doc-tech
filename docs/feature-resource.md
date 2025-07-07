@@ -6,9 +6,9 @@ resource. Here is a [complete list of
 layers](../../../api/faq/index.html#which-layers-have-a-tooltip) for
 which this service is available.
 
-```http
-https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId},{featureId}
-```
+<Suspense>
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId},{featureId}" method="GET" />
+</Suspense>
 
 ## Request Details
 

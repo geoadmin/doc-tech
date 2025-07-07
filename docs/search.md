@@ -3,9 +3,9 @@
 The search service can be used to search for locations, layers or
 features.
 
-```http
-https://api3.geo.admin.ch/rest/services/api/SearchServer
-```
+<Suspense>
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/SearchServer" method="GET" />
+</Suspense>
 
 ::: tip The search service is separated in 3 categories or types:
 

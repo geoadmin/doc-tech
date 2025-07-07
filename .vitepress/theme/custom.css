@@ -117,12 +117,10 @@ figcaption {
   border-radius: 8px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 20px 12px;
+  padding: 20px 20px;
 }
 
-#api-block-code {
-  display: block;
+.api-block pre {
   background-color: transparent;
 }
 

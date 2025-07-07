@@ -5,9 +5,9 @@ Here is a [complete list of
 layers](../../../api/faq/index.html#which-layers-have-a-tooltip) for
 which this service is available.
 
-```sh
-https://api3.geo.admin.ch/rest/services/api/MapServer/identify
-```
+<Suspense>
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/identify" method="GET" />
+</Suspense>
 
 ::: tip
 No more than 50 features can be retrieved per request.
