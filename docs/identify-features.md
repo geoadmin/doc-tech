@@ -15,6 +15,9 @@ No more than 50 features can be retrieved per request.
 
 ## Request Details
 
+To interact with the Layers Attributes service, you need to provide specific parameters in your request.
+This endpoint only has **Query Parameters** to modify the behavior of the request, some are required and some are optional.
+
 ### Query Parameters
 
 | **Parameter**                        | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -22,9 +25,9 @@ No more than 50 features can be retrieved per request.
 | **geometry (required)**              | The geometry to identify on. The geometry is specified by the geometry type. This parameter is specified as a separated list of coordinates. The simple syntax (comma-separated list of coordinates) and the complex one can be used. ([ESRI syntax for geometries](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000n1000000))                                                                      |
 | **geometryType (required)**          | The type of geometry to identify on. Supported values are: `esriGeometryPoint`, `esriGeometryPolyline`, `esriGeometryPolygon`, or `esriGeometryEnvelope`.                                                                                                                                                                                                                                                                      |
 | **layers (optional)**                | The layers to perform the identify operation on. By default, query all the layers in the GeoAdmin API. Notation: `all:"comma-separated list of technical layer names"`.                                                                                                                                                                                                                                                        |
+| **tolerance (required)**             | The tolerance in pixels around the specified geometry. This parameter is used to create a buffer around the geometry. Therefore, a tolerance of `0` deactivates the buffer creation.                                                                                                                                                                                                                                           |
 | **mapExtent (required/optional)**    | The extent of the map (minx, miny, maxx, maxy). Optional if `tolerance=0`. Defaults to `0,0,0,0`. The `mapExtent` and the `imageDisplay` parameters are used by the server to calculate the resolution or scale.                                                                                                                                                                                                               |
 | **imageDisplay (required/optional)** | The screen image display parameters (width, height, and dpi) of the map. The `mapExtent` and `imageDisplay` parameters are used by the server to calculate the distance on the map to search based on the tolerance in screen pixels. Optional if `tolerance=0`. Defaults to `0,0,0`. The combination of `mapExtent` and `imageDisplay` is used to compute a resolution or scale. Some layers have scale-dependent geometries. |
-| **tolerance (required)**             | The tolerance in pixels around the specified geometry. This parameter is used to create a buffer around the geometry. Therefore, a tolerance of `0` deactivates the buffer creation.                                                                                                                                                                                                                                           |
 | **returnGeometry (optional)**        | This parameter defines whether the geometry is returned or not. Defaults to `true`.                                                                                                                                                                                                                                                                                                                                            |
 | **geometryFormat (optional)**        | Returned geometry format. Defaults to ESRI geometry format. Supported values are: `esrijson` or `geojson`.                                                                                                                                                                                                                                                                                                                     |
 | **offset (optional)**                | Offset for the first record (if more than 50 records).                                                                                                                                                                                                                                                                                                                                                                         |
@@ -230,9 +233,10 @@ print('&layerDefs={}'.format(urllib.parse.quote(json.dumps(params))))
 
 Identify all the features belonging to `ch.bafu.nabelstationen` using a tolerance of 5 pixels around a point:
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5
-```
+<Suspense>
+<ExampleCodeBlock url="$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5
+"/>
+</Suspense>
 
 <br>
 

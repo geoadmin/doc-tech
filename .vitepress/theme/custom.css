@@ -5,6 +5,19 @@
   --vp-c-brand-1: red;
   --vp-c-brand-2: red;
   --vp-c-brand-3: #d8232a;
+  --vp-c-text-4: #0456a0;
+  --vp-c-text-5: #6f42c1;
+  --vp-c-text-6: #008b7f;
+}
+
+.dark {
+  --vp-c-text-4: #9ecbff;
+  --vp-c-text-5: #b392f0;
+  --vp-c-text-6: #00e8c6;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 figcaption {
@@ -85,6 +98,29 @@ figcaption {
   margin: 0 0 10px 0;
 }
 
+.api-block {
+  background-color: var(--vp-code-block-bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.api-block pre {
+  background-color: transparent;
+}
+
+.method-btn {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 30px;
+  background-color: var(--vp-c-brand-1);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  pointer-events: none;
+}
+
 /* ==========================
    4. Utility Classes
    ========================== */
@@ -110,26 +146,4 @@ figcaption {
     flex-direction: row;
     gap: 50px;
   }
-}
-
-.api-block {
-  background-color: var(--vp-code-block-bg);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  padding: 20px 20px;
-}
-
-.api-block pre {
-  background-color: transparent;
-}
-
-.method-btn {
-  display: inline-block;
-  padding: 2px 12px;
-  border-radius: 30px;
-  background-color: var(--vp-c-brand-1);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
 }
