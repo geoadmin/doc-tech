@@ -1,3 +1,7 @@
+<script setup>
+import { testJson, identifyExample2, identifyExample3, identifyExample4, identifyExample5, identifyExample6, identifyExample7, identifyExample8, identifyExample9, identifyExample10 } from './examples.js'
+</script>
+
 # Identify Features
 
 This service can be used to discover features at a specific location.
@@ -233,90 +237,49 @@ print('&layerDefs={}'.format(urllib.parse.quote(json.dumps(params))))
 
 Identify all the features belonging to `ch.bafu.nabelstationen` using a tolerance of 5 pixels around a point:
 
-<Suspense>
-<ExampleCodeBlock url="$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5
-"/>
-</Suspense>
-
-<br>
+<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5" :example="testJson"/>
 
 Identify all the features belonging to `ch.bfs.arealstatistik` intersecting an envelope (or bounding box):
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik
-```
+<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik" :example="identifyExample2"/>
 
-<br>
+<!-- FIX ME: curl not working -->
 
 Identify all the features belonging to `ch.bafu.bundesinventare-bln` a polyline:
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"paths":\[\[\[675000,245000\],\[660000,260000\],\[620000,250000\]\]\]}&geometryType=esriGeometryPolyline&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln
-```
-
-<br>
+<ExampleCodeBlock request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"paths":[[[675000,245000],[660000,260000],[620000,250000]]]}&geometryType=esriGeometryPolyline&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln' :example="identifyExample3"/>
 
 Identify all the features belonging to `ch.bafu.bundesinventare-bln` intersecting a polygon:
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"rings":\[\[\[675000,245000\],\[670000,255000\],\[680000,260000\],\[690000,255000\],\[685000,240000\],\[675000,245000\]\]\]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln
-```
-
-<br>
+<ExampleCodeBlock request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={%22rings%22:[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln' :example="identifyExample4"/>
 
 Same request for `ch.bfs.arealstatistik` as above but returned geometry format is GeoJSON:
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&geometryFormat=geojson
-```
-
-<br>
+<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&geometryFormat=geojson" :example="identifyExample5"/>
 
 Same request for `ch.bfs.arealstatistik` as above but geometry is not returned:
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&returnGeometry=false
-```
-
-<br>
+<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&returnGeometry=false" :example="identifyExample6"/>
 
 Filter features with `layerDefs`:
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.swisstopo.amtliches-strassenverzeichnis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis":"stn_label+ilike+'%Corniche%'"}
-```
-
-<br>
+<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.swisstopo.amtliches-strassenverzeichnis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs={'ch.swisstopo.amtliches-strassenverzeichnis':'stn_label+ilike+'%Corniche%'}" :example="identifyExample7"/>
 
 ### Reverse Geocoding Examples
 
 The service identify can be used for Reverse Geocoding operations. Here is a [list of all the available layers](../../../api/faq/index.html#which-layers-are-available).
 
-<br>
-
 Perform an identify request to find the districts intersecting a given envelope geometry (no buffer):
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill&returnGeometry=false
-```
-
-<br>
+<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill&returnGeometry=false" :example="identifyExample8"/>
 
 Perform an identify request to find the municipal boundaries and ZIP (PLZ or NPA) intersecting with a point (no buffer):
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false
-```
-
-<br>
+<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false" :example="identifyExample9"/>
 
 Reverse geocoding an <span class="title-ref">address</span> with a point (no buffer):
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?mapExtent=0,0,100,100&imageDisplay=100,100,100&tolerance=1&geometryType=esriGeometryPoint&geometry=600968.625,197426.921875&layers=all:ch.bfs.gebaeude_wohnungs_register&returnGeometry=false
-```
-
-<br>
+<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false" :example="identifyExample10"/>
 
 ### Simulate a search radius
 

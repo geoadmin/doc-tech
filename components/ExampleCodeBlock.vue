@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { codeToHtml } from "shiki";
-import { ref } from "vue";
+import { ref, inject } from "vue";
+import type { HighlighterGeneric, BundledLanguage, BundledTheme } from "shiki";
 
 const props = defineProps<{
-  url: string;
+  request: string;
+  example: string;
 }>();
 
 const activeTab = ref("request");
@@ -17,27 +18,17 @@ const colorReplacements = {
   "#79b8ff": "var(--vp-c-text-6)",
 };
 
-const requestHtml = await codeToHtml(props.url, {
+const highlighter:
+  | HighlighterGeneric<BundledLanguage, BundledTheme>
+  | undefined = inject("highlighter");
+
+const requestHtml = highlighter?.codeToHtml(props.request, {
   lang: "sh",
   theme: "github-dark",
   colorReplacements: colorReplacements,
 });
 
-const testJson = `{
-  "geometry": {
-    "paths": [
-      [
-        [675000, 245000],
-        [660000, 260000],
-        [620000, 250000]
-      ]
-    ],
-    "type": "esriGeometryPolyline"
-  },
-  "geometryType": "esriGeometryPolyline"
-}`;
-
-const responseHtml = await codeToHtml(testJson, {
+const responseHtml = highlighter?.codeToHtml(props.example, {
   lang: "json",
   theme: "github-dark",
   colorReplacements: colorReplacements,
@@ -85,6 +76,7 @@ const responseHtml = await codeToHtml(testJson, {
   flex-direction: column;
   gap: 3px;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .example-tabs {
