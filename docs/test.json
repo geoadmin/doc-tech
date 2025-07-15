@@ -1,23 +1,44 @@
 {
-  "results": [
+  "type": "FeatureCollection",
+  "features": [
     {
-      "layerBodId": "ch.swisstopo.amtliches-strassenverzeichnis",
-      "layerName": "Official directory of streets",
-      "featureId": 10094530,
-      "id": 10094530,
-      "attributes": {
-        "str_esid": 10094530,
-        "stn_label": "Talstrasse",
-        "zip_label": "5324 Full-Reuenthal",
-        "com_name": "Full-Reuenthal",
-        "com_fosnr": 4307,
-        "str_official": 1,
-        "str_modified": "2024-07-23",
-        "str_type": "Strasse",
-        "str_children": null,
-        "str_parent": null,
-        "str_status": "bestehend",
-        "label": "Talstrasse"
+      "type": "Feature",
+      "featureId": "RIG",
+      "bbox": [8.46333, 47.06741, 8.46333, 47.06741],
+      "layerBodId": "ch.bafu.nabelstationen",
+      "layerName": "Monitoring stations air quality",
+      "id": "RIG",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8.46333, 47.06741]
+      },
+      "properties": {
+        "name": "Rigi-Seebodenalp",
+        "url_de": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_fr": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_it": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_en": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "label": "Rigi-Seebodenalp"
+      }
+    },
+    {
+      "type": "Feature",
+      "featureId": "LAU",
+      "bbox": [6.639701, 46.522018, 6.639701, 46.522018],
+      "layerBodId": "ch.bafu.nabelstationen",
+      "layerName": "Monitoring stations air quality",
+      "id": "LAU",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.639701, 46.522018]
+      },
+      "properties": {
+        "name": "Lausanne",
+        "url_de": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_fr": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_it": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_en": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "label": "Lausanne"
       }
     }
   ]

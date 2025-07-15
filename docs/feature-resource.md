@@ -1,10 +1,17 @@
+<script setup>
+import { 
+    featureResource01,
+    featureResource02,
+    featureResource03,
+} from './examples.js'
+</script>
+
 # Feature Resource
 
-With a Feature ID (or several in a comma separated list) and a layer ID
-(technical name), this service can be used to retrieve a feature
-resource. Here is a [complete list of
-layers](../../../api/faq/index.html#which-layers-have-a-tooltip) for
-which this service is available.
+Retrieve a Feature Resource using a Feature ID (or several in a comma separated list) and a layer ID (technical name).
+Here is a **complete list of layers** which this service is available.
+
+<!-- FIX ME: (../../../api/faq/index.html#which-layers-have-a-tooltip) for -->
 
 <Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId},{featureId}" method="GET" />
@@ -12,7 +19,8 @@ which this service is available.
 
 ## Request Details
 
-RESTFul interface is available.
+To interact with the Feature Resource service, you need to provide specific parameters in your request.
+These parameters are divided into **Path Parameters**, which are required and part of the URL, and **Query Parameters**, which are optional and modify the behavior of the request.
 
 ### Path Parameters
 
@@ -35,22 +43,12 @@ RESTFul interface is available.
 
 Get the feature with the ID `RIG` belonging to the layer `ch.bafu.nabelstationen`:
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG
-```
-
-<br>
+<ExampleCodeBlock :request="featureResource01.request" :example="featureResource01.response"/>
 
 Get several features with IDs `RIG` and `LAU` belonging to the layer `ch.bafu.nabelstationen`:
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU
-```
-
-<br>
+<ExampleCodeBlock :request="featureResource02.request" :example="featureResource02.response"/>
 
 A `GeoJSON` in `EPSG:4326`:
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson
-```
+<ExampleCodeBlock :request="featureResource03.request" :example="featureResource03.response"/>
