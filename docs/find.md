@@ -1,13 +1,22 @@
+<script setup>
+import { 
+    find01,
+    find02,
+    find03,
+    find04,
+} from './examples.js'
+</script>
+
 # Find
 
-This service is used to search the attributes of features. Each result
-include a feature ID, a layer ID, a layer name, a geometry (optionally)
-and attributes in the form of name-value pair. Here is a [complete list
-of layers](../../../api/faq/index.html#which-layers-have-a-tooltip) for
-which this service is available.
+This service is used to search the attributes of features.
+Each result includes a feature ID, a layer ID, a layer name, a geometry (optionally) and attributes in the form of name-value pair.
+Here is a **complete list of layers** which this service is available.
+
+<!-- FIX ME: (../../../api/faq/index.html#which-layers-have-a-tooltip) for -->
 
 <Suspense>
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/find/{uuid}" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/find" method="GET" />
 </Suspense>
 
 ::: tip
@@ -15,6 +24,9 @@ One layer, one search text and one attribute.
 :::
 
 ## Request Details
+
+To interact with the Find service, you need to provide specific parameters in your request.
+This endpoint only has **Query Parameters** that modify the behavior of the request, some are required and some are optional.
 
 ### Query Parameters
 
@@ -35,30 +47,16 @@ One layer, one search text and one attribute.
 
 Search for “Lavaux” in the field `bln_name` of the layer `ch.bafu.bundesinventare-bln` (infix match):
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false
-```
-
-<br>
+<ExampleCodeBlock :request="find01.request" :example="find01.response"/>
 
 Search for `12316` in the field `egid` of the layer `ch.bfs.gebaeude_wohnungs_register` (infix match):
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=123164&searchField=egid&returnGeometry=false
-```
-
-<br>
+<ExampleCodeBlock :request="find02.request" :example="find02.response"/>
 
 Search for `123164` in the field `egid` of the layer `ch.bfs.gebaeude_wohnungs_register` (exact match):
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=1231641&searchField=egid&returnGeometry=false&contains=false
-```
-
-<br>
+<ExampleCodeBlock :request="find03.request" :example="find03.response"/>
 
 Search for the `Talstrasse` in Commune `Full-Reuenthal`
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=stn_label&returnGeometry=false&contains=false&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis":"com_fosnr=4307"}
-```
+<ExampleCodeBlock :request="find04.request" :example="find04.response"/>

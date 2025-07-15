@@ -1,13 +1,25 @@
 <script setup>
-import { testJson, identifyExample2, identifyExample3, identifyExample4, identifyExample5, identifyExample6, identifyExample7, identifyExample8, identifyExample9, identifyExample10 } from './examples.js'
+import { 
+  identifyFeatures01, 
+  identifyFeatures02, 
+  identifyFeatures03, 
+  identifyFeatures04, 
+  identifyFeatures05, 
+  identifyFeatures06, 
+  identifyFeatures07, 
+  identifyFeatures08, 
+  identifyFeatures09, 
+  identifyFeatures10
+} from './examples.js'
 </script>
 
 # Identify Features
 
-This service can be used to discover features at a specific location.
-Here is a [complete list of
-layers](../../../api/faq/index.html#which-layers-have-a-tooltip) for
-which this service is available.
+Use this service to discover features at a specific location.
+Here is a **complete list of layers**
+for which this service is available.
+
+<!-- FIX ME: (../../../api/faq/index.html#which-layers-have-a-tooltip) -->
 
 <Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/identify" method="GET" />
@@ -19,8 +31,8 @@ No more than 50 features can be retrieved per request.
 
 ## Request Details
 
-To interact with the Layers Attributes service, you need to provide specific parameters in your request.
-This endpoint only has **Query Parameters** to modify the behavior of the request, some are required and some are optional.
+To interact with the Identify Features service, you need to provide specific parameters in your request.
+This endpoint only has **Query Parameters** that modify the behavior of the request, some are required and some are optional.
 
 ### Query Parameters
 
@@ -57,147 +69,7 @@ You may filter by attributes with `layerDefs` on [queryable layers](../api/faq/i
 
 To check which attributes are available, their types and examples values for a given searchable layer, you may use the [attributes services](/docs/layers-attributes).
 
-For instance, the layer
-**ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill** has the
-following attributes:
-
-::: details Layer attributes
-
-```sh
-$ curl http://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill
-```
-
-<br>
-
-```json
-{
-  "id": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill",
-  "name": "Municipal boundaries",
-  "fields": [
-    {
-      "name": "gde_hist_id",
-      "type": "INTEGER",
-      "alias": "Historicised number",
-      "values": [11348, 11742, 11801, 16656, 16657]
-    },
-    {
-      "name": "gemflaeche",
-      "type": "FLOAT",
-      "alias": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gemflaeche",
-      "values": [
-        741.0293752097668, 790.3765148986257, 1014, 1060.9729429022232, 1917
-      ]
-    },
-    {
-      "name": "jahr",
-      "type": "INTEGER",
-      "alias": "Year",
-      "values": [1850, 1851, 1852, 2024]
-    },
-    {
-      "name": "link_it",
-      "type": "VARCHAR",
-      "alias": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.link_it",
-      "values": [
-        "https://www.agvchapp.bfs.admin.ch/it/communes/results?BfsNr=1&EntriesFrom=12.09.1848&EntriesTo=14.11.1976&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/it/communes/results?BfsNr=2&EntriesFrom=12.09.1848&EntriesTo=01.01.2023&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/it/communes/results?BfsNr=3&EntriesFrom=12.09.1848&EntriesTo=01.01.2023&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/it/communes/results?BfsNr=62&EntriesFrom=01.01.2024&EntriesTo=01.01.2024&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/it/communes/results?BfsNr=64&EntriesFrom=01.01.2024&EntriesTo=01.01.2024&IncludeUnassignedEntities=True"
-      ]
-    },
-    {
-      "name": "objektart_lookup",
-      "type": "VARCHAR",
-      "alias": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.objektart_lookup",
-      "values": [
-        "gemeindefreies_gebiet",
-        "gemeindegebiet",
-        "politische_gemeinde"
-      ]
-    },
-    {
-      "name": "id",
-      "type": "VARCHAR",
-      "alias": "BFS-Nummer",
-      "values": ["11348-1850", "11742-1850", "11801-1850", "62-2024", "64-2024"]
-    },
-    {
-      "name": "perimeter",
-      "type": "FLOAT",
-      "alias": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.perimeter",
-      "values": [
-        14587.478508754233, 15685.832546628937, 18345.287903557957,
-        20889.64177023718, 27552.74730548829
-      ]
-    },
-    {
-      "name": "gde_nr",
-      "type": "INTEGER",
-      "alias": "SFSO municipality number",
-      "values": [1, 2, 3, 62, 64]
-    },
-    {
-      "name": "link_fr",
-      "type": "VARCHAR",
-      "alias": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.link_fr",
-      "values": [
-        "https://www.agvchapp.bfs.admin.ch/fr/communes/results?BfsNr=1&EntriesFrom=12.09.1848&EntriesTo=14.11.1976&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/fr/communes/results?BfsNr=2&EntriesFrom=12.09.1848&EntriesTo=01.01.2023&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/fr/communes/results?BfsNr=3&EntriesFrom=12.09.1848&EntriesTo=01.01.2023&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/fr/communes/results?BfsNr=62&EntriesFrom=01.01.2024&EntriesTo=01.01.2024&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/fr/communes/results?BfsNr=64&EntriesFrom=01.01.2024&EntriesTo=01.01.2024&IncludeUnassignedEntities=True"
-      ]
-    },
-    {
-      "name": "kanton",
-      "type": "VARCHAR",
-      "alias": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.kanton",
-      "values": ["BE", "BL", "SO", "TI", "ZH"]
-    },
-    {
-      "name": "gemname",
-      "type": "VARCHAR",
-      "alias": "Official name of the municipality",
-      "values": [
-        "Aeugst",
-        "Affoltern am Albis",
-        "Bonstetten",
-        "Kloten",
-        "Nürensdorf"
-      ]
-    },
-    {
-      "name": "is_current_jahr",
-      "type": "BOOLEAN",
-      "alias": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.is_current_jahr",
-      "values": [false]
-    },
-    {
-      "name": "link_de",
-      "type": "VARCHAR",
-      "alias": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.link_de",
-      "values": [
-        "https://www.agvchapp.bfs.admin.ch/de/communes/results?BfsNr=1&EntriesFrom=12.09.1848&EntriesTo=14.11.1976&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/de/communes/results?BfsNr=2&EntriesFrom=12.09.1848&EntriesTo=01.01.2023&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/de/communes/results?BfsNr=3&EntriesFrom=12.09.1848&EntriesTo=01.01.2023&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/de/communes/results?BfsNr=62&EntriesFrom=01.01.2024&EntriesTo=01.01.2024&IncludeUnassignedEntities=True",
-        "https://www.agvchapp.bfs.admin.ch/de/communes/results?BfsNr=64&EntriesFrom=01.01.2024&EntriesTo=01.01.2024&IncludeUnassignedEntities=True"
-      ]
-    },
-    {
-      "name": "objektart",
-      "type": "INTEGER",
-      "alias": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.objektart",
-      "values": [0, 11, 12]
-    }
-  ]
-}
-```
-
-:::
-
-### layerDefs syntax
+#### layerDefs syntax
 
 The syntax of the `layerDefs` parameter is a `json` with the layername as key and the filter expression as value: `{"<layername>":"<filter_expression>"}`
 
@@ -237,33 +109,33 @@ print('&layerDefs={}'.format(urllib.parse.quote(json.dumps(params))))
 
 Identify all the features belonging to `ch.bafu.nabelstationen` using a tolerance of 5 pixels around a point:
 
-<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5" :example="testJson"/>
+<ExampleCodeBlock :request="identifyFeatures01.request" :example="identifyFeatures01.response"/>
 
 Identify all the features belonging to `ch.bfs.arealstatistik` intersecting an envelope (or bounding box):
 
-<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik" :example="identifyExample2"/>
+<ExampleCodeBlock :request="identifyFeatures02.request" :example="identifyFeatures02.response"/>
 
 <!-- FIX ME: curl not working -->
 
 Identify all the features belonging to `ch.bafu.bundesinventare-bln` a polyline:
 
-<ExampleCodeBlock request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"paths":[[[675000,245000],[660000,260000],[620000,250000]]]}&geometryType=esriGeometryPolyline&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln' :example="identifyExample3"/>
+<ExampleCodeBlock :request="identifyFeatures03.request" :example="identifyFeatures03.response"/>
 
 Identify all the features belonging to `ch.bafu.bundesinventare-bln` intersecting a polygon:
 
-<ExampleCodeBlock request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={%22rings%22:[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln' :example="identifyExample4"/>
+<ExampleCodeBlock :request="identifyFeatures04.request" :example="identifyFeatures04.response"/>
 
 Same request for `ch.bfs.arealstatistik` as above but returned geometry format is GeoJSON:
 
-<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&geometryFormat=geojson" :example="identifyExample5"/>
+<ExampleCodeBlock :request="identifyFeatures05.request" :example="identifyFeatures05.response"/>
 
 Same request for `ch.bfs.arealstatistik` as above but geometry is not returned:
 
-<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&returnGeometry=false" :example="identifyExample6"/>
+<ExampleCodeBlock :request="identifyFeatures06.request" :example="identifyFeatures06.response"/>
 
 Filter features with `layerDefs`:
 
-<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.swisstopo.amtliches-strassenverzeichnis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs={'ch.swisstopo.amtliches-strassenverzeichnis':'stn_label+ilike+'%Corniche%'}" :example="identifyExample7"/>
+<ExampleCodeBlock :request="identifyFeatures07.request" :example="identifyFeatures07.response"/>
 
 ### Reverse Geocoding Examples
 
@@ -271,15 +143,15 @@ The service identify can be used for Reverse Geocoding operations. Here is a [li
 
 Perform an identify request to find the districts intersecting a given envelope geometry (no buffer):
 
-<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill&returnGeometry=false" :example="identifyExample8"/>
+<ExampleCodeBlock :request="identifyFeatures08.request" :example="identifyFeatures08.response"/>
 
 Perform an identify request to find the municipal boundaries and ZIP (PLZ or NPA) intersecting with a point (no buffer):
 
-<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false" :example="identifyExample9"/>
+<ExampleCodeBlock :request="identifyFeatures09.request" :example="identifyFeatures09.response"/>
 
 Reverse geocoding an <span class="title-ref">address</span> with a point (no buffer):
 
-<ExampleCodeBlock request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false" :example="identifyExample10"/>
+<ExampleCodeBlock :request="identifyFeatures10.request" :example="identifyFeatures10.response"/>
 
 ### Simulate a search radius
 
