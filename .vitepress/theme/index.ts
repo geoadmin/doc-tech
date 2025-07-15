@@ -17,7 +17,7 @@ export default {
     const highlighter: HighlighterGeneric<BundledLanguage, BundledTheme> =
       await createHighlighter({
         themes: ["github-dark"],
-        langs: ["javascript", "json", "sh"],
+        langs: ["javascript", "json", "sh", "html"],
       });
 
     // Provide the highlighter globally
