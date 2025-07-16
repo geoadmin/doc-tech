@@ -157,6 +157,7 @@ export const identifyFeatures04 = {
   ]
 }`,
 };
+
 export const identifyFeatures05 = {
   request:
     "$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&geometryFormat=geojson",

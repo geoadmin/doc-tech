@@ -1,18 +1,3 @@
-<script setup>
-import { 
-  identifyFeatures01, 
-  identifyFeatures02, 
-  identifyFeatures03, 
-  identifyFeatures04, 
-  identifyFeatures05, 
-  identifyFeatures06, 
-  identifyFeatures07, 
-  identifyFeatures08, 
-  identifyFeatures09, 
-  identifyFeatures10
-} from './examples.js'
-</script>
-
 # Identify Features
 
 Use this service to discover features at a specific location.
@@ -110,77 +95,458 @@ print('&layerDefs={}'.format(urllib.parse.quote(json.dumps(params))))
 Identify all the features belonging to `ch.bafu.nabelstationen` using a tolerance of 5 pixels around a point:
 
 <ExampleCodeBlock
-:request="identifyFeatures01.request"
-:example=`{
-"results": [
-{
-"type": "Feature",
-"featureId": "RIG",
-"bbox": [677835, 213440, 677835, 213440],
-"layerBodId": "ch.bafu.nabelstationen",
-"layerName": "Stations de mesure qualité de l'air",
-"id": "RIG",
-"geometry": {
-"type": "Point",
-"coordinates": [677835, 213440]
-},
-"properties": {
-"name": "Rigi-Seebodenalp",
-"url_de": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
-"url_fr": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
-"url_it": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
-"url_en": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
-"label": "Rigi-Seebodenalp"
-}
-}
-]
-}
-`
+request='$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5' 
+example='{
+  "results": [
+    {
+      "type": "Feature",
+      "featureId": "RIG",
+      "bbox": [677835, 213440, 677835, 213440],
+      "layerBodId": "ch.bafu.nabelstationen",
+      "layerName": "Stations de mesure qualité de l`air",
+      "id": "RIG",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [677835, 213440]
+      },
+      "properties": {
+        "name": "Rigi-Seebodenalp",
+        "url_de": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_fr": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_it": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_en": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "label": "Rigi-Seebodenalp"
+      }
+    }
+  ]
+}'
 />
 
 Identify all the features belonging to `ch.bfs.arealstatistik` intersecting an envelope (or bounding box):
 
-<ExampleCodeBlock :request="identifyFeatures02.request" :example="identifyFeatures02.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik'
+example='{
+  "results": [
+    {
+      "featureId": "54901480-1980",
+      "bbox": [549000.0, 148000.0, 549000.0, 148000.0],
+      "layerBodId": "ch.bfs.arealstatistik",
+      "layerName": "Arealstatistik Standard",
+      "id": "54901480-1980",
+      "geometry": {
+        "x": 549000.0,
+        "y": 148000.0,
+        "spatialReference": { "wkid": 21781 }
+      },
+      "attributes": {
+        "as_72": 8,
+        "survey": "1979/85",
+        "year": 1980,
+        "fj": 1980,
+        "desc_as_72_en": "Surroundings of blocks of flats",
+        "label": "54901480-1980"
+      }
+    }
+    (...more features...)
+  ]
+}'
+/>
 
 <!-- FIX ME: curl not working -->
 
 Identify all the features belonging to `ch.bafu.bundesinventare-bln` a polyline:
 
-<ExampleCodeBlock :request="identifyFeatures03.request" :example="identifyFeatures03.response"/>
+<ExampleCodeBlock
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"paths":[[[675000,245000],[660000,260000],[620000,250000]]]}&geometryType=esriGeometryPolyline&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln' 
+example='{
+  "results": [
+    {
+      "featureId": 1239,
+      "bbox": [658884.4, 259457.7, 661405, 263367.1],
+      "layerBodId": "ch.bafu.bundesinventare-bln",
+      "layerName": "ILNM",
+      "id": 1239,
+      "geometry": {
+        "rings": [
+          [
+            [661321.9, 259738.9],
+            [660783.5, 259457.7],
+            [660773.1, 259516.4],
+            (...more points...)
+            [661178.1, 263167.2],
+            [661188.7, 263146],
+            [661198, 263120.3]
+          ]
+        ],
+        "spatialReference": {
+          "wkid": 21781
+        }
+      },
+      "attributes": {
+        "bln_name": "Wasserschloss beim Zusammenfluss von Aare, Reuss und Limmat",
+        "bln_obj": 1019,
+        "bln_fl": 392.078,
+        "subareanumber": 0,
+        "subareaname": null,
+        "linkurldescription": "https://data.geo.admin.ch/ch.bafu.bundesinventare-bln/objectsheets/2017revision/nr1019.pdf",
+        "label": "Wasserschloss beim Zusammenfluss von Aare, Reuss und Limmat"
+      }
+    }
+    (...more features...)
+  ]
+}'
+/>
 
 Identify all the features belonging to `ch.bafu.bundesinventare-bln` intersecting a polygon:
 
-<ExampleCodeBlock :request="identifyFeatures04.request" :example="identifyFeatures04.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={%22rings%22:[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln' 
+example='{
+  "results": [
+    {
+      "featureId": 1231,
+      "bbox": [665368.5, 256785.7, 676411.1, 261506.4],
+      "layerBodId": "ch.bafu.bundesinventare-bln",
+      "layerName": "ILNM",
+      "id": 1231,
+      "geometry": {
+        "rings": [
+          [
+            [670779.3, 261171.1],
+            [670779.9, 261158.7],
+            [670775.6, 261132.1],
+            [670775.6, 261114.8],
+            [670778.6, 261091.6],
+            [670783.6, 261077],
+            [670790.7, 261056.9],
+            [670799.1, 261038.2],
+            [670808.7, 261016.7],
+            [670818.2, 260999.4],
+            [670829.4, 260985.2],
+            (...more points...)
+            [670779.3, 261171.1]
+            [670779, 261310.9],
+            [670766.3, 261305],
+            [670770, 261294.5],
+            [670770.9, 261275.3],
+            [670771.8, 261258.6],
+            [670772.8, 261245],
+            [670774, 261222.7],
+            [670774.6, 261205.1],
+            [670776.8, 261194],
+            [670779.3, 261171.1]
+          ]
+        ],
+        "spatialReference": {
+          "wkid": 21781
+        }
+      },
+      "attributes": {
+        "bln_name": "Lägerngebiet",
+        "bln_obj": 1011,
+        "bln_fl": 2465.705,
+        "subareanumber": 0,
+        "subareaname": null,
+        "linkurldescription": "https://data.geo.admin.ch/ch.bafu.bundesinventare-bln/objectsheets/2017revision/nr1011.pdf",
+        "label": "Lägerngebiet"
+      }
+    }
+    (...more features...)
+  ]
+}'
+/>
 
 Same request for `ch.bfs.arealstatistik` as above but returned geometry format is GeoJSON:
 
-<ExampleCodeBlock :request="identifyFeatures05.request" :example="identifyFeatures05.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&geometryFormat=geojson'
+example='{
+  "results": [
+    {
+      "type": "Feature",
+      "featureId": "54901480-1980",
+      "bbox": [549000, 148000, 549000, 148000],
+      "layerBodId": "ch.bfs.arealstatistik",
+      "layerName": "Land use statistics standard",
+      "id": "54901480-1980",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [549000, 148000]
+      },
+      "properties": {
+        "as_72": 8,
+        "survey": "1979/85",
+        "year": 1980,
+        "fj": 1980,
+        "desc_as_72_de": "Umschwung von Mehrfamilienhäusern",
+        "desc_as_72_fr": "Terrains attenants aux immeubles résidentiels",
+        "desc_as_72_it": "Terreno annesso a case plurifamiliari",
+        "desc_as_72_rm": "Umschwung von Mehrfamilienhäusern",
+        "desc_as_72_en": "Surroundings of blocks of flats",
+        "label": "54901480-1980"
+      }
+    }
+    (...more features...)
+  ]
+}'
+/>
 
 Same request for `ch.bfs.arealstatistik` as above but geometry is not returned:
 
-<ExampleCodeBlock :request="identifyFeatures06.request" :example="identifyFeatures06.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&returnGeometry=false'
+example='{
+  "results": [
+    {
+      "layerBodId": "ch.bfs.arealstatistik",
+      "layerName": "Land use statistics standard",
+      "featureId": "54901480-1980",
+      "id": "54901480-1980",
+      "attributes": {
+        "as_72": 8,
+        "survey": "1979/85",
+        "year": 1980,
+        "fj": 1980,
+        "desc_as_72_de": "Umschwung von Mehrfamilienhäusern",
+        "desc_as_72_fr": "Terrains attenants aux immeubles résidentiels",
+        "desc_as_72_it": "Terreno annesso a case plurifamiliari",
+        "desc_as_72_rm": "Umschwung von Mehrfamilienhäusern",
+        "desc_as_72_en": "Surroundings of blocks of flats",
+        "label": "54901480-1980"
+      }
+    }
+    (...more features...)
+  ]
+}'
+/>
 
 Filter features with `layerDefs`:
 
-<ExampleCodeBlock :request="identifyFeatures07.request" :example="identifyFeatures07.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.swisstopo.amtliches-strassenverzeichnis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis":"stn_label+ilike+%27%Corniche%%27"}'
+example='{
+  "results": [
+    {
+      "layerBodId": "ch.swisstopo.amtliches-strassenverzeichnis",
+      "layerName": "Official directory of streets",
+      "featureId": 10035871,
+      "id": 10035871,
+      "properties": {
+        "str_esid": 10035871,
+        "stn_label": "Route de la Corniche",
+        "zip_label": "1070 Puidoux, 1071 Chexbres, 1098 Epesses",
+        "com_name": "Puidoux",
+        "com_fosnr": 5607,
+        "str_official": 1,
+        "str_modified": "2024-10-15",
+        "str_type": "Strasse",
+        "str_children": null,
+        "str_parent": null,
+        "str_status": "bestehend",
+        "label": "Route de la Corniche"
+      }
+    },
+    {
+      "layerBodId": "ch.swisstopo.amtliches-strassenverzeichnis",
+      "layerName": "Official directory of streets",
+      "featureId": 10048084,
+      "id": 10048084,
+      "properties": {
+        "str_esid": 10048084,
+        "stn_label": "Route de la Corniche",
+        "zip_label": "1096 Cully, 1097 Riex, 1098 Epesses",
+        "com_name": "Bourg-en-Lavaux",
+        "com_fosnr": 5613,
+        "str_official": 1,
+        "str_modified": "2024-07-29",
+        "str_type": "Strasse",
+        "str_children": null,
+        "str_parent": null,
+        "str_status": "bestehend",
+        "label": "Route de la Corniche"
+      }
+    },
+    {
+      "layerBodId": "ch.swisstopo.amtliches-strassenverzeichnis",
+      "layerName": "Official directory of streets",
+      "featureId": 10093805,
+      "id": 10093805,
+      "properties": {
+        "str_esid": 10093805,
+        "stn_label": "Route de la Corniche",
+        "zip_label": "1071 Chexbres",
+        "com_name": "Chexbres",
+        "com_fosnr": 5601,
+        "str_official": 1,
+        "str_modified": "2024-07-29",
+        "str_type": "Strasse",
+        "str_children": null,
+        "str_parent": null,
+        "str_status": "bestehend",
+        "label": "Route de la Corniche"
+      }
+    }
+  ]
+}'
+/>
 
-### Reverse Geocoding Examples
+## Examples: Reverse Geocoding
 
 The service identify can be used for Reverse Geocoding operations. Here is a [list of all the available layers](../../../api/faq/index.html#which-layers-are-available).
 
 Perform an identify request to find the districts intersecting a given envelope geometry (no buffer):
 
-<ExampleCodeBlock :request="identifyFeatures08.request" :example="identifyFeatures08.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill&returnGeometry=false' 
+example='{
+  "results": [
+    {
+      "layerBodId": "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill",
+      "layerName": "District boundaries",
+      "featureId": 2226,
+      "id": 2226,
+      "attributes": {
+        "name": "Lavaux-Oron",
+        "flaeche": 19791,
+        "label": "Lavaux-Oron"
+      }
+    }
+  ]
+}'
+/>
 
 Perform an identify request to find the municipal boundaries and ZIP (PLZ or NPA) intersecting with a point (no buffer):
 
-<ExampleCodeBlock :request="identifyFeatures09.request" :example="identifyFeatures09.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false' 
+example='{
+  "results": [
+    {
+      "layerBodId": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill",
+      "layerName": "Municipal boundaries",
+      "featureId": "13096-1850",
+      "id": "13096-1850",
+      "attributes": {
+        "gemname": "Puidoux",
+        "gemflaeche": 2286.0973335532985,
+        "gde_hist_id": 13096,
+        "gde_nr": 5607,
+        "jahr": 1850,
+        "perimeter": 30580.136077557163,
+        "kanton": "VD",
+        "objektart": 11,
+        "is_current_jahr": false,
+        "objektart_lookup": "politische_gemeinde",
+        "link_de": "https://www.agvchapp.bfs.admin.ch/de/communes/results?BfsNr=5607&EntriesFrom=12.09.1848&EntriesTo=31.08.2006&IncludeUnassignedEntities=True",
+        "link_fr": "https://www.agvchapp.bfs.admin.ch/fr/communes/results?BfsNr=5607&EntriesFrom=12.09.1848&EntriesTo=31.08.2006&IncludeUnassignedEntities=True",
+        "link_it": "https://www.agvchapp.bfs.admin.ch/it/communes/results?BfsNr=5607&EntriesFrom=12.09.1848&EntriesTo=31.08.2006&IncludeUnassignedEntities=True",
+        "label": "Puidoux"
+      }
+    }
+    (...more features...)
+  ]
+}'
+/>
 
 Reverse geocoding an <span class="title-ref">address</span> with a point (no buffer):
 
-<ExampleCodeBlock :request="identifyFeatures10.request" :example="identifyFeatures10.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false' 
+example='{
+  "results": [
+    {
+      "layerBodId": "ch.bfs.gebaeude_wohnungs_register",
+      "layerName": "RBD: building status",
+      "featureId": "1272199_0",
+      "id": "1272199_0",
+      "attributes": {
+        "egid": "1272199",
+        "strname_deinr": "Seftigenstrasse 264",
+        "plz_plz6": "3084/308400",
+        "ggdename": "Köniz",
+        "ggdenr": 355,
+        "gexpdat": "12.07.2025",
+        "gdekt": "BE",
+        "egrid": "CH669746359158",
+        "lgbkr": 0,
+        "lparz": "212",
+        "lparzsx": null,
+        "ltyp": null,
+        "gebnr": "",
+        "gbez": "",
+        "gkode": 2600983.546,
+        "gkodn": 1197396.177,
+        "gksce": 901,
+        "gstat": 1004,
+        "gkat": 1060,
+        "gklas": null,
+        "gbauj": null,
+        "gbaum": null,
+        "gbaup": 8011,
+        "gabbj": null,
+        "garea": 3143,
+        "gvol": null,
+        "gvolnorm": null,
+        "gvolsce": null,
+        "gastw": 4,
+        "ganzwhg": null,
+        "gazzi": null,
+        "gschutzr": null,
+        "gebf": null,
+        "gwaerzh1": 7430,
+        "genh1": 7542,
+        "gwaersceh1": 865,
+        "gwaerdath1": "14.03.2023",
+        "gwaerzh2": null,
+        "genh2": null,
+        "gwaersceh2": null,
+        "gwaerdath2": "-",
+        "gwaerzw1": 7630,
+        "genw1": 7530,
+        "gwaerscew1": 869,
+        "gwaerdatw1": "29.11.2001",
+        "gwaerzw2": null,
+        "genw2": null,
+        "gwaerscew2": null,
+        "gwaerdatw2": "-",
+        "edid": "0",
+        "egaid": 100718281,
+        "deinr": "264",
+        "esid": 10006665,
+        "strname": ["Seftigenstrasse"],
+        "strnamk": ["Seftigenstr."],
+        "strindx": ["Sef"],
+        "strsp": ["DE"],
+        "stroffiziel": "1",
+        "dplz4": 3084,
+        "dplzz": 0,
+        "dplzname": "Wabern",
+        "dkode": 2600968.668,
+        "dkodn": 1197426.954,
+        "doffadr": 1,
+        "dexpdat": "12.07.2025",
+        "ewid": null,
+        "whgnr": null,
+        "wstwk": null,
+        "wmehrg": null,
+        "weinr": null,
+        "wbez": null,
+        "wstat": null,
+        "wexpdat": null,
+        "wbauj": null,
+        "wabbj": null,
+        "warea": null,
+        "wazim": null,
+        "wkche": null,
+        "label": "Seftigenstrasse 264"
+      }
+    }
+  ]
+}'
+/>
 
-### Simulate a search radius
+## Examples: Search Radius
 
 Equation:
 
@@ -195,11 +561,34 @@ Max(100 / 100, 100 / 100) * 5 = 5
 ```
 
 So, to perform an identify request with a search radius of 5 meters around a given point, you would set:
-
-`mapExtent=0,0,100,100&imageDisplay=100,100,100&tolerance=5&geometryType=esriGeometryPoint&geometry=548945,147956`
-
-<div id="find_description">
-
----
-
-</div>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?mapExtent=0,0,100,100&imageDisplay=100,100,100&tolerance=5&geometryType=esriGeometryPoint&geometry=548945,147956' 
+example='{
+  "results": [
+    {
+      "layerBodId": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill",
+      "layerName": "Municipal boundaries",
+      "featureId": "13096-1850",
+      "id": "13096-1850",
+      "attributes": {
+        "gemname": "Puidoux",
+        "gemflaeche": 2286.0973335532985,
+        "gde_hist_id": 13096,
+        "gde_nr": 5607,
+        "jahr": 1850,
+        "perimeter": 30580.136077557163,
+        "kanton": "VD",
+        "objektart": 11,
+        "is_current_jahr": false,
+        "objektart_lookup": "politische_gemeinde",
+        "link_de": "https://www.agvchapp.bfs.admin.ch/de/communes/results?BfsNr=5607&EntriesFrom=12.09.1848&EntriesTo=31.08.2006&IncludeUnassignedEntities=True",
+        "link_fr": "https://www.agvchapp.bfs.admin.ch/fr/communes/results?BfsNr=5607&EntriesFrom=12.09.1848&EntriesTo=31.08.2006&IncludeUnassignedEntities=True",
+        "link_it": "https://www.agvchapp.bfs.admin.ch/it/communes/results?BfsNr=5607&EntriesFrom=12.09.1848&EntriesTo=31.08.2006&IncludeUnassignedEntities=True",
+        "label": "Puidoux"
+      }
+    }
+    (...more results...)
+  ]
+}
+'
+/>
