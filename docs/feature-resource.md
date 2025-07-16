@@ -1,11 +1,3 @@
-<script setup>
-import { 
-    featureResource01,
-    featureResource02,
-    featureResource03,
-} from './examples.js'
-</script>
-
 # Feature Resource
 
 Retrieve a Feature Resource using a Feature ID (or several in a comma separated list) and a layer ID (technical name).

@@ -1,12 +1,3 @@
-<script setup>
-import { 
-    find01,
-    find02,
-    find03,
-    find04,
-} from './examples.js'
-</script>
-
 # Find
 
 This service is used to search the attributes of features.

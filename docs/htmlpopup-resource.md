@@ -1,9 +1,3 @@
-<script setup>
-import { 
-    htmlPopup01,
-} from './examples.js'
-</script>
-
 # Htmlpopup Resource
 
 Use this service to retrieve an HTML Popup using a Feature ID and a Layer ID.
