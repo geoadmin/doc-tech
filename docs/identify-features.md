@@ -109,7 +109,34 @@ print('&layerDefs={}'.format(urllib.parse.quote(json.dumps(params))))
 
 Identify all the features belonging to `ch.bafu.nabelstationen` using a tolerance of 5 pixels around a point:
 
-<ExampleCodeBlock :request="identifyFeatures01.request" :example="identifyFeatures01.response"/>
+<ExampleCodeBlock
+:request="identifyFeatures01.request"
+:example=`{
+"results": [
+{
+"type": "Feature",
+"featureId": "RIG",
+"bbox": [677835, 213440, 677835, 213440],
+"layerBodId": "ch.bafu.nabelstationen",
+"layerName": "Stations de mesure qualité de l'air",
+"id": "RIG",
+"geometry": {
+"type": "Point",
+"coordinates": [677835, 213440]
+},
+"properties": {
+"name": "Rigi-Seebodenalp",
+"url_de": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+"url_fr": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+"url_it": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+"url_en": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+"label": "Rigi-Seebodenalp"
+}
+}
+]
+}
+`
+/>
 
 Identify all the features belonging to `ch.bfs.arealstatistik` intersecting an envelope (or bounding box):
 

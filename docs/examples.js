@@ -883,3 +883,63 @@ export const htmlPopup01 = {
   </div>
 </div>`,
 };
+
+export const search01 = {
+  request:
+    "$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations",
+  response: `{
+  "results": [
+    {
+      "attrs": {
+        "detail": "wabern koeniz",
+        "geom_quadindex": "021300220302121113110",
+        "geom_st_box2d": "BOX(601112.8374564094 197515.61386168728,601112.8374564094 197515.61386168728)",
+        "label": "<i>Populated Place</i> <b>Wabern</b> (BE) - Köniz",
+        "lat": 46.928733825683594,
+        "lon": 7.453245639801025,
+        "num": 1,
+        "objectclass": "TLM_SIEDLUNGSNAME",
+        "origin": "gazetteer",
+        "rank": 5,
+        "x": 197515.609375,
+        "y": 601112.8125,
+        "zoomlevel": 10
+      },
+      "id": 357116,
+      "weight": 100
+    },
+  (...more results...)
+  ]
+}`,
+};
+
+export const search02 = {
+  request:
+    "$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=bern&origins=parcel,district&type=locations",
+  response: `{
+  "results": [
+    {
+      "attrs": {
+        "detail": "Bern-Mittelland",
+        "featureId": "246",
+        "geom_quadindex": "021",
+        "geom_st_box2d": "BOX(575209.9836898939 168848.72527490254,622384.0411650916 219079.463898759)",
+        "label": "<b>Bern-Mittelland</b>",
+        "lat": 46.896873474121094,
+        "lon": 7.495893478393555,
+        "num": 1,
+        "objectclass": "",
+        "origin": "district",
+        "rank": 3,
+        "x": 193975.1875,
+        "y": 604363.3125,
+        "zoomlevel": 4294967295
+      },
+      "id": 246,
+      "weight": 1
+    },
+    (...more results...)
+  ]
+}
+`,
+};
