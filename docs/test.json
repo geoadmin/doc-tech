@@ -1,26 +1,32 @@
-{
-  "results": [
-    {
-      "layerBodId": "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill",
-      "layerName": "Municipal boundaries",
-      "featureId": "13096-1850",
-      "id": "13096-1850",
-      "attributes": {
-        "gemname": "Puidoux",
-        "gemflaeche": 2286.0973335532985,
-        "gde_hist_id": 13096,
-        "gde_nr": 5607,
-        "jahr": 1850,
-        "perimeter": 30580.136077557163,
-        "kanton": "VD",
-        "objektart": 11,
-        "is_current_jahr": false,
-        "objektart_lookup": "politische_gemeinde",
-        "link_de": "https://www.agvchapp.bfs.admin.ch/de/communes/results?BfsNr=5607&EntriesFrom=12.09.1848&EntriesTo=31.08.2006&IncludeUnassignedEntities=True",
-        "link_fr": "https://www.agvchapp.bfs.admin.ch/fr/communes/results?BfsNr=5607&EntriesFrom=12.09.1848&EntriesTo=31.08.2006&IncludeUnassignedEntities=True",
-        "link_it": "https://www.agvchapp.bfs.admin.ch/it/communes/results?BfsNr=5607&EntriesFrom=12.09.1848&EntriesTo=31.08.2006&IncludeUnassignedEntities=True",
-        "label": "Puidoux"
-      }
-    }
-  ]
-}
+[
+  {
+    "alts": {
+      "COMB": 1121.9,
+      "DTM2": 1121.9,
+      "DTM25": 1121.9
+    },
+    "dist": 0,
+    "easting": 2550050,
+    "northing": 1206550
+  },
+  {
+    "alts": {
+      "COMB": 1143.5,
+      "DTM2": 1143.5,
+      "DTM25": 1143.5
+    },
+    "dist": 64.7,
+    "easting": 2550111.062,
+    "northing": 1206528.761
+  },
+  {
+    "alts": {
+      "COMB": 1158.4,
+      "DTM2": 1158.4,
+      "DTM25": 1158.4
+    },
+    "dist": 129.3,
+    "easting": 2550172.124,
+    "northing": 1206507.522
+  }
+]

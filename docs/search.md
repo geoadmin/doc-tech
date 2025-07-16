@@ -22,8 +22,7 @@ features.
   the GeoAdmin API.
 - The **feature search** which is used to search through features
   descriptions. Note: you can also specify a bounding box to filter
-  the features. ([Searchable
-  layers](../../../api/faq/index.html#which-layers-are-searchable))
+  the features.
 
 :::
 

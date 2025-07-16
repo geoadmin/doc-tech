@@ -13,7 +13,8 @@ See [Height models](https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html
 
 ## Resquest Details
 
-RESTFul interface is available.
+To interact with the Height service, you need to provide specific parameters in your request.
+This endpoint only has **Query Parameters** that modify the behavior of the request, some are required and some are optional.
 
 ### Query Parameters
 
@@ -26,6 +27,9 @@ RESTFul interface is available.
 
 ## Examples
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/height?easting=2600000&northing=1200000
-```
+<ExampleCodeBlock
+request='$ curl https://api3.geo.admin.ch/rest/services/height?easting=2600000&northing=1200000'
+example='{
+    "height": "553.6"
+}'
+/>

@@ -43,12 +43,136 @@ These parameters are divided into **Path Parameters**, which are required and pa
 
 Get the feature with the ID `RIG` belonging to the layer `ch.bafu.nabelstationen`:
 
-<ExampleCodeBlock :request="featureResource01.request" :example="featureResource01.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG' 
+example='{
+  "feature": {
+    "featureId": "RIG",
+    "bbox": [677835, 213440, 677835, 213440],
+    "layerBodId": "ch.bafu.nabelstationen",
+    "layerName": "Monitoring stations air quality",
+    "id": "RIG",
+    "geometry": {
+      "x": 677835,
+      "y": 213440,
+      "spatialReference": {
+        "wkid": 21781
+      }
+    },
+    "attributes": {
+      "name": "Rigi-Seebodenalp",
+      "url_de": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+      "url_fr": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+      "url_it": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+      "url_en": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+      "label": "Rigi-Seebodenalp"
+    }
+  }
+}'
+/>
 
 Get several features with IDs `RIG` and `LAU` belonging to the layer `ch.bafu.nabelstationen`:
 
-<ExampleCodeBlock :request="featureResource02.request" :example="featureResource02.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU' 
+example='{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "featureId": "RIG",
+      "bbox": [677835, 213440, 677835, 213440],
+      "layerBodId": "ch.bafu.nabelstationen",
+      "layerName": "Monitoring stations air quality",
+      "id": "RIG",
+      "geometry": {
+        "x": 677835,
+        "y": 213440,
+        "spatialReference": {
+          "wkid": 21781
+        }
+      },
+      "attributes": {
+        "name": "Rigi-Seebodenalp",
+        "url_de": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_fr": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_it": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_en": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "label": "Rigi-Seebodenalp"
+      }
+    },
+    {
+      "featureId": "LAU",
+      "bbox": [538695, 152615, 538695, 152615],
+      "layerBodId": "ch.bafu.nabelstationen",
+      "layerName": "Monitoring stations air quality",
+      "id": "LAU",
+      "geometry": {
+        "x": 538695,
+        "y": 152615,
+        "spatialReference": {
+          "wkid": 21781
+        }
+      },
+      "attributes": {
+        "name": "Lausanne",
+        "url_de": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_fr": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_it": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_en": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "label": "Lausanne"
+      }
+    }
+  ]
+}'
+/>
 
 A `GeoJSON` in `EPSG:4326`:
 
-<ExampleCodeBlock :request="featureResource03.request" :example="featureResource03.response"/>
+<ExampleCodeBlock 
+request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson' 
+example='{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "featureId": "RIG",
+      "bbox": [8.46333, 47.06741, 8.46333, 47.06741],
+      "layerBodId": "ch.bafu.nabelstationen",
+      "layerName": "Monitoring stations air quality",
+      "id": "RIG",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8.46333, 47.06741]
+      },
+      "properties": {
+        "name": "Rigi-Seebodenalp",
+        "url_de": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_fr": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_it": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_en": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "label": "Rigi-Seebodenalp"
+      }
+    },
+    {
+      "type": "Feature",
+      "featureId": "LAU",
+      "bbox": [6.639701, 46.522018, 6.639701, 46.522018],
+      "layerBodId": "ch.bafu.nabelstationen",
+      "layerName": "Monitoring stations air quality",
+      "id": "LAU",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.639701, 46.522018]
+      },
+      "properties": {
+        "name": "Lausanne",
+        "url_de": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_fr": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_it": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "url_en": "https://www.bafu.admin.ch/bafu/de/home/themen/luft/zustand/daten/datenabfrage-nabel.html",
+        "label": "Lausanne"
+      }
+    }
+  ]
+}'
+/>
