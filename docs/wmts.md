@@ -518,7 +518,8 @@ clear your local cache.
 ### Example
 
 - The the latest Cache Update for SwissImage Product:
-  [https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate](../../../rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate)
+  **https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate**
+  <!-- FIX ME: (../../../rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate) -->
 
 ## Supported projections
 

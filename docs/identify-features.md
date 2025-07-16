@@ -50,7 +50,9 @@ The following table summarize the various combinations:
 
 ### Filters
 
-You may filter by attributes with `layerDefs` on [queryable layers](../api/faq/index.html#which-layers-are-queryable).
+You may filter by attributes with `layerDefs` on **queryable layers**.
+
+<!-- FIX ME: (../api/faq/index.html#which-layers-are-queryable). -->
 
 To check which attributes are available, their types and examples values for a given searchable layer, you may use the [attributes services](/docs/layers-attributes).
 
@@ -393,7 +395,9 @@ example='{
 
 ## Examples: Reverse Geocoding
 
-The service identify can be used for Reverse Geocoding operations. Here is a [list of all the available layers](../../../api/faq/index.html#which-layers-are-available).
+The service identify can be used for Reverse Geocoding operations. Here is a **list of all the available layers**.
+
+<!-- FIX ME: (../../../api/faq/index.html#which-layers-are-available). -->
 
 Perform an identify request to find the districts intersecting a given envelope geometry (no buffer):
 
