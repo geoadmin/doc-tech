@@ -12,7 +12,7 @@ No CSS styling is provided per default so that you can use your own.
 ## Request Details
 
 To interact with the HTML popup service, you need to provide specific parameters in your request.
-These parameters are divided into path parameters\*\*, which are required and part of the URL, and query parameters, which are optional and modify the behavior of the request.
+These parameters are divided into path parameters, which are required and part of the URL, and query parameters, which are optional and modify the behavior of the request.
 
 ### Path Parameters
 
