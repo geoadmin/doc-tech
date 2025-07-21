@@ -1,12 +1,12 @@
-# Find Feature
+# Find Features
 
-Find a feature in a specific layer by searching for a matching attribute.
+Find features in a specific layer by searching for a matching attribute.
 
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/find" method="GET" />
 
 ## Request Details
 
-To interact with the find feature service, you need to provide specific parameters in your request.
+To interact with the find features service, you need to provide specific parameters in your request.
 This endpoint only has query parameters that modify the behavior of the request, some are required and some are optional.
 
 ### Query Parameters
@@ -55,7 +55,7 @@ example='{
 }'
 />
 
-Search for `12316` in the field `egid` of the layer `ch.bfs.gebaeude_wohnungs_register` (infix match):
+Search for `12316` in the field `egid` of the layer `ch.bfs.gebaeude_wohnungs_register` (substring match):
 
 <ExampleCodeBlock 
 request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/find?"\

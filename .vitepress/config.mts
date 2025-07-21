@@ -121,7 +121,7 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
           text: "Identify Features",
           link: "/docs/identify-features",
         },
-        { text: "Find Feature", link: "/docs/find-feature" },
+        { text: "Find Features", link: "/docs/find-features" },
         { text: "Get Features", link: "/docs/get-features" },
         {
           text: "Get HTML Popup",
