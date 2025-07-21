@@ -1,18 +1,13 @@
-# Feature Resource
+# Get Features
 
-Retrieve a Feature Resource using a Feature ID (or several in a comma separated list) and a layer ID (technical name).
-Here is a **complete list of layers** which this service is available.
+Retrieve one or more features using feature IDs and the corresponding layer ID.
 
-<!-- FIX ME: (../../../api/faq/index.html#which-layers-have-a-tooltip) for -->
-
-<Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId},{featureId}" method="GET" />
-</Suspense>
 
 ## Request Details
 
-To interact with the Feature Resource service, you need to provide specific parameters in your request.
-These parameters are divided into **Path Parameters**, which are required and part of the URL, and **Query Parameters**, which are optional and modify the behavior of the request.
+To interact with the get features service, you need to provide specific parameters in your request.
+These parameters are divided into path parameters, which are required and part of the URL, and query parameters, which are optional and modify the behavior of the request.
 
 ### Path Parameters
 

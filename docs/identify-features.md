@@ -1,29 +1,23 @@
 # Identify Features
 
 Use this service to discover features at a specific location.
-Here is a **complete list of layers**
-for which this service is available.
 
-<!-- FIX ME: (../../../api/faq/index.html#which-layers-have-a-tooltip) -->
-
-<Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/identify" method="GET" />
-</Suspense>
 
-::: tip
+::: warning
 No more than 50 features can be retrieved per request.
 :::
 
 ## Request Details
 
-To interact with the Identify Features service, you need to provide specific parameters in your request.
-This endpoint only has **Query Parameters** that modify the behavior of the request, some are required and some are optional.
+To interact with the identify features service, you need to provide specific parameters in your request.
+This endpoint only has query parameters that modify the behavior of the request, some are required and some are optional.
 
 ### Query Parameters
 
 | **Parameter**                        | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **geometry (required)**              | The geometry to identify on. The geometry is specified by the geometry type. This parameter is specified as a separated list of coordinates. The simple syntax (comma-separated list of coordinates) and the complex one can be used. ([ESRI syntax for geometries](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000n1000000))                                                                      |
+| **geometry (required)**              | The geometry to identify on. The geometry is specified by the geometry type. This parameter is specified as a separated list of coordinates. The simple syntax (comma-separated list of coordinates) and the complex one can be used. ([ESRI syntax for geometries](https://developers.arcgis.com/rest/services-reference/enterprise/geometry-objects/))                                                                       |
 | **geometryType (required)**          | The type of geometry to identify on. Supported values are: `esriGeometryPoint`, `esriGeometryPolyline`, `esriGeometryPolygon`, or `esriGeometryEnvelope`.                                                                                                                                                                                                                                                                      |
 | **layers (optional)**                | The layers to perform the identify operation on. By default, query all the layers in the GeoAdmin API. Notation: `all:"comma-separated list of technical layer names"`.                                                                                                                                                                                                                                                        |
 | **tolerance (required)**             | The tolerance in pixels around the specified geometry. This parameter is used to create a buffer around the geometry. Therefore, a tolerance of `0` deactivates the buffer creation.                                                                                                                                                                                                                                           |
@@ -39,7 +33,7 @@ This endpoint only has **Query Parameters** that modify the behavior of the requ
 
 ### Tolerance, mapExtent and imageDisplay
 
-If `tolerance=0`, `imageDisplay` and `mapExtent` are generaly not needed, except to get models which are scale dependant, e.g. displaying points at smaller scales and polygons at larger one. If using `tolerance>0`, both `imageDisplay` and `mapExtent` must be set to meaningfull values. As the `tolerance` is in pixels, these value are used to convert it to map units, _i.e._ meters.
+The values of `imageDisplay` and `mapExtent` must be set for a `tolerance > 0`. This is because we need them to map the `tolerance` from pixels to meters. For a `tolerance=0`, however, we would only set `imageDisplay` and `mapExtent` for specific cases. One such case might be a scale dependant model that you display as points at smaller scales and as polygons at larger scales.
 
 The following table summarize the various combinations:
 
@@ -50,19 +44,15 @@ The following table summarize the various combinations:
 
 ### Filters
 
-You may filter by attributes with `layerDefs` on **queryable layers**.
-
-<!-- FIX ME: (../api/faq/index.html#which-layers-are-queryable). -->
-
-To check which attributes are available, their types and examples values for a given searchable layer, you may use the [attributes services](/docs/layers-attributes).
+To list the available attributes together with their types and examples values, use the layer [attribute service](/docs/layers-attributes).
 
 #### layerDefs syntax
 
-The syntax of the `layerDefs` parameter is a `json` with the layername as key and the filter expression as value: `{"<layername>":"<filter_expression>"}`
+Define the `layerDefs` parameter in JSON format like `{"<layername>":"<filter_expression>"}`.
 
 The filter expression can consist of a single expression of the form `<attribute><operator><value>` or several of these expressions combined with boolean operators `and` and `or`, e.g. `state='open' and startofconstruction>='2018-10'`
 
-`<attribute>` must be one of the queryable attributes, the type of `<value>` must correspond the the type of the queryable attribute (see above) and `<operator>` can be one of
+`<attribute>` must be one of the queryable attributes, the type of `<value>` must correspond the type of the queryable attribute (see above) and `<operator>` can be one of the following options:
 
 | **Operator** | **Operators**                                                                 | **Examples**                                                                    |
 | ------------ | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
@@ -74,6 +64,8 @@ The filter expression can consist of a single expression of the form `<attribute
 
 It's important that the parameters are correctly serialized and url-encoded.
 
+To encode the layerDefs parameter in your URL using the right URL escape codes (%xx), you may want to make use of Python's [urllib.parse.quote()](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.quote):
+
 ```python
 import json
 import urllib.parse
@@ -81,14 +73,7 @@ import urllib.parse
 params = {
   "ch.swisstopo.amtliches-strassenverzeichnis": "zip_label = '8302 Kloten'"
 }
-
-print(json.dumps(params))
-## {"ch.swisstopo.amtliches-strassenverzeichnis": "zip_label = '8302 Kloten'"}
-
-print(urllib.parse.quote(json.dumps(params)))
-## %7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22zip_label%20%3D%20%278302%20Kloten%27%22%7D
-
-print('&layerDefs={}'.format(urllib.parse.quote(json.dumps(params))))
+print(f'&layerDefs={urllib.parse.quote(json.dumps(params))}')
 ## &layerDefs=%7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22zip_label%20%3D%20%278302%20Kloten%27%22%7D
 ```
 
@@ -97,7 +82,16 @@ print('&layerDefs={}'.format(urllib.parse.quote(json.dumps(params))))
 Identify all the features belonging to `ch.bafu.nabelstationen` using a tolerance of 5 pixels around a point:
 
 <ExampleCodeBlock
-request='$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5' 
+request='curl "https://api3.geo.admin.ch/rest/services/all/MapServer/identify?"\
+"geometry=678250,213000&"\
+"geometryFormat=geojson&"\
+"geometryType=esriGeometryPoint&"\
+"imageDisplay=1391,1070,96&"\
+"lang=fr&"\
+"layers=all:ch.bafu.nabelstationen&"\
+"mapExtent=312250,-77500,1007750,457500&"\
+"returnGeometry=true&"\
+"tolerance=5"'
 example='{
   "results": [
     {
@@ -127,7 +121,13 @@ example='{
 Identify all the features belonging to `ch.bfs.arealstatistik` intersecting an envelope (or bounding box):
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik'
+request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+"geometryType=esriGeometryEnvelope&"\
+"geometry=548945.5,147956,549402,148103.5&"\
+"imageDisplay=500,600,96&"\
+"mapExtent=548945.5,147956,549402,148103.5&"\
+"tolerance=1&"\
+"layers=all:ch.bfs.arealstatistik"'
 example='{
   "results": [
     {
@@ -155,12 +155,16 @@ example='{
 }'
 />
 
-<!-- FIX ME: curl not working -->
-
 Identify all the features belonging to `ch.bafu.bundesinventare-bln` a polyline:
 
 <ExampleCodeBlock
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"paths":[[[675000,245000],[660000,260000],[620000,250000]]]}&geometryType=esriGeometryPolyline&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln' 
+request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+"geometry={\"paths\":[[[675000,245000],[660000,260000],[620000,250000]]]}&"\
+"geometryType=esriGeometryPolyline&"\
+"imageDisplay=500,600,96&"\
+"mapExtent=548945.5,147956,549402,148103.5&"\
+"tolerance=5&"\
+"layers=all:ch.bafu.bundesinventare-bln"'
 example='{
   "results": [
     {
@@ -203,7 +207,13 @@ example='{
 Identify all the features belonging to `ch.bafu.bundesinventare-bln` intersecting a polygon:
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={%22rings%22:[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln' 
+request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+"geometry={\"rings\":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&"\
+"geometryType=esriGeometryPolygon&"\
+"imageDisplay=500,600,96&"\
+"mapExtent=548945.5,147956,549402,148103.5&"\
+"tolerance=5&"\
+"layers=all:ch.bafu.bundesinventare-bln"'
 example='{
   "results": [
     {
@@ -262,7 +272,14 @@ example='{
 Same request for `ch.bfs.arealstatistik` as above but returned geometry format is GeoJSON:
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&geometryFormat=geojson'
+request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+"geometryType=esriGeometryEnvelope&"\
+"geometry=548945.5,147956,549402,148103.5&"\
+"imageDisplay=500,600,96&"\
+"mapExtent=548945.5,147956,549402,148103.5&"\
+"tolerance=1&"\
+"layers=all:ch.bfs.arealstatistik&"\
+"geometryFormat=geojson"'
 example='{
   "results": [
     {
@@ -297,7 +314,14 @@ example='{
 Same request for `ch.bfs.arealstatistik` as above but geometry is not returned:
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&returnGeometry=false'
+request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+"geometryType=esriGeometryEnvelope&"\
+"geometry=548945.5,147956,549402,148103.5&"\
+"imageDisplay=500,600,96&"\
+"mapExtent=548945.5,147956,549402,148103.5&"\
+"tolerance=1&"\
+"layers=all:ch.bfs.arealstatistik&"\
+"returnGeometry=false"'
 example='{
   "results": [
     {
@@ -326,7 +350,18 @@ example='{
 Filter features with `layerDefs`:
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.swisstopo.amtliches-strassenverzeichnis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis":"stn_label+ilike+%27%Corniche%%27"}'
+request='curl "https://api3.geo.admin.ch/rest/services/all/MapServer/identify?"\
+"geometryType=esriGeometryEnvelope&"\
+"geometry=2548945.5,1147956,2549402,1148103.5&"\
+"geometryFormat=geojson&"\
+"imageDisplay=1367,949,96&"\
+"lang=en&"\
+"layers=all:ch.swisstopo.amtliches-strassenverzeichnis&"\
+"mapExtent=2318250,952750,3001750,1427250&"\
+"returnGeometry=false&"\
+"sr=2056&"\
+"tolerance=5&"\
+"layerDefs={\"ch.swisstopo.amtliches-strassenverzeichnis\":\"stn_label+ilike+%27%Corniche%%27\"}"'
 example='{
   "results": [
     {
@@ -395,14 +430,19 @@ example='{
 
 ## Examples: Reverse Geocoding
 
-The service identify can be used for Reverse Geocoding operations. Here is a **list of all the available layers**.
-
-<!-- FIX ME: (../../../api/faq/index.html#which-layers-are-available). -->
+The service identify can be used for Reverse Geocoding operations.
 
 Perform an identify request to find the districts intersecting a given envelope geometry (no buffer):
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill&returnGeometry=false' 
+request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+"geometryType=esriGeometryEnvelope&"\
+"geometry=548945.5,147956,549402,148103.5&"\
+"imageDisplay=0,0,0&"\
+"mapExtent=0,0,0,0&"\
+"tolerance=0&"\
+"layers=all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill&"\
+"returnGeometry=false"'
 example='{
   "results": [
     {
@@ -423,7 +463,14 @@ example='{
 Perform an identify request to find the municipal boundaries and ZIP (PLZ or NPA) intersecting with a point (no buffer):
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false' 
+request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+"geometryType=esriGeometryPoint&"\
+"geometry=548945.5,147956&"\
+"imageDisplay=0,0,0&"\
+"mapExtent=0,0,0,0&"\
+"tolerance=0&"\
+"layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&"\
+"returnGeometry=false"'
 example='{
   "results": [
     {
@@ -456,7 +503,14 @@ example='{
 Reverse geocoding an <span class="title-ref">address</span> with a point (no buffer):
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false' 
+request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+"geometryType=esriGeometryPoint&"\
+"geometry=548945.5,147956&"\
+"imageDisplay=0,0,0&"\
+"mapExtent=0,0,0,0&"\
+"tolerance=0&"\
+"layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&"\
+"returnGeometry=false"'
 example='{
   "results": [
     {
@@ -552,21 +606,32 @@ example='{
 
 ## Examples: Search Radius
 
-Equation:
+To search within a specified radius at a given location:
+
+1. Specify the location with `geometry` and set the `geometryType` to `esriGeometryPoint`.
+
+2. Set `mapExtent`, `imageDisplay` and `tolerance` such that you get the desired search radius in meters according to this relation:
 
 ```
-SearchRadius = Max(MapWidthInMeters / ScreenWidthInPx, MapHeightInMeters / ScreenHeightInPx) * toleranceInPx
+searchRadius = max(mapExtent.maxx / imageDisplay.width, mapExtent.maxy / imageDisplay.height) * tolerance toleranceInPx
 ```
 
-For instance if one wants a radius of 5 meters:
+For example, if you want a search radius of 5 meters, you could set `tolerance=5` for a `mapExtent=0,0,100,100` and a `imageDisplay=100,100,100`:
 
 ```
-Max(100 / 100, 100 / 100) * 5 = 5
+searchRadius = max(mapExtent.maxx / imageDisplay.width, mapExtent.maxy / imageDisplay.height) * tolerance toleranceInPx
+             = max(100 / 100, 100 / 100) * 5
+             = 5
 ```
 
 So, to perform an identify request with a search radius of 5 meters around a given point, you would set:
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/identify?mapExtent=0,0,100,100&imageDisplay=100,100,100&tolerance=5&geometryType=esriGeometryPoint&geometry=548945,147956' 
+request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+"mapExtent=0,0,100,100&"\
+"imageDisplay=100,100,100&"\
+"tolerance=5&"\
+"geometryType=esriGeometryPoint&"\
+"geometry=548945,147956"'
 example='{
   "results": [
     {

@@ -11,7 +11,7 @@ To build and run the site locally:
 3. Optional: Activate a suitable Node version, e.g. with `nvm use stable`
    ℹ️ Use `nvm list` to see all available Node versions
 4. Run `npm install` to locally install all the necessary packages
-5. Run `npm run docs:dev` and visit `http://localhost:5173/` in your web browser
+5. Run `npm run docs:dev` and visit http://localhost:5173/ in your web browser
 
 ## How to Add a Release Note
 

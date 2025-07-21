@@ -17,12 +17,10 @@ export default {
     const highlighter: HighlighterGeneric<BundledLanguage, BundledTheme> =
       await createHighlighter({
         themes: ["github-dark"],
-        langs: ["javascript", "json", "sh", "html"],
+        langs: ["javascript", "json", "sh", "html", "http"],
       });
 
     // Provide the highlighter globally
     app.provide("highlighter", highlighter);
   },
 } satisfies Theme;
-
-// Promise < HighlighterGeneric<BundledLangs, BundledThemes>;

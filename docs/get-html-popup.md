@@ -1,22 +1,18 @@
-# Htmlpopup Resource
+# Get HTML Popup
 
-Use this service to retrieve an HTML Popup using a Feature ID and a Layer ID.
-An HTML Popup is an HTML formatted representation of the textual information about the feature. Here is a **complete list of layers** for which this service is available.
+Get metadata for a feature formatted as an HTML popup.
 
-<!-- FIX ME: (../../../api/faq/index.html#which-layers-have-a-tooltip) -->
-
-<Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId}/htmlPopup" method="GET" />
-</Suspense>
 
-::: tip
-No css styling is provided per default so that you can use your own.
+:::tip
+The [map viewer](https://map.geo.admin.ch/) displays the same popup when you click on a feature by hand.
+No CSS styling is provided per default so that you can use your own.
 :::
 
 ## Request Details
 
-To interact with the HTML Popup service, you need to provide specific parameters in your request.
-These parameters are divided into **Path Parameters**, which are required and part of the URL, and **Query Parameters**, which are optional and modify the behavior of the request.
+To interact with the HTML popup service, you need to provide specific parameters in your request.
+These parameters are divided into path parameters\*\*, which are required and part of the URL, and query parameters, which are optional and modify the behavior of the request.
 
 ### Path Parameters
 
@@ -39,7 +35,7 @@ These parameters are divided into **Path Parameters**, which are required and pa
 
 ## Examples
 
-Get the html popup with the feature ID `RIG` belonging to layer `ch.bafu.nabelstationen`:
+Get the HTML popup with the feature ID `RIG` belonging to layer `ch.bafu.nabelstationen`:
 
 <ExampleCodeBlock
 request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG/htmlPopup'
@@ -82,3 +78,7 @@ class="chbafunabelstationen htmlpopup-container">
   </div>
 </div>'
 />
+
+This request retrieves the HTML for the popup, displaying the same content as the map viewer below:
+
+<iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2681170.18,1204968.08&z=2.228&topic=ech&layers=ch.bafu.nabelstationen@features=RIG&bgLayer=ch.swisstopo.pixelkarte-farbe&featureInfo=default" style="border: 0;width: 800px;height: 600px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>

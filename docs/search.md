@@ -1,11 +1,8 @@
 # Search
 
-The search service can be used to search for locations, layers or
-features.
+Search for locations, layers or features using text or a bounding box.
 
-<Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/SearchServer" method="GET" />
-</Suspense>
 
 ::: tip The search service is separated in 3 categories or types:
 
@@ -28,8 +25,8 @@ features.
 
 ## Request Details
 
-To interact with the Search service, you need to provide specific parameters in your request.
-This endpoint only has **Query Parameters** that modify the behavior of the request, some are required and some are optional.
+To interact with the search service, you need to provide specific parameters in your request.
+This endpoint only has query parameters that modify the behavior of the request, some are required and some are optional.
 
 ### Query Parameters
 

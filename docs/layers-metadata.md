@@ -3,9 +3,7 @@
 This service provides metadata for all the available layers in the
 GeoAdmin API.
 
-<Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer" method="GET" />
-</Suspense>
 
 ## Request Details
 

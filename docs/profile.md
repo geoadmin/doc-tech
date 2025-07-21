@@ -1,13 +1,9 @@
 # Profile
 
-This service allows to obtain elevation information for a polyline in CSV format. See [Height models](https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html) for more details about data used by this service.
+Retrieve the elevation information for a polyline in CSV format. See [Height models](https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html) for more details about data used by this service.
 
-<Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/profile.json" method="GET / POST" />
-</Suspense>
-<Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/profile.csv" method="GET / POST" />
-</Suspense>
 
 ::: tip
 For large datasets, use `POST` to send the payload in the request body
@@ -15,8 +11,8 @@ For large datasets, use `POST` to send the payload in the request body
 
 ## Request Details
 
-To interact with the Profile service, you need to provide specific parameters in your request.
-This endpoint only has **Query Parameters** that modify the behavior of the request, some are required and some are optional.
+To interact with the profile service, you need to provide specific parameters in your request.
+This endpoint only has query parameters that modify the behavior of the request, some are required and some are optional.
 
 ### Query Parameters
 
