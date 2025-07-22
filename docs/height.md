@@ -1,24 +1,21 @@
 # Height
 
-This service allows to obtain elevation information for a point.
+Retrieve the elevation information for a point.
 
-Outside of Switzerland a 10m grid elevation model is used. It is a
-combined digital elevation model consisting of elevation models from
-mapping agencies of France, Italy, Austria, Bavaria and
-Baden-Württemberg and derived with a resolution of 10m. The extend
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/height" method="GET" />
+::: info
+Outside of Switzerland a 10m grid elevation model is used. It is a combined digital elevation model consisting of elevation models from mapping agencies of France, Italy, Austria, Bavaria and Baden-Württemberg and derived with a resolution of 10m. The extend
 covers XMin: 2443000 YMin: 1024000 XMax: 2895000 YMax: 1340000
 
-See [Height
-models](https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html)
-for more details about data used by this service.
+See [Height models](https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html) for more details about data used by this service.
+:::
 
-### URL
+## Resquest Details
 
-    GET https://api3.geo.admin.ch/rest/services/height
+To interact with the height service, you need to provide specific parameters in your request.
+This endpoint only has query parameters that modify the behavior of the request, some are required and some are optional.
 
-### Input Parameters
-
-RESTFul interface is available.
+### Query Parameters
 
 | Parameters              | Description                                                                                                                                      |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -27,6 +24,11 @@ RESTFul interface is available.
 | **sr(optional)**        | The reference system to use (EPSG code). Valid values are 2056 (for LV95) and 21781 (for )LV03). If not given, trying to guess which one to use. |
 | **callback (optional)** | The name of the callback function.                                                                                                               |
 
-### Examples
+## Examples
 
-- [https://api3.geo.admin.ch/rest/services/height?easting=2600000&northing=1200000](../../../rest/services/height?easting=2600000&northing=1200000)
+<ExampleCodeBlock
+request='$ curl https://api3.geo.admin.ch/rest/services/height?easting=2600000&northing=1200000'
+example='{
+    "height": "553.6"
+}'
+/>

@@ -6,6 +6,7 @@ export default defineConfig({
   title: "*.geo.admin.ch",
   description: "Technical Documentation about *.geo.admin.ch",
   head: [["link", { rel: "icon", href: "/static/favicon.ico" }]],
+  ignoreDeadLinks: "localhostLinks",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
@@ -120,11 +121,11 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
           text: "Identify Features",
           link: "/docs/identify-features",
         },
-        { text: "Find", link: "/docs/find" },
-        { text: "Feature Resource", link: "/docs/feature-resource" },
+        { text: "Find Features", link: "/docs/find-features" },
+        { text: "Get Features", link: "/docs/get-features" },
         {
-          text: "HTMLpopup Resource",
-          link: "/docs/htmlpopup-resource",
+          text: "Get HTML Popup",
+          link: "/docs/get-html-popup",
         },
       ],
     },

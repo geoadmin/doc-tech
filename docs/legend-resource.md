@@ -3,9 +3,7 @@
 With a layer ID (or technical name), this service can be used to
 retrieve a legend.
 
-<Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/legend" method="GET" />
-</Suspense>
 
 ## Request Details
 

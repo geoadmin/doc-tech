@@ -1,10 +1,8 @@
 # Layers Attributes
 
-The endpoint returns attribute metadata for a specified layer. Use this endpoint if you want to list all available attributes of a layer or if you need details about a particular attribute. The endpoint is also useful for querying the [Find endpoint](/docs/find).
+The endpoint returns attribute metadata for a specified layer. Use this endpoint if you want to list all available attributes of a layer or if you need details about a particular attribute. The endpoint is also useful for querying the [Find endpoint](/docs/find-feature).
 
-<Suspense>
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}" method="GET" />
-</Suspense>
 
 ## Request Details
 

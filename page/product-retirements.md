@@ -7,7 +7,7 @@ previewContent: "Old styles for Light Base Map and Imagery Base Map no longer av
 
 Since March 2024, the Light Base Map and Imagery Base Map background maps have been available via the styles "ch.swisstopo.lightbasemap.vt" and "ch.swisstopo.imagerybasemap.vt" (see also [Vector Tiles Service: available services and data (admin.ch)](https://www.geo.admin.ch/en/vector-tiles-service-available-services-and-data)).
 
-As already announced in March 2024 in the [release notes – GeoAdmin API 3.0](releases/20240515), the old styles, including the variants with worldwide coverage
+As already announced in March 2024 in the [release notes – GeoAdmin API 3.0](/releases/20240515), the old styles, including the variants with worldwide coverage
 
 -ch.swisstopo.leichte-basiskarte.vt
 -ch.swisstopo.leichte-basiskarte-imagery.vt

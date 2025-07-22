@@ -1,18 +1,20 @@
 # Profile
 
-This service allows to obtain elevation information for a polyline in
-CSV format. See [Height
-models](https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html)
-for more details about data used by this service.
+Retrieve the elevation information for a polyline in CSV format. See [Height models](https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html) for more details about data used by this service.
 
-### URL
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/profile.json" method="GET / POST" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/profile.csv" method="GET / POST" />
 
-    GET|POST https://api3.geo.admin.ch/rest/services/profile.json (for json format)
-    GET|POST https://api3.geo.admin.ch/rest/services/profile.csv  (for a csv)
+::: tip
+For large datasets, use `POST` to send the payload in the request body
+:::
 
-### Input Parameters
+## Request Details
 
-RESTFul interface is available.
+To interact with the profile service, you need to provide specific parameters in your request.
+This endpoint only has query parameters that modify the behavior of the request, some are required and some are optional.
+
+### Query Parameters
 
 | Parameters                     | Description                                                                                                                                                                                                                                                             |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -23,9 +25,46 @@ RESTFul interface is available.
 | **distinct_points (optional)** | If True, it will ensure the coordinates given to the service are part of the response. Possible values are True or False, default to False.                                                                                                                             |
 | **callback (optional)**        | Only available for **profile.json**. The name of the callback function.                                                                                                                                                                                                 |
 
-### Example
+## Examples
 
-- A profile in JSON:
-  [https://api3.geo.admin.ch/rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A\[\[2550050%2C1206550\]%2C\[2556950%2C1204150\]%2C\[2561050%2C1207950\]\]}&sr=2056](../../../rest/services/profile.json?geom=%7B%22type%22%3A%22LineString%22%2C%22coordinates%22%3A%5B%5B2550050%2C1206550%5D%2C%5B2556950%2C1204150%5D%2C%5B2561050%2C1207950%5D%5D%7D)
-- A profile in CSV:
-  [https://api3.geo.admin.ch/rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A\[\[2550050%2C1206550\]%2C\[2556950%2C1204150\]%2C\[2561050%2C1207950\]\]}&sr=2056](../../../rest/services/profile.csv?geom=%7B%22type%22%3A%22LineString%22%2C%22coordinates%22%3A%5B%5B2550050%2C1206550%5D%2C%5B2556950%2C1204150%5D%2C%5B2561050%2C1207950%5D%5D%7D)
+<ExampleCodeBlock
+request='$ curl https://api3.geo.admin.ch/rest/services/profile.json?geom={%22type%22:%22LineString%22,%22coordinates%22:[[2550050,1206550],[2556950,1204150],[2561050,1207950]]}'
+example='[
+  {
+    "alts": {
+      "COMB": 1121.9,
+      "DTM2": 1121.9,
+      "DTM25": 1121.9
+    },
+    "dist": 0,
+    "easting": 2550050,
+    "northing": 1206550
+  },
+  {
+    "alts": {
+      "COMB": 1143.5,
+      "DTM2": 1143.5,
+      "DTM25": 1143.5
+    },
+    "dist": 64.7,
+    "easting": 2550111.062,
+    "northing": 1206528.761
+  },
+  {
+    "alts": {
+      "COMB": 1158.4,
+      "DTM2": 1158.4,
+      "DTM25": 1158.4
+    },
+    "dist": 129.3,
+    "easting": 2550172.124,
+    "northing": 1206507.522
+  },
+  (...more results...)
+]'
+/>
+
+<ExampleCodeBlock
+request='$ curl https://api3.geo.admin.ch/rest/services/profile.csv?geom={"type":"LineString","coordinates":[[2550050,1206550],[2556950,1204150],[2561050,1207950]]}'
+example='profile.csv'
+/>
