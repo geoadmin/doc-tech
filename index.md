@@ -75,11 +75,11 @@ const announcementsPreview = announcements[0]
     </div>
   </div>
   <div class="announcements-container">
-    <h2>Product Retirements</h2>
+    <h2>End-of-Life</h2>
     <div>
       <p class="custom-block-title">{{ announcementsPreview.frontmatter.previewTitle}}</p>
       <p>{{ announcementsPreview.frontmatter.previewContent}}</p>
-      <a href="/page/product-retirements">Learn more</a>
+      <a href="/page/end-of-life">Learn more</a>
     </div>
   </div>
 </div>

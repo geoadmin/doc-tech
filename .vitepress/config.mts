@@ -70,12 +70,12 @@ export default defineConfig({
         link: "https://www.geo.admin.ch/en/general-terms-of-use-fsdi",
       },
       {
-        text: "Status page",
+        text: "Status Page",
         link: "/page/status",
       },
       {
-        text: "Product Retirements",
-        link: "/page/product-retirements",
+        text: "End-of-Life",
+        link: "/page/end-of-life",
       },
     ],
     socialLinks: [
