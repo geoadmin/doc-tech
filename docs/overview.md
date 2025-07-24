@@ -10,10 +10,10 @@ Most services are implementing or are heavily inspired by ESRI GeoServices REST 
 
 The API Services are organized into categories based on the actions you can perform with the geospatial data:
 
-- [Explore Data](/docs/layers-metadata): layers metadata, attributes and resources.
-- [Access Data](/docs/identify-features): get specific features or elevation data, use advanced search.
+- [Explore Data](/docs/layers-metadata): Layers metadata, attributes and resources.
+- [Access Data](/docs/identify-features): Get specific features or elevation data, use advanced search.
 - [Visualize Data](/docs/wmts): WMTS, Mapbox Vector Tiles and 3D.
-- [Download Data](/docs/stac/overview): information about STAC API and Atom Feed / Open Search Download Service.
+- [Download Data](/docs/stac/overview): Download entire datasets through a STAC API.
 - [Mapviewer Documentation](/docs/iframe): iFrame documentation and JS API.
 
 According to your objective, you can find following

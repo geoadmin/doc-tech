@@ -176,10 +176,6 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
         },
       ],
     },
-    {
-      text: "Atom Feed / Open Search Download Service",
-      link: "/docs/atom",
-    },
   ];
 }
 
