@@ -5,13 +5,20 @@
     BundledLanguage,
     BundledTheme,
   } from "shiki";
+  import { copyToClipboard } from "./copyCode";
 
-  const props = defineProps<{
+  interface Props {
     request: string;
     example: string;
-  }>();
+    exampleLang?: string;
+  }
+
+  const props = withDefaults(defineProps<Props>(), {
+    exampleLang: "json",
+  });
 
   const activeTab = ref("request");
+  const copyButton = ref<HTMLButtonElement | null>(null);
 
   const colorReplacements = {
     "#24292e": "var(--vp-code-block-bg)",
@@ -33,10 +40,21 @@
   });
 
   const responseHtml = highlighter?.codeToHtml(props.example, {
-    lang: "json",
+    lang: props.exampleLang,
     theme: "github-dark",
     colorReplacements: colorReplacements,
   });
+
+  async function click() {
+    await copyToClipboard(
+      activeTab.value === "request" ? props.request : props.example
+    );
+    copyButton.value!.classList.add("copied");
+
+    setTimeout(() => {
+      copyButton.value?.classList.remove("copied");
+    }, 1000);
+  }
 </script>
 
 <template>
@@ -62,6 +80,13 @@
       class="request-block language-sh"
       :hidden="activeTab !== 'request'"
     >
+      <button
+        @click="click"
+        ref="copyButton"
+        title="Copy code"
+        class="copy"
+      ></button>
+      <span class="lang">sh</span>
       <div class="request-code-block" v-html="requestHtml"></div>
     </div>
     <div
@@ -69,6 +94,13 @@
       class="response-block language-json"
       :hidden="activeTab !== 'response'"
     >
+      <button
+        @click="click"
+        ref="copyButton"
+        title="Copy code"
+        class="copy"
+      ></button>
+      <span class="lang">{{ props.exampleLang }}</span>
       <div class="response-code-block" v-html="responseHtml"></div>
     </div>
   </div>

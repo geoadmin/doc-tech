@@ -39,6 +39,7 @@ Get the HTML popup with the feature ID `RIG` belonging to layer `ch.bafu.nabelst
 
 <ExampleCodeBlock
 request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG/htmlPopup'
+exampleLang='html'
 example='<div
 id="ch.bafu.nabelstationen#RIG"
 class="chbafunabelstationen htmlpopup-container">
