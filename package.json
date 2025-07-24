@@ -6,13 +6,12 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
-    "@types/node": "24.0.0",
+    "mermaid": "^11.6.0",
+    "vitepress-plugin-mermaid": "^2.0.17",
     "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
-    "mermaid": "^11.6.0",
-    "tsx": "^4.19.4",
-    "vitepress-copy-helper": "^0.0.3",
-    "vitepress-plugin-mermaid": "^2.0.17"
+    "@types/node": "24.0.0",
+    "tsx": "^4.19.4"
   },
   "type": "module"
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { ref, inject, onMounted } from "vue";
+  import { ref, inject } from "vue";
   import type {
     HighlighterGeneric,
     BundledLanguage,

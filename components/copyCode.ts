@@ -1,3 +1,4 @@
+// from https://github.com/vuejs/vitepress/blob/006fd800956de5f12f63980e854239c240a70203/src/client/app/composables/copyCode.ts
 export async function copyToClipboard(text: string) {
   try {
     return navigator.clipboard.writeText(text);
