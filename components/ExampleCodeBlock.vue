@@ -46,7 +46,9 @@
   });
 
   async function click() {
-    await copyToClipboard(props.request);
+    await copyToClipboard(
+      activeTab.value === "request" ? props.request : props.example
+    );
     copyButton.value!.classList.add("copied");
 
     setTimeout(() => {
@@ -81,7 +83,7 @@
       <button
         @click="click"
         ref="copyButton"
-        title="Copy Code"
+        title="Copy code"
         class="copy"
       ></button>
       <span class="lang">sh</span>
@@ -92,6 +94,12 @@
       class="response-block language-json"
       :hidden="activeTab !== 'response'"
     >
+      <button
+        @click="click"
+        ref="copyButton"
+        title="Copy code"
+        class="copy"
+      ></button>
       <span class="lang">{{ props.exampleLang }}</span>
       <div class="response-code-block" v-html="responseHtml"></div>
     </div>
