@@ -140,7 +140,6 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
         { text: "Profile", link: "/docs/profile" },
       ],
     },
-    { text: "SPARQL", link: "/docs/sparql" },
   ];
 }
 
