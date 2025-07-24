@@ -140,7 +140,6 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
         { text: "Profile", link: "/docs/profile" },
       ],
     },
-    { text: "SPARQL", link: "/docs/sparql" },
   ];
 }
 
@@ -176,10 +175,6 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
           link: "https://data.geo.admin.ch/api/stac/static/spec/v1/api.html",
         },
       ],
-    },
-    {
-      text: "Atom Feed / Open Search Download Service",
-      link: "/docs/atom",
     },
   ];
 }
