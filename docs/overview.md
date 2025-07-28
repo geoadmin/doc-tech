@@ -2,7 +2,7 @@
 
 Discover how to access geospatial data provided by the Swiss Confederation through the web services of geo.admin.ch.
 
-We provide tutorials on how to interact with those services:
+We provide tutorials on how to interact with these services:
 
 - [Explore Data](/docs/layers-metadata): Browse additional information about layers, including attributes and other metadata.
 - [Access Data](/docs/identify-features): Retrieve location-based features such as geometries, addresses and elevation.
@@ -12,7 +12,7 @@ We provide tutorials on how to interact with those services:
 
 The tutorials are written for a tech-savvy audience like geoinformaticians, data scientists and web developers.
 
-Where available we link to more detailed specifications, like for example to our [STAC API](https://data.geo.admin.ch/api/stac/static/spec/v1/api.html).
+Where available we link to more detailed specifications, for example to our [STAC API](https://data.geo.admin.ch/api/stac/static/spec/v1/api.html).
 
 ::: tip ⚖️ Terms of Use
 The access and use of the data or the services is free of charge, subject to the provisions on fair use, see our [Terms of Use](https://www.geo.admin.ch/en/general-terms-of-use-fsdi).
