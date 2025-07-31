@@ -44,16 +44,16 @@ A list of all URL parameters available at [map.geo.admin.ch](https://map.geo.adm
 | `center` | Coordinates of center of the map view in LV95. The first value is the longitude-equivalent/easting, the second value is the latitude-equivalent/northing. The two are separated by a comma. | • Easting: between 2,450,000 and 2,900,000<br>• Northing: between 1,050,000 and 1,350,000 |  https://map.geo.admin.ch/#/map?center=2700000,1140000 |
 | `topic` | Topic selected in the menu. Topics are groups of related datasets. | blw, are, bafu, swisstopo, kgs, funksender, nga, ivs, sachplan, geol, luftbilder, wildruhezonen, vu, inspire, ech | https://map.geo.admin.ch/#/map?topic=vu |
 | `bgLayer` | Background layer | ch.swisstopo.pixelkarte-farbe, ch.swisstopo.pixelkarte-grau, voidLayer | https://map.geo.admin.ch/#/map?bgLayer=ch.swisstopo.pixelkarte-grau |
-| `layers` | The layers in use. Each layer can be configured, see [the `layers` section](#layers) for details. | see [`layers`](#layers) | https://map.geo.admin.ch/#/map?layers=WMS|http://wms.geo.admin.ch/?|ch.swisstopo.geologie-geophysik-geothermie;ch.ensi.zonenplan-notfallschutz-kernanlagen |
+| `layers` | The layers in use. Each layer can be configured, see [layer parameters](#layer-parameters) for details. | See [layer parameters](#layer-parameters) | https://map.geo.admin.ch/#/map?layers=WMS|http://wms.geo.admin.ch/?|ch.swisstopo.geologie-geophysik-geothermie;ch.ensi.zonenplan-notfallschutz-kernanlagen |
 | `timeSlider` | Sets the year of the time slider. Format: `YYYY`, e.g. `1981`. Can be used with all "timeEnabled" levels. Special case WMS: An empty value (``timeSlider=`) means that the data for all years is displayed. | 0000, 0001, ...., 9999 | https://map.geo.admin.ch/#/map?layers=ch.swisstopo.lubis-luftbilder_farbe&timeSlider=1981 |
 | `crosshair` | Describes the type, easting and northing of a crosshair that is drawn on the map. | • Type: cross, circle, bowl, point, marker<br>• Easting/northing: see `center` | (1) https://map.geo.admin.ch/#/map?center=2538700,1165890&z=6&crosshair=circle<br>(2) https://map.geo.admin.ch/#/map?crosshair=cross,2600981,1197448 |
 | `swisssearch` | A query sent to the service behind the search bar. The map viewer shows the search result as if you would type it into the search bar manually. <br>ℹ️ To center map automatically on the first search result, use `&swisssearch_autoselect=true`, see also [the iframe documentation](/docs/iframe) | Any text | (1) https://map.geo.admin.ch/#/map?swisssearch=berges%2037%20payerne<br>(2) https://map.geo.admin.ch/#/map?swisssearch=7.04983,46.42928|
 | `compareRatio` | The relative position of the swipe elements visible in comparison mode | Floating point value between 0 and 1 | https://map.geo.admin.ch/#/map?compareRatio=0.5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.geologie-generalkarte-ggk200 |
-| `featureInfo` | How to display the tooltip. See [the `featureInfo` section](#featureinfo) for details. | default, bottomPanel, tooltip, none | https://map.geo.admin.ch/#/map?layers=ch.bav.haltestellen-oev@features=8500010&lang=fr&featureInfo=bottomPanel |
+| `featureInfo` | How to display the tooltip. More details in [the corresponding section](#tooltip). | default, bottomPanel, tooltip, none | https://map.geo.admin.ch/#/map?layers=ch.bav.haltestellen-oev@features=8500010&lang=fr&featureInfo=bottomPanel |
 | `geolocation` | Whether to enable geolocation. | true, false | https://map.geo.admin.ch/#/map?lang=fr&geolocation=true |
 | `noSimpleZoom` | Whether to require that the CTRL/CMD button is pressed. This only takes effect in the [`embed` mode](#introduction). | true, false | https://map.geo.admin.ch/#/embed?&noSimpleZoom=true |
 
-## `layers`
+## Layer Parameters
 
 Layer parameters in query parameter `layers` describe which layers are chosen and how those layers are configured.
 
@@ -85,7 +85,7 @@ As an illustration:
 
 ## Feature Selection
 
-Center the map on a selected feature by using a special [layer parameter](#layers): `@features`.
+Center the map on a selected feature by using a special [layer parameter](#layer-parameters): `@features`.
 
 For example, a map like this:
 
@@ -103,8 +103,7 @@ with URL
 
 https://map.geo.admin.ch/#/embed?layers=ch.astra.unfaelle-personenschaeden_fahrraeder@features=203F7E8B2D110152E0630AB38B028D9D:769AE49DEC6D0106E0530A839427D480:98CDD8F6D5493E0BE05329B9D80AAB05
 
-
-## `featureInfo`
+## Tooltip
 
 The query parameter `featureInfo` lets you choose from different options how to display a tooltip.
 A tooltip is a text box with metadata that pops up when you select a feature in the map viewer.
