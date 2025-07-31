@@ -66,7 +66,7 @@ is represented by a `layers` query parameter like this:
 ```txt
 layers=ch.swisstopo.zeitreihen@year=2018,t,0.6
        ╰──────────┬──────────╯╰───┬────╯╰┬╯╰┬╯
-             identifier       timestamp  │  ╰ transparency  
+             identifier       timestamp  │  ╰ opacity  
                                      visibility 
 ```
 
@@ -75,7 +75,7 @@ where
 - `identifier`: The "technical name" of the layer, for example `ch.swisstopo.zeitreihen`. You can find this identifier either in the URL when choosing the layer in the map viewer or through [geocat](https://www.geocat.ch). A full list of available layers can be listed by [the `/collections` endpoint of the STAC API](https://data.geo.admin.ch/api/stac/static/spec/v1/api.html#tag/Data/operation/getCollections).
 - `timestamp`: Designates the version in time of the layer. Currently you can only select a version by year using the `@year=` prefix.
 - `visibility`: `t` (or empty) for "true" if the layer is displayed on the map, `f` for "false" if the layer is listed in the menu but not displayed on the map
-- `transparency`: The transparency of the layer. The value ranges from 0.0 (transparent) to 1.0 (opaque).
+- `opacity`: The transparency of the layer. The value ranges from 0.0 (transparent) to 1.0 (opaque).
 
 The layer parameters are separated by comma (`,`). You can have multiple layers by separating them with a semicolon (`;`).
 
