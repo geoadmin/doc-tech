@@ -85,21 +85,23 @@ As an illustration:
 
 ## Feature Selection
 
-There are two ways to center the map on a feature of a specific layer:
+Center the map on a selected feature by using a special [layer parameter](#layers): `@features`.
 
-1. Specify the feature ID right after the layer name:
+For example, a map like this:
 
-   https://map.geo.admin.ch/?ch.astra.unfaelle-personenschaeden_fahrraeder=769AE49DEC6D0106E0530A839427D480
+<iframe src="https://map.geo.admin.ch/#/embed?layers=ch.astra.unfaelle-personenschaeden_fahrraeder@features=769AE49DEC6D0106E0530A839427D480" style="border: 0;width: 688px;height: 300px;max-width: 100%;max-height: 100%;margin-top: 50px;" allow="geolocation"></iframe>
 
-   <iframe src="https://map.geo.admin.ch/?ch.astra.unfaelle-personenschaeden_fahrraeder=769AE49DEC6D0106E0530A839427D480" style="border: 0;width: 688px;height: 300px;max-width: 100%;max-height: 100%;margin-top: 50px;" allow="geolocation"></iframe>
+is represented by a URL like
 
-2. Encapsulate the feature ID into the `@features` option to select a feature on a layer with customized [layer parameters](#layers):
+https://map.geo.admin.ch/#/embed?layers=ch.astra.unfaelle-personenschaeden_fahrraeder@features=769AE49DEC6D0106E0530A839427D480
 
-   For example, we can customize the layer to only show the data of a specific year:
+Multiple features are separated by a colon (`:`) like in this example
 
-   https://map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder@features=769AE49DEC6D0106E0530A839427D480@year=2018
+<iframe src="https://map.geo.admin.ch/#/embed?layers=ch.astra.unfaelle-personenschaeden_fahrraeder@features=203F7E8B2D110152E0630AB38B028D9D:769AE49DEC6D0106E0530A839427D480:98CDD8F6D5493E0BE05329B9D80AAB05" style="border: 0;width: 688px;height: 300px;max-width: 100%;max-height: 100%;margin-top: 50px;" allow="geolocation"></iframe>
 
-   <iframe src="https://map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder@features=769AE49DEC6D0106E0530A839427D480@year=2018" style="border: 0;width: 688px;height: 300px;max-width: 100%;max-height: 100%;margin-top: 50px;" allow="geolocation"></iframe>
+with URL
+
+https://map.geo.admin.ch/#/embed?layers=ch.astra.unfaelle-personenschaeden_fahrraeder@features=203F7E8B2D110152E0630AB38B028D9D:769AE49DEC6D0106E0530A839427D480:98CDD8F6D5493E0BE05329B9D80AAB05
 
 
 ## `featureInfo`
@@ -112,7 +114,7 @@ The available options are:
 - `default`: Places the tooltip in the default location most suitable for your device.
   For mobile devices, the default corresponds to option `bottomPanel`, for desktop the default is the floating `tooltip`.
   
-  https://map.geo.admin.ch/#/map?lang=en&center=2611363,1266310&z=9&bgLayer=ch.swisstopo.pixelkarte-farbe&topic=ech&layers=ch.bav.haltestellen-oev@features=8500010&featureInfo=default
+  https://map.geo.admin.ch/#/embed?lang=en&center=2611363,1266310&z=9&bgLayer=ch.swisstopo.pixelkarte-farbe&topic=ech&layers=ch.bav.haltestellen-oev@features=8500010&featureInfo=default
 
 
 - `bottomPanel`: Places the tooltip at the bottom of the map. This is the default location for mobile devices.
