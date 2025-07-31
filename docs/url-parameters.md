@@ -51,6 +51,7 @@ A list of all URL parameters available at [map.geo.admin.ch](https://map.geo.adm
 | `compareRatio` | The relative position of the swipe elements visible in comparison mode | Floating point value between 0 and 1 | https://map.geo.admin.ch/#/map?compareRatio=0.5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.geologie-generalkarte-ggk200 |
 | `featureInfo` | How to display the tooltip. See [the `featureInfo` section](#featureinfo) for details. | default, bottomPanel, tooltip, none | https://map.geo.admin.ch/#/map?layers=ch.bav.haltestellen-oev@features=8500010&lang=fr&featureInfo=bottomPanel |
 | `geolocation` | Whether to enable geolocation. | true, false | https://map.geo.admin.ch/#/map?lang=fr&geolocation=true |
+| `noSimpleZoom` | Whether to require that the CTRL/CMD button is pressed. This only takes effect in the [`embed` mode](#introduction). | true, false | https://map.geo.admin.ch/#/embed?&noSimpleZoom=true |
 
 ## `layers`
 
