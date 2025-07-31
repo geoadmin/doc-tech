@@ -8,7 +8,7 @@ We provide tutorials on how to interact with these services:
 - [Access Data](/docs/identify-features): Retrieve location-based features such as geometries, addresses and elevation.
 - [Visualize Data](/docs/wmts): Access map data (2D and 3D) for visualization in your application.
 - [Download Data](/docs/stac/overview): Download entire datasets for exploration and analysis.
-- [Mapviewer Documentation](/docs/iframe): Embed functionality of our [map viewer](https://map.geo.admin.ch/) in your webpage.
+- [Map Viewer](/docs/iframe): Embed the [map viewer](https://map.geo.admin.ch/) in your webpage.
 
 The tutorials are written for a tech-savvy audience like geoinformaticians, data scientists and web developers.
 

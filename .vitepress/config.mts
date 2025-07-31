@@ -56,9 +56,9 @@ export default defineConfig({
         items: downloadDataItems(),
       },
       {
-        text: "Mapviewer",
+        text: "Map Viewer",
         collapsed: false,
-        items: mapviewerItems(),
+        items: mapViewerItems(),
       },
       {
         text: "Release Notes",
@@ -179,7 +179,7 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
   ];
 }
 
-function mapviewerItems(): DefaultTheme.SidebarItem[] {
+function mapViewerItems(): DefaultTheme.SidebarItem[] {
   return [
     { text: "iframe", link: "/docs/iframe" },
     {
