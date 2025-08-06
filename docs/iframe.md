@@ -1,13 +1,13 @@
 # iframe
 
-Embed an interactive version of the [map viewer](https://map.geo.admin.ch/) into your webpage using an HTML iframe like this:
+You can embed an interactive version of the [map viewer](https://map.geo.admin.ch/) into your webpage using an HTML iframe, as shown below:
 
 <iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2600988.46,1197433.4&z=8&topic=ech&layers=&bgLayer=ch.swisstopo.pixelkarte-farbe&featureInfo=default" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
 
 The following expands on the introduction given in the [Web Integration: iFrame](https://www.geo.admin.ch/de/web-integration-iframe/) page.
 
 :::tip ⚖️ Terms of Use
-See the corresponding section on the [Web Integration: iFrame](https://www.geo.admin.ch/de/web-integration-iframe/) page.
+Refer to the corresponding section on the [Web Integration: iFrame](https://www.geo.admin.ch/de/web-integration-iframe/) page.
 :::
 
 ## Add a legend
@@ -15,10 +15,10 @@ See the corresponding section on the [Web Integration: iFrame](https://www.geo.a
 To add a legend of a specific layer to your embedded map viewer:
 
 1. Display the legend of the layer in the map viewer as explained in the [map viewer help](https://www.geo.admin.ch/en/map-viewer-topics-and-data#Display-of-legend-and-additional-information).
-2. Copy the image URL, for example through the context menu of the legend ("Copy Image Link").
+2. Copy the image URL, for example, by right-clicking the legend image and selecting "Copy Image Link".
 3. Add an element to your HTML code displaying the image URL.
 
-In an example:
+Here is an example:
 
 ```html
 <iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2675475,1229326.76&z=6&topic=ech&layers=ch.bfe.grundwasserwaermenutzungspotential&bgLayer=ch.swisstopo.pixelkarte-grau" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
@@ -45,19 +45,19 @@ which looks like this in the final webpage:
 
 ## Add custom elements
 
-To add custom elements like POIs, paths and texts on top of the map viewer:
+To add custom elements like POIs, paths, and text on top of the map viewer:
 
 1. Add the elements with [the Drawing functionality of the map viewer](https://www.geo.admin.ch/en/map-viewer-functions-drawing-and-measuring).
-2. Export the elements to a KML file and store it locally on your computer.
+2. Export the elements to a KML file and save it locally on your computer.
 3. Upload the KML file to a publicly available web server.
 4. Exit drawing mode and import the KML file into the map viewer using the [Import file functionality](https://www.geo.admin.ch/en/map-viewer-functions-advanced-tools).
-5. Generate the iframe [as if you used regular layers](https://www.geo.admin.ch/de/web-integration-iframe/).
+5. Generate the iframe [as you would for regular layers](https://www.geo.admin.ch/de/web-integration-iframe/).
 
 For example, to get to a result that looks like this:
 
 <iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2685959.53,1248777.78&z=9.63&topic=ech&layers=KML%7Chttps://cms.geo.admin.ch/www.geo.admin.ch/kml/zoo.kml&bgLayer=ch.swisstopo.pixelkarte-grau&featureInfo=default" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
 
-we did the following:
+follow these steps:
 
 1. In the map viewer, using the Draw functionality, add some markers (red), a path (orange), a polygon (blue) and a text (green).
 2. Export the drawing as a KML and upload the KML to `https://cms.geo.admin.ch/www.geo.admin.ch/kml/zoo.kml`.
@@ -82,14 +82,14 @@ we did the following:
    </iframe>
    ```
 
-Of course that works with any KML, not just the ones created in the map viewer.
+This works with any KML, not just with those created in the map viewer.
 
 ## Center on a search result
 
 Instead of hardcoding coordinates, you can specify a search term and have the map viewer center on the first search result.
-The search used is the same as if you would enter it in the search bar on [map.geo.admin.ch](https://map.geo.admin.ch/).
+The search is the same as if you would enter a term in the search bar on [map.geo.admin.ch](https://map.geo.admin.ch/).
 
-For example, to center on address "Holzikofenweg 36, 3007 Bern" like in
+For example, to center the map on the address "Holzikofenweg 36, 3007 Bern":
 
 <iframe
    src="https://map.geo.admin.ch/#/embed?
@@ -102,7 +102,7 @@ For example, to center on address "Holzikofenweg 36, 3007 Bern" like in
    allow="geolocation">
 </iframe>
 
-you would create an iframe like this:
+You would pass the address to the `swisssearch` parameter in an iframe like this:
 
 ```html
 <iframe
@@ -117,8 +117,8 @@ you would create an iframe like this:
 </iframe>
 ```
 
-Note that if there is more than one search result, you have to pass the additional parameter `swisssearch_autoselect=true` to select the first search result.
-For example, if we search for the ambiguous "Holzikofenweg, 3007 Bern" and don't set the `swisssearch_autoselect=true`, the map does not center on anything:
+Note: If there is more than one search result, you must pass the parameter `swisssearch_autoselect=true` to automatically select and center on the first search result.
+For example, if you search for the ambiguous "Holzikofenweg, 3007 Bern" without setting `swisssearch_autoselect=true`, the map will not center on any result:
 
 <iframe
    src="https://map.geo.admin.ch/#/embed?
@@ -131,7 +131,7 @@ For example, if we search for the ambiguous "Holzikofenweg, 3007 Bern" and don't
    allow="geolocation">
 </iframe>
 
-By appending the `swisssearch_autoselect=true` like in
+Appending `swisssearch_autoselect=true` centers the map on the first search result (Holzikofenweg 1, 3007 Bern):
 
 ```html
 <iframe
@@ -147,7 +147,7 @@ By appending the `swisssearch_autoselect=true` like in
 </iframe>
 ```
 
-we get a map centered on the first search result (Holzikofenweg 1, 3007 Bern):
+The corresponding iframe:
 
 <iframe
    src="https://map.geo.admin.ch/#/embed?
@@ -163,13 +163,13 @@ we get a map centered on the first search result (Holzikofenweg 1, 3007 Bern):
 
 ## Embed the complete map viewer
 
-To embed the map viewer including the search bar and other menus, you need to replace the `#/embed?` with `#/map?` in the iframe snippet.
+To embed the map viewer with the search bar and other menus, replace the `#/embed?` with `#/map?` in the iframe snippet.
 
 In an example:
 
 <iframe src="https://map.geo.admin.ch/#/map?lang=en&center=2675475,1229326.76&z=6&bgLayer=ch.swisstopo.pixelkarte-farbe" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
 
-which is represented by an iframe like
+This is represented by an iframe like:
 
 ```html
 <iframe
@@ -187,5 +187,5 @@ which is represented by an iframe like
 ```
 
 :::tip
-For proper geolocation, explicitly enabling geolocation with `allow="geolocation"` helps avoid issues with certain web browsers.
+To ensure proper geolocation functionality, explicitly enable geolocation with `allow="geolocation"` to avoid issues in certain web browsers.
 :::
