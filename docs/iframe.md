@@ -84,6 +84,83 @@ we did the following:
 
 Of course that works with any KML, not just the ones created in the map viewer.
 
+## Center on a search result
+
+Instead of hardcoding coordinates, you can specify a search term and have the map viewer center on the first search result.
+The search used is the same as if you would enter it in the search bar on [map.geo.admin.ch](https://map.geo.admin.ch/).
+
+For example, to center on address "Holzikofenweg 36, 3007 Bern" like in
+
+<iframe
+   src="https://map.geo.admin.ch/#/embed?
+      &swisssearch=Holzikofenweg 36, 3007 Bern"
+   style="border: 0;
+          width: 400px;
+          height: 300px;
+          max-width: 100%;
+          max-height: 100%;"
+   allow="geolocation">
+</iframe>
+
+you would create an iframe like this:
+
+```html
+<iframe
+   src="https://map.geo.admin.ch/#/embed?
+      &swisssearch=Holzikofenweg 36, 3007 Bern"
+   style="border: 0;
+          width: 400px;
+          height: 300px;
+          max-width: 100%;
+          max-height: 100%;"
+   allow="geolocation">
+</iframe>
+```
+
+Note that if there is more than one search result, you have to pass the additional parameter `swisssearch_autoselect=true` to select the first search result.
+For example, if we search for the ambiguous "Holzikofenweg, 3007 Bern" and don't set the `swisssearch_autoselect=true`, the map does not center on anything:
+
+<iframe
+   src="https://map.geo.admin.ch/#/embed?
+      &swisssearch=Holzikofenweg, 3007 Bern"
+   style="border: 0;
+          width: 400px;
+          height: 300px;
+          max-width: 100%;
+          max-height: 100%;"
+   allow="geolocation">
+</iframe>
+
+By appending the `swisssearch_autoselect=true` like in
+
+```html
+<iframe
+   src="https://map.geo.admin.ch/#/embed?
+      &swisssearch=Holzikofenweg, 3007 Bern
+      &swisssearch_autoselect=true"
+   style="border: 0;
+          width: 400px;
+          height: 300px;
+          max-width: 100%;
+          max-height: 100%;"
+   allow="geolocation">
+</iframe>
+```
+
+we get a map centered on the first search result (Holzikofenweg 1, 3007 Bern):
+
+<iframe
+   src="https://map.geo.admin.ch/#/embed?
+      &swisssearch=Holzikofenweg, 3007 Bern
+      &swisssearch_autoselect=true"
+   style="border: 0;
+          width: 400px;
+          height: 300px;
+          max-width: 100%;
+          max-height: 100%;"
+   allow="geolocation">
+</iframe>
+
 ## Embed the complete map viewer
 
 To embed the map viewer including the search bar and other menus, you need to replace the `#/embed?` with `#/map?` in the iframe snippet.
