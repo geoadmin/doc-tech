@@ -1,6 +1,6 @@
-# JS API
+# Javascript API
 
-The GeoAdmin JS API extends OpenLayers with Swiss specific configurations and layers.
+The GeoAdmin Javascript API ("JS API") extends OpenLayers with Swiss specific configurations and layers.
 
 For more details, see [the GeoAdmin JS API specs](https://geoadmin.github.io/ol3/apidoc/).
 

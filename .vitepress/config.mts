@@ -184,8 +184,8 @@ function mapViewerItems(): DefaultTheme.SidebarItem[] {
     { text: "iframe", link: "/docs/iframe" },
     { text: "URL Parameters", link: "/docs/url-parameters" },
     {
-      text: "JS API",
-      link: "/docs/js-api",
+      text: "Javascript API",
+      link: "/docs/javascript-api",
     },
   ];
 }
