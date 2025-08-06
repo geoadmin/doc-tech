@@ -38,7 +38,7 @@ To add a release note, follow these steps:
    ignoreSideBar: true
    ```
 
-6. Save the file and commit your changes.
+6. Save the file and commit your changes
 
 ## How to Edit the Status Page Preview
 
