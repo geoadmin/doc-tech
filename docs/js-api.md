@@ -6,7 +6,7 @@ The GeoAdmin JS API extends OpenLayers with Swiss specific configurations and la
 
 The GeoAdmin JS API is about to be decommissioned and is not updated anymore.
 The default version is based on OpenLayers 3.6.0 from 2015.
-We strongly recommend using a different web mapping framework implementing the OGC WMTS, like Leaflet.
+We strongly recommend using a different web mapping framework implementing the OGC WMTS, like Leaflet or plain OpenLayers.
 :::
 
 ## Available Versions
