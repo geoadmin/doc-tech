@@ -1,4 +1,4 @@
-# iframe
+# Embed in an iframe
 
 You can embed an interactive version of the [map viewer](https://map.geo.admin.ch/) into your webpage using an HTML iframe, as shown below:
 

@@ -181,7 +181,7 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
 
 function mapViewerItems(): DefaultTheme.SidebarItem[] {
   return [
-    { text: "iframe", link: "/docs/iframe" },
+    { text: "Embed in an iframe", link: "/docs/embed-in-an-iframe" },
     { text: "URL Parameters", link: "/docs/url-parameters" },
     {
       text: "Javascript API",
