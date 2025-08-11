@@ -7,6 +7,11 @@ export default defineConfig({
   description: "Technical Documentation about *.geo.admin.ch",
   head: [["link", { rel: "icon", href: "/static/favicon.ico" }]],
   ignoreDeadLinks: "localhostLinks",
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 1000,
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 

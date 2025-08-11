@@ -6,6 +6,12 @@ import ExampleCodeBlock from "../../components/ExampleCodeBlock.vue";
 import { createHighlighter } from "shiki";
 import type { HighlighterGeneric, BundledLanguage, BundledTheme } from "shiki";
 
+// Initialize the highlighter asynchronously
+const highlighterPromise = createHighlighter({
+  themes: ["github-dark"],
+  langs: ["javascript", "json", "sh", "html", "http"],
+});
+
 export default {
   extends: DefaultTheme,
   async enhanceApp({ app }) {
@@ -13,12 +19,8 @@ export default {
     app.component("ApiCodeBlock", ApiCodeBlock);
     app.component("ExampleCodeBlock", ExampleCodeBlock);
 
-    // Initialize the highlighter asynchronously
     const highlighter: HighlighterGeneric<BundledLanguage, BundledTheme> =
-      await createHighlighter({
-        themes: ["github-dark"],
-        langs: ["javascript", "json", "sh", "html", "http"],
-      });
+      await highlighterPromise;
 
     // Provide the highlighter globally
     app.provide("highlighter", highlighter);
