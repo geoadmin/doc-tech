@@ -2,7 +2,7 @@
 outline: [2, 3]
 ---
 
-# Asset Updload Management
+# Asset Upload Management
 
 Asset files are uploaded via the [STAC API](https://data.geo.admin.ch/api/stac/static/spec/v1/api.html) using the API requests described in this chapter.
 
@@ -10,17 +10,17 @@ Asset files are uploaded via the [STAC API](https://data.geo.admin.ch/api/stac/s
 - [Compression](#compression)
 
 ::: warning
-STAC API `v0.9` is being deprecated and will be turned off on 31.3.2026, [learm more](/docs/stac/migrate09-10.md).
+STAC API `v0.9` is being deprecated and will be turned off on 31.3.2026, [learn more](/docs/stac/migrate09-10.md).
 :::
 
 :::tip IMPORTANT NOTES
 
-- Files bigger than 10 MB should use compression, see [Compression](/docs/stac/assetupload.html#compression).
+- Files larger than 10 MB should use compression, see [Compression](/docs/stac/assetupload.html#compression).
 
 - POST/PUT requests require authentication as described in [Authentication](/docs/stac/authentication).
   :::
 
-## Steps to upload assets
+## Steps to Upload Assets
 
 Uploading an asset file via the STAC API involves three main steps:
 
@@ -38,7 +38,7 @@ Uploading an asset file via the STAC API involves three main steps:
    A file part must be at least 5 MB (except for the last one) and at most 5 GB, otherwise the complete operation will fail.
    If the file is less than 5 GB, you will upload it as a single part, but you must still initiate and complete the multipart upload process as described above.
 
-   Use the url(s) returned in step 1 to [upload each part](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/uploadAssetFilePart). You may upload parts in parallel.
+   Use the URLs returned in step 1 to [upload each part](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/uploadAssetFilePart). You may upload parts in parallel.
 
   <ApiCodeBlock url="/storage-prefix/{presignedUrl}" method="PUT" />
 
@@ -130,10 +130,10 @@ This describes the process in more detail with focus on automated recurrent uplo
 #### Recurrent upload
 
 If you have recurrent asset uploads, you need to have a proper error handling otherwise the uploads might get stuck.
-Asset uploads operation are not stateless but statefull therefore the error handling is important.
+Asset uploads operation are not stateless but stateful therefore the error handling is important.
 Here below is a simple practical example on which errors to handle in case of recurrent asset upload.
 
-Note this example is only recommended if the upload is recurrent (for example every hour). The number of retries below depends on the upload frequency, if the upload frequency is daily then you might want to have at least 3 retries with some exponential backoff time between each retries, in opposite if the upload is done at high frequency you might skip the retries and simply cancel the upload, using the next upload iteration as retry.
+Note this example is only recommended if the upload is recurrent (for example every hour). The number of retries below depends on the upload frequency, if the upload frequency is daily then you might want to have at least 3 retries with some exponential backoff time between each retries, conversely, if the upload is done at high frequency, you might skip retries and simply cancel the upload, using the next upload iteration as a retry.
 
 1. Create Asset Upload
 
@@ -162,15 +162,15 @@ Note this example is only recommended if the upload is recurrent (for example ev
 
      - Another `400 Bad Request` => Cancel upload
 
-     Your request is not correct, analyze your request and correct it before retrying the step 1.
+     Your request is not correct. Analyze your request and correct it before retrying the step 1.
 
    - `500 Internal Server Error` => Cancel upload
 
-     This is generally an application crash and should be notify to the service administrator, a retry would usually be useless, simply cancel the upload.
+     This is generally an application crash and should be reported to the service administrator. A retry is usually useless; simply cancel the upload.
 
    - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
 
-     Service is momentarily not available, wait a short amount of time and retry step 1. the amount of time to wait and the number of retries depends on the upload rate, but a minimum wait time of 100ms is recommended.
+     Service is momentarily not available, wait a short time and retry step 1. The wait time and number of retries depend on the upload rate, but a minimum wait time of 100ms is recommended.
 
 2. Upload the parts via the presigned URL
 
@@ -189,7 +189,7 @@ Note this example is only recommended if the upload is recurrent (for example ev
 
    - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
 
-     Retry step 2. with a short wait time (min 100ms).
+     Retry step 2 after a short wait (minimum 100ms).
 
 3. Complete the upload
 
@@ -200,11 +200,11 @@ Note this example is only recommended if the upload is recurrent (for example ev
    - `200 OK` => Upload successful
    - `400 Bad Request` => Cancel upload
 
-     Your request is invalid/incorrect, you need to cancel the upload script and verify its correctness.
+     Your request is invalid or incorrect. Cancel the upload script and verify its correctness.
 
    - `500 Internal Server Error` => Cancel upload
 
-     This is generally an application crash and should be notify to the service administrator, a retry would usually be useless, simply cancel the upload.
+     This is generally an application crash and should be reported to the service administrator. A retry is usually useless; simply cancel the upload.
 
    - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
 

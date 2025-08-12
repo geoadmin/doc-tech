@@ -1,12 +1,13 @@
 # Caching
 
-Asset objects are cached by default for 2 hours (7200 seconds).
-Depending on the update interval of an asset object (e.g. for frequently updated data) the `Cache-Control` header can be different, in special cases it can even be set to `no-cache` (e.g. for realtime data).
+Asset objects are cached for 2 hours (7200 seconds) by default.
+Depending on the update interval of an asset object (e.g. for frequently updated data), the `Cache-Control` header can be different.
+In special cases, it can even be set to `no-cache` (e.g. for real-time data).
 
 All endpoints support the precondition headers `If-Match` and `If-None-Match`.
-To reduce unnecessary traffic it's highly recommended to use these headers (mostly `If-None-Match`) when making calls.
+To reduce unnecessary traffic, it is highly recommended to use these headers (especially `If-None-Match`) when making requests."
 
-In case your application is using frequently updated data and you want to be sure not to miss an update of the data, the recommended procedure is as follows:
+If your application uses frequently updated data and you want to ensure you do not miss any updates, follow this recommended procedure:
 
 ```python
 import requests
@@ -34,7 +35,7 @@ while(poll_for_new_data):
     # item metadata has changed since last visit
 
     item_etag = item_response.headers.get("ETag") # save the new etag
-    asset_href = item_response.json['assets'][asset_id]['href'] # save the asset href
+    asset_href = item_response.json()['assets'][asset_id]['href'] # save the asset href
 
     obj_response = requests.get(asset_href, headers={'If-None-Match': f'"{asset_etag}"'})
     if obj_response.status_code == 304:
