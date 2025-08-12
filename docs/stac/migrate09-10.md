@@ -12,39 +12,6 @@ fields and a few braking changes with respect to `v0.9`. In order to highlight t
 we'll use the following example `item` and `asset` json objects to illustrate
 the differences
 
-::: details Example `asset` json
-
-```json
-{
-  "id": "smr50-263-2016-2056-kgrs-2.5.tiff",
-  "title": "Thumbnail",
-  "description": "string",
-  "type": "image/tiff; application=geotiff",
-  "href": "http://data.geo.admin.ch/ch.swisstopo.swissimage/collections/cs/items/CS3-20160503_132130_04/thumb.png",
-  "file:checksum": "90e402107a7f2588a85362b9beea2a12d4514d45",
-  "roles": ["thumbnail"],
-  "geoadmin:variant": "komb",
-  "geoadmin:lang": "de",
-  "proj:epsg": 2056,
-  "gsd": 2.5,
-  "created": "2018-02-12T23:20:50Z",
-  "updated": "2018-02-12T23:20:50Z",
-  "links": [
-    {
-      "href": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.pixelkarte-farbe-pk50.noscale/items/smr200-200-4-2019/assets/smr50-263-2016-2056-kgrs-2.5.tiff",
-      "rel": "self",
-      "hreflang": "de"
-    },
-    {
-      "href": "https://data.geo.admin.ch/api/stac/v0.9/",
-      "rel": "root"
-    }
-  ]
-}
-```
-
-:::
-
 ::: details Example `item` json
 
 ```json
@@ -84,14 +51,46 @@ the differences
 ```
 
 :::
+::: details Example `asset` json
 
-Along with the changes on API level, `/v1` comes with a new authentication mechanism which
-is described in detail [here](./authentication)
+```json
+{
+  "id": "smr50-263-2016-2056-kgrs-2.5.tiff",
+  "title": "Thumbnail",
+  "description": "string",
+  "type": "image/tiff; application=geotiff",
+  "href": "http://data.geo.admin.ch/ch.swisstopo.swissimage/collections/cs/items/CS3-20160503_132130_04/thumb.png",
+  "file:checksum": "90e402107a7f2588a85362b9beea2a12d4514d45",
+  "roles": ["thumbnail"],
+  "geoadmin:variant": "komb",
+  "geoadmin:lang": "de",
+  "proj:epsg": 2056,
+  "gsd": 2.5,
+  "created": "2018-02-12T23:20:50Z",
+  "updated": "2018-02-12T23:20:50Z",
+  "links": [
+    {
+      "href": "https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.pixelkarte-farbe-pk50.noscale/items/smr200-200-4-2019/assets/smr50-263-2016-2056-kgrs-2.5.tiff",
+      "rel": "self",
+      "hreflang": "de"
+    },
+    {
+      "href": "https://data.geo.admin.ch/api/stac/v0.9/",
+      "rel": "root"
+    }
+  ]
+}
+```
+
+:::
+
+Along with the changes on API level, `v1` comes with a new authentication mechanism which
+is described in detail [here](./authentication).
 
 ## Breaking changes
 
 Overall there are very few breaking changes between `v0.9` and `v1` of the STAC API. The
-following fields on the asset object have changed:
+following fields on the `asset` object have changed:
 
 ```json
 {
@@ -111,11 +110,13 @@ following fields on the asset object have changed:
 ### Collection object
 
 Collection can now have assets as well using the same structure and fields as the item assets. For details see
-[API SPEC](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Data/operation/describeCollection)
+[API SPEC](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Data/operation/describeCollection).
 
 ### Item object
 
-#### Item Expiration
+The following field have changed from `v0.9` to `v1`:
+
+##### Item Expiration
 
 It is now possible to set an expiry date of an item. Items with an `expires` date
 in the past will automatically be deleted.
@@ -130,7 +131,7 @@ in the past will automatically be deleted.
 }
 ```
 
-#### Forecast Extension
+##### Forecast Extension
 
 For the specific usecase of [Forecast data](https://github.com/MeteoSwiss/opendata-forecast-data)
 we have developed and implemented the [STAC Forecast Extension](https://github.com/stac-extensions/forecast/pull/12)
@@ -150,7 +151,7 @@ with the following new fields
 }
 ```
 
-#### Item geometry
+##### Item geometry
 
 The item geometry can now be any valid GeoJSON geometry (here we show the part
 of the spec instead of an example)
@@ -171,7 +172,7 @@ itemGeometry:
 
 The following field have changed from `v0.9` to `v1`:
 
-#### Language information about the referenced asset
+##### Language information about the referenced asset
 
 It is now possible to specify the language of a `link` target with the parameter
 `hreflang` from the [Language Extension](https://github.com/stac-extensions/language?tab=readme-ov-file#fields-for-links-and-assets)
@@ -192,7 +193,7 @@ It is now possible to specify the language of a `link` target with the parameter
 }
 ```
 
-#### Asset roles
+##### Asset roles
 
 Assets can now have roles that define the purpose of the asset (e.g. `thumbnail`)
 

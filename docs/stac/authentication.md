@@ -2,9 +2,6 @@
 
 All write requests require authentication. There are currently two types of supported authentications:
 
-- [Session authentication](#session-authentication)
-- [JSON Web Token authentication](#json-web-token-authentication)
-
 ::: warning
 Basic and Token authentication have been removed in `v1` of STAC API.
 :::
@@ -12,10 +9,9 @@ Basic and Token authentication have been removed in `v1` of STAC API.
 ## Session authentication
 
 When using the browsable API the user can simply use the admin interface for logging in.
-The service issues a session cookie which the browser can use to authenticate itself
-and perform write requests. This authentication method is only intended
-for web browsers users of the admin interface. Non-browser clients and
-API endpoints are not guaranteed to work with session authentication.
+The service issues a session cookie which the browser can use to authenticate itself and perform write requests.
+This authentication method is only intended for web browsers users of the admin interface.
+Non-browser clients and API endpoints are not guaranteed to work with session authentication.
 
 ## JSON Web Token authentication
 
@@ -58,7 +54,7 @@ curl --request POST \
     "PASSWORD": "I_love_Minnie_Mouse",
     "USERNAME": "MickeyMouse"
     },
-    "ClientId": "CLIENT_ID"
+    "ClientId": <"CLIENT_ID">
 }' | jq -r .AuthenticationResult.AccessToken
 ```
 
@@ -73,20 +69,5 @@ responsibility of the client to handle these cases.
 [AWS provides an SDK](https://aws.amazon.com/developer/tools/) which may
 make this easier.
 
-The access token is only valid for a certain duration (as per
-the `AuthenticationResult.ExpiresIn` field in the response). You need to
-refresh it periodically, either by obtaining a new JWT or by
-[using the refresh token](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html).
+The access token is only valid for a certain duration (as per the `AuthenticationResult.ExpiresIn` field in the response). You need to refresh it periodically, either by obtaining a new JWT or bY [using the refresh token](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html).
 The refresh token is normally valid for a longer time period.
-
-```mmd
-flowchart LR
-  Start --> Stop
-```
-
-will render as
-
-```mermaid
-flowchart LR
-  Start --> Stop
-```
