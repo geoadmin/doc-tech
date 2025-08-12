@@ -7,12 +7,10 @@ prev:
 
 # Changes and Migration from `v0.9` to `v1`
 
-The new major release `v1` of the STAC API brings a number of additional features and
-fields and a few braking changes with respect to `v0.9`. In order to highlight the changes
-we'll use the following example `item` and `asset` json objects to illustrate
-the differences
+The new major release `v1` of the STAC API brings a number of additional features and fields and a few breaking changes with respect to `v0.9`.
+In order to highlight the changes we'll use the following example `item` and `asset` JSON objects to illustrate the differences.
 
-::: details Example `item` json
+::: details Example `item` JSON
 
 ```json
 {
@@ -51,7 +49,7 @@ the differences
 ```
 
 :::
-::: details Example `asset` json
+::: details Example `asset` JSON
 
 ```json
 {
@@ -84,13 +82,12 @@ the differences
 
 :::
 
-Along with the changes on API level, `v1` comes with a new authentication mechanism which
-is described in detail [here](./authentication).
+Along with the changes at the API level, `v1` comes with a new authentication mechanism. These changesare described in detail [here](./authentication).
 
 ## Breaking changes
 
-Overall there are very few breaking changes between `v0.9` and `v1` of the STAC API. The
-following fields on the `asset` object have changed:
+Overall, there are very few breaking changes between `v0.9` and `v1` of the STAC API.
+The following fields of the `asset` object have changed:
 
 ```json
 {
@@ -109,16 +106,16 @@ following fields on the `asset` object have changed:
 
 ### Collection object
 
-Collection can now have assets as well using the same structure and fields as the item assets. For details see
+Collections can now have assets as well, using the same structure and fields as item assets. For details, see
 [API SPEC](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Data/operation/describeCollection).
 
 ### Item object
 
-The following field have changed from `v0.9` to `v1`:
+The following fields have changed from `v0.9` to `v1`:
 
 ##### Item Expiration
 
-It is now possible to set an expiry date of an item. Items with an `expires` date
+It is now possible to set an expiry date for an item. Items with an `expires` date
 in the past will automatically be deleted.
 
 ```json
@@ -133,9 +130,7 @@ in the past will automatically be deleted.
 
 ##### Forecast Extension
 
-For the specific usecase of [Forecast data](https://github.com/MeteoSwiss/opendata-forecast-data)
-we have developed and implemented the [STAC Forecast Extension](https://github.com/stac-extensions/forecast/pull/12)
-with the following new fields
+For the specific use case of [Forecast data](https://github.com/MeteoSwiss/opendata-forecast-data) we have developed and implemented the[STAC Forecast Extension](https://github.com/stac-extensions/forecast/pull/12) with the following new fields.
 
 ```json
 {
@@ -153,8 +148,7 @@ with the following new fields
 
 ##### Item geometry
 
-The item geometry can now be any valid GeoJSON geometry (here we show the part
-of the spec instead of an example)
+The item geometry can now be any valid GeoJSON geometry. (Below is the relevant part of the spec instead of an example.)
 
 ```json
 itemGeometry:
@@ -170,12 +164,11 @@ itemGeometry:
 
 ### Asset object
 
-The following field have changed from `v0.9` to `v1`:
+The following fields have changed from `v0.9` to `v1`:
 
 ##### Language information about the referenced asset
 
-It is now possible to specify the language of a `link` target with the parameter
-`hreflang` from the [Language Extension](https://github.com/stac-extensions/language?tab=readme-ov-file#fields-for-links-and-assets)
+You can now specify the language of a `link` target using the `hreflang` parameter from the [Language Extension](https://github.com/stac-extensions/language?tab=readme-ov-file#fields-for-links-and-assets)"
 
 ```json
 {
@@ -195,7 +188,7 @@ It is now possible to specify the language of a `link` target with the parameter
 
 ##### Asset roles
 
-Assets can now have roles that define the purpose of the asset (e.g. `thumbnail`)
+Assets can now have roles that define the purpose of the asset (e.g. `thumbnail`).
 
 ```json
 {
