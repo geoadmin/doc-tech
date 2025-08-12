@@ -9,6 +9,7 @@ export default defineConfig({
   ignoreDeadLinks: "localhostLinks",
   vite: {
     build: {
+      // We add this to avoid the warning "(!) Some chunks are larger than 500 kB after minification."
       chunkSizeWarningLimit: 1000,
     },
   },
