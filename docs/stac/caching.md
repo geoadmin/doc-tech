@@ -1,19 +1,14 @@
-# Notes on Caching
+# Caching
 
-Asset objects are cached by default for 2 hours (7200 seconds). Depending on the
-update interval of an asset object (e.g. for frequently updated data)
-the `Cache-Control` header can be different, in special cases it can even be
-set to `no-cache` (e.g. for realtime data).
+Asset objects are cached by default for 2 hours (7200 seconds).
+Depending on the update interval of an asset object (e.g. for frequently updated data) the `Cache-Control` header can be different, in special cases it can even be set to `no-cache` (e.g. for realtime data).
 
 All endpoints support the precondition headers `If-Match` and `If-None-Match`.
-To reduce unnecessary traffic it's highly recommended to use these headers
-(mostly `If-None-Match`) when making calls.
+To reduce unnecessary traffic it's highly recommended to use these headers (mostly `If-None-Match`) when making calls.
 
-In case your application is using frequently updated data and you want to
-be sure not to miss an update of the data, the recommended procedure is as
-follows:
+In case your application is using frequently updated data and you want to be sure not to miss an update of the data, the recommended procedure is as follows:
 
-```python:line-numbers
+```python
 import requests
 import time
 
