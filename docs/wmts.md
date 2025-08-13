@@ -1,28 +1,30 @@
+---
+outline: [2, 3]
+---
+
 # Web Map Tile Service (WMTS)
 
-A RESTFul implementation of the [WMTS OGC Standard](http://www.opengeospatial.org/standards/wmts).
+A RESTful implementation of the [WMTS OGC Standard](http://www.opengeospatial.org/standards/wmts).
 
 :::warning
-Only the RESTFul request encoding to `GetTile` is implemented, not the `GetLegend` and `GetFeatureInfo`. No KVP and SOAP request
-encoding is supported.
+We only support the `GetCapabilities` and `GetTile` operation through a RESTful API endpoint. KVP and SOAP encodings are not not available.
 :::
 
 WMTS requests can perform the following operations:
 
 ## GetCapabilities
 
-The GetCapabilites document provides informations about the service, along with layer description, both in german and french.
+The GetCapabilities document provides information about the service, along with layer description, both in German and French.
 
-<ApiCodeBlock url="https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?<Lang>" method="GET" />
+<ApiCodeBlock url="https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=<Lang>" method="GET" />
 
-| **Parameter**       | **Description**                                               |
-| ------------------- | ------------------------------------------------------------- |
-| **Lang (optional)** | The language. Supported values: `de`, `fr` (Defaults to `de`) |
+| **Parameter**   | **Description**                                               |
+| --------------- | ------------------------------------------------------------- |
+| Lang (optional) | The language. Supported values: `de`, `fr` (Defaults to `de`) |
 
-### Supported projections
+### Supported Projections
 
-Four projections are supported. The same tiles are offered in four other
-_tilematrixsets/projection_.
+Tiles are available in four supported projections:
 
 - LV95/CH1903+ (EPSG:2056)  
   <https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml>
@@ -36,17 +38,15 @@ _tilematrixsets/projection_.
 - WGS84/Pseudo-Mercator (EPSG:3857, as used in OSM, Bing, Google Map)  
   <https://wmts.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml>
 
-Note:
+Notes:
 
-- Partly due to a limitation of the WTMS 1.0.0 recommendations, each
-  _projection_ has its own _GetCapabilities_ document.
-- The same <span class="title-ref">timestamps</span> are available in
-  all projection. New <span class="title-ref">timestamp</span> are
-  added to the former ones.
+- Partly due to a limitation of the WMTS 1.0.0 recommendations, each
+  _projection_ has its own `GetCapabilities` document.
+- The same timestamps are available in all projection. New timestamps are added to the former ones.
 - The layer _ch.kantone.cadastralwebmap-farbe_ uses a WMS service as
   its source.
-- Note that all layers are available at all scales. You have to check
-  for which **tileMatrixSets** a particuliar layer is defined. Your
+- All layers are available at all scales. You have to check
+  for which **tileMatrixSets** a particular layer is defined. Your
   WMTS client may either stretch the tiles from the last available
   level or display nothing.
 
@@ -56,15 +56,17 @@ Note:
 
 Use the following parameters to define your request:
 
-| **Parameter**             | **Example**                | **Description**                                                                                                                                                                                                                                                                                                                                                           |
-| ------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version                   | 1.0.0                      | WMTS protocol version                                                                                                                                                                                                                                                                                                                                                     |
-| Layername                 | ch.bfs.arealstatistik-1997 | See the WMTS [GetCapabilities](//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml) document.                                                                                                                                                                                                                                                                                  |
-| StyleName                 | default                    | Only **default** is supported.                                                                                                                                                                                                                                                                                                                                            |
-| Time                      | 2010, 2010-01              | Date of tile generation in (ISO-8601) or logical value like **current**. A list of available values is provided in the [GetCapabilities](//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml) document under the \<Dimension\> tag. We recommend to use the value under the \<Default\> tag. Note that these values might change frequently - **check for updates regularly**. |
-| TileMatrixSet             | 2056 (constant)            | EPSG code for LV03/CH1903                                                                                                                                                                                                                                                                                                                                                 |
-| TileSetId TileRow TileCol | 22 236 284                 | Zoom level (see below)                                                                                                                                                                                                                                                                                                                                                    |
-| FormatExtension           | png                        | Mostly png, except for some raster layer (pixelkarte and swissimage)                                                                                                                                                                                                                                                                                                      |
+| **Parameter**   | **Example**                | **Description**                                                                                                                                                                                                                                                                                                                                                        |
+| --------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version         | 1.0.0                      | WMTS protocol version                                                                                                                                                                                                                                                                                                                                                  |
+| Layername       | ch.bfs.arealstatistik-1997 | The technical layer name. See the `<ows:Identifier>` tag of the layer in the WMTS GetCapabilities document.document.                                                                                                                                                                                                                                                   |
+| StyleName       | default                    | Only `default` is supported.                                                                                                                                                                                                                                                                                                                                           |
+| Time            | 2010, 2010-01              | Date of tile generation in (ISO-8601) or logical value like `current`. A list of available values is provided in the [GetCapabilities](//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml) document under the `<Dimension` tag. We recommend to use the value under the \<Default\> tag. Note that these values might change frequently - **check for updates regularly**. |
+| TileMatrixSet   | 2056 (constant)            | EPSG code for LV03/CH1903                                                                                                                                                                                                                                                                                                                                              |
+| TileSetId       | 22                         | Zoom level (see table below)                                                                                                                                                                                                                                                                                                                                           |
+| TileRow         | 236                        |                                                                                                                                                                                                                                                                                                                                                                        |
+| TileCol         | 284                        |                                                                                                                                                                                                                                                                                                                                                                        |
+| FormatExtension | png                        | Mostly png, except for some raster layer (pixelkarte and swissimage)                                                                                                                                                                                                                                                                                                   |
 
 With the `tileOrigin` in the top left corner of the bounding box:
 
@@ -100,45 +102,38 @@ With the `tileOrigin` in the top left corner of the bounding box:
 | 0.25               | 27             | 12           | 64                 | 7500        | 5000        | 37’500’000  | 1 : 945                                    |
 | 0.1                | 28             | 13           | 25.6               | 18750       | 12500       | 234’375’000 | 1 : 378                                    |
 
-**Notes**
+Notes:
 
 1.  The projection for the tiles is **LV95** (EPSG:2056). Other
     projection are supported, see further down.
-2.  The tiles are generated on-the-fly and stored in a cache (hundreds
-    of requests per second)
-3.  The zoom level 24 (resolution 1.5m) has been generated, but is not
-    currently used in the API.
+2.  The tiles are generated on-the-fly and stored in a cache.
+3.  Zoom level 24, with a resolution of 1.5m, is available in the tile pyramid but it is not currently made available through the API.
 4.  The zoom levels 27 and 28 (resolution 0.25m and 0.1m) are only
     available for a few layers, e.g. swissimage or cadastral web map.
-    For the others layers it is only a client zoom (tiles are
+    For the other layers it is only a client zoom (tiles are
     stretched).
-5.  You **have** to use the <span
-    class="title-ref">\<ResourceURL\></span> to construct the <span
-    class="title-ref">GetTile</span> request.
+5.  You **have** to use the `ResourceURL` to construct the `GetTile` request.
 6.  **Axis order**: for historical reasons, EPSG:21781 WMTS tiles use
     the non-standard **row/col** order, while all other projections use
     the usual **col/row** order. However, most desktop GIS allow you to
-    either use the advertized order or to override it.
-7.  The tiles of a given layer might be updated **withtout** resulting
-    in a new \<Time\> dimension in the GetCapabilities dimension. In
-    case your application is caching tiles locally, you need to
-    invalidate your local cache for this layer. To check the latest
-    change of any layer, use the [Cache Update](#cache-update) service.
+    either use the advertised order or to override it.
+7.  The tiles of a given layer might be updated **without** resulting
+    in a new \<Time\> dimension in the GetCapabilities dimension.
+    If your application caches tiles locally, you need to invalidate your local cache for this layer.
+    To check the latest change of any layer, use the [Cache Update](#cache-update) service.
 
 ## Cache Update
 
-As noted in the introduction, the tiles of a given `<Time>` dimension might be updated for technical reasons.
+As noted in the `GetTile` section, the tiles of a given `<Time>` dimension might be updated for technical reasons.
 If you are caching tiles locally, this might result in your cache being outdated.
 Use the Cache Update service to query the date of the last update for a given layer.
 If your cache is older than the returned date, you have to clear your local cache.
-
-### URL
 
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/<LayerBodId>/cacheUpdate" method="GET" />
 
 ## Examples
 
-The latest cache update for SwissImage Product:
+The latest cache update for the product SWISSIMAGE:
 
 <ExampleCodeBlock
 request="curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate"
@@ -155,11 +150,11 @@ curl -o demo.jpg https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/d
 display demo.jpg
 ```
 
-The request will display the following image:
+The output image:
 
 <img src="https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/21781/20/58/70.jpeg" />
 
-## Examples: OpenLayers
+### OpenLayers
 
 An OpenLayers3 example showing the Cadastralwebmap as WMTS and Tiled WMS
 

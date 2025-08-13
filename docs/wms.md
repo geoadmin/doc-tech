@@ -1,22 +1,25 @@
+---
+outline: [2, 3]
+---
+
 # Web Map Service (WMS)
 
 Federal offices make part of their data available via the WMS - Federal Spatial Data Infrastructure (FSDI) service.
-The data layers currently available in the WMS-FSDI correspond, with a few exceptions, to the geodata that are also presented in map.geo.admin.ch.
-The WMS-FSDI can be used free of charge and provides access to public geodata.
+The data layers currently available in the WMS-FSDI correspond, with a few exceptions, to the geodata that are presented in map.geo.admin.ch.
 
 WMS requests can perform the following operations:
 
 ## GetCapabilities
 
-The GetCapabilites document provides informations about the service, along with layer description, both in german and french.
+The GetCapabilities document provides information about the service, along with layer description, both in German and French.
 
 <ApiCodeBlock url="https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&LANG=<Lang>" method="GET" />
 
-| **Parameter**       | **Description**                                               |
-| ------------------- | ------------------------------------------------------------- |
-| **Lang (optional)** | The language. Supported values: `de`, `fr` (Defaults to `de`) |
+| **Parameter**   | **Description**                                               |
+| --------------- | ------------------------------------------------------------- |
+| Lang (optional) | The language. Supported values: `de`, `fr` (Defaults to `de`) |
 
-### Supported projections:
+### Supported Projections
 
 - EPSG:2056 CH1903+ / LV95 -- Swiss CH1903+ / LV95
 - EPSG:21781 CH1903 / LV03 -- Swiss CH1903 / LV03
@@ -39,15 +42,15 @@ The GetCapabilites document provides informations about the service, along with 
 
 Use the following parameters to define your request:
 
-| **Parameter** | **Example**                     | **Description**                                                                     |
-| ------------- | ------------------------------- | ----------------------------------------------------------------------------------- |
-| Layers        | ch.bafu.bundesinventare-bln     | Comma-separated list of layer names to display.                                     |
-| Styles        | default                         | Comma-separated list of styles. Use `default` if unsure.                            |
-| CRS           | EPSG:2056                       | Coordinate Reference System. Supported values: see "Supported projections" section. |
-| BBOX          | 2550000,1060000,2660000,1140000 | Bounding box of the map image (minX,minY,maxX,maxY) in the selected CRS.            |
-| Width         | 800                             | Width of the output image in pixels.                                                |
-| Height        | 582                             | Height of the output image in pixels.                                               |
-| Format        | image/png                       | Output image format (e.g., `image/png`, `image/jpeg`).                              |
+| **Parameter** | **Example**                     | **Description**                                                                                     |
+| ------------- | ------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Layers        | ch.bafu.bundesinventare-bln     | Comma-separated list of layer names to display.                                                     |
+| Styles        | default                         | Comma-separated list of styles. Use `default` if unsure.                                            |
+| CRS           | EPSG:2056                       | Coordinate Reference System. Supported values: see [Supported Projections](#supported-projections). |
+| BBOX          | 2550000,1060000,2660000,1140000 | Bounding box of the map image (minX,minY,maxX,maxY) in the selected CRS.                            |
+| Width         | 800                             | Width of the output image in pixels.                                                                |
+| Height        | 582                             | Height of the output image in pixels.                                                               |
+| Format        | image/png                       | Output image format (e.g., `image/png`, `image/jpeg`).                                              |
 
 ## GetFeatureInfo
 
@@ -55,22 +58,22 @@ Use the following parameters to define your request:
 
 Use the following parameters to define your request:
 
-| **Parameter** | **Example**                     | **Description**                                                                     |
-| ------------- | ------------------------------- | ----------------------------------------------------------------------------------- |
-| Layers        | ch.bafu.bundesinventare-bln     | Comma-separated list of layer names to display.                                     |
-| QueryLayers   | ch.bafu.bundesinventare-bln     | Comma-separated list of layers to query for information.                            |
-| Styles        |                                 | Comma-separated list of styles. Use `default` or leave empty if unsure.             |
-| CRS           | EPSG:2056                       | Coordinate Reference System. Supported values: see "Supported projections" section. |
-| BBOX          | 2609000,1123050,2614050,1128100 | Bounding box of the map image (minX,minY,maxX,maxY) in the selected CRS.            |
-| Width         | 101                             | Width of the output image in pixels.                                                |
-| Height        | 101                             | Height of the output image in pixels.                                               |
-| I             | 50                              | X coordinate (pixel column) of the point to query, starting from 0 (left).          |
-| J             | 50                              | Y coordinate (pixel row) of the point to query, starting from 0 (top).              |
-| InfoFormat    | text/plain                      | Format of the returned feature info (e.g., `text/plain`, `application/json`).       |
-| FeatureCount  | 10                              | Maximum number of features to return.                                               |
-| Lang          | en                              | Language for the response. Supported values: `de`, `fr`, `it`, `en`.                |
-| Format        | image/png                       | Output image format (should match the map request).                                 |
-| Transparent   | true                            | Whether the background should be transparent (`true` or `false`).                   |
+| **Parameter** | **Example**                     | **Description**                                                                                     |
+| ------------- | ------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Layers        | ch.bafu.bundesinventare-bln     | Comma-separated list of layer names to display.                                                     |
+| QueryLayers   | ch.bafu.bundesinventare-bln     | Comma-separated list of layers to query for information.                                            |
+| Styles        |                                 | Comma-separated list of styles. Use `default` or leave empty if unsure.                             |
+| CRS           | EPSG:2056                       | Coordinate Reference System. Supported values: see [Supported Projections](#supported-projections). |
+| BBOX          | 2609000,1123050,2614050,1128100 | Bounding box of the map image (minX,minY,maxX,maxY) in the selected CRS.                            |
+| Width         | 101                             | Width of the output image in pixels.                                                                |
+| Height        | 101                             | Height of the output image in pixels.                                                               |
+| I             | 50                              | X coordinate (pixel column) of the point to query, starting from 0 (left).                          |
+| J             | 50                              | Y coordinate (pixel row) of the point to query, starting from 0 (top).                              |
+| InfoFormat    | text/plain                      | Format of the returned feature info (e.g., `text/plain`, `application/json`).                       |
+| FeatureCount  | 10                              | Maximum number of features to return.                                                               |
+| Lang          | en                              | Language for the response. Supported values: `de`, `fr`, `it`, `en`.                                |
+| Format        | image/png                       | Output image format (should match the map request).                                                 |
+| Transparent   | true                            | Whether the background should be transparent (`true` or `false`).                                   |
 
 ## GetLegendGraphic
 
@@ -78,18 +81,18 @@ Use the following parameters to define your request:
 
 Use the following parameters to define your request:
 
-| **Parameter** | **Example**                     | **Description**                                                                     |
-| ------------- | ------------------------------- | ----------------------------------------------------------------------------------- |
-| Layers        | ch.bafu.bundesinventare-bln     | Comma-separated list of layer names for which to request the legend.                |
-| Styles        | default                         | Comma-separated list of styles. Use `default` if unsure.                            |
-| Lang          | en                              | Language for the legend. Supported values: `de`, `fr`, `it`, `en`.                  |
-| CRS           | EPSG:2056                       | Coordinate Reference System. Supported values: see "Supported projections" section. |
-| BBOX          | 2550000,1060000,2660000,1140000 | Bounding box of the map image (minX,minY,maxX,maxY) in the selected CRS.            |
-| Width         | 800                             | Width of the output image in pixels.                                                |
-| Height        | 582                             | Height of the output image in pixels.                                               |
-| Format        | image/png                       | Output image format (e.g., `image/png`, `image/jpeg`).                              |
+| **Parameter** | **Example**                     | **Description**                                                                                    |
+| ------------- | ------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Layers        | ch.bafu.bundesinventare-bln     | Comma-separated list of layer names for which to request the legend.                               |
+| Styles        | default                         | Comma-separated list of styles. Use `default` if unsure.                                           |
+| Lang          | en                              | Language for the legend. Supported values: `de`, `fr`, `it`, `en`.                                 |
+| CRS           | EPSG:2056                       | Coordinate Reference System. Supported values: see [Supported Projections](#supported-projections) |
+| BBOX          | 2550000,1060000,2660000,1140000 | Bounding box of the map image (minX,minY,maxX,maxY) in the selected CRS.                           |
+| Width         | 800                             | Width of the output image in pixels.                                                               |
+| Height        | 582                             | Height of the output image in pixels.                                                              |
+| Format        | image/png                       | Output image format (e.g., `image/png`, `image/jpeg`).                                             |
 
-### Further information
+#### Further information
 
 - [General Terms of Use and Operating Conditions of the Federal Spatial Data Infrastructure FSDI](https://www.geo.admin.ch/en/geo-services/geo-services/terms-of-use.html)
 - [WMS-BGDI system status](http://status.geo.admin.ch/3380881)
@@ -102,14 +105,23 @@ Use the following parameters to define your request:
 
 ## Examples
 
-Example of GetMap request:
+Example of a GetMap request:
 
 ```bash
-curl -o demo.jpg https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png
+curl -o demo.jpg "https://wms.geo.admin.ch/?\
+  SERVICE=WMS&REQUEST=GetMap&\
+  VERSION=1.3.0&\
+  LAYERS=ch.bafu.bundesinventare-bln&\
+  STYLES=default&\
+  CRS=EPSG:2056&\
+  BBOX=2550000,1060000,2660000,1140000&\
+  WIDTH=800&\
+  HEIGHT=582&\
+  FORMAT=image/png"
 display demo.jpg
 ```
 
-The request will display the following image:
+The output image:
 
 <img src="https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png" />
 
@@ -136,6 +148,6 @@ curl -o demo.jpg https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetLegendGraphic&
 display demo.jpg
 ```
 
-The request will display the following image:
+The output image:
 
 <img src="https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&LANG=en&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png" />

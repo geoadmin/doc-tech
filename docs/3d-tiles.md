@@ -1,33 +1,30 @@
 # 3D Tiles
 
-A RESTFul implementation of [Cesium 3D Tiles specification](https://github.com/CesiumGS/3d-tiles).
+This service provides 3D tiles through a RESTful API, implementing the [Cesium 3D Tiles specification](https://github.com/CesiumGS/3d-tiles).
 
 <ApiCodeBlock url="https://3d.geo.admin.ch/<LayerName>/<Version>/<Time>/<Z>/<X>/<Y>.b3dm" method="GET" />
 
-## Request Details
+Use the following parameters to define your request:
 
-### Path Parameters
+| Parameter | Example                          | Description                                                                                                                                                                             |
+| --------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| layerName | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer. Possible values are: `ch.swisstopo.swissbuildings3d.3d`, `ch.swisstopo.swisstlm3d.3d`, `ch.swisstopo.swissnames3d.3d`, `ch.swisstopo.vegetation.3d` |
+| Version   | v1                               | API version. `v1` means tiles generated with 3D Tiles                                                                                                                                   |
+| Time      | 20240501                         | Date of tileset generation in (ISO-8601, e.g. YYYYMMDD)                                                                                                                                 |
+| Z         | 7                                | Zoom level                                                                                                                                                                              |
+| X         | 54                               | Tile column index                                                                                                                                                                       |
+| Y         | 21                               | Tile row index                                                                                                                                                                          |
 
-| Parameter | Example                          | Description                                             |
-| --------- | -------------------------------- | ------------------------------------------------------- |
-| layerName | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer (see below)          |
-| Version   | v1                               | API version. `v1` means tiles generated with 3D Tiles   |
-| Time      | 20240501                         | Date of tileset generation in (ISO-8601, e.g. YYYYMMDD) |
-| Z         | 7                                | Zoom level                                              |
-| X         | 54                               | Tile column index                                       |
-| Y         | 21                               | Tile row index                                          |
+A 3D tile request for swissBUILDINGS3D dataset:
 
-**Available values for `<layerName>`:**
+```http
+curl -o demo.b3dm https://3d.geo.admin.ch/ch.swisstopo.swissbuildings3d.3d/v1/20240501/7/54/21.b3dm
+```
 
-- `ch.swisstopo.swissbuildings3d.3d`
-- `ch.swisstopo.swisstlm3d.3d`
-- `ch.swisstopo.swissnames3d.3d`
-- `ch.swisstopo.vegetation.3d`
-
-### Metadata Service
+## Metadata
 
 The `tileset.json` file describes the available set of tiles.
-In order to use this service you can use [CesiumJS](https://github.com/CesiumGS/cesium).
+It can be used directly by [CesiumJS](https://github.com/CesiumGS/cesium).
 
 <ApiCodeBlock url="https://3d.geo.admin.ch/<LayerName>/<Version>/<Time>/tileset.json" method="GET" />
 
@@ -36,13 +33,7 @@ In order to use this service you can use [CesiumJS](https://github.com/CesiumGS/
 | Time (optional) | 20201203                         | Date of tile generation in (ISO-8601).         |
 | LayerName       | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer (see below) |
 
-## Examples
-
-A 3D tile
-
-```http
-https://3d.geo.admin.ch/ch.swisstopo.swissbuildings3d.3d/v1/20240501/7/54/21.b3dm
-```
+A metadata request for the Vegetation dataset:
 
 <ExampleCodeBlock
 request="curl https://3d.geo.admin.ch/ch.swisstopo.vegetation.3d/v1/tileset.json"
@@ -71,9 +62,9 @@ example='{
 }'
 />
 
-## Examples: Cesium
+## Example: Cesium
 
-Example Geoadmin Terrain, Buildings and WMTS implementation using Cesium.
+An example Cesium application using terrain tiles, 3D buildings and WMTS.
 
 <iframe height="600" style="width: 100%;" scrolling="no" title="Geoadmin Terrain, Buildings and WMTS CesiumJS integration" src="https://codepen.io/geoadmin/embed/zBEYGE?default-tab=js%2Cresult&editable=true&zoom=0.5" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/geoadmin/pen/zBEYGE">
