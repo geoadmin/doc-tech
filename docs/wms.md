@@ -118,7 +118,6 @@ curl -o demo.jpg "https://wms.geo.admin.ch/?\
   WIDTH=800&\
   HEIGHT=582&\
   FORMAT=image/png"
-display demo.jpg
 ```
 
 The output image:
@@ -145,7 +144,6 @@ Example of a GetLegendGraphic request:
 
 ```bash
 curl -o demo.jpg https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&LANG=en&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png
-display demo.jpg
 ```
 
 The output image:

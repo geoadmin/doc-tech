@@ -147,7 +147,6 @@ Fetch a single tile:
 
 ```bash
 curl -o demo.jpg https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/21781/20/58/70.jpeg
-display demo.jpg
 ```
 
 The output image:
