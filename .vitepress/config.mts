@@ -178,6 +178,7 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
         { text: "Asset Upload Management", link: "/docs/stac/asset-upload" },
         { text: "Caching", link: "/docs/stac/caching" },
         { text: "Compression", link: "/docs/stac/compression" },
+        { text: "Item Expiration", link: "/docs/stac/expiration" },
         { text: "Authentication", link: "/docs/stac/authentication" },
         { text: "Supported Media Types", link: "/docs/stac/supported-media" },
         { text: "Migrate v0.9 to v1.0", link: "/docs/stac/migrate09-10" },
