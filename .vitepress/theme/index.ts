@@ -6,21 +6,23 @@ import ExampleCodeBlock from "../../components/ExampleCodeBlock.vue";
 import { createHighlighter } from "shiki";
 import type { HighlighterGeneric, BundledLanguage, BundledTheme } from "shiki";
 
+// Create a global instance of the highlighter as Shiki is supposed to be used as a singleton
+const highlighterPromise = createHighlighter({
+  themes: ["github-dark"],
+  langs: ["javascript", "json", "sh", "html", "http"],
+});
+
 export default {
   extends: DefaultTheme,
   async enhanceApp({ app }) {
-    // register your custom global components
+    // register custom global components
     app.component("ApiCodeBlock", ApiCodeBlock);
     app.component("ExampleCodeBlock", ExampleCodeBlock);
 
-    // Initialize the highlighter asynchronously
     const highlighter: HighlighterGeneric<BundledLanguage, BundledTheme> =
-      await createHighlighter({
-        themes: ["github-dark"],
-        langs: ["javascript", "json", "sh", "html", "http"],
-      });
+      await highlighterPromise;
 
-    // Provide the highlighter globally
+    // Provide the highlighter globally (it can later be used in any component)
     app.provide("highlighter", highlighter);
   },
 } satisfies Theme;

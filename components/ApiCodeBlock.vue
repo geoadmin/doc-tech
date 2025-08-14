@@ -11,9 +11,8 @@
     method?: string;
   }>();
 
-  const highlighter:
-    | HighlighterGeneric<BundledLanguage, BundledTheme>
-    | undefined = inject("highlighter");
+  const highlighter =
+    inject<HighlighterGeneric<BundledLanguage, BundledTheme>>("highlighter");
 
   const html = highlighter?.codeToHtml(props.url, {
     lang: "http",
