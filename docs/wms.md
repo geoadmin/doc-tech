@@ -7,8 +7,6 @@ outline: [2, 3]
 Federal offices make part of their data available via the WMS - Federal Spatial Data Infrastructure (FSDI) service.
 The data layers currently available in the WMS-FSDI correspond, with a few exceptions, to the geodata that are presented in map.geo.admin.ch.
 
-WMS requests can perform the following operations:
-
 ## GetCapabilities
 
 The GetCapabilities document provides information about the service, along with layer description, both in German and French.
@@ -108,16 +106,16 @@ Use the following parameters to define your request:
 Example of a GetMap request:
 
 ```bash
-curl -o demo.jpg "https://wms.geo.admin.ch/?\
-  SERVICE=WMS&REQUEST=GetMap&\
-  VERSION=1.3.0&\
-  LAYERS=ch.bafu.bundesinventare-bln&\
-  STYLES=default&\
-  CRS=EPSG:2056&\
-  BBOX=2550000,1060000,2660000,1140000&\
-  WIDTH=800&\
-  HEIGHT=582&\
-  FORMAT=image/png"
+curl -o demo.png "https://wms.geo.admin.ch/?\
+SERVICE=WMS&REQUEST=GetMap&\
+VERSION=1.3.0&\
+LAYERS=ch.bafu.bundesinventare-bln&\
+STYLES=default&\
+CRS=EPSG:2056&\
+BBOX=2550000,1060000,2660000,1140000&\
+WIDTH=800&\
+HEIGHT=582&\
+FORMAT=image/png"
 ```
 
 The output image:
@@ -143,7 +141,7 @@ Layer 'ch.bafu.bundesinventare-bln'
 Example of a GetLegendGraphic request:
 
 ```bash
-curl -o demo.jpg https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&LANG=en&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png
+curl -o demo.png https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&LANG=en&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png
 ```
 
 The output image:

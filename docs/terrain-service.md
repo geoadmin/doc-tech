@@ -28,14 +28,14 @@ The `layer.json` file provides metadata that describes the availability and stru
 
 <ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/<Time>/layer.json" method="GET" />
 
-| Parameter       | Example  | Description                            |
-| --------------- | -------- | -------------------------------------- |
-| Time (optional) | 20201203 | Date of tile generation in (ISO-8601). |
+| Parameter       | Example  | Description                                                                                                               |
+| --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Time (optional) | 20201203 | Date of tile generation in (ISO-8601). If no date is provided, it returns the metadata for the most recent terrain tiles. |
 
 Example of a metadata request for the date `20201203`:
 
 <ExampleCodeBlock
-request="curl https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/20201203/layer.json"
+request="curl --compressed https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/20201203/layer.json"
 example='{
   "attribution": "Put something there",
   "available": [...],

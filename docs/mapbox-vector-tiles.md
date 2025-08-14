@@ -78,7 +78,7 @@ A MBtileSet request is in the following form:
 | layerName     | ch.swisstopo.base.vt | The technical name of the vector tile layer |
 | version       | v1.0.0               | Version of the tileset                      |
 
-A GetTileSet request for `.mbtiles` file in the Base Map dataset:
+A GetTileSet request for a `.mbtiles` file in the Base Map dataset:
 
 ```http
 curl -o demo.mbtiles https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.base.vt/v1.0.0/ch.swisstopo.base.vt.mbtiles

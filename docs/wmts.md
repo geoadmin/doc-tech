@@ -10,8 +10,6 @@ A RESTful implementation of the [WMTS OGC Standard](http://www.opengeospatial.or
 We only support the `GetCapabilities` and `GetTile` operation through a RESTful API endpoint. KVP and SOAP encodings are not not available.
 :::
 
-WMTS requests can perform the following operations:
-
 ## GetCapabilities
 
 The GetCapabilities document provides information about the service, along with layer description, both in German and French.
@@ -40,9 +38,8 @@ Tiles are available in four supported projections:
 
 Notes:
 
-- Partly due to a limitation of the WMTS 1.0.0 recommendations, each
-  _projection_ has its own `GetCapabilities` document.
-- The same timestamps are available in all projection. New timestamps are added to the former ones.
+- Partly due to a limitation of the WMTS 1.0.0 recommendations, each _projection_ has its own `GetCapabilities` document.
+- The same timestamps are available in all projections. New timestamps are added to the former ones.
 - The layer _ch.kantone.cadastralwebmap-farbe_ uses a WMS service as
   its source.
 - All layers are available at all scales. You have to check
@@ -59,7 +56,7 @@ Use the following parameters to define your request:
 | **Parameter**   | **Example**                | **Description**                                                                                                                                                                                                                                                                                                                                                        |
 | --------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version         | 1.0.0                      | WMTS protocol version                                                                                                                                                                                                                                                                                                                                                  |
-| Layername       | ch.bfs.arealstatistik-1997 | The technical layer name. See the `<ows:Identifier>` tag of the layer in the WMTS GetCapabilities document.document.                                                                                                                                                                                                                                                   |
+| Layername       | ch.bfs.arealstatistik-1997 | The technical layer name. See the `<ows:Identifier>` tag of the layer in the [WMTS GetCapabilities document](#getcapabilities).                                                                                                                                                                                                                                        |
 | StyleName       | default                    | Only `default` is supported.                                                                                                                                                                                                                                                                                                                                           |
 | Time            | 2010, 2010-01              | Date of tile generation in (ISO-8601) or logical value like `current`. A list of available values is provided in the [GetCapabilities](//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml) document under the `<Dimension` tag. We recommend to use the value under the \<Default\> tag. Note that these values might change frequently - **check for updates regularly**. |
 | TileMatrixSet   | 2056 (constant)            | EPSG code for LV03/CH1903                                                                                                                                                                                                                                                                                                                                              |
