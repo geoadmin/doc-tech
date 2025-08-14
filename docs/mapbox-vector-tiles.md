@@ -132,8 +132,5 @@ example='{
 
 An example using MapLibre to display the Light Base Map:
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="Maplibre Vector Tiles" src="https://codepen.io/geoadmin/embed/GvgLvj?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/geoadmin/pen/GvgLvj">
-  Maplibre Vector Tiles</a> by geoadmin (<a href="https://codepen.io/geoadmin">@geoadmin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
+<iframe height="600" style="width: 100%;" scrolling="no" title="Maplibre Vector Tiles" src="https://codepen.io/geoadmin/embed/GvgLvj?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
 </iframe>

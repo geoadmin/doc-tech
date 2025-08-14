@@ -155,9 +155,6 @@ The output image:
 An OpenLayers3 example showing the Cadastralwebmap as WMTS and Tiled WMS
 
 <iframe height="600" style="width: 100%;" scrolling="no" title="WMTS in (EPSG:21781) and WMS (EPSG:21781)" src="https://codepen.io/geoadmin/embed/xVKLdV?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/geoadmin/pen/xVKLdV">
-  WMTS in (EPSG:21781) and WMS (EPSG:21781)</a> by geoadmin (<a href="https://codepen.io/geoadmin">@geoadmin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
 <br/>
@@ -165,7 +162,4 @@ An OpenLayers3 example showing the Cadastralwebmap as WMTS and Tiled WMS
 Using geo.admin.ch WMTS tiles in the new LV95 frame (EPSG:2056).
 
 <iframe height="600" style="width: 100%;" scrolling="no" title="WMTS layer (EPSG:2056)" src="https://codepen.io/geoadmin/embed/GZKEam?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/geoadmin/pen/GZKEam">
-  WMTS layer (EPSG:2056)</a> by geoadmin (<a href="https://codepen.io/geoadmin">@geoadmin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
 </iframe>

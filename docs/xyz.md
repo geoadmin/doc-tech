@@ -55,9 +55,6 @@ The output image:
 An OpenLayers 3 example demonstrating the CadastralWebMap using the WMTS and the Tiled WMS:
 
 <iframe height="600" style="width: 100%;" scrolling="no" title="WMTS layer (EPSG:3857)" src="https://codepen.io/geoadmin/embed/pyzwwL?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/geoadmin/pen/pyzwwL">
-  WMTS layer (EPSG:3857)</a> by geoadmin (<a href="https://codepen.io/geoadmin">@geoadmin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
 <br/>
@@ -65,7 +62,4 @@ An OpenLayers 3 example demonstrating the CadastralWebMap using the WMTS and the
 An OpenLayers example showing the SWISSIMAGE as XYZ:
 
 <iframe height="600" style="width: 100%;" scrolling="no" title="xyz example" src="https://codepen.io/geoadmin/embed/xxYEwjQ?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/geoadmin/pen/xxYEwjQ">
-  xyz example</a> by geoadmin (<a href="https://codepen.io/geoadmin">@geoadmin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
 </iframe>

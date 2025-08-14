@@ -67,7 +67,4 @@ example='{
 An example Cesium application using terrain tiles, 3D buildings and WMTS.
 
 <iframe height="600" style="width: 100%;" scrolling="no" title="Geoadmin Terrain, Buildings and WMTS CesiumJS integration" src="https://codepen.io/geoadmin/embed/zBEYGE?default-tab=js%2Cresult&editable=true&zoom=0.5" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/geoadmin/pen/zBEYGE">
-  Geoadmin Terrain, Buildings and WMTS CesiumJS integration</a> by geoadmin (<a href="https://codepen.io/geoadmin">@geoadmin</a>)
-  on <a href="https://codepen.io">CodePen</a>.
 </iframe>
