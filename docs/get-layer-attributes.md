@@ -1,4 +1,4 @@
-# Layers Attributes
+# Get Layer Attributes
 
 The endpoint returns attribute metadata for a specified layer. Use this endpoint if you want to list all available attributes of a layer or if you need details about a particular attribute. The endpoint is also useful for querying the [Find endpoint](/docs/find-features).
 
@@ -6,7 +6,7 @@ The endpoint returns attribute metadata for a specified layer. Use this endpoint
 
 ## Request Details
 
-To interact with the Layers Attributes service, you need to provide specific parameters in your request.
+To interact with the Layer Attributes service, you need to provide specific parameters in your request.
 These parameters are divided into **Path Parameters**, which are required and part of the URL, and **Query Parameters**, which are optional and modify the behavior of the request.
 
 ### Path Parameters

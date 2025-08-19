@@ -7,7 +7,7 @@ GeoAdmin API.
 
 ## Request Details
 
-To interact with the Layers Attributes service, you need to provide specific parameters in your request.
+To interact with the Layer Metadata service, you need to provide specific parameters in your request.
 This endpoint only has **Query Parameters**, which are optional and modify the behavior of the request.
 
 ### Query Parameters
