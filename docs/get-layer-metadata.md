@@ -1,13 +1,12 @@
 # Get Layer Metadata
 
-This service provides metadata for all the available layers in the
-GeoAdmin API.
+This endpoint provides metadata for all layers that match a search query.
 
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer" method="GET" />
 
 ## Request Details
 
-To interact with the Layer Metadata service, you need to provide specific parameters in your request.
+To interact with the metadata endpoint, you need to provide specific parameters in your request.
 This endpoint only has **Query Parameters**, which are optional and modify the behavior of the request.
 
 ### Query Parameters
@@ -21,9 +20,8 @@ This endpoint only has **Query Parameters**, which are optional and modify the b
 
 ## Response Details
 
-A request to the Layer Metadata service returns a **JSON** composed by a list of object literals representing the **layers** and a set of metadata **attributes** associated to each layer.
-
-Here is a description of the data one can find in the above response.
+The response constains a list of all the layers matching the query.
+For each layer, there are some general identification properties
 
 | Field        | Description                                                                             |
 | ------------ | --------------------------------------------------------------------------------------- |
@@ -32,7 +30,8 @@ Here is a description of the data one can find in the above response.
 | `idGeoCat`   | The associated metadata ID in [GeoCat](http://www.geocat.ch/geonetwork/srv/eng/geocat). |
 | `layerBodId` | The technical name or BOD ID.                                                           |
 
-**Attributes:** Metadata attributes associated with a given layer.
+and attributes listing more metaadata
+
 | Field | Description |
 | ------------ | --------------------------------------------------------------------------------------- |
 | `wmsResource` | The WMS resource of the layer. |
