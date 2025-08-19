@@ -1,13 +1,14 @@
 # Get Layer Legend
 
-With a layer ID (or technical name), this service can be used to
-retrieve a legend.
+This endpoint provides the legend of a given layer in the form of HTML markup.
+A legend is what is shown when you click the info button on a layer in the map viewer.
+It contains a description of the layer, the actual legend explaining the meaning of the different colors and symbols, and additional metadata.
 
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/legend" method="GET" />
 
 ## Request Details
 
-To interact with the Layer Legend service, you need to provide specific parameters in your request.
+To interact with the legend endpoint, you need to provide specific parameters in your request.
 These parameters are divided into **Path Parameters**, which are required and part of the URL, and **Query Parameters**, which are optional and modify the behavior of the request.
 
 ### Path Parameters

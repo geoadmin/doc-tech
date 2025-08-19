@@ -1,6 +1,6 @@
 # Identify Features
 
-Use this service to discover features at a specific location.
+Use this endpoint to discover features at a specific location.
 
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/identify" method="GET" />
 
@@ -10,7 +10,7 @@ No more than 50 features can be retrieved per request.
 
 ## Request Details
 
-To interact with the identify features service, you need to provide specific parameters in your request.
+To interact with the `identify` endpoint, you need to provide specific parameters in your request.
 This endpoint only has query parameters that modify the behavior of the request, some are required and some are optional.
 
 ### Query Parameters
@@ -44,7 +44,7 @@ The following table summarize the various combinations:
 
 ### layerDefs syntax
 
-To list the available attributes together with their types and examples values, use the layer [attribute service](/docs/get-layer-attributes).
+To list the available attributes together with their types and examples values, use the [layer attribute endpoint](/docs/get-layer-attributes).
 
 Define the `layerDefs` parameter in JSON format like `{"<layername>":"<filter_expression>"}`.
 
@@ -428,7 +428,7 @@ example='{
 
 ## Examples: Reverse Geocoding
 
-The service identify can be used for Reverse Geocoding operations.
+The `identify` endpoint can be used for reverse geocoding operations.
 
 Perform an identify request to find the districts intersecting a given envelope geometry (no buffer):
 
