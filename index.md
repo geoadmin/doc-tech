@@ -19,7 +19,7 @@ hero:
 features:
   - title: Explore Data
     details: Browse additional information about layers, including attributes and other metadata.
-    link: /docs/layer-metadata
+    link: /docs/get-layer-metadata
     icon: ℹ️
   - title: Access Data
     details: Retrieve location-based features such as geometries, addresses and elevation.

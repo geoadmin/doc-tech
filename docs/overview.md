@@ -4,7 +4,7 @@ Discover how to access geospatial data provided by the Swiss Confederation throu
 
 We provide tutorials on how to interact with these services:
 
-- [Explore Data](/docs/layer-metadata): Browse additional information about layers, including attributes and other metadata.
+- [Explore Data](/docs/get-layer-metadata): Browse additional information about layers, including attributes and other metadata.
 - [Access Data](/docs/identify-features): Retrieve location-based features such as geometries, addresses and elevation.
 - [Visualize Data](/docs/wmts): Access map data (2D and 3D) for visualization in your application.
 - [Download Data](/docs/stac/overview): Download entire datasets for exploration and analysis.

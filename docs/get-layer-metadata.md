@@ -1,4 +1,4 @@
-# Layer Metadata
+# Get Layer Metadata
 
 This service provides metadata for all the available layers in the
 GeoAdmin API.
