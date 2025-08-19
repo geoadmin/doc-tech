@@ -112,9 +112,9 @@ function loadReleasesSidebarData() {
 
 function exploreDataItems(): DefaultTheme.SidebarItem[] {
   return [
-    { text: "Layers Metadata", link: "/docs/layers-metadata" },
-    { text: "Layers Attributes", link: "/docs/layers-attributes" },
-    { text: "Legend Resource", link: "/docs/legend-resource" },
+    { text: "Get Layer Metadata", link: "/docs/get-layer-metadata" },
+    { text: "Get Layer Attributes", link: "/docs/get-layer-attributes" },
+    { text: "Get Layer Legend", link: "/docs/get-layer-legend" },
   ];
 }
 

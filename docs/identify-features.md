@@ -44,7 +44,7 @@ The following table summarize the various combinations:
 
 ### layerDefs syntax
 
-To list the available attributes together with their types and examples values, use the layer [attribute service](/docs/layers-attributes).
+To list the available attributes together with their types and examples values, use the layer [attribute service](/docs/get-layer-attributes).
 
 Define the `layerDefs` parameter in JSON format like `{"<layername>":"<filter_expression>"}`.
 

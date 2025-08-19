@@ -1,4 +1,4 @@
-# Legend Resource
+# Get Layer Legend
 
 With a layer ID (or technical name), this service can be used to
 retrieve a legend.
@@ -7,7 +7,7 @@ retrieve a legend.
 
 ## Request Details
 
-To interact with the Layers Attributes service, you need to provide specific parameters in your request.
+To interact with the Layer Legend service, you need to provide specific parameters in your request.
 These parameters are divided into **Path Parameters**, which are required and part of the URL, and **Query Parameters**, which are optional and modify the behavior of the request.
 
 ### Path Parameters

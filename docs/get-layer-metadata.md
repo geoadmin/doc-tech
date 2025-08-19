@@ -1,4 +1,4 @@
-# Layers Metadata
+# Get Layer Metadata
 
 This service provides metadata for all the available layers in the
 GeoAdmin API.
@@ -7,7 +7,7 @@ GeoAdmin API.
 
 ## Request Details
 
-To interact with the Layers Attributes service, you need to provide specific parameters in your request.
+To interact with the Layer Metadata service, you need to provide specific parameters in your request.
 This endpoint only has **Query Parameters**, which are optional and modify the behavior of the request.
 
 ### Query Parameters
@@ -21,7 +21,7 @@ This endpoint only has **Query Parameters**, which are optional and modify the b
 
 ## Response Details
 
-A request to the Layers Metadata service returns a **JSON** composed by a list of object literals representing the **layers** and a set of metadata **attributes** associated to each layer.
+A request to the Layer Metadata service returns a **JSON** composed by a list of object literals representing the **layers** and a set of metadata **attributes** associated to each layer.
 
 Here is a description of the data one can find in the above response.
 
