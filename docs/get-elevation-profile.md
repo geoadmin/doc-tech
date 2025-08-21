@@ -1,6 +1,7 @@
-# Profile
+# Get Elevation Profile
 
-Retrieve the elevation information for a polyline in CSV format. See [Height models](https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html) for more details about data used by this service.
+Retrieve the elevation profile of a polyline in JSON and CSV format.
+See [Height models](https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html) for more details about the data used by this service.
 
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/profile.json" method="GET / POST" />
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/profile.csv" method="GET / POST" />

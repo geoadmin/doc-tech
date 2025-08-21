@@ -1,6 +1,6 @@
-# Height
+# Get Point Height
 
-Retrieve the elevation information for a point.
+Retrieve the elevation for a specific coordinate.
 
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/height" method="GET" />
 ::: info

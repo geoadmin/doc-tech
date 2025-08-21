@@ -136,14 +136,14 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: "Address Search",
-      items: [{ text: "Search", link: "/docs/search" }],
+      text: "Search",
+      link: "/docs/search",
     },
     {
-      text: "Elevation & Profile",
+      text: "Elevation Data",
       items: [
-        { text: "Height", link: "/docs/height" },
-        { text: "Profile", link: "/docs/profile" },
+        { text: "Get Point Height", link: "/docs/get-point-height" },
+        { text: "Get Elevation Profile", link: "/docs/get-elevation-profile" },
       ],
     },
   ];
