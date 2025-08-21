@@ -32,7 +32,7 @@ Use the following parameters to define your request:
 
 ::: warning
 
-The tiles of a given layer might be updated **without** resulting in a new `<Time\>` dimension.
+The tiles of a given layer might be updated **without** resulting in a new `<Time>` dimension.
 If your application caches tiles locally, you need to invalidate your local cache for this layer.
 To check the latest change of any layer, use the [Cache Update](/docs/wmts#cache-update) service.
 

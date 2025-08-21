@@ -5,7 +5,7 @@ outline: [2, 3]
 # Web Map Service (WMS)
 
 Federal offices make part of their data available via the WMS - Federal Spatial Data Infrastructure (FSDI) service.
-The data layers currently available in the WMS-FSDI correspond, with a few exceptions, to the geodata that are presented in map.geo.admin.ch.
+The data layers currently available in the WMS-FSDI correspond, with a few exceptions, to the geodata that are presented in [map.geo.admin.ch](map.geo.admin.ch).
 
 ## GetCapabilities
 
@@ -50,6 +50,25 @@ Use the following parameters to define your request:
 | Height        | 582                             | Height of the output image in pixels.                                                               |
 | Format        | image/png                       | Output image format (e.g., `image/png`, `image/jpeg`).                                              |
 
+Example of a GetMap request:
+
+```bash
+curl -o demo.png "https://wms.geo.admin.ch/?\
+SERVICE=WMS&REQUEST=GetMap&\
+VERSION=1.3.0&\
+LAYERS=ch.bafu.bundesinventare-bln&\
+STYLES=default&\
+CRS=EPSG:2056&\
+BBOX=2550000,1060000,2660000,1140000&\
+WIDTH=800&\
+HEIGHT=582&\
+FORMAT=image/png"
+```
+
+The output image:
+
+<img src="https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png" />
+
 ## GetFeatureInfo
 
 <ApiCodeBlock url="https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=<Layers>&QUERY_LAYERS=<QueryLayers>&STYLES=<Styles>&CRS=<CRS>&BBOX=<BBOX>&WIDTH=<Width>&HEIGHT=<Height>&I=<I>&J=<J>&INFO_FORMAT=<InfoFormat>&FEATURE_COUNT=<FeatureCount>&LANG=<Lang>&FORMAT=<Format>&TRANSPARENT=<Transparent>" method="GET" />
@@ -73,6 +92,22 @@ Use the following parameters to define your request:
 | Format        | image/png                       | Output image format (should match the map request).                                                 |
 | Transparent   | true                            | Whether the background should be transparent (`true` or `false`).                                   |
 
+Example of a GetFeatureInfo request:
+
+<ExampleCodeBlock
+request="curl https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=ch.bafu.bundesinventare-bln&LAYERS=ch.bafu.bundesinventare-bln&FEATURE_COUNT=10&INFO_FORMAT=text%2Fplain&LANG=en&I=50&J=50&CRS=EPSG%3A2056&STYLES=&WIDTH=101&HEIGHT=101&BBOX=2609000%2C1123050%2C2614050%2C1128100"
+exampleLang="txt"
+example="GetFeatureInfo results:
+Layer 'ch.bafu.bundesinventare-bln'
+  Feature 1362: 
+    No. = '1716'
+    Name = 'Pfynwald – Illgraben'
+    Area_ha = '5064.29'
+    Objectsheet = 'https://data.geo.admin.ch/ch.bafu.bundesinventare-bln/objectsheets/2017revision/nr1716.pdf'
+    Subarea-No. = '0'
+    Subarea = ''"
+/>
+
 ## GetLegendGraphic
 
 <ApiCodeBlock url="https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.3.0&LAYERS={Layers}&STYLES={Styles}&LANG={Lang}&CRS={CRS}&BBOX={BBOX}&WIDTH={Width}&HEIGHT={Height}&FORMAT={Format}" method="GET" />
@@ -90,6 +125,16 @@ Use the following parameters to define your request:
 | Height        | 582                             | Height of the output image in pixels.                                                              |
 | Format        | image/png                       | Output image format (e.g., `image/png`, `image/jpeg`).                                             |
 
+Example of a GetLegendGraphic request:
+
+```bash
+curl -o demo.png https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&LANG=en&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png
+```
+
+The output image:
+
+<img src="https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&LANG=en&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png" />
+
 #### Further information
 
 - [General Terms of Use and Operating Conditions of the Federal Spatial Data Infrastructure FSDI](https://www.geo.admin.ch/en/geo-services/geo-services/terms-of-use.html)
@@ -100,50 +145,3 @@ Use the following parameters to define your request:
 - [MapInfo](http://www.twiav.nl/files/TWIAV_TIP_MI002.pdf)
 - [Quantum GIS](http://www.qgis.org/en/docs/index.html)
 - [Exemple 1 - Mappetizer](http://www.mappetizer.de/de/beispiele/wms_bafu_suisse/index.html)
-
-## Examples
-
-Example of a GetMap request:
-
-```bash
-curl -o demo.png "https://wms.geo.admin.ch/?\
-SERVICE=WMS&REQUEST=GetMap&\
-VERSION=1.3.0&\
-LAYERS=ch.bafu.bundesinventare-bln&\
-STYLES=default&\
-CRS=EPSG:2056&\
-BBOX=2550000,1060000,2660000,1140000&\
-WIDTH=800&\
-HEIGHT=582&\
-FORMAT=image/png"
-```
-
-The output image:
-
-<img src="https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png" />
-
-Example of a GetFeatureInfo request:
-
-<ExampleCodeBlock
-request="curl https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=ch.bafu.bundesinventare-bln&LAYERS=ch.bafu.bundesinventare-bln&FEATURE_COUNT=10&INFO_FORMAT=text%2Fplain&LANG=en&I=50&J=50&CRS=EPSG%3A2056&STYLES=&WIDTH=101&HEIGHT=101&BBOX=2609000%2C1123050%2C2614050%2C1128100"
-exampleLang="txt"
-example="GetFeatureInfo results:
-Layer 'ch.bafu.bundesinventare-bln'
-  Feature 1362: 
-    No. = '1716'
-    Name = 'Pfynwald – Illgraben'
-    Area_ha = '5064.29'
-    Objectsheet = 'https://data.geo.admin.ch/ch.bafu.bundesinventare-bln/objectsheets/2017revision/nr1716.pdf'
-    Subarea-No. = '0'
-    Subarea = ''"
-/>
-
-Example of a GetLegendGraphic request:
-
-```bash
-curl -o demo.png https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&LANG=en&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png
-```
-
-The output image:
-
-<img src="https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.3.0&LAYERS=ch.bafu.bundesinventare-bln&STYLES=default&LANG=en&CRS=EPSG:2056&BBOX=2550000,1060000,2660000,1140000&WIDTH=800&HEIGHT=582&FORMAT=image/png" />

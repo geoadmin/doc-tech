@@ -1,4 +1,4 @@
-# Mapbox Vector Tiles
+# Vector Tiles
 
 This service delivers vector map tiles and styles through a RESTful API, implementing the [Mapbox Vector Tiles specification](https://www.mapbox.com/vector-tiles).
 

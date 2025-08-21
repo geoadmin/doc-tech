@@ -63,7 +63,7 @@ Use the following parameters to define your request:
 | TileSetId       | 22                         | Zoom level (see table below)                                                                                                                                                                                                                                                                                                                                           |
 | TileRow         | 236                        |                                                                                                                                                                                                                                                                                                                                                                        |
 | TileCol         | 284                        |                                                                                                                                                                                                                                                                                                                                                                        |
-| FormatExtension | png                        | Mostly png, except for some raster layer (pixelkarte and swissimage)                                                                                                                                                                                                                                                                                                   |
+| FormatExtension | png                        | Mostly png, except for some raster layer (pixelkarte and SWISSIMAGE)                                                                                                                                                                                                                                                                                                   |
 
 With the `tileOrigin` in the top left corner of the bounding box:
 
@@ -99,14 +99,14 @@ With the `tileOrigin` in the top left corner of the bounding box:
 | 0.25               | 27             | 12           | 64                 | 7500        | 5000        | 37’500’000  | 1 : 945                                    |
 | 0.1                | 28             | 13           | 25.6               | 18750       | 12500       | 234’375’000 | 1 : 378                                    |
 
+<small>
 Notes:
 
-1.  The projection for the tiles is **LV95** (EPSG:2056). Other
-    projection are supported, see further down.
+1.  The projection for the tiles is **LV95** (EPSG:2056). Other projection are available, see [Supported Projections](/docs/wmts.html#supported-projections).
 2.  The tiles are generated on-the-fly and stored in a cache.
 3.  Zoom level 24, with a resolution of 1.5m, is available in the tile pyramid but it is not currently made available through the API.
 4.  The zoom levels 27 and 28 (resolution 0.25m and 0.1m) are only
-    available for a few layers, e.g. swissimage or cadastral web map.
+    available for a few layers, e.g. SWISSIMAGE or cadastral web map.
     For the other layers it is only a client zoom (tiles are
     stretched).
 5.  You **have** to use the `ResourceURL` to construct the `GetTile` request.
@@ -115,9 +115,21 @@ Notes:
     the usual **col/row** order. However, most desktop GIS allow you to
     either use the advertised order or to override it.
 7.  The tiles of a given layer might be updated **without** resulting
-    in a new \<Time\> dimension in the GetCapabilities dimension.
+    in a new `<Time>` dimension in the GetCapabilities dimension.
     If your application caches tiles locally, you need to invalidate your local cache for this layer.
     To check the latest change of any layer, use the [Cache Update](#cache-update) service.
+
+</small>
+
+Example of a GetTile request:
+
+```bash
+curl -o demo.jpg https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/21781/20/58/70.jpeg
+```
+
+The output image:
+
+<img src="https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/21781/20/58/70.jpeg" />
 
 ## Cache Update
 
@@ -127,8 +139,6 @@ Use the Cache Update service to query the date of the last update for a given la
 If your cache is older than the returned date, you have to clear your local cache.
 
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/<LayerBodId>/cacheUpdate" method="GET" />
-
-## Examples
 
 The latest cache update for the product SWISSIMAGE:
 
@@ -140,17 +150,7 @@ example='{
 }'
 />
 
-Fetch a single tile:
-
-```bash
-curl -o demo.jpg https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/21781/20/58/70.jpeg
-```
-
-The output image:
-
-<img src="https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/21781/20/58/70.jpeg" />
-
-### OpenLayers
+## Examples: OpenLayers
 
 An OpenLayers3 example showing the Cadastralwebmap as WMTS and Tiled WMS
 

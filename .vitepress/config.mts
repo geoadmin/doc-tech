@@ -149,8 +149,8 @@ function visualizeDataItems(): DefaultTheme.SidebarItem[] {
     { text: "WMTS", link: "/docs/wmts" },
     { text: "XYZ", link: "/docs/xyz" },
     {
-      text: "Mapbox Vector Tiles",
-      link: "/docs/mapbox-vector-tiles",
+      text: "Vector Tiles",
+      link: "/docs/vector-tiles",
     },
     {
       text: "Terrain Service",
