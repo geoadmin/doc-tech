@@ -136,8 +136,8 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: "Address Search",
-      items: [{ text: "Search", link: "/docs/search" }],
+      text: "Search",
+      link: "/docs/search",
     },
     {
       text: "Elevation & Profile",
