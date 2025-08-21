@@ -153,13 +153,18 @@ function visualizeDataItems(): DefaultTheme.SidebarItem[] {
   return [
     { text: "WMS", link: "/docs/wms" },
     { text: "WMTS", link: "/docs/wmts" },
+    { text: "XYZ", link: "/docs/xyz" },
     {
-      text: "Mapbox Vector Tiles",
-      link: "/docs/mapbox-vector-tiles",
+      text: "Vector Tiles",
+      link: "/docs/vector-tiles",
     },
     {
-      text: "3D",
-      link: "/docs/3d",
+      text: "Terrain Service",
+      link: "/docs/terrain-service",
+    },
+    {
+      text: "3D Tiles",
+      link: "/docs/3d-tiles",
     },
   ];
 }
