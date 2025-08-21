@@ -5,7 +5,7 @@ Depending on the update interval of an asset object (e.g. for frequently updated
 In special cases, it can even be set to `no-cache` (e.g. for real-time data).
 
 All endpoints support the precondition headers `If-Match` and `If-None-Match`.
-To reduce unnecessary traffic, it is highly recommended to use these headers (especially `If-None-Match`) when making requests."
+To reduce unnecessary traffic, it is highly recommended to use these headers (especially `If-None-Match`) when making requests.
 
 If your application uses frequently updated data and you want to ensure you do not miss any updates, follow this recommended procedure:
 
@@ -28,14 +28,12 @@ while(poll_for_new_data):
     if item_response.status_code == 304:
     # item metadata and hence any associated asset object didn't
     # change since last call
-
-    time.sleep(refresh_interval)
+        time.sleep(refresh_interval)
 
     elif item_response.status_code == 200:
     # item metadata has changed since last visit
-
-    item_etag = item_response.headers.get("ETag") # save the new etag
-    asset_href = item_response.json()['assets'][asset_id]['href'] # save the asset href
+        item_etag = item_response.headers.get("ETag") # save the new etag
+        asset_href = item_response.json()['assets'][asset_id]['href'] # save the asset href
 
     obj_response = requests.get(asset_href, headers={'If-None-Match': f'"{asset_etag}"'})
     if obj_response.status_code == 304:
@@ -62,5 +60,5 @@ while(poll_for_new_data):
     else:
         # do proper error handling
     else:
-    # do proper error handling
+        # do proper error handling
 ```

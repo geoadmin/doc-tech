@@ -1,6 +1,6 @@
 # Authentication
 
-All write requests require authentication. There are currently two supported authentications methods:
+All write requests require authentication. There are currently two supported authentication methods:
 
 ::: warning
 Basic and Token authentication have been removed in `v1` of STAC API.
@@ -60,11 +60,10 @@ curl --request POST \
 Replace `<CLIENT_ID>` with the correct client identifier, which you should receive along with your username and password.
 
 The response from `InitiateAuth` is a JSON document.
-Use the `AccessToken` from the response to authenticate against the STAC API."
-In some cases, the response may not contain the token (e.g., if the password must be updated or multi-factor authentication is required)
+Use the `AccessToken` from the response to authenticate against the STAC API.
+In some cases, the response may not contain the token (e.g., if the password must be updated or multi-factor authentication is required).
 The client is responsible for handling these cases.
-[AWS provides an SDK](https://aws.amazon.com/developer/tools/) which may
-make this easier.
+[AWS provides an SDK](https://aws.amazon.com/developer/tools/) which may ake this easier.
 
 The access token is valid only for a limited time, as specified by the `AuthenticationResult.ExpiresIn` field in the response.
 You need to refresh it periodically, either by obtaining a new JWT or by [using the refresh token](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html).

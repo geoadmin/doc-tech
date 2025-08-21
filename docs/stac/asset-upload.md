@@ -4,7 +4,7 @@ outline: [2, 3]
 
 # Asset Upload Management
 
-Asset files are uploaded via the [STAC API](https://data.geo.admin.ch/api/stac/static/spec/v1/api.html) using the API requests described in this chapter.
+Asset files are uploaded via the [STAC API](https://data.geo.admin.ch/api/stac/static/spec/v1/api.html) using the API requests described in this section.
 
 - [Authentication](./authentication)
 - [Compression](#compression)
@@ -36,7 +36,7 @@ Uploading an asset file via the STAC API involves three main steps:
 
    Any file that is larger than 5 GB must be split into multiple parts.
    A file part must be at least 5 MB (except for the last one) and at most 5 GB, otherwise the complete operation will fail.
-   If the file is less than 5 GB, you will upload it as a single part, but you must still initiate and complete the multipart upload process as described above.
+   If the file is less than 5 GB, you will upload it as a single part, but you must still initiate and complete the multipart upload process as described in the example section.
 
    Use the URLs returned in step 1 to [upload each part](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/uploadAssetFilePart). You may upload parts in parallel.
 
@@ -59,7 +59,7 @@ Uploading an asset file via the STAC API involves three main steps:
 - Only one upload can be in progress for a given asset at a time. To start a new upload, first complete or abort any existing upload.  
   Use [list uploads](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/getAssetUploads) to check for uploads in progress.
 
-  <ApiCodeBlock url="http://data.geo.admin.ch/api/stac/v1/collections/{collectionId}/items/{featureId}/assets/{assetId}/uploads" method="GET" />
+  <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collectionId}/items/{featureId}/assets/{assetId}/uploads" method="GET" />
 
 ## Examples
 
@@ -84,23 +84,23 @@ user = os.environ.get('STAC_USER', 'unknown-user')
 password = os.environ.get('STAC_PASSWORD', 'unknown-password')
 
 with open('smr200-200-4-2016-2056-kgrs-10.tiff', 'rb') as fd:
-data = fd.read()
+    data = fd.read()
 
 checksum_multihash = multihash.to_hex_string(multihash.encode(hashlib.sha256(data).digest(), 'sha2-256'))
 md5 = b64encode(hashlib.md5(data).digest()).decode('utf-8')
 
 # 1. Create a multipart upload
 response = requests.post(
-f"{scheme}://{hostname}/api/stac/v1/{asset_path}/uploads",
-auth=(user, password),
-json={
-    "number_parts": 1,
-    "md5_parts": [{
-      "part_number": 1,
-      "md5": md5
-    }],
-    "file:checksum": checksum_multihash
-}
+    f"{scheme}://{hostname}/api/stac/v1/{asset_path}/uploads",
+    auth=(user, password),
+    json={
+        "number_parts": 1,
+        "md5_parts": [{
+          "part_number": 1,
+          "md5": md5
+        }],
+        "file:checksum": checksum_multihash
+    }
 )
 upload_id = response.json()['upload_id']
 
@@ -120,95 +120,85 @@ For other examples on how to compute the base64 MD5 of a part, see [AWS examples
 
 ### Recurrent uploads and error handling
 
-This describes the process in more detail with focus on automated recurrent uploads and error handling.
+This describes the process in more detail, focusing on automated recurrent uploads and error handling.
 
 #### Glossary
 
 - Abort Upload: abort an upload in progress by sending an abort request to the service
 - Cancel Upload: cancel the upload iteration without sending an abort request to the service
 
-#### Recurrent upload
+#### Recurrent Upload
 
 If you have recurrent asset uploads, you need to have a proper error handling otherwise the uploads might get stuck.
-Asset uploads operation are not stateless but stateful therefore the error handling is important.
+Asset upload operation are stateful, not stateless, therefore the error handling is important.
 Here below is a simple practical example on which errors to handle in case of recurrent asset upload.
 
 Note this example is only recommended if the upload is recurrent (for example every hour). The number of retries below depends on the upload frequency, if the upload frequency is daily then you might want to have at least 3 retries with some exponential backoff time between each retries, conversely, if the upload is done at high frequency, you might skip retries and simply cancel the upload, using the next upload iteration as a retry.
 
-1. Create Asset Upload
+1. **Create Asset Upload**
 
-   ```text
+   ```s
    POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads
    ```
 
-   - `201 OK` => Continue to step 2.
-   - `400 Bad Request`
+   Possible Responses:
 
-     - Response is `{"description": "Upload already in progress", "code": 400}` => Abort the upload
+   | HTTP Response                                                       | Action Required                                                         |
+   | ------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+   | `201 OK`                                                            | Continue to step 2.                                                     |
+   | `400 Bad Request - "Upload already in progress"`                    | Abort the existing upload (see item 1.1), then restart step 1.          |
+   | `400 Bad Request - other errors`                                    | Cancel upload. Analyze and correct your request before retrying.        |
+   | `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless). |
+   | `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Retry later. Adjust wait time based on upload rate (minimum 100ms).     |
 
-       - To do so first get the `upload_id` of the `in-progress` upload via
+   **1.1. Abort the existing upload**
 
-         ```text
-         GET https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads?status=in-progress
-         ```
+   If response is `{"description": "Upload already in progress", "code": 400}`, you should abort the upload.
 
-       - Then using this id abort the upload
+   First get the `upload_id` of the `in-progress` upload via:
 
-         ```text
-         POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/abort
-         ```
-
-       - Then restart the step 1.
-
-     - Another `400 Bad Request` => Cancel upload
-
-     Your request is not correct. Analyze your request and correct it before retrying the step 1.
-
-   - `500 Internal Server Error` => Cancel upload
-
-     This is generally an application crash and should be reported to the service administrator. A retry is usually useless; simply cancel the upload.
-
-   - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
-
-     Service is momentarily not available, wait a short time and retry step 1. The wait time and number of retries depend on the upload rate, but a minimum wait time of 100ms is recommended.
-
-2. Upload the parts via the presigned URL
-
-   ```text
-   PUT {presigned_url}
+   ```http
+   GET https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads?status=in-progress
    ```
 
-   - `200 OK` => Continue to step 3.
-   - `400 Bad Request` => Abort upload
+   Then use the `upload_id` to abort it:
 
-     Abort upload using the current `upload_id` and contact service administrator.
-
-     ```text
-     POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/abort
-     ```
-
-   - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
-
-     Retry step 2 after a short wait (minimum 100ms).
-
-3. Complete the upload
-
-   ```text
-   POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/complete
+   ```http
+   POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/abort
    ```
 
-   - `200 OK` => Upload successful
-   - `400 Bad Request` => Cancel upload
+   Finally, restart step 1. If you get another `400 Bad Request`, your request is not correct and you should cancel it.
+   Analyze your request and correct it before retrying step 1.
 
-     Your request is invalid or incorrect. Cancel the upload script and verify its correctness.
+**2. Upload the parts via the presigned URL**
 
-   - `500 Internal Server Error` => Cancel upload
+```http
+PUT {presigned_url}
+```
 
-     This is generally an application crash and should be reported to the service administrator. A retry is usually useless; simply cancel the upload.
+Possible Responses:
 
-   - `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` => Retry
+| HTTP Response                                                       | Action Required                                                         |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `200 OK`                                                            | Continue to step 3.                                                     |
+| `400 Bad Request`                                                   | Abort upload                                                            |
+| `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless). |
+| `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Retry step 2 after a short wait (minimum 100ms).                        |
 
-     Service is momentarily not available, wait a short moment (100ms), then retry the request.
+**3. Complete the upload**
+
+```http
+POST https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/complete
+```
+
+Possible Responses:
+
+| HTTP Response                                                       | Action Required                                                                    |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `200 OK`                                                            | Upload successful.                                                                 |
+| `400 Bad Request`                                                   | Cancel upload                                                                      |
+| `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless).            |
+| `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Service is momentarily not available, wait a short moment, then retry the request. |
 
 The following figure shows the flow of a multipart upload process.
 
