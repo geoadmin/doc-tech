@@ -5,7 +5,7 @@ outline: [2, 3]
 # Web Map Service (WMS)
 
 Federal offices make part of their data available via the WMS - Federal Spatial Data Infrastructure (FSDI) service.
-The data layers currently available in the WMS-FSDI correspond, with a few exceptions, to the geodata that are presented in [map.geo.admin.ch](map.geo.admin.ch).
+The data layers currently available in the WMS-FSDI correspond, with a few exceptions, to the geodata that are presented in [map.geo.admin.ch](https://map.geo.admin.ch).
 
 ## GetCapabilities
 
