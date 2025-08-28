@@ -5,7 +5,7 @@ import fs from "fs";
 export default defineConfig({
   title: "*.geo.admin.ch",
   description: "Technical Documentation about *.geo.admin.ch",
-  head: [["link", { rel: "icon", href: "/static/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   ignoreDeadLinks: "localhostLinks",
   vite: {
     build: {
@@ -16,7 +16,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
-    logo: { src: "/static/icon-ch.svg", width: 24, height: 24 },
+    logo: { src: "/icon-ch.svg", width: 24, height: 24 },
     lastUpdated: {
       formatOptions: {
         dateStyle: "medium",
