@@ -189,3 +189,11 @@ This is represented by an iframe like:
 :::tip
 To ensure proper geolocation functionality, explicitly enable geolocation with `allow="geolocation"` to avoid issues in certain web browsers.
 :::
+
+
+## Example
+
+Example showing how to retrieve the layer ID and the feature ID outside the iframe when a feature is selected on the map.
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="Basic iframe" src="https://codepen.io/geoadmin/embed/yOBzqM?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+</iframe>

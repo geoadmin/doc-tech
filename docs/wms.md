@@ -145,3 +145,10 @@ The output image:
 - [MapInfo](http://www.twiav.nl/files/TWIAV_TIP_MI002.pdf)
 - [Quantum GIS](http://www.qgis.org/en/docs/index.html)
 - [Exemple 1 - Mappetizer](http://www.mappetizer.de/de/beispiele/wms_bafu_suisse/index.html)
+
+## Examples: OpenLayers
+
+An OpenLayers10 example showing the CadastralWebMap as WMTS and Tiled WMS
+
+<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/geoadmin/embed/ogjMOay?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+</iframe>
