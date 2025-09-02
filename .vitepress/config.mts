@@ -176,12 +176,12 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
       items: [
         { text: "Overview", link: "/docs/stac-api/overview" },
         { text: "Asset Upload", link: "/docs/stac-api/asset-upload" },
+        { text: "Authentication", link: "/docs/stac-api/authentication" },
         { text: "Caching", link: "/docs/stac-api/caching" },
         { text: "Compression", link: "/docs/stac-api/compression" },
         { text: "Item Expiration", link: "/docs/stac-api/item-expiration" },
-        { text: "Authentication", link: "/docs/stac-api/authentication" },
-        { text: "Supported Media Types", link: "/docs/stac-api/supported-media" },
         { text: "Migrate v0.9 to v1.0", link: "/docs/stac-api/migrate09-10" },
+        { text: "Supported Media Types", link: "/docs/stac-api/supported-media" },
         {
           text: "API Specs",
           link: "https://data.geo.admin.ch/api/stac/static/spec/v1/api.html",
