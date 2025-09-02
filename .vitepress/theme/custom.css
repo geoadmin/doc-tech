@@ -121,6 +121,20 @@ figcaption {
   pointer-events: none;
 }
 
+#layer-table {
+  width: 100%;
+  max-height: 600px;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#layer-table-headers {
+  background-color: var(--vp-c-bg-2);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 /* ==========================
    4. Utility Classes
    ========================== */

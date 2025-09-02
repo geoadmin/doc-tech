@@ -83,6 +83,7 @@ export default defineConfig({
         text: "End-of-Life",
         link: "/page/end-of-life",
       },
+      { text: "Available Layers", link: "/available-layers" },
     ],
     socialLinks: [
       { icon: "github", link: "https://github.com/geoadmin/doc-techdoc" },
