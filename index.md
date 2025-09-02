@@ -32,7 +32,7 @@ features:
   - title: Download Data
     details: Download entire datasets for exploration and analysis.
     icon: ⬇️
-    link: /docs/stac/overview
+    link: /docs/stac-api/overview
 ---
 
 <script setup>

@@ -31,7 +31,7 @@ export default defineConfig({
       { text: "Home", link: "/" },
       {
         text: "STAC API",
-        link: "https://data.geo.admin.ch/api/stac/static/spec/v1/api.html",
+        link: "https://data.geo.admin.ch/api/stac-api/static/spec/v1/api.html",
       },
     ],
 
@@ -172,17 +172,18 @@ function visualizeDataItems(): DefaultTheme.SidebarItem[] {
 function downloadDataItems(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "STAC",
+      text: "STAC API",
       items: [
-        { text: "Asset Upload Management", link: "/docs/stac/asset-upload" },
-        { text: "Caching", link: "/docs/stac/caching" },
-        { text: "Compression", link: "/docs/stac/compression" },
-        { text: "Item Expiration", link: "/docs/stac/item-expiration" },
-        { text: "Authentication", link: "/docs/stac/authentication" },
-        { text: "Supported Media Types", link: "/docs/stac/supported-media" },
-        { text: "Migrate v0.9 to v1.0", link: "/docs/stac/migrate09-10" },
+        { text: "Overview", link: "/docs/stac-api/overview" },
+        { text: "Asset Upload", link: "/docs/stac-api/asset-upload" },
+        { text: "Caching", link: "/docs/stac-api/caching" },
+        { text: "Compression", link: "/docs/stac-api/compression" },
+        { text: "Item Expiration", link: "/docs/stac-api/item-expiration" },
+        { text: "Authentication", link: "/docs/stac-api/authentication" },
+        { text: "Supported Media Types", link: "/docs/stac-api/supported-media" },
+        { text: "Migrate v0.9 to v1.0", link: "/docs/stac-api/migrate09-10" },
         {
-          text: "Documentation",
+          text: "API Specs",
           link: "https://data.geo.admin.ch/api/stac/static/spec/v1/api.html",
         },
       ],

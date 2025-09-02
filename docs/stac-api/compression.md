@@ -4,7 +4,7 @@ Files between **1 MB** and **10 MB** are automatically compressed during downloa
 Note that this compression is only done for standard media types (see [File types that CloudFront compresses](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html#compressed-content-cloudfront-file-types)).
 
 :::warning Files larger than 10 MB
-It is highly recommended to upload files larger than **10 MB** using a compressed media type (see [Supported Media Type](/docs/stac/supported-media)).
+It is highly recommended to upload files larger than **10 MB** using a compressed media type (see [Supported Media Type](/docs/stac-api/supported-media)).
 If this is not possible (e.g., for JSON directly used in a browser application), the file should be either compressed upfront (see below) or split into smaller files.
 
 :::

@@ -1,8 +1,5 @@
 ---
 outline: [2, 3]
-prev:
-  text: "Authentication"
-  link: "api3/stac/authentication"
 ---
 
 # Changes and Migration from `v0.9` to `v1`
@@ -104,19 +101,17 @@ The following fields of the `asset` object have changed:
 
 ## New fields and functionality
 
+We have extended the functionality of collections and added new fields to items and assets.
+
 ### Collection object
 
-Collections can now have assets as well, using the same structure and fields as item assets. For details, see
-[API SPEC](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Data/operation/describeCollection).
+Collections can now have assets as well, using the same structure and fields as item assets. For details, see the [API Specs](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Data/operation/describeCollection).
 
 ### Item object
 
-The following fields have changed from `v0.9` to `v1`:
-
 ##### Item Expiration
 
-It is now possible to set an expiry date for an item. Items with an `expires` date
-in the past will automatically be deleted.
+It is now possible to set an expiry date for an item. Items with an `expires` date in the past will automatically be deleted.
 
 ```json
 {
@@ -130,7 +125,7 @@ in the past will automatically be deleted.
 
 ##### Forecast Extension
 
-For the specific use case of [Forecast data](https://github.com/MeteoSwiss/opendata-forecast-data) we have developed and implemented the[STAC Forecast Extension](https://github.com/stac-extensions/forecast/pull/12) with the following new fields.
+For the specific use case of [weather forecast data](https://github.com/MeteoSwiss/opendata-forecast-data) we have developed and implemented the [STAC Forecast Extension](https://github.com/stac-extensions/forecast/pull/12) with the following new fields.
 
 ```json
 {
@@ -148,7 +143,7 @@ For the specific use case of [Forecast data](https://github.com/MeteoSwiss/opend
 
 ##### Item geometry
 
-The item geometry can now be any valid GeoJSON geometry. (Below is the relevant part of the spec instead of an example.)
+The item geometry can now be any valid GeoJSON geometry.
 
 ```json
 itemGeometry:
@@ -163,8 +158,6 @@ itemGeometry:
 ```
 
 ### Asset object
-
-The following fields have changed from `v0.9` to `v1`:
 
 ##### Language information about the referenced asset
 

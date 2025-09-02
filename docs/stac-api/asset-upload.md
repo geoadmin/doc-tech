@@ -2,41 +2,41 @@
 outline: [2, 3]
 ---
 
-# Asset Upload Management
+# Asset Upload
 
 Asset files are uploaded via the [STAC API](https://data.geo.admin.ch/api/stac/static/spec/v1/api.html) using the API requests described in this section.
 
-- [Authentication](./authentication)
-- [Compression](#compression)
-
 ::: warning
-STAC API `v0.9` is being deprecated and will be turned off on 31.3.2026, [learn more](/docs/stac/migrate09-10.md).
+STAC API `v0.9` is being deprecated and will be turned off on 31.3.2026, [learn more](/docs/stac-api/migrate09-10.md).
 :::
 
 :::tip IMPORTANT NOTES
 
-- Files larger than 10 MB should use compression, see [Compression](/docs/stac/assetupload.html#compression).
+- Files larger than 10 MB should use compression, see [Compression](/docs/stac-api/compression).
 
-- POST/PUT requests require authentication as described in [Authentication](/docs/stac/authentication).
+- POST/PUT requests require authentication as described in [Authentication](/docs/stac-api/authentication).
   :::
+
 
 ## Steps to Upload Assets
 
 Uploading an asset file via the STAC API involves three main steps:
 
+::: tip FILE SPLITTING
+- Any file that is larger than 5 GB must be split into multiple parts.
+- A file part must be at least 5 MB (except for the last one) and at most 5 GB, otherwise the complete operation will fail.
+- If the file is less than 5 GB, you will upload it as a single part, but you must still initiate and complete the multipart upload process as described in the example section.
+:::
+
 1. **Start a new upload:**
 
-   Use the [create new upload](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Data-Management/operation/putAsset) request. This returns a list of URLs for uploading file parts.
+   Use the [create new upload](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/createAssetUpload) request. This returns a list of URLs for uploading file parts.
 
 <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads" method="POST" />
 
 <br/>
 
 2. **Upload file parts:**
-
-   Any file that is larger than 5 GB must be split into multiple parts.
-   A file part must be at least 5 MB (except for the last one) and at most 5 GB, otherwise the complete operation will fail.
-   If the file is less than 5 GB, you will upload it as a single part, but you must still initiate and complete the multipart upload process as described in the example section.
 
    Use the URLs returned in step 1 to [upload each part](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/uploadAssetFilePart). You may upload parts in parallel.
 
