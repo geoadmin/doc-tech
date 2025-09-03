@@ -1,13 +1,17 @@
 # Caching
 
-Asset objects are cached for 2 hours (7200 seconds) by default.
-Depending on the update interval of an asset object (e.g. for frequently updated data), the `Cache-Control` header can be different.
-In special cases, it can even be set to `no-cache` (e.g. for real-time data).
+This page explains how caching works for asset objects in our API and how to efficiently handle updates using HTTP caching headers.
+By leveraging the the right headers, you can minimize unnecessary data transfer and keep your application in sync with the latest changes.
 
-All endpoints support the precondition headers `If-Match` and `If-None-Match`.
-To reduce unnecessary traffic, it is highly recommended to use these headers (especially `If-None-Match`) when making requests.
+Asset objects are cached for two hours by default.
+Depending on how frequently an asset is updated, the `Cache-Control` header may vary.
+For example, real-time data may be served with `no-cache` to ensure freshness.
 
-If your application uses frequently updated data and you want to ensure you do not miss any updates, follow this recommended procedure:
+All endpoints support the HTTP precondition headers `If-Match` and `If-None-Match`.
+To reduce unnecessary traffic and improve efficiency, we strongly recommend using these headers - especially `If-None-Match` - when making requests.
+
+Below, you’ll find a sample Python script demonstrating a recommended polling strategy for frequent data updates.
+The script uses these headers to check for updates periodically, only downloading new data when it has changed.
 
 ```python
 import requests

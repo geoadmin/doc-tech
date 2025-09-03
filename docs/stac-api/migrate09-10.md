@@ -79,7 +79,7 @@ In order to highlight the changes we'll use the following example `item` and `as
 
 :::
 
-Along with the changes at the API level, `v1` comes with a new authentication mechanism. These changesare described in detail [here](./authentication).
+Along with the changes at the API level, `v1` comes with a new authentication mechanism. These changes are described in detail [here](./authentication).
 
 ## Breaking changes
 
