@@ -27,14 +27,6 @@ export default defineConfig({
       text: "Edit this page on GitHub",
       pattern: "https://github.com/geoadmin/doc-tech/edit/master/:path",
     },
-    nav: [
-      { text: "Home", link: "/" },
-      {
-        text: "STAC API",
-        link: "https://data.geo.admin.ch/api/stac-api/static/spec/v1/api.html",
-      },
-    ],
-
     sidebar: [
       {
         text: "Get Started",
