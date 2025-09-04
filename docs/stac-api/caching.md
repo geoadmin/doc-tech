@@ -1,7 +1,7 @@
 # Caching
 
 This page explains how caching works for asset objects in our API and how to efficiently handle updates using HTTP caching headers.
-By leveraging the the right headers, you can minimize unnecessary data transfer and keep your application in sync with the latest changes.
+By leveraging the right headers, you can minimize unnecessary data transfer and keep your application in sync with the latest changes.
 
 Asset objects are cached for two hours by default.
 Depending on how frequently an asset is updated, the `Cache-Control` header may vary.

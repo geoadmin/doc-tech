@@ -18,12 +18,12 @@ Session authentication is designed specifically for browser-based workflows and 
 
 ## JSON Web Token Authentication
 
-WT authentication is the recommended approach for API clients performing write operations programmatically.
+JWT authentication is the recommended approach for API clients performing write operations programmatically.
 
 JWT authentication involves two steps:
 
 1. Obtain a JWT token from Amazon Cognito's [InitiateAuth API](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html).
-2. Include the tokem in the HTTP `Authorization` header using the `Bearer` scheme as defined in [RFC 6750](https://datatracker.ietf.org/doc/html/rfc6750#section-2.1).
+2. Include the tokes in the HTTP `Authorization` header using the `Bearer` scheme as defined in [RFC 6750](https://datatracker.ietf.org/doc/html/rfc6750#section-2.1).
 
 To obtain a JWT token, use Amazon Cognito’s InitiateAuth API by sending your username and password, along with your client ID. For example:
 
@@ -52,7 +52,7 @@ For example, this can happen if a password update or multi-factor authentication
 AWS provides an [SDK](https://aws.amazon.com/developer/tools/) to simplify handling these situations
 :::
 
-::: tip Toke expiration
+::: tip Token expiration
 The access token you receive is valid only for a limited time, as specified by the `AuthenticationResult.ExpiresIn` field. After it expires, your application must obtain a new token either by re-authenticating or by using the [refresh token](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html), which is typically valid for a longer period.
 :::
 

@@ -143,7 +143,7 @@ For the specific use case of [weather forecast data](https://github.com/MeteoSwi
 
 ##### Item geometry
 
-The item geometry can now be any valid GeoJSON geometry.
+The item geometry can now be any valid GeoJSON geometry. Below is the relevant part of the spec instead of an example:
 
 ```json
 itemGeometry:
@@ -159,9 +159,9 @@ itemGeometry:
 
 ### Asset object
 
-##### Language information about the referenced asset
+##### Language Information About the Referenced Asset
 
-You can now specify the language of a `link` target using the `hreflang` parameter from the [Language Extension](https://github.com/stac-extensions/language?tab=readme-ov-file#fields-for-links-and-assets)"
+You can now specify the language of a `link` target using the `hreflang` parameter from the [Language Extension](https://github.com/stac-extensions/language?tab=readme-ov-file#fields-for-links-and-assets).
 
 ```json
 {
