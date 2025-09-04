@@ -152,7 +152,7 @@ example='{
 
 ## Examples: OpenLayers
 
-An OpenLayers10 example showing the CadastralWebMap as WMTS and Tiled WMS
+This OpenLayers example shows how the CadastralWebMap appears differently when loaded using a WMTS compared to a tiled WMS.
 
 <iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/geoadmin/embed/ogjMOay?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
 </iframe>
