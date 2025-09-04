@@ -21,7 +21,11 @@ To add a legend of a specific layer to your embedded map viewer:
 Here is an example:
 
 ```html
-<iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2675475,1229326.76&z=6&topic=ech&layers=ch.bfe.grundwasserwaermenutzungspotential&bgLayer=ch.swisstopo.pixelkarte-grau" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
+<iframe
+  src="https://map.geo.admin.ch/#/embed?lang=en&center=2675475,1229326.76&z=6&topic=ech&layers=ch.bfe.grundwasserwaermenutzungspotential&bgLayer=ch.swisstopo.pixelkarte-grau"
+  style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;"
+  allow="geolocation"
+></iframe>
 <b>Legend</b>
 <p>
   <img
@@ -36,6 +40,7 @@ which looks like this in the final webpage:
 <iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2675475,1229326.76&z=6&topic=ech&layers=ch.bfe.grundwasserwaermenutzungspotential&bgLayer=ch.swisstopo.pixelkarte-grau" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
 
 <b>Legend</b>
+
 <p>
   <img
     src="https://api3.geo.admin.ch/static/images/legends/ch.bfe.grundwasserwaermenutzungspotential_en.png"
@@ -65,7 +70,7 @@ follow these steps:
 
    ```html
    <iframe
-      src="https://map.geo.admin.ch/#/embed?
+     src="https://map.geo.admin.ch/#/embed?
          lang=en&
          center=2685959.53,1248777.78&
          z=9.63&
@@ -73,12 +78,13 @@ follow these steps:
          layers=KML%7Chttps://cms.geo.admin.ch/www.geo.admin.ch/kml/zoo.kml
          &bgLayer=ch.swisstopo.pixelkarte-grau
          &featureInfo=default"
-      style="border: 0;
+     style="border: 0;
              width: 400px;
              height: 300px;
              max-width: 100%;
              max-height: 100%;"
-      allow="geolocation">
+     allow="geolocation"
+   >
    </iframe>
    ```
 
@@ -106,14 +112,15 @@ You would pass the address to the `swisssearch` parameter in an iframe like this
 
 ```html
 <iframe
-   src="https://map.geo.admin.ch/#/embed?
+  src="https://map.geo.admin.ch/#/embed?
       &swisssearch=Holzikofenweg 36, 3007 Bern"
-   style="border: 0;
+  style="border: 0;
           width: 400px;
           height: 300px;
           max-width: 100%;
           max-height: 100%;"
-   allow="geolocation">
+  allow="geolocation"
+>
 </iframe>
 ```
 
@@ -135,15 +142,16 @@ Appending `swisssearch_autoselect=true` centers the map on the first search resu
 
 ```html
 <iframe
-   src="https://map.geo.admin.ch/#/embed?
+  src="https://map.geo.admin.ch/#/embed?
       &swisssearch=Holzikofenweg, 3007 Bern
       &swisssearch_autoselect=true"
-   style="border: 0;
+  style="border: 0;
           width: 400px;
           height: 300px;
           max-width: 100%;
           max-height: 100%;"
-   allow="geolocation">
+  allow="geolocation"
+>
 </iframe>
 ```
 
@@ -173,27 +181,31 @@ This is represented by an iframe like:
 
 ```html
 <iframe
-   src="https://map.geo.admin.ch/#/map?
+  src="https://map.geo.admin.ch/#/map?
       lang=en&
       center=2675475,1229326.76&
       z=6&
       bgLayer=ch.swisstopo.pixelkarte-farbe"
-   style="border: 0;
+  style="border: 0;
           width: 400px;
           height: 300px;
           max-width: 100%;
           max-height: 100%;"
-   allow="geolocation"></iframe>
+  allow="geolocation"
+></iframe>
 ```
 
 :::tip
 To ensure proper geolocation functionality, explicitly enable geolocation with `allow="geolocation"` to avoid issues in certain web browsers.
 :::
 
-
-## Example
+## Example: Accessing Feature Info from an Embedded Map
 
 Example showing how to retrieve the layer ID and the feature ID outside the iframe when a feature is selected on the map.
+
+This example demonstrates how to enable interaction between an embedded map and other elements on your webpage.
+When a user clicks on a supported feature (currently from KML or GeoJSON layers), the map sends a 'message' event to the parent page using the postMessage API.
+The event is then captured by the parent page and used to display feature information outside the iframe.
 
 <iframe height="600" style="width: 100%;" scrolling="no" title="Basic iframe" src="https://codepen.io/geoadmin/embed/yOBzqM?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
 </iframe>

@@ -40,7 +40,9 @@ To check the latest change of any layer, use the [Cache Update](/docs/wmts#cache
 
 ## Examples
 
-Fetch a single tile:
+### Get a Single Title
+
+Fetch a single tile for the `ch.swisstopo.pixelkarte-farbe` layer:
 
 ```bash
 curl -o demo.jpg https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg
