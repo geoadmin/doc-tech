@@ -7,7 +7,7 @@ We provide tutorials on how to interact with these services:
 - [Explore Data](/docs/get-layer-metadata): Browse additional information about layers, including attributes and other metadata.
 - [Access Data](/docs/identify-features): Retrieve location-based features such as geometries, addresses and elevation.
 - [Visualize Data](/docs/wmts): Access map data (2D and 3D) for visualization in your application.
-- [Download Data](/docs/stac/overview): Download entire datasets for exploration and analysis.
+- [Download Data](/docs/stac-api/overview): Download entire datasets for exploration and analysis.
 - [Map Viewer](/docs/embed-in-an-iframe): Embed the [map viewer](https://map.geo.admin.ch/) in your webpage.
 
 The tutorials are written for a tech-savvy audience like geoinformaticians, data scientists and web developers.
