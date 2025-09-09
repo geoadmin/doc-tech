@@ -1,5 +1,6 @@
 import { defineConfig, type DefaultTheme } from "vitepress";
-import fs from "fs";
+import fs, { link } from "fs";
+import { text } from "stream/consumers";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -61,7 +62,7 @@ export default defineConfig({
       {
         text: "Release Notes",
         collapsed: false,
-        items: loadReleasesSidebarData(),
+        items: releaseNotesItems(),
       },
       {
         text: "Terms of use",
@@ -85,6 +86,29 @@ export default defineConfig({
     },
   },
 });
+
+function releaseNotesItems() {
+  return [
+    {
+      text: "Software Updates",
+      items: [
+        {
+          text: "web-mapviewer",
+          link: "https://github.com/geoadmin/web-mapviewer/releases",
+        },
+        {
+          text: "mf-chsdi3",
+          link: "https://github.com/geoadmin/mf-chsdi3/releases",
+        },
+        {
+          text: "service-stac",
+          link: "https://github.com/geoadmin/service-stac/releases",
+        },
+      ],
+    },
+    { text: "Data Updates", items: loadReleasesSidebarData() },
+  ];
+}
 
 // loads the sidebar data in releases.json after the script has been run (.scripts/releases-sidebar.ts)
 function loadReleasesSidebarData() {
