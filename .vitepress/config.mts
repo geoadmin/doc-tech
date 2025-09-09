@@ -1,6 +1,5 @@
 import { defineConfig, type DefaultTheme } from "vitepress";
-import fs, { link } from "fs";
-import { text } from "stream/consumers";
+import fs from "fs";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
