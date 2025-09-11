@@ -2,7 +2,7 @@
 
 You can embed an interactive version of the [map viewer](https://map.geo.admin.ch/) into your webpage using an HTML iframe, as shown below:
 
-<iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2600988.46,1197433.4&z=8&topic=ech&layers=&bgLayer=ch.swisstopo.pixelkarte-farbe&featureInfo=default" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
+<iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2600988.46,1197433.4&z=8&topic=ech&layers=&bgLayer=ch.swisstopo.pixelkarte-farbe&featureInfo=default" style="border: 0;width: 100%;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
 
 The following expands on the introduction given in the [Web Integration: iFrame](https://www.geo.admin.ch/de/web-integration-iframe/) page.
 
@@ -21,7 +21,11 @@ To add a legend of a specific layer to your embedded map viewer:
 Here is an example:
 
 ```html
-<iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2675475,1229326.76&z=6&topic=ech&layers=ch.bfe.grundwasserwaermenutzungspotential&bgLayer=ch.swisstopo.pixelkarte-grau" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
+<iframe
+  src="https://map.geo.admin.ch/#/embed?lang=en&center=2675475,1229326.76&z=6&topic=ech&layers=ch.bfe.grundwasserwaermenutzungspotential&bgLayer=ch.swisstopo.pixelkarte-grau"
+  style="border: 0;width: 100%;height: 300px;max-width: 100%;max-height: 100%;"
+  allow="geolocation"
+></iframe>
 <b>Legend</b>
 <p>
   <img
@@ -33,9 +37,10 @@ Here is an example:
 
 which looks like this in the final webpage:
 
-<iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2675475,1229326.76&z=6&topic=ech&layers=ch.bfe.grundwasserwaermenutzungspotential&bgLayer=ch.swisstopo.pixelkarte-grau" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
+<iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2675475,1229326.76&z=6&topic=ech&layers=ch.bfe.grundwasserwaermenutzungspotential&bgLayer=ch.swisstopo.pixelkarte-grau" style="border: 0;width: 100%;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
 
 <b>Legend</b>
+
 <p>
   <img
     src="https://api3.geo.admin.ch/static/images/legends/ch.bfe.grundwasserwaermenutzungspotential_en.png"
@@ -55,7 +60,7 @@ To add custom elements like POIs, paths, and text on top of the map viewer:
 
 For example, to get to a result that looks like this:
 
-<iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2685959.53,1248777.78&z=9.63&topic=ech&layers=KML%7Chttps://cms.geo.admin.ch/www.geo.admin.ch/kml/zoo.kml&bgLayer=ch.swisstopo.pixelkarte-grau&featureInfo=default" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
+<iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2685959.53,1248777.78&z=9.63&topic=ech&layers=KML%7Chttps://cms.geo.admin.ch/www.geo.admin.ch/kml/zoo.kml&bgLayer=ch.swisstopo.pixelkarte-grau&featureInfo=default" style="border: 0;width: 100%;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
 
 follow these steps:
 
@@ -65,7 +70,7 @@ follow these steps:
 
    ```html
    <iframe
-      src="https://map.geo.admin.ch/#/embed?
+     src="https://map.geo.admin.ch/#/embed?
          lang=en&
          center=2685959.53,1248777.78&
          z=9.63&
@@ -73,12 +78,13 @@ follow these steps:
          layers=KML%7Chttps://cms.geo.admin.ch/www.geo.admin.ch/kml/zoo.kml
          &bgLayer=ch.swisstopo.pixelkarte-grau
          &featureInfo=default"
-      style="border: 0;
-             width: 400px;
+     style="border: 0;
+             width: 100%;
              height: 300px;
              max-width: 100%;
              max-height: 100%;"
-      allow="geolocation">
+     allow="geolocation"
+   >
    </iframe>
    ```
 
@@ -95,7 +101,7 @@ For example, to center the map on the address "Holzikofenweg 36, 3007 Bern":
    src="https://map.geo.admin.ch/#/embed?
       &swisssearch=Holzikofenweg 36, 3007 Bern"
    style="border: 0;
-          width: 400px;
+          width: 100%;
           height: 300px;
           max-width: 100%;
           max-height: 100%;"
@@ -106,14 +112,15 @@ You would pass the address to the `swisssearch` parameter in an iframe like this
 
 ```html
 <iframe
-   src="https://map.geo.admin.ch/#/embed?
+  src="https://map.geo.admin.ch/#/embed?
       &swisssearch=Holzikofenweg 36, 3007 Bern"
-   style="border: 0;
-          width: 400px;
+  style="border: 0;
+          width: 100%;
           height: 300px;
           max-width: 100%;
           max-height: 100%;"
-   allow="geolocation">
+  allow="geolocation"
+>
 </iframe>
 ```
 
@@ -124,7 +131,7 @@ For example, if you search for the ambiguous "Holzikofenweg, 3007 Bern" without 
    src="https://map.geo.admin.ch/#/embed?
       &swisssearch=Holzikofenweg, 3007 Bern"
    style="border: 0;
-          width: 400px;
+          width: 100%;
           height: 300px;
           max-width: 100%;
           max-height: 100%;"
@@ -135,15 +142,16 @@ Appending `swisssearch_autoselect=true` centers the map on the first search resu
 
 ```html
 <iframe
-   src="https://map.geo.admin.ch/#/embed?
+  src="https://map.geo.admin.ch/#/embed?
       &swisssearch=Holzikofenweg, 3007 Bern
       &swisssearch_autoselect=true"
-   style="border: 0;
-          width: 400px;
+  style="border: 0;
+          width: 100%;
           height: 300px;
           max-width: 100%;
           max-height: 100%;"
-   allow="geolocation">
+  allow="geolocation"
+>
 </iframe>
 ```
 
@@ -154,7 +162,7 @@ The corresponding iframe:
       &swisssearch=Holzikofenweg, 3007 Bern
       &swisssearch_autoselect=true"
    style="border: 0;
-          width: 400px;
+          width: 100%;
           height: 300px;
           max-width: 100%;
           max-height: 100%;"
@@ -167,25 +175,35 @@ To embed the map viewer with the search bar and other menus, replace the `#/embe
 
 In an example:
 
-<iframe src="https://map.geo.admin.ch/#/map?lang=en&center=2675475,1229326.76&z=6&bgLayer=ch.swisstopo.pixelkarte-farbe" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
+<iframe src="https://map.geo.admin.ch/#/map?lang=en&center=2675475,1229326.76&z=6&bgLayer=ch.swisstopo.pixelkarte-farbe" style="border: 0;width: 100%;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
 
 This is represented by an iframe like:
 
 ```html
 <iframe
-   src="https://map.geo.admin.ch/#/map?
+  src="https://map.geo.admin.ch/#/map?
       lang=en&
       center=2675475,1229326.76&
       z=6&
       bgLayer=ch.swisstopo.pixelkarte-farbe"
-   style="border: 0;
-          width: 400px;
+  style="border: 0;
+          width: 100%;
           height: 300px;
           max-width: 100%;
           max-height: 100%;"
-   allow="geolocation"></iframe>
+  allow="geolocation"
+></iframe>
 ```
 
 :::tip
 To ensure proper geolocation functionality, explicitly enable geolocation with `allow="geolocation"` to avoid issues in certain web browsers.
 :::
+
+## Example: Accessing Feature Info from an Embedded Map
+
+This example demonstrates how to enable interaction between an embedded map and other elements on your webpage.
+When a user clicks on a supported feature (currently from KML or GeoJSON layers), the map sends a `message` event to the parent page using the postMessage API.
+The event is then captured by the parent page and used to display feature information outside the iframe.
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="Basic iframe" src="https://codepen.io/geoadmin/embed/zxvyMBp?default-tab=none%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+</iframe>
