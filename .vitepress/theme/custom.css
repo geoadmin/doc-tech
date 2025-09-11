@@ -25,78 +25,135 @@ figcaption {
   color: var(--vp-c-text-2);
 }
 
+.VPLink:hover {
+  background-color: var(--vp-button-alt-hover-bg);
+  border-color: transparent !important;
+}
+
 /* ==========================
    2. Layout Styles
    ========================== */
-.releases-container {
+
+.home-container {
+  width: 100%;
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 32px;
+}
+
+.releases-container {
+  flex: 2;
+}
+
+.releases-container-cols {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.announcements-container {
+  flex: 1;
+}
+
+.home-container-col {
   width: 100%;
 }
 
-.status-announcements-container {
+#home-container-h2 {
+  margin: 0px;
+}
+
+.home-container-col h4 {
+  margin-bottom: 12px;
+}
+
+.home-container-col span {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.home-container-col a {
+  display: block;
+  text-decoration: none;
+  padding: 4px 0px;
+  color: var(--vp-button-brand-bg);
+  font-weight: normal;
+}
+
+@media (min-width: 768px) {
+  .releases-container-cols {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 960px) {
+  .home-container {
+    flex-direction: row;
+  }
+}
+
+.status-container {
+  width: 100%;
+}
+
+.status-warning {
+  background-color: var(--vp-custom-block-warning-bg);
+  width: 100%;
+}
+
+.status-warning:hover {
+  background-color: var(--vp-c-yellow-3);
+}
+
+.status-info {
+  margin-top: 64px;
+  background-color: var(--vp-c-bg-soft);
+  width: 100%;
+}
+
+.status-info:hover {
+  background-color: var(--vp-button-alt-hover-bg);
+}
+
+.status-content {
+  color: var(--vp-custom-block-warning-text);
+  padding: 10px 30px;
+  width: 100%;
+  height: 64px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
-.status-container,
-.announcements-container {
-  flex-basis: 50%;
+.status-content-title {
+  font-weight: bold;
 }
 
-.status-alert {
-  min-height: 150px;
+.status-content-text {
+  font-weight: normal;
+}
+
+@media (min-width: 960px) {
+  .status-warning {
+    margin-top: 64px;
+  }
+
+  .item.grid-4 {
+    width: calc(100% / 5) !important;
+  }
+}
+
+@media (min-width: 1456px) {
+  .status-content {
+    max-width: 1376px;
+    margin: auto;
+    padding: 0;
+  }
 }
 
 /* ==========================
    3. Component Styles
    ========================== */
-
-/* Releases List */
-.releases-list {
-  flex: 1 1 30%;
-  min-width: 0;
-}
-
-.releases-list a {
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  color: var(--vp-c-text-1);
-}
-
-.releases-list div {
-  height: 80px;
-  border-top: lightgray solid 1px;
-}
-
-.releases-list div:last-child {
-  border-bottom: lightgray solid 1px;
-}
-
-.releases-list p {
-  margin: 0;
-  font-weight: bold;
-}
-
-.releases-preview {
-  flex: 1 1 70%;
-  min-width: 0;
-}
-
-.releases-preview-content {
-  max-height: 400px;
-  overflow: hidden;
-  width: 100%;
-}
-
-.releases-preview p {
-  margin: 0 0 10px 0;
-}
 
 .api-block {
   background-color: var(--vp-code-block-bg);
@@ -132,18 +189,4 @@ figcaption {
 
 #link-with-icon:hover {
   color: #d8232a;
-}
-
-/* ==========================
-   5. Media Queries
-   ========================== */
-@media (min-width: 768px) {
-  .releases-container {
-    flex-direction: row;
-  }
-
-  .status-announcements-container {
-    flex-direction: row;
-    gap: 50px;
-  }
 }

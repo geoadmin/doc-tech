@@ -1,6 +1,6 @@
 ---
 previewTitle: "Planned removal of vector tile styles"
-previewContent: "Old styles for Light Base Map and Imagery Base Map no longer available from January 2025"
+previewContent: "Old styles for Light Base Map and Imagery Base Map no longer available from January 2025."
 ---
 
 # End-of-Life
