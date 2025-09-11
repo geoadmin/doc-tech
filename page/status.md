@@ -1,6 +1,6 @@
 ---
 # Use the following variables to set the homepage preview
-previewType: "info"  # possible values: "info", "warning", "danger"
+previewType: "info" # possible values: "info" or "warning"
 previewTitle: "All systems operational"
 previewContent: "All systems are fully operational and available for use."
 ---
@@ -36,8 +36,8 @@ GOOGLE CHROME
 EDGE
 
 - Click on the three dots (menu) in the upper right corner and select "Settings."
-- Go to the "Privacy, search, and services" section and click on "Clear browser data" and then 
-on "Choose what to clear."
+- Go to the "Privacy, search, and services" section and click on "Clear browser data" and then
+  on "Choose what to clear."
 - Select time range: Select the time range for which you want to clear the cache (e.g., "Last hour," "Last 24 hours," "All time").
 - Select items. Make sure the "Cached images and files" checkbox is selected
 - Delete: Click the "Clear now" button to clear the cache
