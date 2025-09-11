@@ -40,7 +40,7 @@ To check the latest change of any layer, use the [Cache Update](/docs/wmts#cache
 
 ## Examples
 
-### Get a Single Title
+### Get a Single Tile
 
 Fetch a single tile for the `ch.swisstopo.pixelkarte-farbe` layer:
 

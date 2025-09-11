@@ -201,8 +201,6 @@ To ensure proper geolocation functionality, explicitly enable geolocation with `
 
 ## Example: Accessing Feature Info from an Embedded Map
 
-Example showing how to retrieve the layer ID and the feature ID outside the iframe when a feature is selected on the map.
-
 This example demonstrates how to enable interaction between an embedded map and other elements on your webpage.
 When a user clicks on a supported feature (currently from KML or GeoJSON layers), the map sends a `message` event to the parent page using the postMessage API.
 The event is then captured by the parent page and used to display feature information outside the iframe.
