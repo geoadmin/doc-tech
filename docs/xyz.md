@@ -40,7 +40,9 @@ To check the latest change of any layer, use the [Cache Update](/docs/wmts#cache
 
 ## Examples
 
-Fetch a single tile:
+### Get a Single Tile
+
+Fetch a single tile for the `ch.swisstopo.pixelkarte-farbe` layer:
 
 ```bash
 curl -o demo.jpg https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg
@@ -52,14 +54,14 @@ The output image:
 
 ### OpenLayers
 
-An OpenLayers 3 example demonstrating the CadastralWebMap using the WMTS and the Tiled WMS:
+An OpenLayers 10 example showing the Base Map layer as XYZ tiles:
 
-<iframe height="600" style="width: 100%;" scrolling="no" title="WMTS layer (EPSG:3857)" src="https://codepen.io/geoadmin/embed/pyzwwL?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/geoadmin/embed/GgpXMyg?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
 </iframe>
 
 <br/>
 
-An OpenLayers example showing the SWISSIMAGE as XYZ:
+An OpenLayers 10 example showing the SWISSIMAGE layer as XYZ tiles:
 
-<iframe height="600" style="width: 100%;" scrolling="no" title="xyz example" src="https://codepen.io/geoadmin/embed/xxYEwjQ?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/geoadmin/embed/YPyOxoR?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
 </iframe>

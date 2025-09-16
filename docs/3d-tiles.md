@@ -64,7 +64,7 @@ example='{
 
 ## Example: Cesium
 
-An example Cesium application using terrain tiles, 3D buildings and WMTS.
+An example of a Cesium application using terrain tiles, 3D buildings and a WMTS layer.
 
-<iframe height="600" style="width: 100%;" scrolling="no" title="Geoadmin Terrain, Buildings and WMTS CesiumJS integration" src="https://codepen.io/geoadmin/embed/zBEYGE?default-tab=js%2Cresult&editable=true&zoom=0.5" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/geoadmin/embed/NPGLwVO?default-tab=js%2Cresult&editable=true&zoom=0.5" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
 </iframe>
