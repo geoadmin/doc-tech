@@ -53,15 +53,15 @@ const announcementsPreview = announcements[0]
 
 let statusContainer = null;
 let app = null;
-// Initiate and attach StatusBanner to the right position in the DOM
+// Initiate and attach StatusBanner to the header, if type is 'warning' or 'danger'
 onMounted(() => {
-  const isWarning = statusPreview.frontmatter.previewType === 'warning'
-  const siblingContainer = document.querySelector(isWarning ? '.VPNav' : '.VPFeatures');
+  if (statusPreview.frontmatter.previewType !== 'warning' && statusPreview.frontmatter.previewType !== 'danger' ) return;
+  const headerContainer = document.querySelector('.VPNav');
   statusContainer = document.createElement('div');
   statusContainer.className = 'status-container';
 
-  if (siblingContainer && siblingContainer.parentNode) {
-    siblingContainer.parentNode.insertBefore(statusContainer, siblingContainer.nextSibling);
+  if (headerContainer && headerContainer.parentNode) {
+    headerContainer.parentNode.insertBefore(statusContainer, headerContainer.nextSibling);
 
     app = createApp({
       render: () => h(StatusBanner, {
@@ -112,4 +112,8 @@ onUnmounted(() => {
       <a href="/page/end-of-life">Learn more</a>
     </div>
   </div>
+</div>
+<div class="home-status-container" v-if="statusPreview.frontmatter.previewType === 'info'">
+  <span class="status-content-text">{{ statusPreview.frontmatter.previewContent + ' '}}</span>
+  <a href="/page/status">Learn more</a>
 </div>

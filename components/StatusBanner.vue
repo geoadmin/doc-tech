@@ -12,7 +12,7 @@
   const isWarning = props.status.previewType === "warning";
 </script>
 <template>
-  <div :class="[isWarning ? 'status-warning' : 'status-info']">
+  <div :class="[isWarning ? 'status-warning' : 'status-danger']">
     <a href="/page/status" class="status-content">
       <p>
         <span class="status-content-title"

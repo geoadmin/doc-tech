@@ -50,13 +50,9 @@ To add a release note, follow these steps:
    ```
 2. Update the `previewType` variable (`info` or `warning`) to control the color and the position in the page :
 
-   ::: info
-   An info banner is placed below the feature links in the homepage.
-   :::
-
-   ::: warning
-   A warning banner is placed just below the header of the homepage.
-   :::
+   - `info`: bottom of the page, just text without backgound color
+   - `warning`: top of the page, yellow banner
+   - `danger`: top of the page, red banner
 
 3. Save the file and commit your changes.
 

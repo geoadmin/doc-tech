@@ -1,11 +1,16 @@
 ---
 # Use the following variables to set the homepage preview
-previewType: "info" # possible values: "info" or "warning"
+# Set `previewType` to control the position and color of the preview:
+#   - "info": bottom of the page, no color
+#   - "warning": top of the page, yellow
+#   - "danger": top of the page, red
+# The `previewTitle` is only used in 'danger' and 'warning' types
+previewType: "info"
 previewTitle: "All systems operational"
 previewContent: "All systems are fully operational and available for use."
 ---
 
-# Status Page
+# Status
 
 Status updates of \*geo.admin.ch services, newest first.
 
