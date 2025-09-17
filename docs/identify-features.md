@@ -659,3 +659,59 @@ example='{
 }
 '
 />
+
+## Download as INTERLIS
+
+For a limited set of "ÖREB" layers, features can be retrieved in the INTERLIS format (XML) with `geometryFormat=interlis`.
+"ÖREB" is the German accronym for the [Cadastre of public-law restrictions on landownership](https://www.swisstopo.admin.ch/en/plr-cadastre).
+
+:::warning
+The INTERLIS format is designed for specialized applications and may not be suitable for general use.
+For most users, we recommend using one of the following formats instead:
+
+- `geometryFormat=geojson`
+- `geometryFormat=esrijson`
+
+::: 
+
+The following layers are based on the [ÖREB model V2_0](https://models.geo.admin.ch/V_D/OeREB/OeREBKRMtrsfr_V2_0.ili) and offer features in the INTERLIS format:
+
+- Layers with data:
+  
+  ```txt
+  ch.astra.baulinien-nationalstrassen_v2_0.oereb
+  ch.bazl.projektierungszonen-flughafenanlagen_v2_0.oereb
+  ch.bazl.sicherheitszonenplan_v2_0.oereb
+  ch.vbs.kataster-belasteter-standorte-militaer_v2_0.oereb
+  ch.bazl.kataster-belasteter-standorte-zivilflugplaetze_v2_0.oereb
+  ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb
+  ```
+
+- Layers without data:
+
+  ```txt
+  ch.astra.projektierungszonen-nationalstrassen_v2_0.oereb
+  ch.bav.projektierungszonen-eisenbahnanlagen_v2_0.oereb
+  ch.bav.baulinien-eisenbahnanlagen_v2_0.oereb
+  ch.bazl.baulinien-flughafenanlagen_v2_0.oereb
+  ch.bfe.projektierungszonen-starkstromanlagen_v2_0.oereb
+  ch.bfe.baulinien-starkstromanlagen_v2_0.oereb
+  ```
+
+### Example ÖREB Queries
+
+Look for all the features of `ch.bazl.projektierungszonen-flughafenanlagen_v2_0.oereb` using a point:
+
+https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2682414.312,1257059.381&geometryType=esriGeometryPoint&layers=all:ch.bazl.projektierungszonen-flughafenanlagen_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
+
+Look for all the features of `ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb` using a polygon:
+
+https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"rings":[[[2675000,1245000],[2670000,1255000],[2680000,1260000],[2690000,1255000],[2685000,1240000],[2675000,1245000]]]}&geometryType=esriGeometryPolygon&layers=all:ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
+
+Look for all the features of `ch.bazl.sicherheitszonenplan_v2_0.oereb` using a bounding box (envelope):  
+
+https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2575000,1109000,2610000,1127000&geometryType=esriGeometryEnvelope&layers=all:ch.bazl.sicherheitszonenplan_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
+
+Look for all the features of `ch.astra.baulinien-nationalstrassen_v2_0.oereb` using a bounding box (envelope):
+
+https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2599000,1200000,2604000,1203000&geometryType=esriGeometryEnvelope&layers=all:ch.astra.baulinien-nationalstrassen_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
