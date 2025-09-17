@@ -34,7 +34,7 @@ features:
     icon: ⬇️
     link: /docs/stac-api/overview
   - title: Map Viewer
-    details: Integrate and customize an interactive version of the Map Viewer in your webpage.
+    details: Integrate and customize map.geo.admin.ch as an interactive map in your webpage.
     icon: 🗺️
     link: /docs/embed-in-an-iframe
 ---
@@ -91,14 +91,14 @@ onUnmounted(() => {
     <div class="releases-container-cols">
       <div class="home-container-col">
         <h4>Software Updates</h4>
-        <span>Latest software releases managed by GeoAdmin.</span>
+        <span>The latest releases of software in *.geo.admin.ch:</span>
         <a class="vp-external-link-icon link" href="https://github.com/geoadmin/web-mapviewer/releases">web-mapviewer</a>
         <a class="vp-external-link-icon link" href="https://github.com/geoadmin/mf-chsdi3/releases">mf-chsdi3</a>
         <a class="vp-external-link-icon link" href="https://github.com/geoadmin/service-stac/releases">service-stac</a>
       </div>
       <div class="home-container-col">
         <h4>Data Updates</h4>
-        <span>New and updated datasets are available on the federal geoportal.</span>
+        <span>News on changes in the data available through our services:</span>
         <a :href="lastRelease.url">Latest Release</a>
         <a href="/releases/release-notes">All Releases</a>
       </div>
