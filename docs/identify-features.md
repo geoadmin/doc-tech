@@ -42,7 +42,7 @@ The following table summarize the various combinations:
 | `tolerance=0` | No buffer & no scale                     | No buffer, but scale                     |
 | `tolerance>0` | Forbidden                                | Buffer & scale                           |
 
-### layerDefs syntax
+### layerDefs Syntax
 
 To list the available attributes together with their types and examples values, use the [layer attribute endpoint](/docs/get-layer-attributes).
 
@@ -58,7 +58,7 @@ The filter expression can consist of a single expression of the form `<attribute
 | `number`     | `=`, `<`, `>`, `>=`, `<=`, `!=`                                               | `tutu >= 2.4`, `tutu < 5`                                                       |
 | `boolean`    | `is` (true/false), `is not` (true/false)                                      | `tata is not false`                                                             |
 
-#### Correct encoding
+#### Correct Encoding
 
 It's important that the parameters are correctly serialized and url-encoded.
 
