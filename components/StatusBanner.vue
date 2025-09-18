@@ -1,26 +1,22 @@
 <script setup lang="ts">
   interface StatusBannerProps {
-    previewType: string;
-    previewTitle: string;
-    previewContent: string;
+    type: string;
+    title: string;
+    content: string;
   }
 
   const props = defineProps<{
     status: StatusBannerProps;
   }>();
 
-  const isWarning = props.status.previewType === "warning";
+  const isWarning = props.status.type === "warning";
 </script>
 <template>
   <div :class="[isWarning ? 'status-warning' : 'status-danger']">
     <a href="/page/status" class="status-content">
       <p>
-        <span class="status-content-title"
-          >{{ props.status.previewTitle }} -
-        </span>
-        <span class="status-content-text">{{
-          props.status.previewContent
-        }}</span>
+        <span class="status-content-title">{{ props.status.title }} - </span>
+        <span class="status-content-text">{{ props.status.content }}</span>
       </p>
     </a>
   </div>

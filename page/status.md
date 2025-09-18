@@ -1,18 +1,24 @@
 ---
-# Use the following variables to set the homepage preview
-# Set `previewType` to control the position and color of the preview:
+# Use the following variables to set the Current Status section in this page and the homepage preview
+# Set `type` to control the position and color of the homepage preview:
 #   - "info": bottom of the page, no color
 #   - "warning": top of the page, yellow
 #   - "danger": top of the page, red
-# The `previewTitle` is only used in 'danger' and 'warning' types
-previewType: "info"
-previewTitle: "All systems operational"
-previewContent: "All systems are fully operational and available for use."
+# The `title` is not displayed in the homepage preview for 'info' type
+type: "info"
+title: "All systems operational"
+content: "All systems are fully operational and available for use."
 ---
 
 # Status
 
 Status updates of \*geo.admin.ch services, newest first.
+
+## Current Status
+
+### {{ $frontmatter.title }}
+
+{{ $frontmatter.content }}
 
 ## [2025-07-02] Incident with Printing
 

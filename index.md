@@ -55,7 +55,7 @@ let statusContainer = null;
 let app = null;
 // Initiate and attach StatusBanner to the header, if type is 'warning' or 'danger'
 onMounted(() => {
-  if (statusPreview.frontmatter.previewType !== 'warning' && statusPreview.frontmatter.previewType !== 'danger' ) return;
+  if (statusPreview.frontmatter.type !== 'warning' && statusPreview.frontmatter.type !== 'danger' ) return;
   const headerContainer = document.querySelector('.VPNav');
   statusContainer = document.createElement('div');
   statusContainer.className = 'status-container';
@@ -113,7 +113,7 @@ onUnmounted(() => {
     </div>
   </div>
 </div>
-<div class="home-status-container" v-if="statusPreview.frontmatter.previewType === 'info'">
-  <span class="status-content-text">{{ statusPreview.frontmatter.previewContent + ' '}}</span>
+<div class="home-status-container" v-if="statusPreview.frontmatter.type === 'info'">
+  <span class="status-content-text">{{ statusPreview.frontmatter.content + ' '}}</span>
   <a href="/page/status">Learn more</a>
 </div>
