@@ -69,7 +69,7 @@ export default defineConfig({
       },
       {
         text: "Status Page",
-        link: "/page/status",
+        link: "/page/status-page",
       },
       {
         text: "End-of-Life",
