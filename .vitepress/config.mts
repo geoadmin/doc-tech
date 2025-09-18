@@ -69,7 +69,7 @@ export default defineConfig({
       },
       {
         text: "Status Page",
-        link: "/page/status",
+        link: "/page/status-page",
       },
       {
         text: "End-of-Life",
@@ -77,7 +77,7 @@ export default defineConfig({
       },
     ],
     socialLinks: [
-      { icon: "github", link: "https://github.com/geoadmin/doc-techdoc" },
+      { icon: "github", link: "https://github.com/geoadmin/doc-tech" },
     ],
 
     search: {

@@ -20,7 +20,7 @@ features:
   - title: Explore Data
     details: Browse additional information about layers, including attributes and other metadata.
     link: /docs/get-layer-metadata
-    icon: ℹ️
+    icon: 🧭
   - title: Access Data
     details: Retrieve location-based features such as geometries, addresses and elevation.
     link: /docs/identify-features
@@ -33,53 +33,87 @@ features:
     details: Download entire datasets for exploration and analysis.
     icon: ⬇️
     link: /docs/stac-api/overview
+  - title: Map Viewer
+    details: Integrate and customize map.geo.admin.ch as an interactive map in your webpage.
+    icon: 🗺️
+    link: /docs/embed-in-an-iframe
 ---
 
 <script setup>
+import { onMounted, onUnmounted, h, createApp } from 'vue'
 import { data as releases } from './scripts/releases-content.data.ts'
 import { data as status } from './scripts/status.data.ts'
 import { data as announcements } from './scripts/announcements.data.ts'
+import StatusBanner from './components/StatusBanner.vue'
 
-const latestReleases = releases.slice(1, 6)
 const lastRelease = releases.at(0)
 const statusPreview = status[0]
 const announcementsPreview = announcements[0]
+
+
+let statusContainer = null;
+let app = null;
+// Initiate and attach StatusBanner to the header, if type is 'warning' or 'danger'
+onMounted(() => {
+  if (statusPreview.frontmatter.type !== 'warning' && statusPreview.frontmatter.type !== 'danger' ) return;
+  const headerContainer = document.querySelector('.VPNav');
+  statusContainer = document.createElement('div');
+  statusContainer.className = 'status-container';
+
+  if (headerContainer && headerContainer.parentNode) {
+    headerContainer.parentNode.insertBefore(statusContainer, headerContainer.nextSibling);
+
+    app = createApp({
+      render: () => h(StatusBanner, {
+        status: statusPreview.frontmatter
+      })
+    });
+    
+    app.mount(statusContainer);
+  }
+})
+
+onUnmounted(() => {
+  // Clean up when user leaves the page
+  if (app) {
+    app.unmount();
+  }
+  
+  if (statusContainer && statusContainer.parentNode) {
+    statusContainer.parentNode.removeChild(statusContainer);
+  }
+})
+
 </script>
-
-## Release Notes
-
-<div class="releases-container">
-  <div class="releases-preview">
-    <div class="releases-preview-content" v-html="lastRelease.html"></div>
-    <p>...</p>
-    <a :href="lastRelease.url">Learn more</a>
-  </div>
-
-  <div class="releases-list">
-      <div v-for="release of latestReleases">
-        <a :href="release.url">
-        <p>Release {{ release.frontmatter.title }}</p>
-        <span>{{ release.frontmatter.date }}</span>
-        </a>
+<div class="home-container">
+  <div class="releases-container">
+    <h2 id="home-container-h2">Release Notes</h2>
+    <div class="releases-container-cols">
+      <div class="home-container-col">
+        <h4>Software Updates</h4>
+        <span>The latest releases of software in *.geo.admin.ch:</span>
+        <a class="vp-external-link-icon link" href="https://github.com/geoadmin/web-mapviewer/releases">web-mapviewer</a>
+        <a class="vp-external-link-icon link" href="https://github.com/geoadmin/mf-chsdi3/releases">mf-chsdi3</a>
+        <a class="vp-external-link-icon link" href="https://github.com/geoadmin/service-stac/releases">service-stac</a>
       </div>
-  </div>
-</div>
-
-<div class="status-announcements-container">
-  <div class="status-container">
-    <h2>Services Status</h2>
-    <div :class="[statusPreview.frontmatter.previewType, 'custom-block status-alert']">
-      <p class="custom-block-title">{{ statusPreview.frontmatter.previewTitle}}</p>
-      <p>{{ statusPreview.frontmatter.previewContent}}</p>
-      <a href="/page/status">Learn more</a>
+      <div class="home-container-col">
+        <h4>Data Updates</h4>
+        <span>News on changes in the data available through our services:</span>
+        <a :href="lastRelease.url">Latest Release</a>
+        <a href="/releases/release-notes">All Releases</a>
+      </div>
     </div>
   </div>
   <div class="announcements-container">
-    <h2>End-of-Life</h2>
-    <div>
-      <p class="custom-block-title">{{ announcementsPreview.frontmatter.previewTitle}}</p>
-      <p>{{ announcementsPreview.frontmatter.previewContent}}</p>
+    <h2 id="home-container-h2">End-of-Life</h2>
+    <div class="home-container-col">
+      <h4>{{ announcementsPreview.frontmatter.previewTitle}}</h4>
+      <span>{{ announcementsPreview.frontmatter.previewContent}}</span>
       <a href="/page/end-of-life">Learn more</a>
     </div>
   </div>
+</div>
+<div class="home-status-container" v-if="statusPreview.frontmatter.type === 'info'">
+  <span class="status-content-text">{{ '✅ ' +  statusPreview.frontmatter.content + ' '}}</span>
+  <a href="/page/status-page">Learn more</a>
 </div>

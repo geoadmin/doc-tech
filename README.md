@@ -40,27 +40,19 @@ To add a release note, follow these steps:
 
 6. Save the file and commit your changes.
 
-## How to Edit the Status Page Preview
+## How to Edit the Status Banner
 
-1. To edit the status page preview, use the following variables located in the `status.md` file:
+1. To edit the status banner, use the following variables located in the `status.md` file:
    ```YAML
    previewType: "info"
    previewTitle: "Issues in services"
    previewContent: "Our systems are experiencing issues"
    ```
-2. Update the `previewType` variable to one of the following values based on the desired message type `info`, `warning` or `danger`:
+2. Update the `previewType` variable (`info` or `warning`) to control the color and the position in the page :
 
-   ::: info
-   This is an info box.
-   :::
-
-   ::: warning
-   This is a warning.
-   :::
-
-   ::: danger
-   This is a dangerous warning.
-   :::
+   - `info`: bottom of the page, just text without backgound color
+   - `warning`: top of the page, yellow banner
+   - `danger`: top of the page, red banner
 
 3. Save the file and commit your changes.
 
