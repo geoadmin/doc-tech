@@ -7,7 +7,8 @@ You can embed an interactive version of the [map viewer](https://map.geo.admin.c
 The following expands on the introduction given in the [Web Integration: iFrame](https://www.geo.admin.ch/de/web-integration-iframe/) page.
 
 :::tip ⚖️ Terms of Use
-Refer to the corresponding section on the [Web Integration: iFrame](https://www.geo.admin.ch/de/web-integration-iframe/) page.
+When embedding the map viewer using an iframe, you must comply with the [Terms of Use for geo.admin.ch](https://www.geo.admin.ch/en/general-terms-of-use-fsdi).
+Please review these terms before implementation to ensure your use case is permitted.
 :::
 
 ## Add a legend
