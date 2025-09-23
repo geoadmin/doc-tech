@@ -42,7 +42,7 @@ To add a release note, follow these steps:
 
 ## How to Edit the Status Banner
 
-1. To edit the status banner, use the following variables located in the `status.md` file:
+1. To edit the status banner, use the following variables located in the [`status-page.md`](./page/status-page.md) file:
    ```YAML
    previewType: "info"
    previewTitle: "Issues in services"
@@ -58,7 +58,7 @@ To add a release note, follow these steps:
 
 ## How to Edit the End-of-Life Preview
 
-1. To edit the End-of-Life preview, use the following variables located in the `end-of-life.md` file:
+1. To edit the End-of-Life preview, use the following variables located in the [`end-of-life.md`](./page/end-of-life.md) file:
 
    ```YAML
    previewTitle: "Decomissioning of legacy vectortile styles / tiles"
