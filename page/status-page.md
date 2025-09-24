@@ -1,4 +1,4 @@
----
+  ---
 # Use the following variables to set the Current Status section in this page and the homepage preview
 # Set `type` to control the position and color of the homepage preview:
 #   - "info": bottom of the page, no color
@@ -13,6 +13,8 @@ outline: [2, 3]
 ---
 
 # Status Page
+
+This page provides the latest status updates for all *.geo.admin.ch web services, including ongoing incidents and a history of past events.
 
 ## Current Status
 
