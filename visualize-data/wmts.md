@@ -102,7 +102,7 @@ With the `tileOrigin` in the top left corner of the bounding box:
 <small>
 Notes:
 
-1.  The projection for the tiles is **LV95** (EPSG:2056). Other projection are available, see [Supported Projections](/docs/wmts.html#supported-projections).
+1.  The projection for the tiles is **LV95** (EPSG:2056). Other projection are available, see [Supported Projections](/visualize-data/wmts.html#supported-projections).
 2.  The tiles are generated on-the-fly and stored in a cache.
 3.  Zoom level 24, with a resolution of 1.5m, is available in the tile pyramid but it is not currently made available through the API.
 4.  The zoom levels 27 and 28 (resolution 0.25m and 0.1m) are only

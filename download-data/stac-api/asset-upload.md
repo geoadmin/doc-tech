@@ -14,7 +14,7 @@ The following sections describe each step in detail, including how to set up a r
 
 :::tip IMPORTANT NOTES
 
-- POST/PUT requests require [authentication](/docs/stac-api/authentication).
+- POST/PUT requests require [authentication](/download-data/stac-api/authentication).
   :::
 
 ## File Splitting
@@ -23,7 +23,7 @@ Files smaller than 5 GB can be uploaded as a single part; however, you must stil
 
 If the file exceeds 5 GB, it must be split into multiple parts. Each part must be at least 5 MB in size - except for the final part- and no part can be larger than 5 GB. Uploads that do not follow these size constraints will fail.
 
-Additionally, files larger than 10 MB should be compressed before uploading; see [Compression](/docs/stac-api/compression) for guidance.
+Additionally, files larger than 10 MB should be compressed before uploading; see [Compression](/download-data/stac-api/compression) for guidance.
 
 ## Basic Steps
 
