@@ -1,18 +1,34 @@
 ---
-# Use the following variables to set the Current Status section in this page and the homepage preview
-# Set `type` to control the position and color of the homepage preview:
-#   - "info": bottom of the page, no color
-#   - "warning": top of the page, yellow
-#   - "danger": top of the page, red
-# The `title` is not displayed in the homepage preview for 'info' type
 type: "info"
 title: "All Systems Operational"
 content: "No ongoing incidents - all services are functioning as expected."
 
 outline: [2, 3]
 ---
+<!---
+Templates:
 
+✅ Normal status: Status info is at the bottom of the start page
+
+type: "info"
+title: "All Systems Operational"
+content: "No ongoing incidents - all services are functioning as expected."
+
+⚠️ Minor incident: Status info as a yellow banner at the top of the start page
+
+type: "warning"
+title: "Minor incident"
+content: "We are currently investigating degraded performance in [Service XY]. Some users may experience intermittent issues. Updates will be posted as more information becomes available."
+
+🚨 Major incident: Status info as a red banner at the top of the start page
+
+type: "danger"
+title: "Major incident"
+content: "We are experiencing a significant outage affecting [Service XY]. All hands are on deck to diagnose and resolve the issue. The next update will be posted at XX:XX or as significant progress is made."
+--->
 # Status Page
+
+This page provides the latest status updates for all *.geo.admin.ch web services, including ongoing incidents and a history of past events.
 
 ## Current Status
 
@@ -20,7 +36,7 @@ outline: [2, 3]
   {
     'info': '✅',
     'warning': '⚠️',
-    'danger': '❌'
+    'danger': '🚨'
   }[$frontmatter.type] || ''
 }} **{{ $frontmatter.title }}**: {{ $frontmatter.content }}
 
