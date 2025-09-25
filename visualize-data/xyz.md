@@ -22,7 +22,7 @@ Use the following parameters to define your request:
 
 | Parameter       | Example                    | Explanation                                                                                                                                                                                                                                                                                                                                                             |
 | --------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Layername       | ch.bfs.arealstatistik-1997 | The technical layer name. See the `<ows:Identifier>` tag of the layer in the [WMTS GetCapabilities document](/docs/wmts.md#getcapabilities).                                                                                                                                                                                                                            |
+| Layername       | ch.bfs.arealstatistik-1997 | The technical layer name. See the `<ows:Identifier>` tag of the layer in the [WMTS GetCapabilities document](/visualize-data/wmts.md#getcapabilities).                                                                                                                                                                                                                  |
 | StyleName       | default                    | Only `default` is supported.                                                                                                                                                                                                                                                                                                                                            |
 | Time            | 2010, 2010-01              | Date of tile generation in (ISO-8601) or logical value like `current`. A list of available values is provided in the [GetCapabilities](//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml) document under the \<Dimension\> tag. We recommend to use the value under the \<Default\> tag. Note that these values might change frequently - **check for updates regularly**. |
 | z               | 10                         | Zoom level                                                                                                                                                                                                                                                                                                                                                              |
@@ -34,7 +34,7 @@ Use the following parameters to define your request:
 
 The tiles of a given layer might be updated **without** resulting in a new `<Time>` dimension.
 If your application caches tiles locally, you need to invalidate your local cache for this layer.
-To check the latest change of any layer, use the [Cache Update](/docs/wmts#cache-update) service.
+To check the latest change of any layer, use the [Cache Update](/visualize-data/wmts#cache-update) service.
 
 :::
 
