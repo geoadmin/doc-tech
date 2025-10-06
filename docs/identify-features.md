@@ -5,7 +5,7 @@ Use this endpoint to discover features at a specific location.
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/identify" method="GET" />
 
 ::: warning
-No more than 50 features can be retrieved per request.
+No more than 200 features can be retrieved per request.
 :::
 
 ## Request Details
