@@ -27,7 +27,7 @@ For each layer, there are some general identification properties
 | ------------ | --------------------------------------------------------------------------------------- |
 | `name`       | The name of the layer (short name, less than 30 characters).                            |
 | `fullName`   | The layer's full name (not necessarily different from `name`).                          |
-| `idGeoCat`   | The associated metadata ID in [GeoCat](http://www.geocat.ch/geonetwork/srv/eng/geocat). |
+| `idGeoCat`   | The associated metadata ID in [GeoCat](https://www.geocat.ch). |
 | `layerBodId` | The technical name or BOD ID.                                                           |
 
 and attributes listing more metaadata
@@ -36,12 +36,12 @@ and attributes listing more metaadata
 | ------------ | --------------------------------------------------------------------------------------- |
 | `wmsResource` | The WMS resource of the layer. |
 | `scaleLimit` | The scale at which the layer is valid. |
-| `inspireUpperAbstract` | The abstract of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category (first level). |
-| `inspireName` | The name of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category. |
+| `inspireUpperAbstract` | The abstract of the [INSPIRE](https://www.geo.admin.ch/en/inspire-services) category (first level). |
+| `inspireName` | The name of the [INSPIRE](https://www.geo.admin.ch/en/inspire-services) category. |
 | `urlDetails` | Link to the official details page. |
 | `bundCollectionNumber` | The collection number. |
 | `dataOwner` | The data owner. |
-| `inspireAbstract` | The abstract of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category the layer belongs to. |
+| `inspireAbstract` | The abstract of the [INSPIRE](https://www.geo.admin.ch/en/inspire-services) category the layer belongs to. |
 | `abstract` | The layer abstract. |
 | `wmsContactAbbreviation` | The abbreviation contact for the WMS resource. |
 | `downloadUrl` | The link where the data can be downloaded. |
@@ -49,7 +49,7 @@ and attributes listing more metaadata
 | `wmsContactName` | The contact name for the WMS resource. |
 | `dataStatus` | The date of the latest data update. |
 | `bundCollectionName` | The collection name. |
-| `inspireUpperName` | The name of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category (first level). |
+| `inspireUpperName` | The name of the [INSPIRE](https://www.geo.admin.ch/en/inspire-services) category (first level). |
 | `urlApplication` | The application where this layer is published. |
 | `tileInfo` | WMTS general information in JSON format. Note that this section is always identical and is not tied to a particular "map" like in ESRI specifications. |
 
@@ -71,7 +71,7 @@ $ curl https://api3.geo.admin.ch/rest/services/api/MapServer?searchText=wasser
 
 <br>
 
-Find a layer by [geocat ID](http://www.geocat.ch/geonetwork/srv/eng/geocat):
+Find a layer by [geocat ID](https://www.geocat.ch):
 
 ```sh
 $ curl https://api3.geo.admin.ch/rest/services/api/MapServer?searchText=f198f6f6-8efa-4235-a55f-99767ea0206c
