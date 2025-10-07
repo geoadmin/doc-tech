@@ -18,7 +18,7 @@ The GetCapabilities document provides information about the service, along with 
 
 | **Parameter**   | **Description**                                               |
 | --------------- | ------------------------------------------------------------- |
-| Lang (optional) | The language. Supported values: `de`, `fr` (Defaults to `de`) |
+| Lang (optional) | Specifies the language for the service response. Supported values: `de` (German), `fr` (French), `it` (Italian), `rm` (Rumantsch), `en` (English). Defaults to `de` if not specified. |
 
 ### Supported Projections
 
@@ -40,8 +40,7 @@ Notes:
 
 - Partly due to a limitation of the WMTS 1.0.0 recommendations, each _projection_ has its own `GetCapabilities` document.
 - The same timestamps are available in all projections. New timestamps are added to the former ones.
-- The layer _ch.kantone.cadastralwebmap-farbe_ uses a WMS service as
-  its source.
+- The layer _ch.kantone.cadastralwebmap-farbe_ is sourced from a WMS service. For optimal quality and accuracy, use this layer only in EPSG:2056 and EPSG:21781. Using other projections may result in reduced quality due to reprojection limitations.
 - All layers are available at all scales. You have to check
   for which **tileMatrixSets** a particular layer is defined. Your
   WMTS client may either stretch the tiles from the last available
