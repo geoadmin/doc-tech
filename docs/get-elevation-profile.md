@@ -29,7 +29,7 @@ This endpoint only has query parameters that modify the behavior of the request,
 ## Examples
 
 <ExampleCodeBlock
-request='$ curl https://api3.geo.admin.ch/rest/services/profile.json?geom={%22type%22:%22LineString%22,%22coordinates%22:[[2550050,1206550],[2556950,1204150],[2561050,1207950]]}'
+request='$ curl -G "https://api3.geo.admin.ch/rest/services/profile.json" --data-urlencode "geom={\"type\":\"LineString\",\"coordinates\":[[2550050,1206550],[2556950,1204150],[2561050,1207950]]}"'
 example='[
   {
     "alts": {
@@ -66,6 +66,6 @@ example='[
 />
 
 <ExampleCodeBlock
-request='$ curl https://api3.geo.admin.ch/rest/services/profile.csv?geom={"type":"LineString","coordinates":[[2550050,1206550],[2556950,1204150],[2561050,1207950]]}'
+request='$ curl -G "https://api3.geo.admin.ch/rest/services/profile.csv" --data-urlencode "geom={\"type\":\"LineString\",\"coordinates\":[[2550050,1206550],[2556950,1204150],[2561050,1207950]]}"'
 example='profile.csv'
 />
