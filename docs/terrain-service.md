@@ -11,7 +11,7 @@ Use the following parameters to define your request:
 | ---------- | --------------- | -------------------------------------------------- |
 | ServerName | 3d.geo.admin.ch |                                                    |
 | Version    | v1              | v1 means terrain tiles generated with cesium tiles |
-| Time       | 20201203        | Date of tile generation in (ISO-8601).             |
+| Time       | 20250101        | Date of tile generation in ISO-8601 (YYYYMMDD).             |
 | Zoom       | 12              | Zoom level                                         |
 | X          | 4309            | The longitude index                                |
 | Y          | 3111            | The latitude index                                 |
@@ -19,7 +19,7 @@ Use the following parameters to define your request:
 An example of a terrain tile request:
 
 ```http
-curl -o demo.terrain https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/20201203/7/136/98.terrain?v=3924.0.0
+curl -o demo.terrain https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/20250101/11/2130/1550.terrain?v=1.43646.0
 ```
 
 ## Metadata
@@ -28,14 +28,17 @@ The `layer.json` file provides metadata that describes the availability and stru
 
 <ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/<Time>/layer.json" method="GET" />
 
+If you always want the most rectent terrain tiles, you can leave `/<Time>` away in the path towards `layer.json`.
+
+
 | Parameter       | Example  | Description                                                                                                               |
 | --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Time (optional) | 20201203 | Date of tile generation in (ISO-8601). If no date is provided, it returns the metadata for the most recent terrain tiles. |
+| Time (optional) |  | Date of tile generation in ISO-8601 (YYYYMMDD). If no date is provided, it returns the metadata for the most recent terrain tiles. |
 
-Example of a metadata request for the date `20201203`:
+Example of a metadata request for the date `20250101`:
 
 <ExampleCodeBlock
-request="curl --compressed https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/20201203/layer.json"
+request="curl --compressed https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/20250101/layer.json"
 example='{
   "attribution": "Put something there",
   "available": [...],
