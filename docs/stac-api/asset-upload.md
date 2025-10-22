@@ -132,7 +132,7 @@ If you have recurrent asset uploads, you need to have proper error handling to p
 The number of retries should be adjusted based on the upload frequency.
 
 - For low-frequency uploads (e.g., daily), it is advisable to implement at least 3 retries, using exponential backoff time between retries.
-- For high-frequency uploads, you may choose to skip retries and instead cancel the current upload, relying on the next scheduled upload as a fallback.
+- For high-frequency uploads, you may choose to skip retries and instead abort the current upload, relying on the next scheduled upload as a fallback.
 
 :::tip GLOSSARY
 
