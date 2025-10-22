@@ -31,7 +31,7 @@ It can be used directly by [CesiumJS](https://github.com/CesiumGS/cesium).
 
 | Parameter       | Example                          | Description                                                                                                                                                                             |
 | --------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Time (optional) | 20250728                         | Date of tilegeneration in ISO-8601(YYYYMMDD). If you omit this parameter, the most recent tile is returned.                                                                                                                                               |
+| Time (optional) | 20250728                         | Date of tile generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned.                                                                                                                                               |
 | layerName       | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer. Possible values are: `ch.swisstopo.swissbuildings3d.3d`, `ch.swisstopo.swisstlm3d.3d`, `ch.swisstopo.swissnames3d.3d`, `ch.swisstopo.vegetation.3d` |
 
 A metadata request for the Vegetation dataset:
