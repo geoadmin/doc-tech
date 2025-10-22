@@ -11,7 +11,7 @@ Basic authentication and token authentication were removed in STAC API version `
 
 ## Session Authentication
 
-Users can browse geodata in the "admin interface", a web-based UI available to selected user.
+Users can browse geodata in the "admin interface", a web-based UI available to selected users.
 Upon successful login, the service issues a session cookie that authenticates subsequent requests from the browser.
 
 Session authentication is designed specifically for browser-based workflows and may not work with non-browser clients or all API endpoints.
