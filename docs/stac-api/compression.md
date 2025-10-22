@@ -5,7 +5,7 @@ Efficient compression reduces bandwidth usage and improves load times, especiall
 
 ## Compression During Download
 
-To optimize transfer speeds, files between 1 MB and 10 MB are automatically compressed during download.
+To optimize transfer speeds, files between 1 MB and 10 MB are automatically compressed during download if the client supports it.
 The compression format - either GZIP (`gzip`) or Brotli (`br`) - is determined by the `Accept-Encoding` header sent with the request.
 
 Compression is only applied to standard media types supported by Amazon CloudFront.
