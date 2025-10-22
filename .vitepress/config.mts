@@ -211,7 +211,7 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
                 },
                 { text: 'Caching', link: '/docs/stac-api/caching' },
                 { text: 'Item Expiration', link: '/docs/stac-api/item-expiration' },
-                { text: 'Migrate v0.9 to v1.0', link: '/docs/stac-api/migrate09-10' },
+                { text: 'Migrate v0.9 to v1', link: '/docs/stac-api/migrate09-10' },
                 {
                     text: 'API Specs',
                     link: 'https://data.geo.admin.ch/api/stac/static/spec/v1/api.html',
