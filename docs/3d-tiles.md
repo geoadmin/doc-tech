@@ -6,14 +6,14 @@ This service provides 3D tiles through a RESTful API, implementing the [Cesium 3
 
 Use the following parameters to define your request:
 
-| Parameter | Example                          | Description                                                                                                                                                                             |
-| --------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| layerName | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer. Possible values are: `ch.swisstopo.swissbuildings3d.3d`, `ch.swisstopo.swisstlm3d.3d`, `ch.swisstopo.swissnames3d.3d`, `ch.swisstopo.vegetation.3d` |
-| Version   | v1                               | API version. `v1` means tiles generated with 3D Tiles                                                                                                                                   |
-| Time (optional)      | 20250501                         | Date of tileset generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned.                                                                                                                                |
-| Z         | 7                                | Zoom level                                                                                                                                                                              |
-| X         | 54                               | Tile column index                                                                                                                                                                       |
-| Y         | 21                               | Tile row index                                                                                                                                                                          |
+| Parameter        | Example                          | Description                                                                                                                                                                             |
+| -----------------| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| layerName        | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer. Possible values are: `ch.swisstopo.swissbuildings3d.3d`, `ch.swisstopo.swisstlm3d.3d`, `ch.swisstopo.swissnames3d.3d`, `ch.swisstopo.vegetation.3d` |
+| Version          | v1                               | The API version                                                                                                                                                                         |
+| Time (optional   | 20250501                         | Date of tileset generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned.                                                                        |
+| Z                | 7                                | Zoom level                                                                                                                                                                              |
+| X                | 54                               | Tile column index                                                                                                                                                                       |
+| Y                | 21                               | Tile row index                                                                                                                                                                          |
 
 A 3D tile request for swissBUILDINGS3D dataset:
 
