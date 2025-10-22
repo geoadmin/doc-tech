@@ -15,9 +15,10 @@ For details, refer to the CloudFront documentation on [serving compressed files]
 
 ## Compression Before Upload
 
-For files larger than 10 MB, it's recommended to use a [compressed media type](/docs/stac-api/supported-media).
-If that is not an option, you can either split the file into smaller parts or compress it manually.
+For files larger than 10 MB, we recommended to use a [compressed media type](/docs/stac-api/supported-media).
 
-If you compress the file manually using `gzip` or `br`, you must set the `content_encoding` parameter inf the [multipart upload request](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/createAssetUpload) accordingly.
-The file will then be delivered in its compressed form, as indicated by the `Content-Encoding` header.
-Client applications must be able to handle this compression format.
+If you cannot use a compressed media type, compress the file yourself with `gzip` or `br`.
+To have the file delivered later in its compressed form, set the `content_encoding` parameter in the [multipart upload request](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/createAssetUpload) accordingly.
+Client applications must support the selected compression format.
+
+If the file remains too large after compression, split it into smaller parts.
