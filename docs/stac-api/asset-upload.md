@@ -142,7 +142,7 @@ The number of retries should be adjusted based on the upload frequency.
 
 The following example illustrates best practices for handling errors during repeated asset uploads.
 
-1.  **Create Asset Upload**
+1. **Create Asset Upload**
 
      <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads" method="POST" />
 
@@ -168,7 +168,7 @@ The following example illustrates best practices for handling errors during repe
 
     **c.** Restart the asset upload.
 
-2.  **Upload the parts via the presigned URL from step 1**
+2. **Upload the parts via the presigned URL from step 1**
 
       <ApiCodeBlock url="{presigned_url}" method="PUT" />
 
@@ -181,7 +181,7 @@ The following example illustrates best practices for handling errors during repe
     | `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless). |
     | `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Retry step 2 after a short wait (minimum 100ms).                        |
 
-3.  **Complete the upload**
+3. **Complete the upload**
 
     <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/complete" method="POST" />
 
