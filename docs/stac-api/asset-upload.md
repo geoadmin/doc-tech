@@ -39,9 +39,15 @@ Uploading an asset file via the STAC API involves three main steps:
 
 2. **Upload file parts:**
 
-   Use the presigned URLs returned in step 1 to [upload each part](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/uploadAssetFilePart). You may upload parts in parallel.
+   Use the presigned URLs returned in step 1 to [upload each part](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/uploadAssetFilePart).
 
     <ApiCodeBlock url="/storage-prefix/{presignedUrl}" method="PUT" />
+
+    You may upload parts in parallel. It is possible to retry a failed upload.
+
+    :::warning
+    Presigned URLs expire within three hours, so the upload must be completed before that.
+    :::
 
 <br/>
 
