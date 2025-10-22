@@ -197,8 +197,7 @@ The following example illustrates best practices for handling errors during repe
     The following figure shows the flow of a multipart upload process.
 
     <a href="../../static/service-stac-upload-process.svg"
-      target="_blank"
-      rel="noopener">
+      target="_blank">
       <img src="../../static/service-stac-upload-process.svg"
         alt="Multipart upload process diagram">
     </a>
