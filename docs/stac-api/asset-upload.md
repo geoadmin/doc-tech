@@ -39,9 +39,15 @@ Uploading an asset file via the STAC API involves three main steps:
 
 2. **Upload file parts:**
 
-   Use the presigned URLs returned in step 1 to [upload each part](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/uploadAssetFilePart). You may upload parts in parallel.
+   Use the presigned URLs returned in step 1 to [upload each part](https://data.geo.admin.ch/api/stac/static/spec/v1/apitransactional.html#tag/Asset-Upload-Management/operation/uploadAssetFilePart).
 
     <ApiCodeBlock url="/storage-prefix/{presignedUrl}" method="PUT" />
+
+    You may upload parts in parallel. It is possible to retry a failed upload.
+
+    :::warning
+    Presigned URLs expire within three hours, so the upload must be completed before that.
+    :::
 
 <br/>
 
@@ -126,7 +132,7 @@ If you have recurrent asset uploads, you need to have proper error handling to p
 The number of retries should be adjusted based on the upload frequency.
 
 - For low-frequency uploads (e.g., daily), it is advisable to implement at least 3 retries, using exponential backoff time between retries.
-- For high-frequency uploads, you may choose to skip retries and instead cancel the current upload, relying on the next scheduled upload as a fallback.
+- For high-frequency uploads, you may choose to skip retries and instead abort the current upload, relying on the next scheduled upload as a fallback.
 
 :::tip GLOSSARY
 
@@ -136,7 +142,7 @@ The number of retries should be adjusted based on the upload frequency.
 
 The following example illustrates best practices for handling errors during repeated asset uploads.
 
-1.  **Create Asset Upload**
+1. **Create Asset Upload**
 
      <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads" method="POST" />
 
@@ -162,7 +168,7 @@ The following example illustrates best practices for handling errors during repe
 
     **c.** Restart the asset upload.
 
-2.  **Upload the parts via the presigned URL from step 1**
+2. **Upload the parts via the presigned URL from step 1**
 
       <ApiCodeBlock url="{presigned_url}" method="PUT" />
 
@@ -175,7 +181,7 @@ The following example illustrates best practices for handling errors during repe
     | `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless). |
     | `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Retry step 2 after a short wait (minimum 100ms).                        |
 
-3.  **Complete the upload**
+3. **Complete the upload**
 
     <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/complete" method="POST" />
 
