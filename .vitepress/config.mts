@@ -139,6 +139,7 @@ function exploreDataItems(): DefaultTheme.SidebarItem[] {
   return [
     { text: "Get Layer Metadata", link: "/docs/get-layer-metadata" },
     { text: "Get Layer Attributes", link: "/docs/get-layer-attributes" },
+    { text: "Get Layer Attribute Values", link: "/docs/get-layer-attribute-values" },
     { text: "Get Layer Legend", link: "/docs/get-layer-legend" },
   ];
 }

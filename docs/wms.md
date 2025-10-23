@@ -9,13 +9,25 @@ The data layers currently available in the WMS-FSDI correspond, with a few excep
 
 ## GetCapabilities
 
-The GetCapabilities document provides information about the service, along with layer description, both in German and French.
+The GetCapabilities document provides comprehensive information about the WMS service, including detailed layer descriptions available in all four Swiss national languages and English. The language can be specified using the `LANG` parameter, which can be provided either as a path parameter or as a query string parameter. When both are present, the path parameter takes precedence over the query string parameter.
 
-<ApiCodeBlock url="https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&LANG=<Lang>" method="GET" />
+::: info
+The language parameter (both path and query string variants) is supported by all WMS requests: `GetCapabilities`, `GetMap`, `GetFeatureInfo`, and `GetLegendGraphic`. This allows you to receive localized responses and layer information in your preferred language.
+:::
 
-| **Parameter**   | **Description**                                               |
+<ApiCodeBlock url="https://wms.geo.admin.ch/{language}/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&LANG=<Lang>" method="GET" />
+
+### Path Parameters
+
+| Parameter                 | Description                         |
+| ------------------------- | ----------------------------------- |
+| **Lang** *(optional)*     | Specifies the language for the service response. Supported values: `de` (German), `fr` (French), `it` (Italian), `rm` (Rumantsch), `en` (English). Defaults to `de` if not specified. |
+
+### Query Parameters
+
+| Parameter       | Description                                                   |
 | --------------- | ------------------------------------------------------------- |
-| Lang (optional) | The language. Supported values: `de`, `fr` (Defaults to `de`) |
+| **Lang** *(optional)* | Specifies the language for the service response. Supported values: `de` (German), `fr` (French), `it` (Italian), `rm` (Rumantsch), `en` (English). Defaults to `de` if not specified. |
 
 ### Supported Projections
 
