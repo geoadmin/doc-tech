@@ -40,7 +40,7 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
     'warning': '⚠️',
     'danger': '🚨'
   }[$frontmatter.type] || ''
-}} **{{ $frontmatter.title }}**: {{ $frontmatter.content }}
+}} **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.content }}
 
 ## Incident History
 
