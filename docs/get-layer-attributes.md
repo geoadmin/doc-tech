@@ -45,14 +45,9 @@ Here is a description of the data contained in the response.
 
 Get all the attributes for layer `ch.swisstopo.swissboundaries3d-land-flaeche.fill`
 
-```sh
-curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-land-flaeche.fill
-```
-
-Response example:
-
-```json
-{
+<ExampleCodeBlock
+request="curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-land-flaeche.fill"
+example='{
   "id": "ch.swisstopo.swissboundaries3d-land-flaeche.fill",
   "name": "National boundaries",
   "fields": [
@@ -81,10 +76,8 @@ Response example:
       "values": [264, 763, 16048, 4129069]
     }
   ]
-}
-```
-
-<br>
+}'
+/>
 
 Get the same legend using JSONP:
 

@@ -38,14 +38,11 @@ No CSS styling is applied by default, allowing you to integrate the legend seaml
 
 Get the legend for `ch.bafu.nabelstationen`:
 
-```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/legend
-```
+<ExampleCodeBlock
+request="curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/legend"
+exampleLang='html'
+example='<div class="legend-container">
 
-Response example:
-
-```html
-<div class="legend-container">
   <div class="legend-header">
     <p class="bod-title">
       <span
@@ -135,10 +132,8 @@ Response example:
       </tr>
     </table>
   </div>
-</div>
-```
-
-<br>
+</div>'
+/>
 
 Get the same legend using JSONP:
 
