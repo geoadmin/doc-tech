@@ -14,8 +14,11 @@ export default defineConfig({
 
      https://sys-docs.dev.bgdi.ch/preview/feat-pb-1234-my-branch/index.html
   */
-  base: process.env.VITE_BASE_URL || '/',
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  base: process.env.VITE_BASE_URL || "/",
+  head: [
+    ["link", { rel: "icon", href: "/favicon.ico" }],
+    ["meta", { name: "robots", content: "noindex" }],
+  ],
   ignoreDeadLinks: "localhostLinks",
   vite: {
     build: {
