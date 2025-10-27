@@ -28,7 +28,7 @@ This endpoint only has query parameters that modify the behavior of the request,
 | **offset (optional)**                | Offset for the first record (if more than 50 records).                                                                                                                                                                                                                                                                                                                                                                         |
 | **sr (optional)**                    | The spatial reference. Supported values: `21781` (LV03), `2056` (LV95), `4326` (WGS84), and `3857` (Web Pseudo-Mercator). Defaults to `21781`.                                                                                                                                                                                                                                                                                 |
 | **lang (optional)**                  | The language. Supported values: `de`, `fr`, `it`, `rm`, `en`. Defaults to `de`.                                                                                                                                                                                                                                                                                                                                                |
-| **layerDefs (optional)**             | Filter features with an expression. Syntax: `{ "<layerId>" : "<layerDef1>" }` where `<layerId>` must correspond to the layer specified in `layers`. See below for more details.                                                                                                                                                                                                                                                                            |
+| **layerDefs (optional)**             | Filter features with an expression. Syntax: `{ "<layerId>" : "<layerDef1>" }` where `<layerId>` must correspond to the layer specified in `layers`. See below for more details.                                                                                                                                                                                                                                                |
 | **callback (optional)**              | The name of the callback function.                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ### Tolerance, mapExtent and imageDisplay
@@ -69,12 +69,11 @@ Regarding the format of the `layerDefs` parameter:
   - `<attribute>` must be one of the queryable attributes listed by the [layer attribute endpoint](/docs/get-layer-attributes).
   - `<operator>` must be one of the following options:
 
-   | **Operator** | **Operators**                                                                 | **Examples**                                                                    |
-   | ------------ | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-   | `varchar`    | `=`, `+=`, `like`, `ilike`, `not like`, `not ilike`, `is null`, `is not null` | `toto = '3455 Kloten'`, `toto ilike '%SH%'`, `toto is null`, `toto ilike 'SH%'` |
-   | `number`     | `=`, `<`, `>`, `>=`, `<=`, `!=`                                               | `tutu >= 2.4`, `tutu < 5`                                                       |
-   | `boolean`    | `is` (true/false), `is not` (true/false)                                      | `tata is not false`                                                             |
-  
+  | **Operator** | **Operators**                                                                 | **Examples**                                                                    |
+  | ------------ | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+  | `varchar`    | `=`, `+=`, `like`, `ilike`, `not like`, `not ilike`, `is null`, `is not null` | `toto = '3455 Kloten'`, `toto ilike '%SH%'`, `toto is null`, `toto ilike 'SH%'` |
+  | `number`     | `=`, `<`, `>`, `>=`, `<=`, `!=`                                               | `tutu >= 2.4`, `tutu < 5`                                                       |
+  | `boolean`    | `is` (true/false), `is not` (true/false)                                      | `tata is not false`                                                             |
   - `<value>` must correspond to the type of the queryable attribute.
 
 In an example:
@@ -691,12 +690,12 @@ For most users, we recommend using one of the following formats instead:
 - `geometryFormat=geojson`
 - `geometryFormat=esrijson`
 
-::: 
+:::
 
 The following layers are based on the [ÖREB model V2_0](https://models.geo.admin.ch/V_D/OeREB/OeREBKRMtrsfr_V2_0.ili) and offer features in the INTERLIS format:
 
 - Layers with data:
-  
+
   ```txt
   ch.astra.baulinien-nationalstrassen_v2_0.oereb
   ch.bazl.projektierungszonen-flughafenanlagen_v2_0.oereb
@@ -727,7 +726,7 @@ Look for all the features of `ch.bav.kataster-belasteter-standorte-oev_v2_0.oere
 
 https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"rings":[[[2675000,1245000],[2670000,1255000],[2680000,1260000],[2690000,1255000],[2685000,1240000],[2675000,1245000]]]}&geometryType=esriGeometryPolygon&layers=all:ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
 
-Look for all the features of `ch.bazl.sicherheitszonenplan_v2_0.oereb` using a bounding box (envelope):  
+Look for all the features of `ch.bazl.sicherheitszonenplan_v2_0.oereb` using a bounding box (envelope):
 
 https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2575000,1109000,2610000,1127000&geometryType=esriGeometryEnvelope&layers=all:ch.bazl.sicherheitszonenplan_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
 

@@ -32,26 +32,26 @@ For each layer, there are some general identification properties
 
 and attributes listing more metaadata
 
-| Field | Description |
-| ------------ | --------------------------------------------------------------------------------------- |
-| `wmsResource` | The WMS resource of the layer. |
-| `scaleLimit` | The scale at which the layer is valid. |
-| `inspireUpperAbstract` | The abstract of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category (first level). |
-| `inspireName` | The name of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category. |
-| `urlDetails` | Link to the official details page. |
-| `bundCollectionNumber` | The collection number. |
-| `dataOwner` | The data owner. |
-| `inspireAbstract` | The abstract of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category the layer belongs to. |
-| `abstract` | The layer abstract. |
-| `wmsContactAbbreviation` | The abbreviation contact for the WMS resource. |
-| `downloadUrl` | The link where the data can be downloaded. |
-| `maps` | The projects in which this layer is accessible. |
-| `wmsContactName` | The contact name for the WMS resource. |
-| `dataStatus` | The date of the latest data update. |
-| `bundCollectionName` | The collection name. |
-| `inspireUpperName` | The name of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category (first level). |
-| `urlApplication` | The application where this layer is published. |
-| `tileInfo` | WMTS general information in JSON format. Note that this section is always identical and is not tied to a particular "map" like in ESRI specifications. |
+| Field                    | Description                                                                                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `wmsResource`            | The WMS resource of the layer.                                                                                                                         |
+| `scaleLimit`             | The scale at which the layer is valid.                                                                                                                 |
+| `inspireUpperAbstract`   | The abstract of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category (first level).              |
+| `inspireName`            | The name of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category.                                |
+| `urlDetails`             | Link to the official details page.                                                                                                                     |
+| `bundCollectionNumber`   | The collection number.                                                                                                                                 |
+| `dataOwner`              | The data owner.                                                                                                                                        |
+| `inspireAbstract`        | The abstract of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category the layer belongs to.       |
+| `abstract`               | The layer abstract.                                                                                                                                    |
+| `wmsContactAbbreviation` | The abbreviation contact for the WMS resource.                                                                                                         |
+| `downloadUrl`            | The link where the data can be downloaded.                                                                                                             |
+| `maps`                   | The projects in which this layer is accessible.                                                                                                        |
+| `wmsContactName`         | The contact name for the WMS resource.                                                                                                                 |
+| `dataStatus`             | The date of the latest data update.                                                                                                                    |
+| `bundCollectionName`     | The collection name.                                                                                                                                   |
+| `inspireUpperName`       | The name of the [INSPIRE](https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html) category (first level).                  |
+| `urlApplication`         | The application where this layer is published.                                                                                                         |
+| `tileInfo`               | WMTS general information in JSON format. Note that this section is always identical and is not tied to a particular "map" like in ESRI specifications. |
 
 ## Examples
 

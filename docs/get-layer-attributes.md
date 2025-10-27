@@ -91,20 +91,20 @@ Get the same legend using JSONP:
 ```js
 // Define the callback function to handle the response
 function myCallbackFunction(data) {
-  console.log(data);
+  console.log(data)
   // Process the data as needed
 }
 
 // Dynamically create a script tag to make the JSONP request
 function fetchLayerAttributes() {
-  const script = document.createElement("script");
+  const script = document.createElement('script')
   const url =
-    "https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill";
-  const callbackName = "myCallbackFunction";
-  script.src = `${url}?callback=${callbackName}`;
-  document.body.appendChild(script);
+    'https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
+  const callbackName = 'myCallbackFunction'
+  script.src = `${url}?callback=${callbackName}`
+  document.body.appendChild(script)
 }
 
 // Fetch the data when the page loads
-window.onload = fetchLayerAttributes;
+window.onload = fetchLayerAttributes
 ```

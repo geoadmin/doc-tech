@@ -7,14 +7,14 @@ Tiles are organized and served following the [Tile Map Service (TMS) specificati
 
 Use the following parameters to define your request:
 
-| Parameter       | Example         | Description                                        |
-| ----------------| --------------- | -------------------------------------------------- |
-| ServerName      | 3d.geo.admin.ch |                                                    |
-| Version         | v1              | v1 means terrain tiles generated with cesium tiles |
-| Time (optional) | 20250101        | Date of tile generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned.   |
-| Zoom            | 12              | Zoom level                                         |
-| X               | 4309            | The longitude index                                |
-| Y               | 3111            | The latitude index                                 |
+| Parameter       | Example         | Description                                                                                                   |
+| --------------- | --------------- | ------------------------------------------------------------------------------------------------------------- |
+| ServerName      | 3d.geo.admin.ch |                                                                                                               |
+| Version         | v1              | v1 means terrain tiles generated with cesium tiles                                                            |
+| Time (optional) | 20250101        | Date of tile generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned. |
+| Zoom            | 12              | Zoom level                                                                                                    |
+| X               | 4309            | The longitude index                                                                                           |
+| Y               | 3111            | The latitude index                                                                                            |
 
 An example of a terrain tile request:
 
@@ -28,11 +28,9 @@ The `layer.json` file provides metadata that describes the availability and stru
 
 <ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/<Time>/layer.json" method="GET" />
 
-
-
-| Parameter       | Example  | Description                                                                                                               |
-| --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Time (optional) | 20250101  | Date of tile generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent metadata is returned. |
+| Parameter       | Example  | Description                                                                                                       |
+| --------------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| Time (optional) | 20250101 | Date of tile generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent metadata is returned. |
 
 Example of a metadata request for the date `20250101`:
 

@@ -19,6 +19,6 @@ The following versions of the GeoAdmin JS API are available:
 - Versions using LV95:
   - 4.4.2 → https://api3.geo.admin.ch/loader.js?version=4.4.2
 - Versions using LV03:
-  - 4.3.2 → https://api3.geo.admin.ch/loader.js?version=4.3.2 
+  - 4.3.2 → https://api3.geo.admin.ch/loader.js?version=4.3.2
   - 3.18.2 → https://api3.geo.admin.ch/loader.js?version=3.18.2
   - 3.6.0 (default) → https://api3.geo.admin.ch/loader.js
