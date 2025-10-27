@@ -3,15 +3,17 @@
     "releases-sidebar": "tsx scripts/releases-sidebar.js",
     "docs:dev": "npm run releases-sidebar && vitepress dev",
     "docs:build": "npm run releases-sidebar && vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
-    "mermaid": "^11.6.0",
-    "vitepress-plugin-mermaid": "^2.0.17",
+    "@types/node": "24.0.0",
     "fast-glob": "^3.3.3",
     "gray-matter": "^4.0.3",
-    "@types/node": "24.0.0",
-    "tsx": "^4.19.4"
+    "prettier": "^3.6.2",
+    "tsx": "^4.19.4",
+    "vitepress": "1.6.4"
   },
   "type": "module"
 }
