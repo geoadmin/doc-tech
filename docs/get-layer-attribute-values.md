@@ -1,6 +1,7 @@
 # Get Layer Attribute Values
 
-The attribute values endpoint provides a preview of possible values for a specific attribute (field) of a given vector layer. This is useful for building filter UIs, dropdowns, or for understanding the data distribution in a layer. This endpoint can be used to get more detailed information about possible attribute values.
+The attribute values endpoint provides a preview of possible values for a specific attribute (field) of a given vector layer.
+This is useful for building filter UIs, dropdowns, or for understanding the data distribution in a layer.
 
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/attributes/{attributeName}" method="GET" />
 
@@ -18,7 +19,7 @@ This endpoint only has **Path Parameters** which are mandatory.
 
 ## Response Details
 
-The endpoint returns a **JSON** with information about the attribute values for the specified layer and attribute. The response includes an array of values. For attributes of type `DATE`, `INTEGER`, `NUMERIC` the endpoint returns the minimum and maximum values as a two-element array. For other attribute types the endpoint returns up to 50 distinct values, sorted.
+The endpoint returns a **JSON** with information about the attribute values for the specified layer and attribute. The response includes an array of values. For attributes of type `DATE`, `INTEGER`, `NUMERIC` the endpoint returns the minimum and maximum values as a two-element array. For other attribute types the endpoint returns up to 50 distinct values, sorted alphabetically.
 
 Here is a description of the data contained in the response.
 
@@ -90,7 +91,7 @@ example='{
 
 <br>
 
-Get the min and max value for the `garea` attribute from layer `ch.bfs.gebaeude_wohnungs_register` with descending order:
+Get the min and max value for the `garea` attribute from layer `ch.bfs.gebaeude_wohnungs_register`:
 
 <ExampleCodeBlock 
 request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/attributes/garea"'

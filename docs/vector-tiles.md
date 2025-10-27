@@ -69,11 +69,7 @@ curl -o demo.pbf https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v
 ## GetTileSets
 MBTiles are used for storing tiled map data in SQLite databases for immediate or offline usage and for efficient transfer.
 
-::: warning
-The file that is being downloaded in the example below is approximately **900MB** in size.
-:::
-
-A MBTileSet request is in the following form:
+TileSet request is in the following form:
 
 <ApiCodeBlock url="https://vectortiles.geo.admin.ch/tiles/{layerName}/{version}/{layerName}.mbtiles" method="GET" />
 
@@ -83,6 +79,10 @@ A MBTileSet request is in the following form:
 | version       | v1.0.0               | Version of the tileset                      |
 
 A GetTileSet request for a `.mbtiles` file in the Base Map dataset:
+
+::: warning
+The file that is being downloaded in the example below is approximately **900MB** in size.
+:::
 
 ```http
 curl -o demo.mbtiles https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.base.vt/v1.0.0/ch.swisstopo.base.vt.mbtiles
