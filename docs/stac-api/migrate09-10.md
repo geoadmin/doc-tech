@@ -38,9 +38,7 @@ In order to highlight the changes we'll use the following example `item` and `as
     "forecast:perturbed": true
   },
   "stac_version": "0.9.0",
-  "stac_extensions": [
-    "https://stac-extensions.github.io/forecast/v0.2.0/schema.json"
-  ],
+  "stac_extensions": ["https://stac-extensions.github.io/forecast/v0.2.0/schema.json"],
   "type": "Feature"
 }
 ```

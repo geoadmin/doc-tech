@@ -16,8 +16,8 @@ The GetCapabilities document provides information about the service, along with 
 
 <ApiCodeBlock url="https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=<Lang>" method="GET" />
 
-| **Parameter**   | **Description**                                               |
-| --------------- | ------------------------------------------------------------- |
+| **Parameter**   | **Description**                                                                                                                                                                       |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Lang (optional) | Specifies the language for the service response. Supported values: `de` (German), `fr` (French), `it` (Italian), `rm` (Rumantsch), `en` (English). Defaults to `de` if not specified. |
 
 ### Supported Projections

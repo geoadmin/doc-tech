@@ -1,19 +1,19 @@
 {
-  "scripts": {
-    "releases-sidebar": "tsx scripts/releases-sidebar.js",
-    "docs:dev": "npm run releases-sidebar && vitepress dev",
-    "docs:build": "npm run releases-sidebar && vitepress build",
-    "docs:preview": "vitepress preview",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
-  },
-  "devDependencies": {
-    "@types/node": "24.0.0",
-    "fast-glob": "^3.3.3",
-    "gray-matter": "^4.0.3",
-    "prettier": "^3.6.2",
-    "tsx": "^4.19.4",
-    "vitepress": "1.6.4"
-  },
-  "type": "module"
+    "scripts": {
+        "releases-sidebar": "tsx scripts/releases-sidebar.js",
+        "docs:dev": "npm run releases-sidebar && vitepress dev",
+        "docs:build": "npm run releases-sidebar && vitepress build",
+        "docs:preview": "vitepress preview",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "devDependencies": {
+        "@types/node": "24.0.0",
+        "fast-glob": "^3.3.3",
+        "gray-matter": "^4.0.3",
+        "prettier": "^3.6.2",
+        "tsx": "^4.19.4",
+        "vitepress": "1.6.4"
+    },
+    "type": "module"
 }

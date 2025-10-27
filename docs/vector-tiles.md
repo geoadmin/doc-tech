@@ -67,6 +67,7 @@ curl -o demo.pbf https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v
 ```
 
 ## GetTileSets
+
 MBTiles are used for storing tiled map data in SQLite databases for immediate or offline usage and for efficient transfer.
 
 TileSet request is in the following form:

@@ -1,3 +1,3 @@
-import { createContentLoader } from "vitepress";
+import { createContentLoader } from 'vitepress'
 
-export default createContentLoader("./page/end-of-life.md");
+export default createContentLoader('./page/end-of-life.md')

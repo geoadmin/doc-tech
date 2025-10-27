@@ -12,10 +12,10 @@ This endpoint only has **Path Parameters** which are mandatory.
 
 ### Path Parameters
 
-| Parameters                      | Description                                                       |
-| ------------------------------- | ----------------------------------------------------------------- |
-| **layerBodId (required)**       | The technical name or the layer ID.                              |
-| **attributeName (required)**    | The name of the attribute for which to retrieve values.          |
+| Parameters                   | Description                                             |
+| ---------------------------- | ------------------------------------------------------- |
+| **layerBodId (required)**    | The technical name or the layer ID.                     |
+| **attributeName (required)** | The name of the attribute for which to retrieve values. |
 
 ## Response Details
 
@@ -23,9 +23,9 @@ The endpoint returns a **JSON** with information about the attribute values for 
 
 Here is a description of the data contained in the response.
 
-| **Field**        | **Description**                                                      |
-| ---------------- | -------------------------------------------------------------------- |
-| `values`         | Array of attribute values                                            |
+| **Field** | **Description**           |
+| --------- | ------------------------- |
+| `values`  | Array of attribute values |
 
 ## Examples
 
