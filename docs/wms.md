@@ -7,15 +7,39 @@ outline: [2, 3]
 Federal offices make part of their data available via the WMS - Federal Spatial Data Infrastructure (FSDI) service.
 The data layers currently available in the WMS-FSDI correspond, with a few exceptions, to the geodata that are presented in [map.geo.admin.ch](https://map.geo.admin.ch).
 
+## Set the Language  
+
+The default response language of all WMS endpoints is German (`de`).  
+There are two ways to set a different language:  
+
+1. As a path parameter like in `https://wms.geo.admin.ch/{Lang}/?SERVICE=WMS&...`  
+2. As a query parameter `Lang` like in `https://wms.geo.admin.ch/?SERVICE=WMS&...&Lang=fr&...`  
+
+When both are present, the path parameter takes precedence over the query string parameter.  
+
+The supported values are: `de` (German), `fr` (French), `it` (Italian), `rm` (Rumantsch), `en` (English). Defaults to `de` if not specified
+
+::: info
+The language parameter (both path and query string variants) is supported by all WMS requests: `GetCapabilities`, `GetMap`, `GetFeatureInfo`, and `GetLegendGraphic`. This allows you to receive localized responses and layer information in your preferred language.
+:::
+
+<ApiCodeBlock url="https://wms.geo.admin.ch/{language}/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&LANG=<Lang>" method="GET" />
+
 ## GetCapabilities
 
-The GetCapabilities document provides information about the service, along with layer description, both in German and French.
+The GetCapabilities document provides comprehensive information about the WMS service, including detailed layer descriptions available in all four Swiss national languages and English.
 
-<ApiCodeBlock url="https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&LANG=<Lang>" method="GET" />
+### Path Parameters
 
-| **Parameter**   | **Description**                                               |
+| Parameter                 | Description                         |
+| ------------------------- | ----------------------------------- |
+| **Lang** *(optional)*     | Specifies the language for the service response. |
+
+### Query Parameters
+
+| Parameter       | Description                                                   |
 | --------------- | ------------------------------------------------------------- |
-| Lang (optional) | The language. Supported values: `de`, `fr` (Defaults to `de`) |
+| **Lang** *(optional)* | Specifies the language for the service response. |
 
 ### Supported Projections
 

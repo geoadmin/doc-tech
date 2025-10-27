@@ -79,7 +79,7 @@ Here is a description of the response's data.
 | **Field** | **Description**                                                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `id`      | This is an internal value and therefore shouldn't be used.                                                                                                         |
-| `weight`  | The `weight` is dynamically computed according to the `searchText` that is provided. It informs the user about how close an entry is to the provided `searchText`. |
+| `weight`  | The `weight` attribute represents the similarity between the search query and the index. **For location search**: `weight = 100` typically indicates exact matches, `weight < 100` indicates partial/wildcard matches, `weight > 1000` indicates fuzzy search results. Since the search engine combines multiple ranking methods, weight values should be used as general guidelines only. **Important**: Absolute weight values may change without backward compatibility. |
 
 **Attributes:**
 | **Field** | **Description** |

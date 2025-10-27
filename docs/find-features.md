@@ -290,7 +290,7 @@ request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/find?"\
 "searchField=stn_label&"\
 "returnGeometry=false&"\
 "contains=false&"\
-"layerDefs={\"ch.swisstopo.amtliches-strassenverzeichnis\":\"com_fosnr=4307\"}"'
+"layerDefs=%7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%22com_fosnr%3D4307%22%7D"'
 example='{
   "results": [
     {
