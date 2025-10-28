@@ -7,11 +7,20 @@ Technical documentation for services made available by geo.admin.ch.
 To build and run the site locally:
 
 1. Make sure Node.js v18 or higher is installed (`node -v`)
-2. Install VitePress following [the setup guide](https://vitepress.dev/guide/getting-started).
+2. Install VitePress following [the setup guide](https://vitepress.dev/guide/getting-started). Do not use the setup wizard, only install the package.
 3. Optional: Activate a suitable Node version, e.g. with `nvm use stable`
    ℹ️ Use `nvm list` to see all available Node versions
 4. Run `npm install` to locally install all the necessary packages
 5. Run `npm run docs:dev` and visit http://localhost:5173/ in your web browser
+
+## Development
+
+This project uses the [prettier](https://prettier.io/) package for formatting.
+
+You can automatically run prettier with these commands:
+
+1.  `npm run format`
+2.  `npm run format:check`
 
 ## How to Add a Release Note
 
@@ -49,7 +58,6 @@ To add a release note, follow these steps:
    previewContent: "Our systems are experiencing issues"
    ```
 2. Update the `previewType` variable (`info` or `warning`) to control the color and the position in the page :
-
    - `info`: bottom of the page, just text without backgound color
    - `warning`: top of the page, yellow banner
    - `danger`: top of the page, red banner

@@ -1,0 +1,17 @@
+{
+    "printWidth": 100,
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "jsxSingleQuote": false,
+    "overrides": [
+        {
+            "files": "*.md",
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ],
+    "singleAttributePerLine": true
+}
