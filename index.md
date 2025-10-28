@@ -53,7 +53,7 @@ const announcementsPreview = announcements[0]
 
 let statusContainer = null;
 let app = null;
-// Initiate and attach StatusBanner to the header, if type is 'warning' or 'danger'
+// Initiate and attach StatusBanner to the header, if the type is 'warning' or 'danger'
 onMounted(() => {
   if (statusPreview.frontmatter.type !== 'warning' && statusPreview.frontmatter.type !== 'danger' ) return;
   const headerContainer = document.querySelector('.VPNav');
