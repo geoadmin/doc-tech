@@ -1,10 +1,11 @@
 ---
-type: "info"
-title: "All Systems Operational"
-content: "No ongoing incidents - all services are functioning as expected."
+type: 'info'
+title: 'All Systems Operational'
+content: 'No ongoing incidents - all services are functioning as expected.'
 
 outline: [2, 3]
 ---
+
 <!---
 Templates:
 
@@ -26,9 +27,10 @@ type: "danger"
 title: "Major incident"
 content: "We are experiencing a significant outage affecting [Service XY]. All hands are on deck to diagnose and resolve the issue. The next update will be posted at XX:XX or as significant progress is made."
 --->
+
 # Status Page
 
-This page provides the latest status updates for all *.geo.admin.ch web services, including ongoing incidents and a history of past events.
+This page provides the latest status updates for all \*.geo.admin.ch web services, including ongoing incidents and a history of past events.
 
 ## Current Status
 

@@ -6,14 +6,14 @@ This service provides 3D tiles through a RESTful API, implementing the [Cesium 3
 
 Use the following parameters to define your request:
 
-| Parameter        | Example                          | Description                                                                                                                                                                             |
-| -----------------| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| layerName        | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer. Possible values are: `ch.swisstopo.swissbuildings3d.3d`, `ch.swisstopo.swisstlm3d.3d`, `ch.swisstopo.swissnames3d.3d`, `ch.swisstopo.vegetation.3d` |
-| Version          | v1                               | The API version                                                                                                                                                                         |
-| Time (optional   | 20250501                         | Date of tileset generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned.                                                                        |
-| Z                | 7                                | Zoom level                                                                                                                                                                              |
-| X                | 54                               | Tile column index                                                                                                                                                                       |
-| Y                | 21                               | Tile row index                                                                                                                                                                          |
+| Parameter      | Example                          | Description                                                                                                                                                                             |
+| -------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| layerName      | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer. Possible values are: `ch.swisstopo.swissbuildings3d.3d`, `ch.swisstopo.swisstlm3d.3d`, `ch.swisstopo.swissnames3d.3d`, `ch.swisstopo.vegetation.3d` |
+| Version        | v1                               | The API version                                                                                                                                                                         |
+| Time (optional | 20250501                         | Date of tileset generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned.                                                                        |
+| Z              | 7                                | Zoom level                                                                                                                                                                              |
+| X              | 54                               | Tile column index                                                                                                                                                                       |
+| Y              | 21                               | Tile row index                                                                                                                                                                          |
 
 A 3D tile request for swissBUILDINGS3D dataset:
 
@@ -28,10 +28,9 @@ It can be used directly by [CesiumJS](https://github.com/CesiumGS/cesium).
 
 <ApiCodeBlock url="https://3d.geo.admin.ch/<LayerName>/<Version>/<Time>/tileset.json" method="GET" />
 
-
 | Parameter       | Example                          | Description                                                                                                                                                                             |
 | --------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Time (optional) | 20250728                         | Date of tile generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned.                                                                                                                                               |
+| Time (optional) | 20250728                         | Date of tile generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned.                                                                           |
 | layerName       | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer. Possible values are: `ch.swisstopo.swissbuildings3d.3d`, `ch.swisstopo.swisstlm3d.3d`, `ch.swisstopo.swissnames3d.3d`, `ch.swisstopo.vegetation.3d` |
 
 A metadata request for the Vegetation dataset:
