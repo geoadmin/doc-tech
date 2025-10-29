@@ -2,12 +2,13 @@
 outline: [2, 3]
 ---
 
-# Changes and Migration from `v0.9` to `v1`
+# Migrate `v0.9` to `v1`
 
 The new major release `v1` of the STAC API brings a number of additional features and fields and a few breaking changes with respect to `v0.9`.
-In order to highlight the changes we'll use the following example `item` and `asset` JSON objects to illustrate the differences.
 
-::: details Example `item` JSON
+In order to highlight the changes we'll use the following example `item` and `asset` JSON objects (compliant with `v0.9`) to illustrate the differences.
+
+::: details Example `item` JSON (`v0.9`)
 
 ```json
 {
@@ -44,7 +45,7 @@ In order to highlight the changes we'll use the following example `item` and `as
 ```
 
 :::
-::: details Example `asset` JSON
+::: details Example `asset` JSON (`v0.9`)
 
 ```json
 {

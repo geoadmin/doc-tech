@@ -11,7 +11,7 @@ Basic authentication and token authentication were removed in STAC API version `
 
 ## Session Authentication
 
-Users can browse geodata in the "admin interface", a web-based UI available to selected user.
+Users can browse geodata in the "admin interface", a web-based UI available to selected users.
 Upon successful login, the service issues a session cookie that authenticates subsequent requests from the browser.
 
 Session authentication is designed specifically for browser-based workflows and may not work with non-browser clients or all API endpoints.
@@ -23,7 +23,7 @@ JWT authentication is the recommended approach for API clients performing write 
 JWT authentication involves two steps:
 
 1. Obtain a JWT token from Amazon Cognito's [InitiateAuth API](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html).
-2. Include the tokes in the HTTP `Authorization` header using the `Bearer` scheme as defined in [RFC 6750](https://datatracker.ietf.org/doc/html/rfc6750#section-2.1).
+2. Include the token in the HTTP `Authorization` header using the `Bearer` scheme as defined in [RFC 6750](https://datatracker.ietf.org/doc/html/rfc6750#section-2.1).
 
 To obtain a JWT token, use Amazon Cognito’s InitiateAuth API by sending your username and password, along with your client ID. For example:
 
