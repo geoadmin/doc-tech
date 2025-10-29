@@ -2,6 +2,8 @@
 
 Use this endpoint to discover features at a specific location.
 
+A list of all available layers is provided on [this page](https://api3.geo.admin.ch/rest/services/api/MapServer/layersTable).
+
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/identify" method="GET" />
 
 ::: warning

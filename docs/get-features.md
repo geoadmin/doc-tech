@@ -2,6 +2,8 @@
 
 Retrieve one or more features using feature IDs and the corresponding layer ID.
 
+A list of all available layers is provided on [this page](https://api3.geo.admin.ch/rest/services/api/MapServer/layersTable).
+
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId},{featureId}" method="GET" />
 
 ## Request Details

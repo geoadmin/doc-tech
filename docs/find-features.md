@@ -2,6 +2,8 @@
 
 Find features in a specific layer by searching for a matching attribute.
 
+A list of all available layers is provided on [this page](https://api3.geo.admin.ch/rest/services/api/MapServer/layersTable).
+
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/find" method="GET" />
 
 ## Request Details

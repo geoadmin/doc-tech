@@ -2,6 +2,8 @@
 
 Get metadata for a feature formatted as an HTML popup.
 
+A list of all available layers is provided on [this page](https://api3.geo.admin.ch/rest/services/api/MapServer/layersTable).
+
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId}/htmlPopup" method="GET" />
 
 :::tip
