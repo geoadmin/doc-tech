@@ -43,11 +43,11 @@ Uploading an asset file via the STAC API involves three main steps:
 
     <ApiCodeBlock url="/storage-prefix/{presignedUrl}" method="PUT" />
 
-    You may upload parts in parallel. It is possible to retry a failed upload.
+   You may upload parts in parallel. It is possible to retry a failed upload.
 
-    :::warning
-    Presigned URLs expire within three hours, so the upload must be completed before that.
-    :::
+   :::warning
+   Presigned URLs expire within three hours, so the upload must be completed before that.
+   :::
 
 <br/>
 
@@ -144,56 +144,56 @@ The following example illustrates best practices for handling errors during repe
 
 1. **Create Asset Upload**
 
-     <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads" method="POST" />
+    <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads" method="POST" />
 
-    Possible Responses:
+   Possible Responses:
 
-    | HTTP Response                                                       | Action Required                                                         |
-    | ------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-    | `201 OK`                                                            | Continue to step 2.                                                     |
-    | `400 Bad Request - "Upload already in progress"`                    | Abort the existing upload (see below), then restart step 1.             |
-    | `400 Bad Request - other errors`                                    | Cancel upload. Analyze and correct your request before retrying.        |
-    | `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless). |
-    | `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Retry later. Adjust wait time based on upload rate (minimum 100ms).     |
+   | HTTP Response                                                       | Action Required                                                         |
+   | ------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+   | `201 OK`                                                            | Continue to step 2.                                                     |
+   | `400 Bad Request - "Upload already in progress"`                    | Abort the existing upload (see below), then restart step 1.             |
+   | `400 Bad Request - other errors`                                    | Cancel upload. Analyze and correct your request before retrying.        |
+   | `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless). |
+   | `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Retry later. Adjust wait time based on upload rate (minimum 100ms).     |
 
-    If the response is `{"description": "Upload already in progress", "code": 400}`, you should abort the upload.
+   If the response is `{"description": "Upload already in progress", "code": 400}`, you should abort the upload.
 
-    **a.** Get the `upload_id` of the upload marked in progress via:
+   **a.** Get the `upload_id` of the upload marked in progress via:
 
-      <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads?status=in-progress" method="GET" />
+     <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads?status=in-progress" method="GET" />
 
-    **b.** Abort the upload:
+   **b.** Abort the upload:
 
-     <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/abort" method="POST" />
+    <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/abort" method="POST" />
 
-    **c.** Restart the asset upload.
+   **c.** Restart the asset upload.
 
 2. **Upload the parts via the presigned URL from step 1**
 
-      <ApiCodeBlock url="{presigned_url}" method="PUT" />
+     <ApiCodeBlock url="{presigned_url}" method="PUT" />
 
-    Possible Responses:
+   Possible Responses:
 
-    | HTTP Response                                                       | Action Required                                                         |
-    | ------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-    | `200 OK`                                                            | Continue to step 3.                                                     |
-    | `400 Bad Request`                                                   | Abort upload                                                            |
-    | `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless). |
-    | `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Retry step 2 after a short wait (minimum 100ms).                        |
+   | HTTP Response                                                       | Action Required                                                         |
+   | ------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+   | `200 OK`                                                            | Continue to step 3.                                                     |
+   | `400 Bad Request`                                                   | Abort upload                                                            |
+   | `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless). |
+   | `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Retry step 2 after a short wait (minimum 100ms).                        |
 
 3. **Complete the upload**
 
-    <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/complete" method="POST" />
+   <ApiCodeBlock url="https://data.geo.admin.ch/api/stac/v1/collections/{collection}/items/{item}/assets/{asset}/uploads/{upload_id}/complete" method="POST" />
 
-    Possible Responses:
+   Possible Responses:
 
-    | HTTP Response                                                       | Action Required                                                                    |
-    | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-    | `200 OK`                                                            | Upload successful.                                                                 |
-    | `400 Bad Request`                                                   | Cancel upload                                                                      |
-    | `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless).            |
-    | `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Service is momentarily not available, wait a short moment, then retry the request. |
+   | HTTP Response                                                       | Action Required                                                                    |
+   | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+   | `200 OK`                                                            | Upload successful.                                                                 |
+   | `400 Bad Request`                                                   | Cancel upload                                                                      |
+   | `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless).            |
+   | `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Service is momentarily not available, wait a short moment, then retry the request. |
 
-    The following figure shows the flow of a multipart upload process.
+   The following figure shows the flow of a multipart upload process.
 
-    <img src="../../static/service-stac-upload-process.svg" />
+   <img src="../../static/service-stac-upload-process.svg" />
