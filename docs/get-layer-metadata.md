@@ -2,6 +2,8 @@
 
 This endpoint provides metadata for all layers that match a search query.
 
+A list of all available layers is provided on [this page](https://api3.geo.admin.ch/rest/services/api/MapServer/layersTable).
+
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer" method="GET" />
 
 ## Request Details
