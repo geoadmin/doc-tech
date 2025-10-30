@@ -3,6 +3,12 @@
 Adjust the parameters in the URL of the map viewer to have full control over what is shown on the map.
 Use the URL to reproduce what you see right now on the map viewer anywhere.
 
+:::info
+This page documents the current, recommended set of URL parameters for configuring map viewer.
+Some parameters listed in older documentation are now considered legacy and have been replaced or removed.
+For a detailed overview of these changes and their modern equivalents, refer to the [migration guide from 2024](https://www.geo.admin.ch/en/changes-of-the-url-parameters-2024).
+:::
+
 ## Introduction
 
 The query string in the map viewer URL reflects what is currently displayed on the map.
