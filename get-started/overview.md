@@ -19,8 +19,9 @@ The access and use of the data or the services is free of charge, subject to the
 :::
 
 ## Available Layers
+
 All layers available through the Federal Spatial Data Infrastructure (FSDI) services can be found at the links below:
 
 - https://api3.geo.admin.ch/rest/services/api/MapServer/layersTable
 - https://data.geo.admin.ch/
-- https://data.geo.admin.ch/api/stac/v1/collections 
+- https://data.geo.admin.ch/api/stac/v1/collections
