@@ -44,7 +44,7 @@ export default defineConfig({
             {
                 text: 'Get Started',
                 collapsed: false,
-                items: [{ text: 'Overview', link: '/docs/overview' }],
+                items: [{ text: 'Overview', link: '/get-started/overview' }],
             },
             {
                 text: 'Explore Data',
@@ -138,10 +138,10 @@ function loadReleasesSidebarData() {
 
 function exploreDataItems(): DefaultTheme.SidebarItem[] {
     return [
-        { text: 'Get Layer Metadata', link: '/docs/get-layer-metadata' },
-        { text: 'Get Layer Attributes', link: '/docs/get-layer-attributes' },
-        { text: 'Get Layer Attribute Values', link: '/docs/get-layer-attribute-values' },
-        { text: 'Get Layer Legend', link: '/docs/get-layer-legend' },
+        { text: 'Get Layer Metadata', link: '/explore-data/get-layer-metadata' },
+        { text: 'Get Layer Attributes', link: '/explore-data/get-layer-attributes' },
+        { text: 'Get Layer Attribute Values', link: '/explore-data/get-layer-attribute-values' },
+        { text: 'Get Layer Legend', link: '/explore-data/get-layer-legend' },
     ]
 }
 
@@ -152,25 +152,25 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
             items: [
                 {
                     text: 'Identify Features',
-                    link: '/docs/identify-features',
+                    link: '/access-data/identify-features',
                 },
-                { text: 'Find Features', link: '/docs/find-features' },
-                { text: 'Get Features', link: '/docs/get-features' },
+                { text: 'Find Features', link: '/access-data/find-features' },
+                { text: 'Get Features', link: '/access-data/get-features' },
                 {
                     text: 'Get HTML Popup',
-                    link: '/docs/get-html-popup',
+                    link: '/access-data/get-html-popup',
                 },
             ],
         },
         {
             text: 'Search',
-            link: '/docs/search',
+            link: '/access-data/search',
         },
         {
             text: 'Elevation Data',
             items: [
-                { text: 'Get Point Height', link: '/docs/get-point-height' },
-                { text: 'Get Elevation Profile', link: '/docs/get-elevation-profile' },
+                { text: 'Get Point Height', link: '/access-data/get-point-height' },
+                { text: 'Get Elevation Profile', link: '/access-data/get-elevation-profile' },
             ],
         },
     ]
@@ -178,20 +178,20 @@ function accessDataItems(): DefaultTheme.SidebarItem[] {
 
 function visualizeDataItems(): DefaultTheme.SidebarItem[] {
     return [
-        { text: 'WMS', link: '/docs/wms' },
-        { text: 'WMTS', link: '/docs/wmts' },
-        { text: 'XYZ', link: '/docs/xyz' },
+        { text: 'WMS', link: '/visualize-data/wms' },
+        { text: 'WMTS', link: '/visualize-data/wmts' },
+        { text: 'XYZ', link: '/visualize-data/xyz' },
         {
             text: 'Vector Tiles',
-            link: '/docs/vector-tiles',
+            link: '/visualize-data/vector-tiles',
         },
         {
             text: 'Terrain Service',
-            link: '/docs/terrain-service',
+            link: '/visualize-data/terrain-service',
         },
         {
             text: '3D Tiles',
-            link: '/docs/3d-tiles',
+            link: '/visualize-data/3d-tiles',
         },
     ]
 }
@@ -201,17 +201,17 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
         {
             text: 'STAC API',
             items: [
-                { text: 'Overview', link: '/docs/stac-api/overview' },
-                { text: 'Authentication', link: '/docs/stac-api/authentication' },
-                { text: 'Asset Upload', link: '/docs/stac-api/asset-upload' },
-                { text: 'Compression', link: '/docs/stac-api/compression' },
+                { text: 'Overview', link: '/download-data/stac-api/overview' },
+                { text: 'Authentication', link: '/download-data/stac-api/authentication' },
+                { text: 'Asset Upload', link: '/download-data/stac-api/asset-upload' },
+                { text: 'Compression', link: '/download-data/stac-api/compression' },
                 {
                     text: 'Supported Media Types',
-                    link: '/docs/stac-api/supported-media',
+                    link: '/download-data/stac-api/supported-media',
                 },
-                { text: 'Caching', link: '/docs/stac-api/caching' },
-                { text: 'Item Expiration', link: '/docs/stac-api/item-expiration' },
-                { text: 'Migrate v0.9 to v1', link: '/docs/stac-api/migrate09-10' },
+                { text: 'Caching', link: '/download-data/stac-api/caching' },
+                { text: 'Item Expiration', link: '/download-data/stac-api/item-expiration' },
+                { text: 'Migrate v0.9 to v1', link: '/download-data/stac-api/migrate09-10' },
                 {
                     text: 'API Specs',
                     link: 'https://data.geo.admin.ch/api/stac/static/spec/v1/api.html',
@@ -223,11 +223,11 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
 
 function mapViewerItems(): DefaultTheme.SidebarItem[] {
     return [
-        { text: 'Embed in an iframe', link: '/docs/embed-in-an-iframe' },
-        { text: 'URL Parameters', link: '/docs/url-parameters' },
+        { text: 'Embed in an iframe', link: '/map-viewer/embed-in-an-iframe' },
+        { text: 'URL Parameters', link: '/map-viewer/url-parameters' },
         {
             text: 'Javascript API',
-            link: '/docs/javascript-api',
+            link: '/map-viewer/javascript-api',
         },
     ]
 }
