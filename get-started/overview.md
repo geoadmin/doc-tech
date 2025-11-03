@@ -17,3 +17,10 @@ Where available we link to more detailed specifications, for example to our [STA
 ::: tip ⚖️ Terms of Use
 The access and use of the data or the services is free of charge, subject to the provisions on fair use, see our [Terms of Use](https://www.geo.admin.ch/en/general-terms-of-use-fsdi).
 :::
+
+## Available Layers
+All layers available through the Federal Spatial Data Infrastructure (FSDI) services can be found at the links below:
+
+- https://api3.geo.admin.ch/rest/services/api/MapServer/layersTable
+- https://data.geo.admin.ch/
+- https://data.geo.admin.ch/api/stac/v1/collections 
