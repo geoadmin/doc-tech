@@ -67,7 +67,7 @@ Regarding the format of the `layerDefs` parameter:
 
 - Use a JSON-like format: `{"<layername>":"<filter_expression>"}`.
 - The `<filter_expression` is defined in the form `<attribute><operator><value>` where
-  - `<attribute>` must be one of the queryable attributes listed by the [layer attribute endpoint](/docs/get-layer-attributes).
+  - `<attribute>` must be one of the queryable attributes listed by the [layer attribute endpoint](/explore-data/get-layer-attributes).
   - `<operator>` must be one of the following options:
 
   | **Operator** | **Operators**                                                                 | **Examples**                                                                    |

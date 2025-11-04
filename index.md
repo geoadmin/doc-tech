@@ -11,7 +11,7 @@ hero:
     alt: Geoportal
   actions:
     - text: Get started
-      link: /docs/overview
+      link: /get-started/overview
     - theme: alt
       text: Getting help
       link: http://groups.google.com/group/geoadmin-api
@@ -19,24 +19,24 @@ hero:
 features:
   - title: Explore Data
     details: Browse additional information about layers, including attributes and other metadata.
-    link: /docs/get-layer-metadata
+    link: /explore-data/get-layer-metadata
     icon: 🧭
   - title: Access Data
     details: Retrieve location-based features such as geometries, addresses and elevation.
-    link: /docs/identify-features
+    link: /access-data/identify-features
     icon: 🔎
   - title: Visualize Data
     details: Access map data (2D and 3D) for visualization in your application.
     icon: 👁
-    link: /docs/wms
+    link: /visualize-data/wms
   - title: Download Data
     details: Download entire datasets for exploration and analysis.
     icon: ⬇️
-    link: /docs/stac-api/overview
+    link: /download-data/stac-api/overview
   - title: Map Viewer
     details: Integrate and customize map.geo.admin.ch as an interactive map in your webpage.
     icon: 🗺️
-    link: /docs/embed-in-an-iframe
+    link: /map-viewer/embed-in-an-iframe
 ---
 
 <script setup>
