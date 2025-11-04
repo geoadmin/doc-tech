@@ -91,14 +91,14 @@ onUnmounted(() => {
     <div class="releases-container-cols">
       <div class="home-container-col">
         <h4>Software Updates</h4>
-        <span>The latest releases of software in *.geo.admin.ch:</span>
+        <span>Latest software releases on *.geo.admin.ch:</span>
         <a class="vp-external-link-icon link" href="https://github.com/geoadmin/web-mapviewer/releases">web-mapviewer</a>
         <a class="vp-external-link-icon link" href="https://github.com/geoadmin/mf-chsdi3/releases">mf-chsdi3</a>
         <a class="vp-external-link-icon link" href="https://github.com/geoadmin/service-stac/releases">service-stac</a>
       </div>
       <div class="home-container-col">
         <h4>Data Updates</h4>
-        <span>News on changes in the data available through our services:</span>
+        <span>Changes in the data available through our services:</span>
         <a :href="lastRelease.url">Latest Release</a>
         <a href="/releases/release-notes">All Releases</a>
       </div>
