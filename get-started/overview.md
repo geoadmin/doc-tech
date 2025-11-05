@@ -20,8 +20,8 @@ The access and use of the data or the services is free of charge, subject to the
 
 ## Available Layers
 
-All layers available through the Federal Spatial Data Infrastructure (FSDI) services can be found at the links below:
+To use our APIs you often must know a layer’s technical name, e.g., ch.bfs.gebaeude_wohnungs_register. We recommend the following three resources to look up these names:
 
-- https://api3.geo.admin.ch/rest/services/api/MapServer/layersTable
-- https://data.geo.admin.ch/
-- https://data.geo.admin.ch/api/stac/v1/collections
+- [Map viewer layer table](https://api3.geo.admin.ch/rest/services/api/MapServer/layersTable): Lists the layers available on the map viewer and how they are featured.
+- STAC API: For automation directly the [/collections endpoint](https://data.geo.admin.ch/api/stac/v1/collections), for manual browsing the [STAC Browser](https://data.geo.admin.ch/browser/index.html).
+- [data.geo.admin.ch](https://data.geo.admin.ch): A curated inventory of all datasets, including those not yet exposed via the STAC API.
