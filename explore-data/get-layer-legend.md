@@ -4,7 +4,7 @@ This endpoint provides the legend of a given layer in the form of HTML markup.
 A legend is what is shown when you click the info button on a layer in the map viewer.
 It contains a description of the layer, the actual legend explaining the meaning of the different colors and symbols, and additional metadata.
 
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/legend" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer/{layerBodId}/legend" method="GET" />
 
 ## Request Details
 
@@ -39,7 +39,7 @@ No CSS styling is applied by default, allowing you to integrate the legend seaml
 Get the legend for `ch.bafu.nabelstationen`:
 
 <ExampleCodeBlock
-request="curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/legend"
+request="curl https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.bafu.nabelstationen/legend"
 exampleLang='html'
 example='<div class="legend-container">
 
@@ -138,5 +138,5 @@ example='<div class="legend-container">
 Get the same legend using JSONP:
 
 ```sh
-$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/legend?callback=callback
+$ curl https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.bafu.nabelstationen/legend?callback=callback
 ```

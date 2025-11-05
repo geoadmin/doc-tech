@@ -2,7 +2,7 @@
 
 This endpoint provides metadata for all layers that match a search query.
 
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer" method="GET" />
 
 ## Request Details
 
@@ -58,7 +58,7 @@ and attributes listing more metaadata
 List all the layers available in the GeoAdmin API:
 
 <ExampleCodeBlock
-request="curl https://api3.geo.admin.ch/rest/services/api/MapServer"
+request="curl https://api3.geo.admin.ch/rest/services/ech/MapServer"
 example='{
   "mapName": "api",
   "description": "Configuration for the map (topic) api",
@@ -119,7 +119,7 @@ example='{
 Using searchText parameter to list all the layers available in the GeoAdmin API where the word "wasser" is found in their description:
 
 <ExampleCodeBlock
-request="curl https://api3.geo.admin.ch/rest/services/api/MapServer?searchText=wasser"
+request="curl https://api3.geo.admin.ch/rest/services/ech/MapServer?searchText=wasser"
 example='{
   "mapName": "api",
   "description": "Configuration for the map (topic) api",
@@ -177,7 +177,7 @@ example='{
 Find a layer by [geocat ID](https://www.geocat.ch):
 
 <ExampleCodeBlock
-request="curl https://api3.geo.admin.ch/rest/services/api/MapServer?searchText=f198f6f6-8efa-4235-a55f-99767ea0206c"
+request="curl https://api3.geo.admin.ch/rest/services/ech/MapServer?searchText=f198f6f6-8efa-4235-a55f-99767ea0206c"
 example='{
   "mapName": "api",
   "description": "Configuration for the map (topic) api",

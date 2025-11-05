@@ -2,7 +2,7 @@
 
 Get metadata for a feature formatted as an HTML popup.
 
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId}/htmlPopup" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer/{layerBodId}/{featureId}/htmlPopup" method="GET" />
 
 :::tip
 The [map viewer](https://map.geo.admin.ch/) displays the same popup when you click on a feature by hand.
@@ -38,7 +38,7 @@ These parameters are divided into path parameters, which are required and part o
 Get the HTML popup with the feature ID `RIG` belonging to layer `ch.bafu.nabelstationen`:
 
 <ExampleCodeBlock
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG/htmlPopup'
+request='$ curl https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.bafu.nabelstationen/RIG/htmlPopup'
 exampleLang='html'
 example='<div
 id="ch.bafu.nabelstationen#RIG"

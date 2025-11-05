@@ -2,7 +2,7 @@
 
 The endpoint returns attribute metadata for a specified layer. Use this endpoint if you want to list all available attributes of a layer or if you need details about a particular attribute. The endpoint is also useful for querying the [Find endpoint](/access-data/find-features).
 
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer/{layerBodId}" method="GET" />
 
 ## Request Details
 
@@ -46,7 +46,7 @@ Here is a description of the data contained in the response.
 Get all the attributes for layer `ch.swisstopo.swissboundaries3d-land-flaeche.fill`
 
 <ExampleCodeBlock
-request="curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-land-flaeche.fill"
+request="curl https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.swisstopo.swissboundaries3d-land-flaeche.fill"
 example='{
   "id": "ch.swisstopo.swissboundaries3d-land-flaeche.fill",
   "name": "National boundaries",
@@ -92,7 +92,7 @@ function myCallbackFunction(data) {
 function fetchLayerAttributes() {
   const script = document.createElement('script')
   const url =
-    'https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
+    'https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
   const callbackName = 'myCallbackFunction'
   script.src = `${url}?callback=${callbackName}`
   document.body.appendChild(script)

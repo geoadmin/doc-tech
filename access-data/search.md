@@ -2,7 +2,7 @@
 
 Search for locations, layers or features using text or a bounding box.
 
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/SearchServer" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/SearchServer" method="GET" />
 
 ::: tip The search service is separated in 3 categories or types:
 
@@ -112,7 +112,7 @@ class="title-ref">origins</span>.
 Search for locations matching the word “wabern”:
 
 <ExampleCodeBlock
-request="$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations"
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/SearchServer?searchText=wabern&type=locations"
 example='{
   "results": [
     {
@@ -142,7 +142,7 @@ example='{
 Search for locations of type "parcel" and "district" (the origins):
 
 <ExampleCodeBlock 
-request="$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=bern&origins=parcel,district&type=locations" 
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/SearchServer?searchText=bern&origins=parcel,district&type=locations" 
 example='{
   "results": [
     {
@@ -173,7 +173,7 @@ example='{
 Search for locations within a given map extent the `bbox`:
 
 <ExampleCodeBlock 
-request="$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?bbox=551306.5625,167918.328125,551754.125,168514.625&type=locations"
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/SearchServer?bbox=551306.5625,167918.328125,551754.125,168514.625&type=locations"
 example='{
   "results": [
     {
@@ -204,7 +204,7 @@ example='{
 - Search for layers in French matching the word “géoïde” in their description:
 
 <ExampleCodeBlock 
-request="$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr"
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/SearchServer?searchText=géoïde&type=layers&lang=fr"
 example='{
   "results": [
     {
@@ -229,7 +229,7 @@ example='{
 Search for features matching word "433" in their description:
 
 <ExampleCodeBlock 
-request="$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433"
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433"
 example='{
   "results": [
     {
@@ -256,7 +256,7 @@ example='{
 Get a GeoJSON for locations matching the word “wabern”:
 
 <ExampleCodeBlock 
-request="$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson"
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson"
 example='{
   "bbox": [
     601112.8374564094, 197515.61386168728, 601112.8374564094, 197515.61386168728
@@ -300,7 +300,7 @@ example='{
 Get a Webmercator GeoJSON:
 
 <ExampleCodeBlock 
-request="$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson"
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson"
 example='{
   "bbox": [829691.4, 5930449.5, 829691.4, 5930449.5],
   "features": [
@@ -339,7 +339,7 @@ example='{
 Input `bbox` may also be in `LV95`:
 
 <ExampleCodeBlock 
-request="$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?bbox=2551306.5625,1167918.328125,2551754.125,1168514.625&type=locations&sr=2056"
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/SearchServer?bbox=2551306.5625,1167918.328125,2551754.125,1168514.625&type=locations&sr=2056"
 example='{
   "results": [
     {
@@ -392,7 +392,7 @@ example='{
 First: search for addresses using the feature search service:
 
 <ExampleCodeBlock 
-request="$ curl https://api3.geo.admin.ch/rest/services/api/SearchServer?features=ch.bfs.gebaeude_wohnungs_register&type=featuresearch&searchText=isabelle"
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/SearchServer?features=ch.bfs.gebaeude_wohnungs_register&type=featuresearch&searchText=isabelle"
 example='{
   "results": [
     {
@@ -435,7 +435,7 @@ example='{
 Then: use "feature_id" found in "attrs" to get detailed information about a feature:
 
 <ExampleCodeBlock 
-request="$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/880711_0?returnGeometry=false"
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/880711_0?returnGeometry=false"
 example='{
   "feature": {
     "layerBodId": "ch.bfs.gebaeude_wohnungs_register",

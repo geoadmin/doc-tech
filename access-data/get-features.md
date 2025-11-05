@@ -2,7 +2,7 @@
 
 Retrieve one or more features using feature IDs and the corresponding layer ID.
 
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId},{featureId}" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer/{layerBodId}/{featureId},{featureId}" method="GET" />
 
 ## Request Details
 
@@ -31,7 +31,7 @@ These parameters are divided into path parameters, which are required and part o
 Get the feature with the ID `RIG` belonging to the layer `ch.bafu.nabelstationen`:
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG' 
+request='$ curl https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.bafu.nabelstationen/RIG' 
 example='{
   "feature": {
     "featureId": "RIG",
@@ -61,7 +61,7 @@ example='{
 Get several features with IDs `RIG` and `LAU` belonging to the layer `ch.bafu.nabelstationen`:
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU' 
+request='$ curl https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.bafu.nabelstationen/RIG,LAU' 
 example='{
   "type": "FeatureCollection",
   "features": [
@@ -116,7 +116,7 @@ example='{
 A `GeoJSON` in `EPSG:4326`:
 
 <ExampleCodeBlock 
-request='$ curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson' 
+request='$ curl https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson' 
 example='{
   "type": "FeatureCollection",
   "features": [

@@ -137,12 +137,12 @@ If you are caching tiles locally, this might result in your cache being outdated
 Use the Cache Update service to query the date of the last update for a given layer.
 If your cache is older than the returned date, you have to clear your local cache.
 
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/<LayerBodId>/cacheUpdate" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer/<LayerBodId>/cacheUpdate" method="GET" />
 
 The latest cache update for the product SWISSIMAGE:
 
 <ExampleCodeBlock
-request="curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate"
+request="curl https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.swisstopo.swissimage-product/cacheUpdate"
 example='{
   "cache_type": "wmts_native",
   "cache_update": "2025-06-12T08:44:38"
