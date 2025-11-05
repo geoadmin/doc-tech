@@ -194,6 +194,50 @@ The following example illustrates best practices for handling errors during repe
    | `500 Internal Server Error`                                         | Cancel upload. Report to service administrator (retry usually useless).            |
    | `502 Bad Gateway`, `503 Service Unavailable`, `504 Gateway Timeout` | Service is momentarily not available, wait a short moment, then retry the request. |
 
-   The following figure shows the flow of a multipart upload process.
+The following figure shows the flow of a multipart upload process.
 
-   <img src="../../static/service-stac-upload-process.svg" />
+```mermaid
+flowchart TD
+    start(("Start"))
+
+    s1["Step 1: POST <br>/assets/{assetId}/uploads"]
+    s2["Step 2: PUT<br>{presigned url}"]
+    s3["Step 3: POST<br>/assets/{assetId}/uploads/{uploadId}/complete"]
+
+    in_progress{"description = 'upload in progress'"}
+    get["GET<br>/assets/{assetId}/uploads?status=in-progress"]
+    post["POST<br>/assets/{assetId}/uploads/{uploadId}/abort"]
+    debug["debug manually"]
+
+    retry_step2{"Retry?"}
+    retry_step3{"Retry?"}
+    retry_end{"Retry?"}
+
+    sleep_step2["SLEEP<br>(200ms)"]
+    sleep_step3["SLEEP<br>(200ms)"]
+
+    ending(("End"))
+
+    start --> s1
+    s1 -->|201| s2
+    s2 -->|200| s3
+    s3 -->|200| ending
+
+    s1 -->|400| in_progress
+    in_progress -->|no| debug
+    in_progress -->|yes| get
+    get --> post
+    post --> retry_end
+    retry_end -->|yes| s1
+    retry_end -->|no| ending
+
+    s2 -->|400<br>50X| retry_step2
+    retry_step2 -->|yes| sleep_step2
+    sleep_step2 --> s2
+    retry_step2 -->|no| post
+
+    s3 -->|50X| retry_step3
+    retry_step3 -->|yes| sleep_step3
+    sleep_step3 --> s1
+    retry_step3 -->|no| ending
+```
