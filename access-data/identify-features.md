@@ -2,7 +2,7 @@
 
 Use this endpoint to discover features at a specific location.
 
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/identify" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer/identify" method="GET" />
 
 ::: warning
 No more than 200 features can be retrieved per request.
@@ -80,7 +80,7 @@ Regarding the format of the `layerDefs` parameter:
 In an example:
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/all/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "geometryType=esriGeometryEnvelope&"\
 "geometry=2548945.5,1147956,2549402,1148103.5&"\
 "geometryFormat=geojson&"\
@@ -180,7 +180,7 @@ print(f'&layerDefs={urllib.parse.quote(json.dumps(params))}')
 Identify all the features belonging to `ch.bafu.nabelstationen` using a tolerance of 5 pixels around a point:
 
 <ExampleCodeBlock
-request='curl "https://api3.geo.admin.ch/rest/services/all/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "geometry=678250,213000&"\
 "geometryFormat=geojson&"\
 "geometryType=esriGeometryPoint&"\
@@ -219,7 +219,7 @@ example='{
 Identify all the features belonging to `ch.bfs.arealstatistik` intersecting an envelope (or bounding box):
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "geometryType=esriGeometryEnvelope&"\
 "geometry=548945.5,147956,549402,148103.5&"\
 "imageDisplay=500,600,96&"\
@@ -256,7 +256,7 @@ example='{
 Identify all the features belonging to `ch.bafu.bundesinventare-bln` a polyline:
 
 <ExampleCodeBlock
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "geometry={\"paths\":[[[675000,245000],[660000,260000],[620000,250000]]]}&"\
 "geometryType=esriGeometryPolyline&"\
 "imageDisplay=500,600,96&"\
@@ -305,7 +305,7 @@ example='{
 Identify all the features belonging to `ch.bafu.bundesinventare-bln` intersecting a polygon:
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "geometry={\"rings\":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&"\
 "geometryType=esriGeometryPolygon&"\
 "imageDisplay=500,600,96&"\
@@ -370,7 +370,7 @@ example='{
 Same request for `ch.bfs.arealstatistik` as above but returned geometry format is GeoJSON:
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "geometryType=esriGeometryEnvelope&"\
 "geometry=548945.5,147956,549402,148103.5&"\
 "imageDisplay=500,600,96&"\
@@ -412,7 +412,7 @@ example='{
 Same request for `ch.bfs.arealstatistik` as above but geometry is not returned:
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "geometryType=esriGeometryEnvelope&"\
 "geometry=548945.5,147956,549402,148103.5&"\
 "imageDisplay=500,600,96&"\
@@ -452,7 +452,7 @@ The `identify` endpoint can be used for reverse geocoding operations.
 Perform an identify request to find the districts intersecting a given envelope geometry (no buffer):
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "geometryType=esriGeometryEnvelope&"\
 "geometry=548945.5,147956,549402,148103.5&"\
 "imageDisplay=0,0,0&"\
@@ -480,7 +480,7 @@ example='{
 Perform an identify request to find the municipal boundaries and ZIP (PLZ or NPA) intersecting with a point (no buffer):
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "geometryType=esriGeometryPoint&"\
 "geometry=548945.5,147956&"\
 "imageDisplay=0,0,0&"\
@@ -520,7 +520,7 @@ example='{
 Reverse geocoding an <span class="title-ref">address</span> with a point (no buffer):
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "geometryType=esriGeometryPoint&"\
 "geometry=548945.5,147956&"\
 "imageDisplay=0,0,0&"\
@@ -643,7 +643,7 @@ searchRadius = max(mapExtent.maxx / imageDisplay.width, mapExtent.maxy / imageDi
 
 So, to perform an identify request with a search radius of 5 meters around a given point, you would set:
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/identify?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?"\
 "mapExtent=0,0,100,100&"\
 "imageDisplay=100,100,100&"\
 "tolerance=5&"\
@@ -721,16 +721,16 @@ The following layers are based on the [ÖREB model V2_0](https://models.geo.admi
 
 Look for all the features of `ch.bazl.projektierungszonen-flughafenanlagen_v2_0.oereb` using a point:
 
-https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2682414.312,1257059.381&geometryType=esriGeometryPoint&layers=all:ch.bazl.projektierungszonen-flughafenanlagen_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
+https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?geometry=2682414.312,1257059.381&geometryType=esriGeometryPoint&layers=all:ch.bazl.projektierungszonen-flughafenanlagen_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
 
 Look for all the features of `ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb` using a polygon:
 
-https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"rings":[[[2675000,1245000],[2670000,1255000],[2680000,1260000],[2690000,1255000],[2685000,1240000],[2675000,1245000]]]}&geometryType=esriGeometryPolygon&layers=all:ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
+https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?geometry={"rings":[[[2675000,1245000],[2670000,1255000],[2680000,1260000],[2690000,1255000],[2685000,1240000],[2675000,1245000]]]}&geometryType=esriGeometryPolygon&layers=all:ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
 
 Look for all the features of `ch.bazl.sicherheitszonenplan_v2_0.oereb` using a bounding box (envelope):
 
-https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2575000,1109000,2610000,1127000&geometryType=esriGeometryEnvelope&layers=all:ch.bazl.sicherheitszonenplan_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
+https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?geometry=2575000,1109000,2610000,1127000&geometryType=esriGeometryEnvelope&layers=all:ch.bazl.sicherheitszonenplan_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
 
 Look for all the features of `ch.astra.baulinien-nationalstrassen_v2_0.oereb` using a bounding box (envelope):
 
-https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry=2599000,1200000,2604000,1203000&geometryType=esriGeometryEnvelope&layers=all:ch.astra.baulinien-nationalstrassen_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056
+https://api3.geo.admin.ch/rest/services/ech/MapServer/identify?geometry=2599000,1200000,2604000,1203000&geometryType=esriGeometryEnvelope&layers=all:ch.astra.baulinien-nationalstrassen_v2_0.oereb&mapExtent=2480000,1070000,2840000,1310000&imageDisplay=3600,2400,96&tolerance=0&geometryFormat=interlis&sr=2056

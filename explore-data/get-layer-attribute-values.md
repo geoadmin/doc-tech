@@ -3,7 +3,7 @@
 The attribute values endpoint provides a preview of possible values for a specific attribute (field) of a given vector layer.
 This is useful for building filter UIs, dropdowns, or for understanding the data distribution in a layer.
 
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/attributes/{attributeName}" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer/{layerBodId}/attributes/{attributeName}" method="GET" />
 
 ## Request Details
 
@@ -32,7 +32,7 @@ Here is a description of the data contained in the response.
 Get distinct values for the `egid` attribute from layer `ch.bfs.gebaeude_wohnungs_register`:
 
 <ExampleCodeBlock 
-request='curl https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/attributes/egid'
+request='curl https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/attributes/egid'
 example='{
     "values": [
         "1",
@@ -94,7 +94,7 @@ example='{
 Get the min and max value for the `garea` attribute from layer `ch.bfs.gebaeude_wohnungs_register`:
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/attributes/garea"'
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/attributes/garea"'
 example='{
     "values": [
         1,

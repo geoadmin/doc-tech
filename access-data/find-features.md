@@ -2,7 +2,7 @@
 
 Find features in a specific layer by searching for a matching attribute.
 
-<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/api/MapServer/find" method="GET" />
+<ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer/find" method="GET" />
 
 ## Request Details
 
@@ -29,7 +29,7 @@ This endpoint only has query parameters that modify the behavior of the request,
 Search for “Lavaux” in the field `bln_name` of the layer `ch.bafu.bundesinventare-bln` (substring match):
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/find?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/find?"\
 "layer=ch.bafu.bundesinventare-bln&"\
 "searchText=Lavaux&"\
 "searchField=bln_name&"\
@@ -58,7 +58,7 @@ example='{
 Search for `12316` in the field `egid` of the layer `ch.bfs.gebaeude_wohnungs_register` (substring match):
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/find?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/find?"\
 "layer=ch.bfs.gebaeude_wohnungs_register&"\
 "searchText=123164&"\
 "searchField=egid&"\
@@ -160,7 +160,7 @@ example='{
 Search for `123164` in the field `egid` of the layer `ch.bfs.gebaeude_wohnungs_register` (exact match):
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/find?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/find?"\
 "layer=ch.bfs.gebaeude_wohnungs_register&"\
 "searchText=1231641&"\
 "searchField=egid&"\
@@ -284,7 +284,7 @@ example='{
 Search for the `Talstrasse` in Commune `Full-Reuenthal`
 
 <ExampleCodeBlock 
-request='curl "https://api3.geo.admin.ch/rest/services/api/MapServer/find?"\
+request='curl "https://api3.geo.admin.ch/rest/services/ech/MapServer/find?"\
 "layer=ch.swisstopo.amtliches-strassenverzeichnis&"\
 "searchText=Talstrasse&"\
 "searchField=stn_label&"\
