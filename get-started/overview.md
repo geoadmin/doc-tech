@@ -17,3 +17,11 @@ Where available we link to more detailed specifications, for example to our [STA
 ::: tip ⚖️ Terms of Use
 The access and use of the data or the services is free of charge, subject to the provisions on fair use, see our [Terms of Use](https://www.geo.admin.ch/en/general-terms-of-use-fsdi).
 :::
+
+## Available Layers
+
+To use our APIs you often must know a layer’s technical name, e.g., ch.bfs.gebaeude_wohnungs_register. We recommend the following three resources to look up these names:
+
+- [Map viewer layer table](https://api3.geo.admin.ch/rest/services/api/MapServer/layersTable): Lists the layers available on the map viewer and how they are featured.
+- STAC API: For automation directly the [/collections endpoint](https://data.geo.admin.ch/api/stac/v1/collections), for manual browsing the [STAC Browser](https://data.geo.admin.ch/browser/index.html).
+- [data.geo.admin.ch](https://data.geo.admin.ch): A curated inventory of all datasets, including those not yet exposed via the STAC API.
