@@ -48,7 +48,7 @@ Notes:
 
 ## GetTile
 
-<ApiCodeBlock url="http://wmts.geo.admin.ch/<Version>/<LayerBodId>/<StyleName>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>" method="GET" />
+<ApiCodeBlock url="http://wmts.geo.admin.ch/<Version>/<LayerBodId>/<StyleName>/<Time>/<TileMatrixSet>/<TileSetId>/<TileCol>/<TileRow>.<FormatExtension>" method="GET" />
 
 Use the following parameters to define your request:
 
@@ -58,10 +58,10 @@ Use the following parameters to define your request:
 | Layername       | ch.bfs.arealstatistik-1997 | The technical layer name. See the `<ows:Identifier>` tag of the layer in the [WMTS GetCapabilities document](#getcapabilities).                                                                                                                                                                                                                                        |
 | StyleName       | default                    | Only `default` is supported.                                                                                                                                                                                                                                                                                                                                           |
 | Time            | 2010, 2010-01              | Date of tile generation in (ISO-8601) or logical value like `current`. A list of available values is provided in the [GetCapabilities](//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml) document under the `<Dimension` tag. We recommend to use the value under the \<Default\> tag. Note that these values might change frequently - **check for updates regularly**. |
-| TileMatrixSet   | 2056 (constant)            | EPSG code for LV03/CH1903                                                                                                                                                                                                                                                                                                                                              |
+| TileMatrixSet   | 2056 (constant)            | EPSG code for LV95/CH1903+                                                                                                                                                                                                                                                                                                                                              |
 | TileSetId       | 22                         | Zoom level (see table below)                                                                                                                                                                                                                                                                                                                                           |
-| TileRow         | 236                        |                                                                                                                                                                                                                                                                                                                                                                        |
 | TileCol         | 284                        |                                                                                                                                                                                                                                                                                                                                                                        |
+| TileRow         | 236                        |                                                                                                                                                                                                                                                                                                                                                                        |
 | FormatExtension | png                        | Mostly png, except for some raster layer (pixelkarte and SWISSIMAGE)                                                                                                                                                                                                                                                                                                   |
 
 With the `tileOrigin` in the top left corner of the bounding box:
@@ -102,17 +102,18 @@ With the `tileOrigin` in the top left corner of the bounding box:
 Notes:
 
 1.  The projection for the tiles is **LV95** (EPSG:2056). Other projection are available, see [Supported Projections](/visualize-data/wmts.html#supported-projections).
-2.  The tiles are generated on-the-fly and stored in a cache.
-3.  Zoom level 24, with a resolution of 1.5m, is available in the tile pyramid but it is not currently made available through the API.
-4.  The zoom levels 27 and 28 (resolution 0.25m and 0.1m) are only
-    available for a few layers, e.g. SWISSIMAGE or cadastral web map.
-    For the other layers it is only a client zoom (tiles are
-    stretched).
-5.  You **have** to use the `ResourceURL` to construct the `GetTile` request.
-6.  **Axis order**: for historical reasons, EPSG:21781 WMTS tiles use
+2.  **Axis order**: for historical reasons, EPSG:21781 WMTS tiles use
     the non-standard **row/col** order, while all other projections use
     the usual **col/row** order. However, most desktop GIS allow you to
     either use the advertised order or to override it.
+    If you are using EPSG:21781, invert the **row/col** order in the URL to `.../<TileRow>/<TileCol>.<FormatExtension>`.
+3.  The tiles are generated on-the-fly and stored in a cache.
+4.  Zoom level 24, with a resolution of 1.5m, is available in the tile pyramid but it is not currently made available through the API.
+5.  The zoom levels 27 and 28 (resolution 0.25m and 0.1m) are only
+    available for a few layers, e.g. SWISSIMAGE or cadastral web map.
+    For the other layers it is only a client zoom (tiles are
+    stretched).
+6.  You **have** to use the `ResourceURL` to construct the `GetTile` request.
 7.  The tiles of a given layer might be updated **without** resulting
     in a new `<Time>` dimension in the GetCapabilities dimension.
     If your application caches tiles locally, you need to invalidate your local cache for this layer.
