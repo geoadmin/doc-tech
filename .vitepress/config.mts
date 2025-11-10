@@ -18,6 +18,9 @@ export default defineConfig({
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }],
         ['meta', { name: 'robots', content: 'noindex' }],
+        ['meta', { property: 'og:title', content: 'Tech Docs - *.geo.admin.ch' }],
+        ['meta', { property: 'og:description', content: 'We provide web services and components to interact with the Federal Spatial Data Infrastructure (FSDI).' }],
+        ['meta', { property: 'og:image', content: 'https://docs.geo.admin.ch/swisstopo_map.png' }],
     ],
     ignoreDeadLinks: 'localhostLinks',
     vite: {
