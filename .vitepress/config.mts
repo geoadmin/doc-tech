@@ -18,6 +18,7 @@ export default defineConfig({
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }],
         ['meta', { name: 'robots', content: 'noindex' }],
+        // adds Open Graph tags for link previews in social media
         ['meta', { property: 'og:url', content: 'https://docs.geo.admin.ch/' }],
         ['meta', { property: 'og:type', content: 'website' }],
         [
@@ -37,6 +38,7 @@ export default defineConfig({
         ],
     ],
     transformHead(ctx) {
+        // adds dynamic og:title based on page title
         const isHomePage = ctx.pageData.relativePath === 'index.md'
         const ogTitle = isHomePage
             ? `Tech Docs - *.geo.admin.ch`
