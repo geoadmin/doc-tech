@@ -1,4 +1,4 @@
-import { defineConfig, HeadConfig, type DefaultTheme } from 'vitepress'
+import { defineConfig, type DefaultTheme } from 'vitepress'
 import fs from 'fs'
 
 // https://vitepress.dev/reference/site-config
