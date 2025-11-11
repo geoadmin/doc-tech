@@ -1,4 +1,4 @@
-import { defineConfig, type DefaultTheme } from 'vitepress'
+import { defineConfig, HeadConfig, type DefaultTheme } from 'vitepress'
 import fs from 'fs'
 
 // https://vitepress.dev/reference/site-config
@@ -18,7 +18,8 @@ export default defineConfig({
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }],
         ['meta', { name: 'robots', content: 'noindex' }],
-        ['meta', { property: 'og:title', content: 'Tech Docs - *.geo.admin.ch' }],
+        ['meta', { property: 'og:url', content: 'https://docs.geo.admin.ch/' }],
+        ['meta', { property: 'og:type', content: 'website' }],
         [
             'meta',
             {
@@ -27,8 +28,15 @@ export default defineConfig({
                     'Technical documentation on web services and components to interact with the Federal Spatial Data Infrastructure (FSDI).',
             },
         ],
-        ['meta', { property: 'og:image', content: 'https://docs.geo.admin.ch/swisstopo_map.png' }],
+        ['meta', { property: 'og:image', content: 'https://docs.geo.admin.ch/swisstopo_map_landscape.png' }],
     ],
+    transformHead(ctx) {
+        const isHomePage = ctx.pageData.relativePath === 'index.md';
+        const ogTitle = isHomePage ? `Tech Docs - *.geo.admin.ch` : `${ctx.pageData.title} | Tech Docs`;
+        const head = ctx.head;
+        head.push(['meta', { property: 'og:title', content: ogTitle }]);
+        return head;
+    },
     ignoreDeadLinks: 'localhostLinks',
     vite: {
         build: {
