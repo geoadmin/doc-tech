@@ -24,7 +24,7 @@ export default defineConfig({
             {
                 property: 'og:description',
                 content:
-                    'We provide web services and components to interact with the Federal Spatial Data Infrastructure (FSDI).',
+                    'Technical documentation on web services and components to interact with the Federal Spatial Data Infrastructure (FSDI).',
             },
         ],
         ['meta', { property: 'og:image', content: 'https://docs.geo.admin.ch/swisstopo_map.png' }],
