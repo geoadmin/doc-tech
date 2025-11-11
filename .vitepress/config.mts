@@ -28,14 +28,22 @@ export default defineConfig({
                     'Technical documentation on web services and components to interact with the Federal Spatial Data Infrastructure (FSDI).',
             },
         ],
-        ['meta', { property: 'og:image', content: 'https://docs.geo.admin.ch/swisstopo_map_landscape.png' }],
+        [
+            'meta',
+            {
+                property: 'og:image',
+                content: 'https://docs.geo.admin.ch/swisstopo_map_landscape.png',
+            },
+        ],
     ],
     transformHead(ctx) {
-        const isHomePage = ctx.pageData.relativePath === 'index.md';
-        const ogTitle = isHomePage ? `Tech Docs - *.geo.admin.ch` : `${ctx.pageData.title} | Tech Docs`;
-        const head = ctx.head;
-        head.push(['meta', { property: 'og:title', content: ogTitle }]);
-        return head;
+        const isHomePage = ctx.pageData.relativePath === 'index.md'
+        const ogTitle = isHomePage
+            ? `Tech Docs - *.geo.admin.ch`
+            : `${ctx.pageData.title} | Tech Docs`
+        const head = ctx.head
+        head.push(['meta', { property: 'og:title', content: ogTitle }])
+        return head
     },
     ignoreDeadLinks: 'localhostLinks',
     vite: {
