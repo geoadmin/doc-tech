@@ -17,7 +17,6 @@ export default defineConfig({
     base: process.env.VITE_BASE_URL || '/',
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }],
-        ['meta', { name: 'robots', content: 'noindex' }],
         // adds Open Graph tags for link previews in social media
         ['meta', { property: 'og:url', content: 'https://docs.geo.admin.ch/' }],
         ['meta', { property: 'og:type', content: 'website' }],
