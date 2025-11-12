@@ -2,6 +2,11 @@
 
 Technical documentation for services made available by geo.admin.ch.
 
+<!-- prettier-ignore -->
+| Branch      | CI Status  | Deployed version |
+|-------------| ---------- | ---------------- |
+| master      | ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZ04zNVBLc2NkYkdlWFZzK0RZUjBkSE02U3UwejRqL0xSQUVqdFdSbVpCV0VrQnBod0NuK0c4aDg5MFhwMHJ0QzQxN0xqOXhmbmpiUVJEZXcxVE9Cbk9zPSIsIml2UGFyYW1ldGVyU3BlYyI6IkhmNVFpYUYrb0VvaUJrb0giLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main) | <https://sys-docs.int.bgdi.ch/> |
+
 ## Getting Started
 
 To build and run the site locally:
