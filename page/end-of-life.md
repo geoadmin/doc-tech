@@ -1,11 +1,28 @@
 ---
-previewTitle: 'Planned removal of Atom Feed / OS Download Service'
-previewContent: 'The INSPIRE Atom Feed / Open Search download service will be removed with the data release of November 12th 2025.'
+previewTitle: 'Planned removal of ch.bfe.komo-projekte'
+previewContent: 'The layer _ch.bfe.komo-projekte_ will be removed from chsdi services with the release of December 17th.'
 ---
 
 # End-of-Life
 
 Announcements of changes in our systems and in our provided data sets, newest first.
+
+## [2025-11-12] Planned removal of layer ch.bfe.komo-projekte
+
+The layer _ch.bfe.komo-projekte_ will be removed from chsdi services with the release of December 17th.
+
+## [2025-11-12] Removal of some BAFU layers, Siegfried layers and ch.swisstopo.schneeschuhwandern
+
+The layers _ch.bafu.flora-verbreitungskarten_, _ch.bafu.gefahren-basiskarte_, _ch.bafu.karst-ausdehnung_grundwasservorkommen_, _ch.bafu.karst-einzugsgebiete_, _ch.bafu.karst-einzugsgebietseinheiten_, _ch.bafu.karst-quellen_schwinden_, _ch.bafu.karst-unterirdische_fliesswege_, _ch.swisstopo.hiks-siegfried-ta25.metadata_, _ch.swisstopo.hiks-siegfried-ta50.metadata_ and _ch.swisstopo.schneeschuhwandern_ have been removed from chsdi services as previously announced.
+
+## [2025-11-12] Removal of layer ch.bazl.intrinsisches-bodenrisiko_sora
+
+The layer _ch.bazl.intrinsisches-bodenrisiko_sora_ has been removed from chsdi services, since it is replaced by the 2 new layers _ch.bazl.intrinsisches-bodenrisiko_sora_100_ and _ch.bazl_._intrinsisches-bodenrisiko_sora_200_ from now on.
+
+## [2025-11-12] Removal of Atom Feed / Open Search Download Service
+
+The INSPIRE ATOM/OS download service has been removed from the chsdi services as previously announced.
+The INSPIRE datasets ([ch.swisstopo.swissboundaries3d.inspire](https://data.geo.admin.ch/browser/index.html#/collections/ch.swisstopo.swissboundaries3d.inspire) and [ch.swisstopo.swissnames3d.inspire](https://data.geo.admin.ch/browser/index.html#/collections/ch.swisstopo.swissnames3d.inspire)) stay available for download via the STAC API.
 
 ## [2025-10-08] Planned removal of Atom Feed / Open Search Download Service
 
