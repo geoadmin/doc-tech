@@ -1,11 +1,10 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import fs from 'fs'
 
-export default
-    defineConfig({
-        title: '*.geo.admin.ch',
-        description: 'Technical Documentation about *.geo.admin.ch',
-        /*
+export default defineConfig({
+    title: '*.geo.admin.ch',
+    description: 'Technical Documentation about *.geo.admin.ch',
+    /*
         Prepend a base path such that links still work when the page is built for the
         preview in a PR ('test link' in the PR description).
 
@@ -14,115 +13,115 @@ export default
 
         https://sys-docs.dev.bgdi.ch/preview/feat-pb-1234-my-branch/index.html
         */
-        base: process.env.VITE_BASE_URL || '/',
-        head: [
-            ['link', { rel: 'icon', href: '/favicon.ico' }],
-            // adds Open Graph tags for link previews in social media
-            ['meta', { property: 'og:url', content: 'https://docs.geo.admin.ch/' }],
-            ['meta', { property: 'og:type', content: 'website' }],
-            [
-                'meta',
-                {
-                    property: 'og:description',
-                    content:
-                        'Technical documentation on web services and components to interact with the Federal Spatial Data Infrastructure (FSDI).',
-                },
-            ],
-            [
-                'meta',
-                {
-                    property: 'og:image',
-                    content: 'https://docs.geo.admin.ch/swisstopo_map_landscape.png',
-                },
-            ],
+    base: process.env.VITE_BASE_URL || '/',
+    head: [
+        ['link', { rel: 'icon', href: '/favicon.ico' }],
+        // adds Open Graph tags for link previews in social media
+        ['meta', { property: 'og:url', content: 'https://docs.geo.admin.ch/' }],
+        ['meta', { property: 'og:type', content: 'website' }],
+        [
+            'meta',
+            {
+                property: 'og:description',
+                content:
+                    'Technical documentation on web services and components to interact with the Federal Spatial Data Infrastructure (FSDI).',
+            },
         ],
-        transformHead(ctx) {
-            // adds dynamic og:title based on page title
-            const isHomePage = ctx.pageData.relativePath === 'index.md'
-            const ogTitle = isHomePage
-                ? `Tech Docs - *.geo.admin.ch`
-                : `${ctx.pageData.title} | Tech Docs`
-            const head = ctx.head
-            head.push(['meta', { property: 'og:title', content: ogTitle }])
-            return head
-        },
-        ignoreDeadLinks: 'localhostLinks',
-        vite: {
-            build: {
-                // We add this to avoid the warning '(!) Some chunks are larger than 500 kB after minification.'
-                chunkSizeWarningLimit: 1000,
+        [
+            'meta',
+            {
+                property: 'og:image',
+                content: 'https://docs.geo.admin.ch/swisstopo_map_landscape.png',
             },
+        ],
+    ],
+    transformHead(ctx) {
+        // adds dynamic og:title based on page title
+        const isHomePage = ctx.pageData.relativePath === 'index.md'
+        const ogTitle = isHomePage
+            ? `Tech Docs - *.geo.admin.ch`
+            : `${ctx.pageData.title} | Tech Docs`
+        const head = ctx.head
+        head.push(['meta', { property: 'og:title', content: ogTitle }])
+        return head
+    },
+    ignoreDeadLinks: 'localhostLinks',
+    vite: {
+        build: {
+            // We add this to avoid the warning '(!) Some chunks are larger than 500 kB after minification.'
+            chunkSizeWarningLimit: 1000,
         },
-        themeConfig: {
-            // https://vitepress.dev/reference/default-theme-config
+    },
+    themeConfig: {
+        // https://vitepress.dev/reference/default-theme-config
 
-            logo: { src: '/icon-ch.svg', width: 24, height: 24 },
-            lastUpdated: {
-                formatOptions: {
-                    dateStyle: 'medium',
-                    timeStyle: 'short',
-                },
-            },
-            editLink: {
-                text: 'Edit this page on GitHub',
-                pattern: 'https://github.com/geoadmin/doc-tech/edit/master/:path',
-            },
-            sidebar: [
-                {
-                    text: 'Get Started',
-                    collapsed: false,
-                    items: [{ text: 'Overview', link: '/get-started/overview' }],
-                },
-                {
-                    text: 'Explore Data',
-                    collapsed: false,
-                    items: exploreDataItems(),
-                },
-                {
-                    text: 'Access Data',
-                    collapsed: false,
-                    items: accessDataItems(),
-                },
-                {
-                    text: 'Visualize Data',
-                    collapsed: false,
-                    items: visualizeDataItems(),
-                },
-                {
-                    text: 'Download Data',
-                    collapsed: false,
-                    items: downloadDataItems(),
-                },
-                {
-                    text: 'Map Viewer',
-                    collapsed: false,
-                    items: mapViewerItems(),
-                },
-                {
-                    text: 'Release Notes',
-                    collapsed: false,
-                    items: releaseNotesItems(),
-                },
-                {
-                    text: 'Terms of use',
-                    link: 'https://www.geo.admin.ch/en/general-terms-of-use-fsdi',
-                },
-                {
-                    text: 'Status Page',
-                    link: '/page/status-page',
-                },
-                {
-                    text: 'End-of-Life',
-                    link: '/page/end-of-life',
-                },
-            ],
-            socialLinks: [{ icon: 'github', link: 'https://github.com/geoadmin/doc-tech' }],
-
-            search: {
-                provider: 'local',
+        logo: { src: '/icon-ch.svg', width: 24, height: 24 },
+        lastUpdated: {
+            formatOptions: {
+                dateStyle: 'medium',
+                timeStyle: 'short',
             },
         },
-    })
+        editLink: {
+            text: 'Edit this page on GitHub',
+            pattern: 'https://github.com/geoadmin/doc-tech/edit/master/:path',
+        },
+        sidebar: [
+            {
+                text: 'Get Started',
+                collapsed: false,
+                items: [{ text: 'Overview', link: '/get-started/overview' }],
+            },
+            {
+                text: 'Explore Data',
+                collapsed: false,
+                items: exploreDataItems(),
+            },
+            {
+                text: 'Access Data',
+                collapsed: false,
+                items: accessDataItems(),
+            },
+            {
+                text: 'Visualize Data',
+                collapsed: false,
+                items: visualizeDataItems(),
+            },
+            {
+                text: 'Download Data',
+                collapsed: false,
+                items: downloadDataItems(),
+            },
+            {
+                text: 'Map Viewer',
+                collapsed: false,
+                items: mapViewerItems(),
+            },
+            {
+                text: 'Release Notes',
+                collapsed: false,
+                items: releaseNotesItems(),
+            },
+            {
+                text: 'Terms of use',
+                link: 'https://www.geo.admin.ch/en/general-terms-of-use-fsdi',
+            },
+            {
+                text: 'Status Page',
+                link: '/page/status-page',
+            },
+            {
+                text: 'End-of-Life',
+                link: '/page/end-of-life',
+            },
+        ],
+        socialLinks: [{ icon: 'github', link: 'https://github.com/geoadmin/doc-tech' }],
+
+        search: {
+            provider: 'local',
+        },
+    },
+})
 
 function releaseNotesItems() {
     return [
