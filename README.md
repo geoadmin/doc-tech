@@ -6,7 +6,7 @@ Technical documentation for services made available by geo.admin.ch.
 
 To build and run the site locally:
 
-1. Make sure Node.js v18 or higher is installed (`node -v`)
+1. Make sure Node.js v22 or higher is installed (`node -v`)
 2. Install VitePress following [the setup guide](https://vitepress.dev/guide/getting-started). Do not use the setup wizard, only install the package.
 3. Optional: Activate a suitable Node version, e.g. with `nvm use stable`
    ℹ️ Use `nvm list` to see all available Node versions
@@ -19,8 +19,8 @@ This project uses the [prettier](https://prettier.io/) package for formatting.
 
 You can automatically run prettier with these commands:
 
-1.  `npm run format`
-2.  `npm run format:check`
+1. `npm run format`
+2. `npm run format:check`
 
 ## How to Add a Release Note
 
@@ -52,11 +52,13 @@ To add a release note, follow these steps:
 ## How to Edit the Status Banner
 
 1. To edit the status banner, use the following variables located in the [`status-page.md`](./page/status-page.md) file:
+
    ```YAML
    previewType: "info"
    previewTitle: "Issues in services"
    previewContent: "Our systems are experiencing issues"
    ```
+
 2. Update the `previewType` variable (`info` or `warning`) to control the color and the position in the page :
    - `info`: bottom of the page, just text without backgound color
    - `warning`: top of the page, yellow banner
