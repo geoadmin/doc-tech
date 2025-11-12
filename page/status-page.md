@@ -1,7 +1,7 @@
 ---
-type: 'info'
-title: 'All Systems Operational'
-content: 'No ongoing incidents - all services are functioning as expected.'
+type: 'warning'
+title: 'Major incident: Resolved'
+content: 'STAC API outage has been resolved.'
 
 outline: [2, 3]
 ---
@@ -43,6 +43,21 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 }} **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.content }}
 
 ## Incident History
+
+### [2025-11-12] Incident with Service Stac
+
+#### [2025-11-12 19:15] Disruption of Service Stac - Resolved
+
+The root cause that led to the outage of STAC API could be identified and resolved. The problem was a
+misconfigration of database logging that was done earlier today
+that led to a rapid increase in log volume and eventually resulted in full disk of the database cluster. Disk
+space has been increased and the logging configuration change rolled back.
+
+STAC API is functioning normal again.
+
+#### [2025-11-12 19:15] Disruption of Service Stac
+
+The STAC API on data.geo.admin.ch is currently unavailable. We're investigating the cause and will give an update later tonight.
 
 ### [2025-07-02] Incident with Printing
 
