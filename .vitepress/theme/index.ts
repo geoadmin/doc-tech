@@ -1,5 +1,5 @@
 import { h, nextTick, watch, onMounted } from 'vue'
-import type { Theme } from 'vitepress'
+import { type Theme, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import ApiCodeBlock from '../../components/ApiCodeBlock.vue'
 import './custom.css'
@@ -17,6 +17,8 @@ const highlighterPromise = createHighlighter({
 export default {
     extends: DefaultTheme,
     Layout: () => {
+        const route = useRoute()
+
         const initMermaid = () => {
             const mermaidRenderer = createMermaidRenderer({
                 theme: 'forest',
@@ -35,7 +37,19 @@ export default {
                     initMermaid()
                 }
             )
+
+            // initial scroll to active sidebar item
+            nextTick(() => scrollToActiveSidebarItem())
         })
+
+          // watch for route changes and scroll to active sidebar item
+        watch(
+            () => route.path,
+            () =>
+                nextTick(() => {
+                    scrollToActiveSidebarItem()
+                })
+        )
 
         return h(DefaultTheme.Layout)
     },
@@ -51,3 +65,10 @@ export default {
         app.provide('highlighter', highlighter)
     },
 } satisfies Theme
+
+const scrollToActiveSidebarItem = () => {
+    const activeLink = document.querySelector('#VPSidebarNav div.is-link.is-active.has-active')
+    if (activeLink) {
+        activeLink.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+}
