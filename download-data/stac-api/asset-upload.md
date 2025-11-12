@@ -196,8 +196,6 @@ The following example illustrates best practices for handling errors during repe
 
 The following figure shows the flow of a multipart upload process.
 
-<Zoomable>
-
 ```mermaid
 flowchart TD
     start(("Start"))
@@ -243,5 +241,3 @@ flowchart TD
     sleep_step3 --> s1
     retry_step3 -->|no| ending
 ```
-
-</Zoomable>

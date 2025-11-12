@@ -1,8 +1,7 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
-import { withMermaid } from 'vitepress-plugin-mermaid'
 import fs from 'fs'
 
-export default withMermaid(
+export default
     defineConfig({
         title: '*.geo.admin.ch',
         description: 'Technical Documentation about *.geo.admin.ch',
@@ -123,11 +122,7 @@ export default withMermaid(
                 provider: 'local',
             },
         },
-        mermaid: {
-            theme: 'default',
-        },
     })
-)
 
 function releaseNotesItems() {
     return [
