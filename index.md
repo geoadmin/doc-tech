@@ -45,6 +45,7 @@ import { data as releases } from './scripts/releases-content.data.ts'
 import { data as status } from './scripts/status.data.ts'
 import { data as announcements } from './scripts/announcements.data.ts'
 import StatusBanner from './components/StatusBanner.vue'
+import {withBase} from 'vitepress'
 
 const lastRelease = releases.at(0)
 const statusPreview = status[0]
@@ -99,8 +100,8 @@ onUnmounted(() => {
       <div class="home-container-col">
         <h4>Data Updates</h4>
         <span>Changes in the data available through our services:</span>
-        <a :href="lastRelease.url">Latest Release</a>
-        <a href="/releases/release-notes">All Releases</a>
+        <a :href="withBase(lastRelease.url)">Latest Release</a>
+        <a :href="withBase('/releases/release-notes')">All Releases</a>
       </div>
     </div>
   </div>
@@ -109,7 +110,7 @@ onUnmounted(() => {
     <div class="home-container-col">
       <h4>{{ announcementsPreview.frontmatter.previewTitle}}</h4>
       <span>{{ announcementsPreview.frontmatter.previewContent}}</span>
-      <a href="/page/end-of-life">Learn more</a>
+      <a :href="withBase('/page/end-of-life')">Learn more</a>
     </div>
   </div>
 </div>
