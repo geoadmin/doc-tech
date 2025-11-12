@@ -116,5 +116,5 @@ onUnmounted(() => {
 </div>
 <div class="home-status-container" v-if="statusPreview.frontmatter.type === 'info'">
   <span class="status-content-text">{{ '✅ ' +  statusPreview.frontmatter.content + ' '}}</span>
-  <a href="/page/status-page">Learn more</a>
+  <a :href="withBase('/page/status-page')">Learn more</a>
 </div>
