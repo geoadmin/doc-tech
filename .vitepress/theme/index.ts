@@ -4,7 +4,6 @@ import DefaultTheme from 'vitepress/theme'
 import ApiCodeBlock from '../../components/ApiCodeBlock.vue'
 import './custom.css'
 import ExampleCodeBlock from '../../components/ExampleCodeBlock.vue'
-import Zoomable from '../../components/Zoomable.vue'
 import { createHighlighter } from 'shiki'
 import type { HighlighterGeneric, BundledLanguage, BundledTheme } from 'shiki'
 import { createMermaidRenderer } from 'vitepress-mermaid-renderer'
@@ -42,7 +41,6 @@ export default {
         // register custom global components
         app.component('ApiCodeBlock', ApiCodeBlock)
         app.component('ExampleCodeBlock', ExampleCodeBlock)
-        app.component('Zoomable', Zoomable)
 
         const highlighter: HighlighterGeneric<BundledLanguage, BundledTheme> =
             await highlighterPromise
