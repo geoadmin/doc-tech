@@ -14,7 +14,8 @@
         "prettier": "^3.6.2",
         "tsx": "^4.19.4",
         "vitepress": "1.6.4",
-        "vitepress-plugin-mermaid": "2.0.17"
+        "vitepress-plugin-mermaid": "2.0.17",
+        "less": "4.4.2"
     },
     "type": "module"
 }
