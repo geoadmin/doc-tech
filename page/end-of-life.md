@@ -1,6 +1,6 @@
 ---
 previewTitle: 'Planned removal of ch.bfe.komo-projekte'
-previewContent: 'The layer _ch.bfe.komo-projekte_ will be removed from chsdi services with the release of December 17th.'
+previewContent: 'The layer *ch.bfe.komo-projekte* will be removed from chsdi services with the release of December 17th.'
 ---
 
 # End-of-Life
