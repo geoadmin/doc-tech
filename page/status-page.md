@@ -1,7 +1,7 @@
 ---
-type: "info"
-title: "All Systems Operational"
-content: "No ongoing incidents - all services are functioning as expected."
+type: 'info'
+title: 'All Systems Operational'
+content: 'No ongoing incidents - all services are functioning as expected.'
 
 outline: [2, 3]
 ---
