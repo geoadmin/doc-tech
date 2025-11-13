@@ -11,12 +11,11 @@ Technical documentation for services made available by geo.admin.ch.
 
 To build and run the site locally:
 
-1. Make sure Node.js v22 or higher is installed (`node -v`)
-2. Install VitePress following [the setup guide](https://vitepress.dev/guide/getting-started). Do not use the setup wizard, only install the package.
-3. Optional: Activate a suitable Node version, e.g. with `nvm use stable`
+1. Make sure Node.js v22 or higher is installed (`node -v`). If you have `nvm` installed you should have automatically the correct version due to `.nvmrc`
+2. Optional: Activate a suitable Node version, e.g. with `nvm use stable`
    ℹ️ Use `nvm list` to see all available Node versions
-4. Run `npm install` to locally install all the necessary packages
-5. Run `npm run docs:dev` and visit http://localhost:5173/ in your web browser
+3. Run `npm install` to locally install all the necessary packages
+4. Run `npm run docs:dev` and visit http://localhost:5173/ in your web browser
 
 ## Development
 
