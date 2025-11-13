@@ -1,19 +1,18 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import fs from 'fs'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
     title: '*.geo.admin.ch',
     description: 'Technical Documentation about *.geo.admin.ch',
     /*
-  Prepend a base path such that links still work when the page is built for the
-  preview in a PR ('test link' in the PR description).
+        Prepend a base path such that links still work when the page is built for the
+        preview in a PR ('test link' in the PR description).
 
-  For example, VITE_BASE_URL would be set to '/preview/feat-pb-1234-my-branch/'
-  for a link like this:
+        For example, VITE_BASE_URL would be set to '/preview/feat-pb-1234-my-branch/'
+        for a link like this:
 
-     https://sys-docs.dev.bgdi.ch/preview/feat-pb-1234-my-branch/index.html
-  */
+        https://sys-docs.dev.bgdi.ch/preview/feat-pb-1234-my-branch/index.html
+        */
     base: process.env.VITE_BASE_URL || '/',
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }],
