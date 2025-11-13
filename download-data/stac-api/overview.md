@@ -13,5 +13,5 @@ This implementation conforms to the core [STAC API specification](https://github
 The underlying data model follows the STAC schema and is extended by the [forecast extension](https://github.com/stac-extensions/forecast) to support weather forecast data.
 
 ::: warning
-STAC API `v0.9` is being deprecated and will be turned off on 31.3.2026. [Learn more...](/download-data/stac-api/migrate09-10.md).
+STAC API `v0.9` is being deprecated and we therefore encourage the usage of `v1` [Learn more...](/download-data/stac-api/migrate09-10.md). There's no date defined yet for turning off `v0.9`, it will at least be operated till end of 2026.
 :::
