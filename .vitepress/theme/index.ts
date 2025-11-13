@@ -1,4 +1,4 @@
-import { h, nextTick, watch } from 'vue'
+import { h, nextTick, watch, onMounted } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import ApiCodeBlock from '../../components/ApiCodeBlock.vue'
@@ -7,6 +7,7 @@ import ExampleCodeBlock from '../../components/ExampleCodeBlock.vue'
 import { createHighlighter } from 'shiki'
 import type { HighlighterGeneric, BundledLanguage, BundledTheme } from 'shiki'
 import { createMermaidRenderer } from 'vitepress-mermaid-renderer'
+import { on } from 'events'
 
 // Create a global instance of the highlighter as Shiki is supposed to be used as a singleton
 const highlighterPromise = createHighlighter({
@@ -28,12 +29,14 @@ export default {
         nextTick(() => initMermaid())
 
         // on theme change, re-render mermaid charts
-        watch(
-            () => document.documentElement.getAttribute('data-theme'),
-            () => {
-                initMermaid()
-            }
-        )
+        onMounted(() => {
+            watch(
+                () => document.documentElement.getAttribute('data-theme'),
+                () => {
+                    initMermaid()
+                }
+            )
+        })
 
         return h(DefaultTheme.Layout)
     },
