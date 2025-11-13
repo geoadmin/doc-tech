@@ -1,7 +1,7 @@
 ---
 type: 'warning'
-title: 'Major incident: Resolved'
-content: 'STAC API outage has been resolved.'
+previewTitle: 'Major incident: Resolved'
+previewContent: 'STAC API outage has been resolved.'
 
 outline: [2, 3]
 ---
@@ -40,7 +40,7 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
     'warning': '⚠️',
     'danger': '🚨'
   }[$frontmatter.type] || ''
-}} **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.content }}
+}} **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.previewContent }}
 
 ## Incident History
 

@@ -5,6 +5,7 @@ import './custom.css'
 import ExampleCodeBlock from '../../components/ExampleCodeBlock.vue'
 import { createHighlighter } from 'shiki'
 import type { HighlighterGeneric, BundledLanguage, BundledTheme } from 'shiki'
+import markdownit from 'markdown-it'
 
 // Create a global instance of the highlighter as Shiki is supposed to be used as a singleton
 const highlighterPromise = createHighlighter({

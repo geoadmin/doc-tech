@@ -1,8 +1,8 @@
 <script setup lang="ts">
 interface StatusBannerProps {
     type: string
-    title: string
-    content: string
+    previewTitle: string
+    previewContent: string
 }
 
 const props = defineProps<{
@@ -18,8 +18,8 @@ const isWarning = props.status.type === 'warning'
             class="status-content"
         >
             <p>
-                <span class="status-content-title">{{ props.status.title }} - </span>
-                <span class="status-content-text">{{ props.status.content }}</span>
+                <span class="status-content-title">{{ props.status.previewTitle }} - </span>
+                <span class="status-content-text">{{ props.status.previewContent }}</span>
             </p>
         </a>
     </div>

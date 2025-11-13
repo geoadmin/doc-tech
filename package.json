@@ -13,7 +13,8 @@
         "gray-matter": "^4.0.3",
         "prettier": "^3.6.2",
         "tsx": "^4.19.4",
-        "vitepress": "1.6.4"
+        "vitepress": "1.6.4",
+        "markdown-it": "14.1.0"
     },
     "type": "module"
 }
