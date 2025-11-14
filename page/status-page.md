@@ -44,6 +44,29 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ## Incident History
 
+### [2025-11-14] Information on recent problems when changing address data from RBD to the official directory of building addresses
+
+On Wednesday, November 12, 2025, the Search Service was switched from the register of buildings and dwellings (RBD) to the new default data source of the official directory of building addresses.
+
+The temporary change in the feature ID led to unexpected problems for a number of users of the REST API from geo.admin.ch. Our comprehensive problem identification and solution, which has now been completed, has shown that this was due to a technical model issue in the source data (lack of uniqueness of the EGID-EDID combination) and was therefore unavoidable. In the meantime, the problem has been resolved on the data side, so that the feature ID of the search service once again returns the unique combination of EGID and EDID, as was the case before the change from the RBD to the official building address register.
+
+The technical workarounds below, including the option to choose between the RBD and the official building address register, remain applicable:
+
+Among other things, this update made the addresses for the Principality of Liechtenstein searchable. In order to do this, the perimeter of the addresses in Swisssearch had to be enlarged and the data source behind the Origin in Swisssearch was changed accordingly. As a result, the featureIDs no longer come from ch.bfs.gebaeude_wohnungs_register, but from ch.swisstopo.amtliches-gebaeudeadressverzeichnis.
+
+On the SearchServer endpoint, you can either perform a type=featuresearch or a type=locations search.
+•	type=featuresearch is linked to a layer and requires the Get parameter features=<layername> to search the data of the desired layer. There is no fuzzy search here.
+•	type=locations, on the other hand, is independent of layers and performs a Swisssearch on various data sources (including addresses). Fuzzy search is implemented here.
+In this search, the features parameter is ignored; a query is made on the Swisssearch index, and you can optionally select the data source with origins=xyz.
+
+For your information, there are three ways to perform an address search:
+1.	Swisssearch search with origins=address; if desired, the feature ID can be transferred to the feature endpoint of the specialist layer ch.swisstopo.amtliches-gebaeudeadressverzeichnis
+2.	FeatureSearch in the layer ch.swisstopo.amtliches-gebaeudeadressverzeichnis; if desired, the feature ID can be transferred to the feature endpoint of the thematic layer ch.swisstopo.amtliches-gebaeudeadressverzeichnis
+3.	FeatureSearch in the layer ch.bfs.gebaeude_wohnungs_register; if desired, the feature ID can be transferred to the feature endpoint of the specialist layer ch.bfs.gebaeude_wohnungs_register.
+
+Specific documentation for this topic: [Search | *.geo.admin.ch](https://docs.geo.admin.ch/access-data/search.html#request-details)
+
+
 ### [2025-11-12] Incident with Service Stac
 
 #### [2025-11-12 19:15] Disruption of Service Stac - Resolved
