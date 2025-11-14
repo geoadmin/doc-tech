@@ -54,12 +54,12 @@ The temporary change in the feature ID led to unexpected problems for a number o
 
 The technical workarounds below, including the option to choose between the RBD and the official building address register, remain applicable:
 
-Among other things, this update made the addresses for the Principality of Liechtenstein searchable. In order to do this, the perimeter of the addresses in Swisssearch had to be enlarged and the data source behind the Origin in Swisssearch was changed accordingly. As a result, the featureIDs no longer come from ch.bfs.gebaeude_wohnungs_register, but from ch.swisstopo.amtliches-gebaeudeadressverzeichnis.
+Among other things, this update made the addresses for the Principality of Liechtenstein searchable. In order to do this, the perimeter of the addresses in Swisssearch had to be enlarged and the data source behind the Origin in Swisssearch was changed accordingly. As a result, the featureIDs no longer come from `ch.bfs.gebaeude_wohnungs_register`, but from `ch.swisstopo.amtliches-gebaeudeadressverzeichnis`.
 
 On the SearchServer endpoint, you can either perform a type=featuresearch or a type=locations search.
 
-- type=featuresearch is linked to a layer and requires the Get parameter features=<layername> to search the data of the desired layer. There is no fuzzy search here.
-- type=locations, on the other hand, is independent of layers and performs a Swisssearch on various data sources (including addresses). Fuzzy search is implemented here.
+- `type=featuresearch` is linked to a layer and requires the Get parameter `features=<layername>` to search the data of the desired layer. There is no fuzzy search here.
+- `type=locations`, on the other hand, is independent of layers and performs a Swisssearch on various data sources (including addresses). Fuzzy search is implemented here.
   In this search, the features parameter is ignored; a query is made on the Swisssearch index, and you can optionally select the data source with origins=xyz.
 
 For your information, there are three ways to perform an address search:
