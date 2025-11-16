@@ -1,4 +1,4 @@
-import { h, nextTick, watch } from 'vue'
+import { h, nextTick, watch, onMounted } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import ApiCodeBlock from '../../components/ApiCodeBlock.vue'
@@ -28,12 +28,14 @@ export default {
         nextTick(() => initMermaid())
 
         // on theme change, re-render mermaid charts
-        watch(
-            () => document.documentElement.getAttribute('data-theme'),
-            () => {
-                initMermaid()
-            }
-        )
+        onMounted(() => {
+            watch(
+                () => document.documentElement.getAttribute('data-theme'),
+                () => {
+                    initMermaid()
+                }
+            )
+        })
 
         return h(DefaultTheme.Layout)
     },
