@@ -16,6 +16,7 @@ const highlighterPromise = createHighlighter({
 
 export default {
     extends: DefaultTheme,
+    // Layout will be used to initialize mermaid and scroll to active sidebar item
     Layout: () => {
         const route = useRoute()
 
