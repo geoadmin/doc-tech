@@ -1,7 +1,7 @@
 ---
 type: 'info'
 previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected'
+previewContent: 'No ongoing incidents - all services are functioning as expected.'
 
 outline: [2, 3]
 ---
