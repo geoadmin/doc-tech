@@ -42,7 +42,7 @@ export default {
             nextTick(() => scrollToActiveSidebarItem())
         })
 
-          // watch for route changes and scroll to active sidebar item
+        // watch for route changes and scroll to active sidebar item
         watch(
             () => route.path,
             () =>
