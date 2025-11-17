@@ -2,16 +2,20 @@
 
 Technical documentation for services made available by geo.admin.ch.
 
+<!-- prettier-ignore -->
+| Branch      | CI Status  | Deployed version |
+|-------------| ---------- | ---------------- |
+| master      | ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZ04zNVBLc2NkYkdlWFZzK0RZUjBkSE02U3UwejRqL0xSQUVqdFdSbVpCV0VrQnBod0NuK0c4aDg5MFhwMHJ0QzQxN0xqOXhmbmpiUVJEZXcxVE9Cbk9zPSIsIml2UGFyYW1ldGVyU3BlYyI6IkhmNVFpYUYrb0VvaUJrb0giLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main) | <https://sys-docs.int.bgdi.ch/> |
+
 ## Getting Started
 
 To build and run the site locally:
 
-1. Make sure Node.js v18 or higher is installed (`node -v`)
-2. Install VitePress following [the setup guide](https://vitepress.dev/guide/getting-started). Do not use the setup wizard, only install the package.
-3. Optional: Activate a suitable Node version, e.g. with `nvm use stable`
+1. Make sure Node.js v22 or higher is installed (`node -v`). If you have `nvm` installed you should have automatically the correct version due to `.nvmrc`
+2. Optional: Activate a suitable Node version, e.g. with `nvm use stable`
    ℹ️ Use `nvm list` to see all available Node versions
-4. Run `npm install` to locally install all the necessary packages
-5. Run `npm run docs:dev` and visit http://localhost:5173/ in your web browser
+3. Run `npm install` to locally install all the necessary packages
+4. Run `npm run docs:dev` and visit http://localhost:5173/ in your web browser
 
 ## Development
 
@@ -19,8 +23,8 @@ This project uses the [prettier](https://prettier.io/) package for formatting.
 
 You can automatically run prettier with these commands:
 
-1.  `npm run format`
-2.  `npm run format:check`
+1. `npm run format`
+2. `npm run format:check`
 
 ## How to Add a Release Note
 
@@ -52,11 +56,13 @@ To add a release note, follow these steps:
 ## How to Edit the Status Banner
 
 1. To edit the status banner, use the following variables located in the [`status-page.md`](./page/status-page.md) file:
+
    ```YAML
    previewType: "info"
    previewTitle: "Issues in services"
    previewContent: "Our systems are experiencing issues"
    ```
+
 2. Update the `previewType` variable (`info` or `warning`) to control the color and the position in the page :
    - `info`: bottom of the page, just text without backgound color
    - `warning`: top of the page, yellow banner
