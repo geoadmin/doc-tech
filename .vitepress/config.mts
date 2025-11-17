@@ -3,6 +3,7 @@ import fs from 'fs'
 
 export default defineConfig({
     title: '*.geo.admin.ch',
+    sitemap: { hostname: 'https://docs.geo.admin.ch/' },
     description: 'Technical Documentation about *.geo.admin.ch',
     /*
         Prepend a base path such that links still work when the page is built for the
