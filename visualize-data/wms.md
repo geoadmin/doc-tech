@@ -163,12 +163,10 @@ The output image:
 
 - [General Terms of Use and Operating Conditions of the Federal Spatial Data Infrastructure FSDI](https://www.geo.admin.ch/en/geo-services/geo-services/terms-of-use.html)
 - [WMS-BGDI system status](http://status.geo.admin.ch/3380881)
+- [Quantum GIS](http://www.qgis.org/en/docs/index.html)
 - [Add WMS to ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/help/data/services/add-wms-services.htm)
 - [Add WMS to ArcGIS Desktop](https://desktop.arcgis.com/en/arcmap/10.6/map/web-maps-and-services/adding-wms-services.htm)
 - [Google Earth](https://www.mngeo.state.mn.us/chouse/wms/wms_image_server_google_earth_instructions.html)
-- [MapInfo](http://www.twiav.nl/files/TWIAV_TIP_MI002.pdf)
-- [Quantum GIS](http://www.qgis.org/en/docs/index.html)
-- [Exemple 1 - Mappetizer](http://www.mappetizer.de/de/beispiele/wms_bafu_suisse/index.html)
 
 ## Example: OpenLayers
 
