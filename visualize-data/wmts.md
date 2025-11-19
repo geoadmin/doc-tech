@@ -8,9 +8,6 @@ A RESTful implementation of the [WMTS OGC Standard](http://www.opengeospatial.or
 
 :::warning
 We only support the `GetCapabilities` and `GetTile` operation through a RESTful API endpoint. KVP and SOAP encodings are not not available.
-
-If no EPSG code is specified, the WMTS service defaults to the outdated CH1903 / MN03 reference frame (EPSG:21781). To ensure you receive tiles in the correct reference frame, always include the desired EPSG in the URL. For example:
-https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml
 :::
 
 ## GetCapabilities
@@ -22,6 +19,11 @@ The GetCapabilities document provides information about the service, along with 
 | **Parameter**   | **Description**                                                                                                                                                                       |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Lang (optional) | Specifies the language for the service response. Supported values: `de` (German), `fr` (French), `it` (Italian), `rm` (Rumantsch), `en` (English). Defaults to `de` if not specified. |
+
+:::warning
+If no EPSG code is specified, the WMTS service defaults to the outdated CH1903 / MN03 reference frame (EPSG:21781). To ensure you receive tiles in the correct reference frame, always include the desired EPSG in the URL. For example:
+https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml
+:::
 
 ### Supported Projections
 
