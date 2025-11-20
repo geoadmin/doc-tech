@@ -46,6 +46,7 @@ import { data as status } from './scripts/status.data.ts'
 import { data as announcements } from './scripts/announcements.data.ts'
 import StatusBanner from './components/StatusBanner.vue'
 import {withBase} from 'vitepress'
+// Though vitepress uses markdown-it, it's not exposed so we need to explicitly import
 import markdownit from 'markdown-it'
 
 
