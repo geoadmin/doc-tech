@@ -84,29 +84,28 @@ To add a release note, follow these steps:
 ## How to add a new incident details section
 
 1. Edit the file [`status-page.md`](./page/status-page.md)
-1. If there already is a section of the current year, such as e.g. `:::: details 2025 {open}`, add the incident on top of that section, leaving one blank line after the `:::: details 2025 {open}`
-1. If it is the first incident of the current year, create a new section for the new year, e.g. `:::: details 2026 {open}` and already the closing `::::`, so basically like this:
+1. If there already is a section of the current year, such as e.g. `::::: details 2025`, add the incident on top of that section, leaving one blank line after the `::::: details 2025`
+1. If it is the first incident of the current year, create a new section for the new year, e.g. `::::: details 2026 {open}` and already the closing `:::::`, so basically like this:
 
    ```markdown
-   :::: details 2026 {open}
+   ::::: details 2026 {open}
 
-   ::::
+   :::::
    ```
 
-1. When you started a new year, please remove the `{open}` from the last year. This way, the old year is collapsed by default.
-1. Also, please remove the `{open}` from the last incident's details, this way, only the recent incident's details are expanded.
 1. Add the new incident either in the section of the new year or in the already existing section of the current year like this:
 
    ```markdown
-   :::: details 2026 {open}
+   ::::: details 2026
 
-   ::: details MONTH, DAY - short heading {open}
+   :::: details MONTH, DAY(, TIME) - [SHORT HEADING OF THE INCIDENT]
 
-   ### MONTH, DAY - longer heading
+   ::: info MONTH, DAY(, Time) [LONGER HEADING OF THE INCIDENT]
 
-   DETAILS go here
+   [DETAILED TEXT ABOUT THE INCIDENT]
    :::
    ::::
+   :::::
    ```
 
-1. Remember to close the details section of the incident with three `:`, and in case you created a new year section, remember to close that one with four `:`.
+The five `:` are only when you start and end a new year, otherwise, only the part that starts and ends with four `:` is relevant for you.

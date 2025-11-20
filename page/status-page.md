@@ -47,11 +47,11 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 <!-- Please check the README.md for details on how to add new incidents or start a new year, thanks!
 -->
 
-:::: details 2025 {open}
+::::: details 2025
 
-::: details Nov 12 - Issues with search service {open}
+:::: details Nov 12 - Issues with search service
 
-### Nov 14 - Information on recent problems when changing address data from RBD to the official directory of building addresses
+::: info Nov 14 - Information on recent problems when changing address data from RBD to the official directory of building addresses
 
 On Wednesday, November 12, 2025, the Search Service was switched from the register of buildings and dwellings (RBD) to the new default data source of the official directory of building addresses.
 
@@ -70,14 +70,15 @@ On the SearchServer endpoint, you can either perform a type=featuresearch or a t
 For your information, there are three ways to perform an address search:
 
 1. Swisssearch search with origins=address; if desired, the feature ID can be transferred to the feature endpoint of the specialist layer ch.swisstopo.amtliches-gebaeudeadressverzeichnis
-1. FeatureSearch in the layer ch.swisstopo.amtliches-gebaeudeadressverzeichnis; if desired, the feature ID can be transferred to the feature endpoint of the thematic layer ch.swisstopo.amtliches-gebaeudeadressverzeichnis
-1. FeatureSearch in the layer ch.bfs.gebaeude_wohnungs_register; if desired, the feature ID can be transferred to the feature endpoint of the specialist layer ch.bfs.gebaeude_wohnungs_register.
+2. FeatureSearch in the layer ch.swisstopo.amtliches-gebaeudeadressverzeichnis; if desired, the feature ID can be transferred to the feature endpoint of the thematic layer ch.swisstopo.amtliches-gebaeudeadressverzeichnis
+3. FeatureSearch in the layer ch.bfs.gebaeude_wohnungs_register; if desired, the feature ID can be transferred to the feature endpoint of the specialist layer ch.bfs.gebaeude_wohnungs_register.
 
 Specific documentation for this topic: [Search | \*.geo.admin.ch](https://docs.geo.admin.ch/access-data/search.html#request-details)
 :::
-::: details Nov 12 - Incident with Service Stac
+::::
+:::: details Nov 12 - Incident with Service Stac
 
-### Nov 12, 19:15 - Disruption of Service Stac - Resolved
+::: info Nov 12, 19:15 - Disruption of Service Stac - Resolved
 
 The root cause that led to the outage of STAC API could be identified and resolved. The problem was a
 misconfigration of database logging that was done earlier today
@@ -85,14 +86,15 @@ that led to a rapid increase in log volume and eventually resulted in full disk 
 space has been increased and the logging configuration change rolled back.
 
 STAC API is functioning normal again.
-
-### Nov 12, 19:15 - Disruption of Service Stac
+:::
+::: info Nov 12, 19:15 - Disruption of Service Stac
 
 The STAC API on data.geo.admin.ch is currently unavailable. We're investigating the cause and will give an update later tonight.
 :::
-::: details July 2nd - Incident with Printing
+::::
+:::: details July 2nd - Incident with Printing
 
-### July 3, 10:00 - Incident Resolved
+::: info July 3, 10:00 - Incident Resolved
 
 An update to map.geo.admin.ch made on July 2, 2025 caused a temporarily disruption to the system's printing service.
 This resulted in a problem with the browser cache storing the information.
@@ -127,15 +129,16 @@ SAFARI
 
 - In Safari, go to "Settings" > "Advanced" and enable "Show Develop menu in menu bar."
 - Click on ‘Develop’ in the menu and then on "Empty Cache."
-
-### July 2, 16:00 - Incident Detected
+  :::
+  ::: info July 2, 16:00 - Incident Detected
 
 The printing functionality of map.geo.admin.ch is currently unavailable.
 We are analysing the problem and keep you updated on this page.
 :::
-::: details April 30 - Incident with WMS/WMTS
+::::
+:::: details April 30 - Incident with WMS/WMTS
 
-### May 6 - Root Cause Analysis
+::: info May 6 - Root Cause Analysis
 
 On the 30th of April and 1st of May, the WMS service and WMTS service provided by geo.admin.ch were restricted or unavailable, which also affected the print function in the map viewer.
 
@@ -147,16 +150,16 @@ The problem was resolved by our specialists by rolling out new system components
 We apologise for any inconvenience caused.
 
 Thank you for your understanding and patience.
-
-### May 1, 16:00 - Incident Resolved
+:::
+::: info May 1, 16:00 - Incident Resolved
 
 The disruption has been resolved.
 
 All services on \*geo.admin.ch are now available as usual.
 
 We thank you for your understanding and patience.
-
-### May 1, 12:00 - Update
+:::
+::: info May 1, 12:00 - Update
 
 No change since the update at 9:25 a.m.
 We are continuing to work intensively to resolve the problem.
@@ -164,8 +167,8 @@ We are continuing to work intensively to resolve the problem.
 The next update will be provided today at around 4 p.m. or as soon as the disruption has been resolved.
 
 We apologise for any inconvenience caused and thank you in advance for your patience.
-
-### May 1, 09:25 Update
+:::
+::: info May 1, 09:25 Update
 
 The extent of the disruption has been reduced in the meantime.
 Certain WMS layers and the printing service are still affected.
@@ -174,8 +177,8 @@ No other services provided by \*geo.admin.ch are affected. We are continuing to 
 The next update will be provided today at around 12 noon or as soon as the disruption has been resolved.
 
 We apologise for any inconvenience caused and thank you in advance for your patience.
-
-### April 30, 16:00 Update
+:::
+::: info April 30, 16:00 Update
 
 The disruption to the WMS, WMTS and print services is still ongoing.
 No other services provided by \*geo.admin.ch are affected.
@@ -184,8 +187,8 @@ We are working intensively to resolve the problem.
 The next update will be provided tomorrow, 1 May, at 9 a.m. or as soon as the disruption has been resolved.
 
 We apologise for any inconvenience caused and thank you in advance for your patience.
-
-### April 30, 12:00 Update
+:::
+::: info April 30, 12:00 Update
 
 The disruption to WMS and WMTS services is still ongoing.
 We are continuing to work hard to resolve the issue.
@@ -193,8 +196,8 @@ We are continuing to work hard to resolve the issue.
 The next update will be provided today at around 4 p.m. or as soon as the disruption has been resolved.
 
 We apologise for any inconvenience caused and thank you in advance for your patience.
-
-### April 30, 10:00 Incident Detected
+:::
+::: info April 30, 10:00 Incident Detected
 
 We are currently experiencing some problems with our WMS and WMTS services, which we are analysing and will resolve as quickly as possible.
 The duration of the disruption is still unknown.
@@ -205,3 +208,4 @@ The next update will be provided today at around 12 noon or as soon as the disru
 We apologise for any inconvenience caused and thank you in advance for your patience.
 :::
 ::::
+:::::
