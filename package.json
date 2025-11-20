@@ -14,7 +14,8 @@
         "prettier": "^3.6.2",
         "tsx": "^4.19.4",
         "vitepress": "1.6.4",
-        "vitepress-mermaid-renderer": "1.1.5"
+        "vitepress-mermaid-renderer": "1.1.5",
+        "markdown-it": "14.1.0"
     },
     "type": "module",
     "engines": {

@@ -46,10 +46,14 @@ import { data as status } from './scripts/status.data.ts'
 import { data as announcements } from './scripts/announcements.data.ts'
 import StatusBanner from './components/StatusBanner.vue'
 import {withBase} from 'vitepress'
+// Though vitepress uses markdown-it, it's not exposed so we need to explicitly import
+import markdownit from 'markdown-it'
+
 
 const lastRelease = releases.at(0)
 const statusPreview = status[0]
 const announcementsPreview = announcements[0]
+const md = markdownit()
 
 
 let statusContainer = null;
@@ -108,13 +112,13 @@ onUnmounted(() => {
   <div class="announcements-container">
     <h2 id="home-container-h2">End-of-Life</h2>
     <div class="home-container-col">
-      <h4>{{ announcementsPreview.frontmatter.previewTitle}}</h4>
-      <span>{{ announcementsPreview.frontmatter.previewContent}}</span>
+      <h4>{{announcementsPreview.frontmatter.previewTitle}}</h4>
+      <span v-html="md.render(announcementsPreview.frontmatter.previewContent)"></span>
       <a :href="withBase('/page/end-of-life')">Learn more</a>
     </div>
   </div>
 </div>
 <div class="home-status-container" v-if="statusPreview.frontmatter.type === 'info'">
-  <span class="status-content-text">{{ '✅ ' +  statusPreview.frontmatter.content + ' '}}</span>
+  <span class="status-content-text" v-html="md.render('✅ ' +  statusPreview.frontmatter.previewContent + ' ')"></span>
   <a :href="withBase('/page/status-page')">Learn more</a>
 </div>

@@ -1,7 +1,7 @@
 ---
 type: 'info'
-title: 'All Systems Operational'
-content: 'No ongoing incidents - all services are functioning as expected.'
+previewTitle: 'All Systems Operational'
+previewContent: 'No ongoing incidents - all services are functioning as expected.'
 
 outline: [2, 3]
 ---
@@ -40,7 +40,7 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
     'warning': '⚠️',
     'danger': '🚨'
   }[$frontmatter.type] || ''
-}} **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.content }}
+}} **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.previewContent }}
 
 ## Incident History
 
