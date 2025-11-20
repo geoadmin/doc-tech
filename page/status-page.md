@@ -44,6 +44,23 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ## Incident History
 
+<!-- Once we are in 2026, we should do the following:
+1. add a new details section for 2026:
+   ::: details 2026 {open}
+    [add any new incidents here]
+    ### [2026-mm-dd] Incident XYZ
+    #### [2026-mm-dd] Iformation related to incident XYZ
+    bla bla bla
+   :::
+
+2. remove the {open} from the 2025 section, so that it is collapsed by default
+
+This will group all incidents by year, and only the current year is expanded, all older incidents
+are collapsed. Improves overview a bit, in case we have too many incidents in one single year ;-)
+-->
+
+::: details 2025 {open}
+
 ### [2025-11-12] Issues with search service
 
 #### [2025-11-14] Information on recent problems when changing address data from RBD to the official directory of building addresses
@@ -198,3 +215,4 @@ We will keep you updated on this page.
 The next update will be provided today at around 12 noon or as soon as the disruption has been resolved.
 
 We apologise for any inconvenience caused and thank you in advance for your patience.
+:::
