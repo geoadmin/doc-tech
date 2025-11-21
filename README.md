@@ -84,7 +84,7 @@ To add a release note, follow these steps:
 ## How to add a new incident details section
 
 1. Edit the file [`status-page.md`](./page/status-page.md)
-1. If there already is a section of the current year, such as e.g. `::::: details 2025`, add the incident on top of that section, leaving one blank line after the `::::: details 2025`
+1. If there already is a section of the current year, such as e.g. `::::: details 2025 {open}`, add the incident on top of that section, leaving one blank line after the `::::: details 2025`
 1. If it is the first incident of the current year, create a new section for the new year, e.g. `::::: details 2026 {open}` and already the closing `:::::`, so basically like this:
 
    ```markdown
@@ -98,7 +98,7 @@ To add a release note, follow these steps:
    ```markdown
    ::::: details 2026
 
-   :::: details MONTH, DAY(, TIME) - [SHORT HEADING OF THE INCIDENT]
+   :::: details MONTH, DAY(, TIME) - [SHORT HEADING OF THE INCIDENT] {open}
 
    ::: info MONTH, DAY(, Time) [LONGER HEADING OF THE INCIDENT]
 

@@ -49,7 +49,7 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ::::: details 2025
 
-:::: details Nov 12 - Issues with search service
+:::: details Nov 12 - Issues with search service {open}
 
 ::: info Nov 14 - Information on recent problems when changing address data from RBD to the official directory of building addresses
 
@@ -76,7 +76,7 @@ For your information, there are three ways to perform an address search:
 Specific documentation for this topic: [Search | \*.geo.admin.ch](https://docs.geo.admin.ch/access-data/search.html#request-details)
 :::
 ::::
-:::: details Nov 12 - Incident with Service Stac
+:::: details Nov 12 - Incident with Service Stac {open}
 
 ::: info Nov 12, 19:15 - Disruption of Service Stac - Resolved
 
@@ -92,7 +92,7 @@ STAC API is functioning normal again.
 The STAC API on data.geo.admin.ch is currently unavailable. We're investigating the cause and will give an update later tonight.
 :::
 ::::
-:::: details July 2nd - Incident with Printing
+:::: details July 2nd - Incident with Printing {open}
 
 ::: info July 3, 10:00 - Incident Resolved
 
@@ -136,7 +136,7 @@ The printing functionality of map.geo.admin.ch is currently unavailable.
 We are analysing the problem and keep you updated on this page.
 :::
 ::::
-:::: details April 30 - Incident with WMS/WMTS
+:::: details April 30 - Incident with WMS/WMTS {open}
 
 ::: info May 6 - Root Cause Analysis
 
