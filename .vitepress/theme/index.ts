@@ -44,9 +44,8 @@ export default {
                     initMermaid()
                 }
             )
-
         })
-        
+
         nextTick(() => {
             // Initialize Mermaid after DOM is ready
             initMermaid()
