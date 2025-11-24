@@ -42,15 +42,16 @@ export default {
                     initMermaid()
                 }
             )
-        })
-        nextTick(() => {
-            // Initialize Mermaid after DOM is ready
-            initMermaid()
 
-            // Initial scroll to active sidebar item, with timeout to ensure the SideBar is rendered
-            setTimeout(() => {
-                scrollToActiveSidebarItem()
-            }, 100)
+            nextTick(() => {
+                // Initialize Mermaid after DOM is ready
+                initMermaid()
+
+                // Initial scroll to active sidebar item, with timeout to ensure the SideBar is rendered
+                setTimeout(() => {
+                    scrollToActiveSidebarItem()
+                }, 100)
+            })
         })
 
         // watch for route changes and scroll to active sidebar item
