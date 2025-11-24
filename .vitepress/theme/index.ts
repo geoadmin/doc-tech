@@ -50,7 +50,8 @@ export default {
             // Initialize Mermaid after DOM is ready
             initMermaid()
 
-            // Initial scroll to active sidebar item, with timeout to ensure the SideBar is rendered
+            // Initial scroll to active sidebar item, with timeout to ensure the sidebar is rendered
+            // Without this, the sidebar is not centered on the current article if we come from a different domain and use a direct link.
             setTimeout(() => {
                 scrollToActiveSidebarItem()
             }, 100)
