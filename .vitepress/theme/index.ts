@@ -15,6 +15,8 @@ const highlighterPromise = createHighlighter({
 })
 
 const scrollToActiveSidebarItem = () => {
+    // do not run on server side
+    if (typeof document === 'undefined') return
     const activeLink = document.querySelector('#VPSidebarNav div.is-link.is-active.has-active')
     if (activeLink) {
         activeLink.scrollIntoView({ block: 'center' })
@@ -43,15 +45,16 @@ export default {
                 }
             )
 
-            nextTick(() => {
-                // Initialize Mermaid after DOM is ready
-                initMermaid()
+        })
+        
+        nextTick(() => {
+            // Initialize Mermaid after DOM is ready
+            initMermaid()
 
-                // Initial scroll to active sidebar item, with timeout to ensure the SideBar is rendered
-                setTimeout(() => {
-                    scrollToActiveSidebarItem()
-                }, 100)
-            })
+            // Initial scroll to active sidebar item, with timeout to ensure the SideBar is rendered
+            setTimeout(() => {
+                scrollToActiveSidebarItem()
+            }, 100)
         })
 
         // watch for route changes and scroll to active sidebar item
