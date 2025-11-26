@@ -14,6 +14,15 @@ const highlighterPromise = createHighlighter({
     langs: ['javascript', 'json', 'sh', 'html', 'http'],
 })
 
+const scrollToActiveSidebarItem = () => {
+    // do not run on server side
+    if (typeof document === 'undefined') return
+    const activeLink = document.querySelector('#VPSidebarNav div.is-link.is-active.has-active')
+    if (activeLink) {
+        activeLink.scrollIntoView({ block: 'center' })
+    }
+}
+
 export default {
     extends: DefaultTheme,
     // Layout will be used to initialize mermaid and scroll to active sidebar item
@@ -27,9 +36,6 @@ export default {
             })
         }
 
-        // initial mermaid setup
-        nextTick(() => initMermaid())
-
         // on theme change, re-render mermaid charts
         onMounted(() => {
             watch(
@@ -38,9 +44,17 @@ export default {
                     initMermaid()
                 }
             )
+        })
 
-            // initial scroll to active sidebar item
-            nextTick(() => scrollToActiveSidebarItem())
+        nextTick(() => {
+            // Initialize Mermaid after DOM is ready
+            initMermaid()
+
+            // Initial scroll to active sidebar item, with timeout to ensure the sidebar is rendered
+            // Without this, the sidebar is not centered on the current article if we come from a different domain and use a direct link.
+            setTimeout(() => {
+                scrollToActiveSidebarItem()
+            }, 100)
         })
 
         // watch for route changes and scroll to active sidebar item
@@ -66,10 +80,3 @@ export default {
         app.provide('highlighter', highlighter)
     },
 } satisfies Theme
-
-const scrollToActiveSidebarItem = () => {
-    const activeLink = document.querySelector('#VPSidebarNav div.is-link.is-active.has-active')
-    if (activeLink) {
-        activeLink.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    }
-}
