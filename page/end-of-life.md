@@ -7,6 +7,11 @@ previewContent: 'The layer _ch.bfe.komo-projekte_ will be removed from chsdi ser
 
 Announcements of changes in our systems and in our provided data sets, newest first.
 
+## [2025-12-17] Removal of layer ch.bfe.komo-projekte, announcement of removal ch.bakom.mobilnetz-2g
+
+The layer _ch.bfe.komo-projekte_ has been removed from chsdi services as previously announced.
+The layer ch.bakom.mobilnetz-2g will be removed from chsdi services with the release of February 4th 2026.
+
 ## [2025-11-12] Planned removal of layer ch.bfe.komo-projekte
 
 The layer _ch.bfe.komo-projekte_ will be removed from chsdi services with the release of December 17th.
