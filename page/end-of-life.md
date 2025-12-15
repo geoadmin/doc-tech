@@ -1,6 +1,6 @@
 ---
-previewTitle: 'Planned removal of ch.bfe.komo-projekte'
-previewContent: 'The layer _ch.bfe.komo-projekte_ will be removed from chsdi services with the release of December 17th.'
+previewTitle: 'Planned removal of ch.bakom.mobilnetz-2g'
+previewContent: 'Layer _ch.bakom.mobilnetz-2g_ will be removed from chsdi services with the release of February 4th 2026.'
 ---
 
 # End-of-Life
