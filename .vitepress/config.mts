@@ -38,7 +38,7 @@ export default defineConfig({
         [
             'meta',
             {
-                property: 'google-site-verification',
+                name: 'google-site-verification',
                 content: 'IuPnZ3S0PNfvJ3Qi-IHG36q2lQ5UIvdQ-7q0_jOVZb8',
             },
         ],
