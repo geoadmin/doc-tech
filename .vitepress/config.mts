@@ -35,6 +35,13 @@ export default defineConfig({
                 content: 'https://docs.geo.admin.ch/swisstopo_map_landscape.png',
             },
         ],
+        [
+            'meta',
+            {
+                property: 'google-site-verification',
+                content: 'IuPnZ3S0PNfvJ3Qi-IHG36q2lQ5UIvdQ-7q0_jOVZb8',
+            },
+        ],
     ],
     transformHead(ctx) {
         // adds dynamic og:title based on page title
