@@ -1,5 +1,6 @@
 node_modules
 *.zip
+.idea
 .vscode
 .vite_opt_cache
 
