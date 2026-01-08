@@ -145,6 +145,6 @@ Another example that is using OpenLayers' [ol-mapbox-style](https://github.com/o
 
 <iframe src="https://codesandbox.io/embed/6twfj8?view=preview&module=%2Fsrc%2Findex.js&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="VectorTiles in OpenLayers" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 
-THe same example but using LV95 frame with OpenLayers:
+The same example but using LV95 frame with OpenLayers:
 
 <iframe src="https://codesandbox.io/embed/nlgnwp?view=preview&module=%2Fsrc%2Findex.js&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="VectorTiles in OpenLayers in LV95" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
