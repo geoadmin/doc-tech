@@ -137,5 +137,14 @@ example='{
 
 An example using MapLibre to display the Light Base Map:
 
-<iframe height="600" style="width: 100%;" scrolling="no" title="Maplibre Vector Tiles" src="https://codepen.io/geoadmin/embed/XJmPzJo?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe src="https://codesandbox.io/embed/d5vm45?view=preview&module=%2Fsrc%2Findex.js&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="Simple VectorTiles" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+
+## Example: OpenLayers
+
+Another example that is using OpenLayers' [ol-mapbox-style](https://github.com/openlayers/ol-mapbox-style) library to display the Light Base Map.
+
+<iframe src="https://codesandbox.io/embed/6twfj8?view=preview&module=%2Fsrc%2Findex.js&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="VectorTiles in OpenLayers" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+
+THe same example but using LV95 frame with OpenLayers:
+
+<iframe src="https://codesandbox.io/embed/nlgnwp?view=preview&module=%2Fsrc%2Findex.js&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="VectorTiles in OpenLayers in LV95" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>

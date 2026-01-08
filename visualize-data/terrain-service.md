@@ -55,5 +55,4 @@ example='{
 
 An example of a Cesium application using terrain tiles, 3D buildings and a WMTS layer.
 
-<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/geoadmin/embed/NPGLwVO?default-tab=js%2Cresult&editable=true&zoom=0.5" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe src="https://codesandbox.io/embed/73fz8h?view=preview&module=%2Fsrc%2Findex.js&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="Terrain, 3D Buildings and WMTS (CesiumJS)" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
