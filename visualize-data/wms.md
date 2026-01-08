@@ -172,5 +172,10 @@ The output image:
 
 This OpenLayers example shows how the CadastralWebMap appears differently when loaded using a WMTS compared to a tiled WMS.
 
-<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/geoadmin/embed/ogjMOay?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe src="https://codesandbox.io/embed/94ph6k?view=preview&module=%2Fsrc%2Findex.js&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="CadastralWebMap WMS/WMTS comparison" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+
+<br />
+
+Another OpenLayers example showing how to load a WMS layer with a gutter (buffer between tiles so that features overlapping them are fully rendered)
+
+<iframe src="https://codesandbox.io/embed/06h77?view=preview&module=%2Fsrc%2Findex.js&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="vanilla OpenLayers with a WMS layer" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>

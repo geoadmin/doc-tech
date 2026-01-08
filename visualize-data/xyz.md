@@ -54,14 +54,12 @@ The output image:
 
 ### OpenLayers
 
-An OpenLayers 10 example showing the Base Map layer as XYZ tiles:
+An OpenLayers 10 example showing the Base Map layer as XYZ tiles in LV95:
 
-<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/geoadmin/embed/GgpXMyg?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe src="https://codesandbox.io/embed/pzj48q?view=preview&module=%2Fsrc%2Findex.js&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="Simple XYZ in LV95" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 
 <br/>
 
-An OpenLayers 10 example showing the SWISSIMAGE layer as XYZ tiles:
+An OpenLayers 10 example showing the SWISSIMAGE layer as XYZ tiles in WebMercator:
 
-<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/geoadmin/embed/YPyOxoR?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe src="https://codesandbox.io/embed/7m23n6?view=preview&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="Simple XYZ in WebMercator" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
