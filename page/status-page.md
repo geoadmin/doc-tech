@@ -1,7 +1,7 @@
 ---
 type: 'warning'
-title: 'Minor incident'
-content: 'We are currently investigating problems with the public transport stop layer. Updates will be posted as more information becomes available.'
+previewTitle: 'Minor incident'
+previewContent: 'We are currently investigating problems with the public transport stop layer. Updates will be posted as more information becomes available.'
 
 outline: [2, 3]
 ---
