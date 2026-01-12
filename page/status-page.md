@@ -1,7 +1,7 @@
 ---
-type: 'info'
-previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected.'
+type: 'warning'
+title: 'Minor incident'
+content: 'We are currently investigating problems with the public transport stop layer. Updates will be posted as more information becomes available.'
 
 outline: [2, 3]
 ---
