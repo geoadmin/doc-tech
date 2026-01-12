@@ -44,7 +44,9 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ## Incident History
 
-### [2026-01-12]
+### [2026-01-12] Issue with public transport stop layer
+
+#### [2026-01-12] Information on recent problems with the public transport stop layer
 
 Currently the public transport stop layer is not behaving as expected.
 There are no icons for the public transport stops - or, if there are icons - clicking on it does not trigger the information pop-up window.
