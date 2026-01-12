@@ -1,7 +1,7 @@
 ---
-type: 'info'
-previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected.'
+type: 'warning'
+title: 'Minor incident'
+content: 'We are currently investigating problems with the public transport stop layer. Updates will be posted as more information becomes available.'
 
 outline: [2, 3]
 ---
@@ -43,6 +43,14 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 }} **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.previewContent }}
 
 ## Incident History
+
+### [2026-01-12] Issue with public transport stop layer
+
+#### [2026-01-12] Information on recent problems with the public transport stop layer
+
+Currently the public transport stop layer is not behaving as expected.
+There are no icons for the public transport stops - or, if there are icons - clicking on it does not trigger the information pop-up window.
+We are working on solving this issue.
 
 ### [2025-11-12] Issues with search service
 
