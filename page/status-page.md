@@ -44,6 +44,12 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ## Incident History
 
+### [2026-01-12]
+
+Currently the public transport stop layer is not behaving as expected.
+There are no icons for the public transport stops - or, if there are icons - clicking on it does not trigger the information pop-up window.
+We are working on solving this issue.
+
 ### [2025-11-12] Issues with search service
 
 #### [2025-11-14] Information on recent problems when changing address data from RBD to the official directory of building addresses
