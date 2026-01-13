@@ -1,11 +1,16 @@
 ---
-previewTitle: 'Planned removal of ch.bakom.mobilnetz-2g'
-previewContent: 'Layer _ch.bakom.mobilnetz-2g_ will be removed from chsdi services with the release of February 4th 2026.'
+previewTitle: 'Removal of assets ch.bazl.luftfahrthindernis'
+previewContent: 'Obsolete assets of ch.bazl.luftfahrthindernis removed as planned'
 ---
 
 # End-of-Life
 
 Announcements of changes in our systems and in our provided data sets, newest first.
+
+## [2026-01-13] Removal of assets ch.bazl.luftfahrthindernis
+
+The assets _luftfahrthindernis_4326.csv.zip_, _luftfahrthindernis_simplified_4326.csv.zip_ and _luftfahrthindernis_simplified_4326.kmz_ of the data collection ch.bazl.luftfahrthindernis have been removed from service STAC as previously announced and coordinated with FOCA as data provider.
+The asset _luftfahrthindernis_4326.aixm_ has been replaced by a new zipped asset _luftfahrthindernis_4326.aixm.zip_ with the same step, while the asset _luftfahrthindernis_4326.kmz_ persists
 
 ## [2025-12-17] Removal of layer ch.bfe.komo-projekte, announcement of removal ch.bakom.mobilnetz-2g
 
