@@ -1,7 +1,7 @@
 ---
-type: 'danger'
-previewTitle: 'Major Incident'
-previewContent: 'The WMS service is down on PROD. There are issues to be expected with all layers served via WMS. We are working on a fix.'
+type: 'info'
+previewTitle: 'All Systems Operational'
+previewContent: 'No ongoing incidents - all services are functioning as expected.'
 
 outline: [2, 3]
 ---
@@ -44,12 +44,16 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ## Incident History
 
-### [2026-01-19]
+### [2026-01-19] Issue with service-wms
 
-#### [2026-01-19 11:30]
+#### [2026-01-19 11:30] Issues with layers served by WMS, since WMS is down
 
 Our WMS service is experiencing problems on PROD. There are issues observed with layers, that are served via WMS.
 We are working on a fix for this issue.
+
+#### [2026-01-19 12:10] Issue with service-wms solved
+
+The recent issue with service-wms is solved. Reason was a specific external layer causing issues with our WMS service.
 
 ### [2026-01-12] Issue with public transport stop layer
 
