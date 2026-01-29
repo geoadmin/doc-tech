@@ -14,7 +14,7 @@ hero:
       link: /get-started/overview
     - theme: alt
       text: Getting help
-      link: http://groups.google.com/group/geoadmin-api
+      link: /page/get-help
 
 features:
   - title: Explore Data
