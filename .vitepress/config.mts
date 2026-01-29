@@ -122,6 +122,10 @@ export default defineConfig({
                 text: 'End-of-Life',
                 link: '/page/end-of-life',
             },
+            {
+                text: 'Get Help',
+                link: '/page/get-help',
+            },
         ],
         socialLinks: [{ icon: 'github', link: 'https://github.com/geoadmin/doc-tech' }],
 
