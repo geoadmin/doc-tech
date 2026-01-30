@@ -3,11 +3,6 @@
     "extends": [
         "github>swissgeo/.github:renovate-preset/default.json5#feat_GPS-431_renovate_preset"
     ],
-    "reviewers": [
-        "asteiner-swisstopo",
-        "keetraxx"
-    ],
-    "baseBranchPatterns": [
-        "master"
-    ]
+    "reviewers": ["asteiner-swisstopo", "keetraxx"],
+    "baseBranchPatterns": ["master"]
 }
