@@ -6,5 +6,8 @@
     "reviewers": [
         "asteiner-swisstopo",
         "keetraxx"
+    ],
+    "baseBranchPatterns": [
+        "master"
     ]
 }
