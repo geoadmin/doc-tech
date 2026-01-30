@@ -4,5 +4,5 @@
         "github>swissgeo/.github:renovate-preset/default.json5"
     ],
     "reviewers": ["asteiner-swisstopo", "keetraxx"],
-    "baseBranchPatterns": ["master"]
+    "baseBranchPatterns" : ["feat_.*"]
 }
