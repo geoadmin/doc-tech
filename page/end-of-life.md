@@ -1,11 +1,15 @@
 ---
-previewTitle: 'Removal of assets ch.bazl.luftfahrthindernis'
-previewContent: 'Obsolete assets of ch.bazl.luftfahrthindernis removed as planned'
+previewTitle: 'Removal of layer ch.bakom.mobilnetz-2g'
+previewContent: 'Layer ch.bakom.mobilnetz-2g removed as planned'
 ---
 
 # End-of-Life
 
 Announcements of changes in our systems and in our provided data sets, newest first.
+
+## [2026-02-04] Removal of layer ch.bakom.mobilnetz-2g
+
+The layer ch.bakom.mobilnetz-2g has been removed from chsdi services as previously announced.
 
 ## [2026-01-13] Removal of assets ch.bazl.luftfahrthindernis
 
