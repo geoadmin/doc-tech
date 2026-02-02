@@ -1,7 +1,7 @@
 ---
-type: 'info'
-previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected.'
+type: 'danger'
+previewTitle: 'Major incident because no spanish'
+previewContent: 'We are experiencing a significant outage affecting no spanish. All hands are on deck to diagnose and resolve the issue. The next update will be posted at XX:XX or as significant progress is made.'
 
 outline: [2, 3]
 ---
@@ -43,6 +43,9 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 }} **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.previewContent }}
 
 ## Incident History
+
+### [2026-02-02] Issue with no spanish in map.geo.admin.ch
+Spanish is missing, tha's not good.
 
 ### [2026-01-19] Issue with service-wms
 
