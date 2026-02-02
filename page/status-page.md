@@ -45,6 +45,7 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 ## Incident History
 
 ### [2026-02-02] Issue with no spanish in map.geo.admin.ch
+
 Spanish is missing, tha's not good.
 
 ### [2026-01-19] Issue with service-wms
