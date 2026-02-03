@@ -8,13 +8,13 @@
         "format:check": "prettier --check ."
     },
     "devDependencies": {
-        "@types/node": "24.0.0",
+        "@types/node": "24.10.10",
         "fast-glob": "^3.3.3",
         "gray-matter": "^4.0.3",
         "prettier": "^3.6.2",
         "tsx": "^4.19.4",
         "vitepress": "1.6.4",
-        "vitepress-mermaid-renderer": "1.1.5",
+        "vitepress-mermaid-renderer": "1.1.8",
         "markdown-it": "14.1.0"
     },
     "type": "module",
