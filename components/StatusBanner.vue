@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {withBase} from 'vitepress'
+
 interface StatusBannerProps {
     type: string
     previewTitle: string
@@ -14,7 +16,7 @@ const isWarning = props.status.type === 'warning'
 <template>
     <div :class="[isWarning ? 'status-warning' : 'status-danger']">
         <a
-            href="/page/status-page"
+            :href="withBase('/page/status-page')"
             class="status-content"
         >
             <p>

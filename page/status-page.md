@@ -1,5 +1,5 @@
 ---
-type: 'info'
+type: 'warning'
 previewTitle: 'All Systems Operational'
 previewContent: 'No ongoing incidents - all services are functioning as expected.'
 
