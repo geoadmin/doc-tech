@@ -94,6 +94,18 @@ Here is a description of the response's data.
 | `x` and `y` | These attributes represent the coordinates of an entry. If an object's entry is a line or a polygon, those coordinates will always be on the underlying geometry. |
 | `label` | The HTML label for an entry. |
 
+**Links (for address results):**
+| **Field** | **Description** |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `links` | An array of related resources for address search results. Each link contains: |
+| `rel` | The relationship type, typically "related". |
+| `title` | The layer ID of the related resource (e.g., "ch.swisstopo.amtliches-gebaeudeadressverzeichnis", "ch.bfs.gebaeude_wohnungs_register"). |
+| `href` | The URL path to access the related feature resource. The `<featureid>` placeholder contains the actual feature ID. |
+
+::: tip
+For address search results, it is recommended to use the `links` provided in the response to get additional feature information instead of constructing feature URLs manually. The links point to related resources such as the official building address directory and building/dwelling register.
+:::
+
 Here is a list of possible origins sorted in ascending ranking order:
 
 - **zipcode** (ch.swisstopo-vd.ortschaftenverzeichnis_plz)
@@ -135,6 +147,48 @@ example='{
       "weight": 100
     },
   (...more results...)
+  ]
+}'
+/>
+
+Search for an address (note the `links` section containing related resources):
+
+<ExampleCodeBlock
+request="$ curl https://api3.geo.admin.ch/rest/services/ech/SearchServer?searchText=Landstrasse%208595%20Altnau&type=locations"
+example='{
+  "results": [
+    {
+      "attrs": {
+        "detail": "landstrasse # 8595 altnau 4641 altnau ch tg",
+        "featureId": "191979601_0",
+        "geom_quadindex": "012323201233230311110",
+        "geom_st_box2d": "BOX(2737666 1275668,2737666 1275668)",
+        "label": "Landstrasse # <b>8595 Altnau</b>",
+        "lat": 47.61722946166992,
+        "lon": 9.269905090332031,
+        "num": 0,
+        "objectclass": "",
+        "origin": "address",
+        "rank": 7,
+        "x": 1275668,
+        "y": 2737666,
+        "zoomlevel": 10
+      },
+      "id": 1926520,
+      "weight": 100,
+      "links": [
+        {
+          "rel": "related",
+          "title": "ch.swisstopo.amtliches-gebaeudeadressverzeichnis",
+          "href": "/rest/services/ech/MapServer/ch.swisstopo.amtliches-gebaeudeadressverzeichnis/<featureid>"
+        },
+        {
+          "rel": "related",
+          "title": "ch.bfs.gebaeude_wohnungs_register",
+          "href": "/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/<featureid>"
+        }
+      ]
+    }
   ]
 }'
 />
