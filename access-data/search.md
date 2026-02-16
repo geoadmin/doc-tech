@@ -113,7 +113,7 @@ Here is a list of possible origins sorted in ascending ranking order:
 - **district** (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)
 - **kantone** (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)
 - **gazetteer** (ch.swisstopo.swissnames3d, ch.bav.haltestellen-oev)
-- **address** (ch.bfs.gebaeude_wohnungs_register with EGID or use prefix 'addresse', 'adresse', 'indirizzo', 'address' without EGID)
+- **address** (ch.swisstopo.amtliches-gebaeudeadressverzeichnis with EGID or use prefix 'addresse', 'adresse', 'indirizzo', 'address' without EGID)
 - **parcel** (use prefix "parcel", "parzelle", "parcelle" or "parcella" in your requests to filter out other origins)
 
 Prefix filtering cannot be combined with parameter <span
