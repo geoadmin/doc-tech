@@ -1,11 +1,16 @@
 ---
-previewTitle: 'Removal of layer ch.bakom.mobilnetz-2g'
-previewContent: 'Layer ch.bakom.mobilnetz-2g removed as planned'
+previewTitle: 'Migration of collections ch.blw.ursprungsbezeichnungen*, change on collection ch.bafu.gewaesserschutz-nawa'
+previewContent: '5 redundant collections to be replaced by 1 single'
 ---
 
 # End-of-Life
 
 Announcements of changes in our systems and in our provided data sets, newest first.
+
+## [2026-02-26] Migration of collections ch.blw.ursprungsbezeichnungen* and change on collection ch.bafu.gewaesserschutz-nawa
+
+- The existing 5 collections on service STAC _ch.blw.ursprungsbezeichnungen-fleisch_, _ch.blw.ursprungsbezeichnungen-kaese_, _ch.blw.ursprungsbezeichnungen-konditoreiwaren_, _ch.blw.ursprungsbezeichnungen-pflanzen_ and _ch.blw.ursprungsbezeichnungen-spirituosen_ on service STAC have been replaced by a new single collection with the same content _ch.blw.ursprungsbezeichnungen_ and will be decommissioned from service STAC soon.
+- The collection _ch.bafu.gewaesserschutz-nawa_ currently has one item _gewaesserschutz-nawa_. Today's item will be replaced by two new items _gewaesserschutz-nawa_biologie_ and _gewaesserschutz-nawa_chemie_ for content and timestand related reasons with the release of March 18th 2026.
 
 ## [2026-02-04] Removal of layer ch.bakom.mobilnetz-2g
 
