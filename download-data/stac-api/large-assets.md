@@ -16,6 +16,25 @@ The S3 origin responds with `HTTP 206 Partial Content` and includes two useful h
 
 The file is then downloaded chunk by chunk using `Range: bytes=<start>-<end>`, and the final file is verified against the expected size and checksum.
 
+You can probe an asset manually with `curl`:
+
+```bash
+curl --silent --show-error --location \
+    --header "Range: bytes=0-0" \
+    --dump-header - \
+    --output /dev/null \
+    "https://data.geo.admin.ch/ch.swisstopo.pixelkarte-farbe/pixelkarte-farbe/ch.swisstopo.pixelkarte-farbe_3857_0.5.tar"
+```
+
+The response headers will contain the total size and checksum:
+
+```
+HTTP/2 206
+content-range: bytes 0-0/102265118720
+x-amz-meta-sha256: <hex>
+...
+```
+
 ::: tip
 `HEAD` requests are **also blocked** by CloudFront for objects > 50 GB. Always use `GET` with a `Range` header to probe asset metadata.
 :::
