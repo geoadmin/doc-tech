@@ -248,6 +248,7 @@ function downloadDataItems(): DefaultTheme.SidebarItem[] {
                     link: '/download-data/stac-api/supported-media',
                 },
                 { text: 'Caching', link: '/download-data/stac-api/caching' },
+                { text: 'Large Assets (> 50 GB)', link: '/download-data/stac-api/large-assets' },
                 { text: 'Item Expiration', link: '/download-data/stac-api/item-expiration' },
                 { text: 'Migrate v0.9 to v1', link: '/download-data/stac-api/migrate09-10' },
                 {
