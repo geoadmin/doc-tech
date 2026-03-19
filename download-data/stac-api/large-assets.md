@@ -296,3 +296,9 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+::: tip Parallel Downloads
+The script above downloads chunks sequentially, which is simple and reliable. For faster downloads on high-bandwidth connections, you can parallelize by downloading multiple chunks simultaneously using threads or asyncio.
+
+Since each chunk has a specific byte range and the script uses `file_handle.seek(offset)` before writing, chunks can be written to their correct positions in the file regardless of the order they complete. This allows multiple chunks to download in parallel and write to different parts of the file safely.
+:::
