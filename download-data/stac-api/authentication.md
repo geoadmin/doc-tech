@@ -59,8 +59,8 @@ The access token you receive is valid only for a limited time, as specified by t
 Once you have a valid JWT token (for example, `123456`), you can create a new asset by including the token in the Authorization header:
 
 ```bash
-curl --request POST \
---url https://data.geoadmin.ch/api/stac/v1/collections/ch.swisstopo.swisstlmregio/items/swisstlmregio-2020/assets \
+curl --request PUT \
+--url https://data.geoadmin.ch/api/stac/v1/collections/ch.swisstopo.swisstlmregio/items/swisstlmregio-2020/assets/fancy_unique_id \
 --header 'Authorization: Bearer 123456' \
 --header 'Content-Type: application/json' \
 --data '{
