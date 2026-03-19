@@ -112,16 +112,9 @@ def probe_asset(url):
     """
     print('Probing asset via range request...')
     req = urllib.request.Request(url, headers={'Range': 'bytes=0-0'})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            content_range = resp.headers.get('Content-Range', '')
-            sha256 = resp.headers.get('x-amz-meta-sha256', '')
-    except urllib.error.HTTPError as exc:
-        if exc.code == 206:
-            content_range = exc.headers.get('Content-Range', '')
-            sha256 = exc.headers.get('x-amz-meta-sha256', '')
-        else:
-            raise
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        content_range = resp.headers.get('Content-Range', '')
+        sha256 = resp.headers.get('x-amz-meta-sha256', '')
 
     total_size = None
     if '/' in content_range:
