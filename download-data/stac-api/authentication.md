@@ -60,15 +60,13 @@ Once you have a valid JWT token (for example, `123456`), you can create a new as
 
 ```bash
 curl --request PUT \
---url https://data.geoadmin.ch/api/stac/v1/collections/ch.swisstopo.swisstlmregio/items/swisstlmregio-2020/assets/fancy_unique_id \
+--url https://data.geo.admin.ch/api/stac/v1/collections/ch.swisstopo.swisstlmregio/items/swisstlmregio_2020/assets/swisstlmregio_2020_2056.gdb.zip \
 --header 'Authorization: Bearer 123456' \
 --header 'Content-Type: application/json' \
 --data '{
-    "id": "fancy_unique_id",
-    "item": "swisstlmregio-2020",
-    "title": "My title",
-    "type": "application/x.filegdb+zip",
-    "description": "My description",
+    "id": "swisstlmregio_2020_2056.gdb.zip",
+    "item": "swisstlmregio_2020",
+    "type": "application/x.shapefile+zip",
     "proj:epsg": 2056,
     "file:checksum": "12200ADEC47F803A8CF1055ED36750B3BA573C79A3AF7DA6D6F5A2AED03EA16AF3BC"
 }'
