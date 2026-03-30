@@ -6,7 +6,7 @@ The workaround is to use **HTTP range requests**, which bypass the CloudFront li
 
 The actual download is completed in this steps:
 1. Probe the asset
-2. Download the file in chuncks
+2. Download the file in chunks
 3. Optional: Verify SHA‑256 checksum
 
 ## Probe the asset
