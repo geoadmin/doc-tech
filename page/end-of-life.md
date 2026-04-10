@@ -1,11 +1,15 @@
 ---
-previewTitle: 'Migration of collections ch.blw.ursprungsbezeichnungen*, change on collection ch.bafu.gewaesserschutz-nawa'
-previewContent: '5 redundant collections to be replaced by 1 single'
+previewTitle: 'Changes on available data formats in ch.bfs.generalisierte-grenzen_agglomerationen_g1'
+previewContent: 'Information about new and deprecated assets'
 ---
 
 # End-of-Life
 
-Announcements of changes in our systems and in our provided data sets, newest first.
+Announcements of changes in our systems and in our provided data sets, latest first.
+
+## [2026-04-10] Changes on available data formats in ch.bfs.generalisierte-grenzen_agglomerationen_g1
+
+The data collection _ch.bfs.generalisierte-grenzen_agglomerationen_g1_ offers various assets/geodata formats for download: The assets for CSV (.csv.zip), File Geodatabase (.gdb.zip) and Google KMZ (.kmz.zip) will be deprecated soon and replaced by 2 new assets for OGC Geopackage (.gpkg) and geoJSON (.geojson), while the Shapefile assets (.shp.zip) will remain available
 
 ## [2026-02-26] Migration of STAC collections ch.blw.ursprungsbezeichnungen\* and change on ch.bafu.gewaesserschutz-nawa with release of March 18th 2026
 
