@@ -4,9 +4,15 @@ Assets larger than **50 GB** cannot be downloaded with a regular HTTP `GET` or `
 
 The workaround is to use **HTTP range requests**, which bypass the CloudFront limit by fetching the file in sequential chunks directly from the S3 origin.
 
-## How It Works
+Downloading a large asset involves three steps that we detail in the following subsections:
 
-A `GET` request with the header `Range: bytes=0-0` is sent first to probe the asset.
+1. Probe the asset
+2. Download the file in chunks
+3. Optional: Verify SHA‑256 checksum
+
+## 1. Probe the asset
+
+Send a `GET` request with the header `Range: bytes=0-0` to probe the asset.  
 The S3 origin responds with `HTTP 206 Partial Content` and includes two useful headers:
 
 | Header              | Value                                                             |
@@ -14,9 +20,7 @@ The S3 origin responds with `HTTP 206 Partial Content` and includes two useful h
 | `Content-Range`     | `bytes 0-0/<total_size>` — the total size of the object           |
 | `x-amz-meta-sha256` | SHA-256 hex digest of the full object (when set by the publisher) |
 
-The file is then downloaded chunk by chunk using `Range: bytes=<start>-<end>`, and the final file is verified against the expected size and checksum.
-
-You can probe an asset manually with `curl`:
+Example to probe an asset manually with `curl`:
 
 ```bash
 curl --silent --show-error --location \
@@ -39,7 +43,7 @@ x-amz-meta-sha256: <hex>
 `HEAD` requests are **also blocked** by CloudFront for objects > 50 GB. Always use `GET` with a `Range` header to probe asset metadata.
 :::
 
-## Download Script
+## 2. Download the file in chunks
 
 The script below requires **Python 3.6+ and no third-party packages** (stdlib only). It works on Linux, macOS, and Windows.
 
@@ -296,6 +300,12 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## 3. Optional: Verify SHA‑256 checksum
+
+If the asset publisher provided a checksum, the download script automatically verifies it after the download completes. The expected SHA‑256 is read from the `x-amz-meta-sha256` response header during the probe step and compared against a hash of the downloaded file.
+
+If the values do not match, the script exits with an error so you can detect a corrupted or incomplete download before using the file.
 
 ::: tip Parallel Downloads
 The script above downloads chunks sequentially, which is simple and reliable. For faster downloads on high-bandwidth connections, you can parallelize by downloading multiple chunks simultaneously using threads or asyncio.
