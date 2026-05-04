@@ -5,7 +5,8 @@ Use this endpoint to discover features at a specific location.
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer/identify" method="GET" />
 
 ::: warning
-No more than 200 features can be retrieved per request.
+A maximum of 200 features can be retrieved per request.
+To download a larger number of features or entire datasets, use the file-based [STAC API](/download-data/stac-api/overview.md).
 :::
 
 ## Request Details

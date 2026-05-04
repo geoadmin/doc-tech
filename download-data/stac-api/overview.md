@@ -1,6 +1,9 @@
 # Overview
 
 This documentation provides tutorials on how to use the STAC API of [data.geo.admin.ch](https://data.geo.admin.ch/).
+
+While other geo.admin.ch service endpoints are tailored for querying individual records and targeted vector features, the STAC API is optimized for discovering and downloading file-based data, typically entire datasets or specific spatial or temporal tiles.
+
 The STAC API consists of standardized RESTful API endpoints designed for interacting with federal geodata.
 All datasets are organized according to the [SpatioTemporal Asset Catalog](https://stacspec.org) (STAC) specification, which simplifies data discovery and usage.
 
