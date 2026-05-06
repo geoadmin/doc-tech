@@ -1,7 +1,7 @@
 ---
-type: 'danger'
-previewTitle: 'Major incident'
-previewContent: 'We are experiencing a significant outage affecting our WMS/WMTS services. All hands are on deck to diagnose and resolve the issue. The next update will be posted at 15:00 or once significant progress is made.'
+type: 'info'
+previewTitle: 'All Systems Operational'
+previewContent: 'No ongoing incidents - all services are functioning as expected.'
 
 outline: [2, 3]
 ---
