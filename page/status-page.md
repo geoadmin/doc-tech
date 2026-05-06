@@ -46,11 +46,13 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ### [2026-05-06] Issues with WMS and WMTS services
 
-###  [2026-05-06 11:30] Issues with WMS and WMTS solved
+#### [2026-05-06 11:30] Issues with WMS and WMTS solved
 
 The WMS and the WMTS are working again as expected.
-The incident was caused by a temporary IO overload on our network file system (EFS), triggered by a large internal data transfer.
+
+The incident was caused by a temporary IO overload on our network file system (EFS), triggered by a large internal data transfer while preloading the tile cache.
 This caused the map server processes to stall while waiting for IO operations to complete.
+
 The issue was resolved by reducing the load on the file system.
 
 #### [2026-05-06 11:03] Issues with WMS and WMTS noticed
