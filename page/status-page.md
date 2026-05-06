@@ -1,7 +1,7 @@
 ---
-type: 'info'
-previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected.'
+type: 'warning'
+previewTitle: 'Minor incident with the WM(T)S services'
+previewContent: 'We are currently investigating degraded performance of the WM(T)S services. Some users may experience intermittent issues. Updates will be posted as more information becomes available.'
 
 outline: [2, 3]
 ---
