@@ -46,7 +46,7 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ### [2026-05-06] Issues with WMS and WMTS services
 
-#### [2026-05-07 11:03] Issues with WMS and WMTS noticed
+#### [2026-05-06 11:03] Issues with WMS and WMTS noticed
 
 We are currently experiencing issues with our WMS and WMTS services. Maps won't be loaded and the services response slowly or throw errors.
 We are working on fixing this problems.
