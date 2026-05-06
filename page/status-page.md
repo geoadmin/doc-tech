@@ -1,7 +1,7 @@
 ---
 type: 'danger'
 previewTitle: 'Major incident'
-previewContent: 'We are experiencing a significant outage affecting our WMS/WMTS services. All hands are on deck to diagnose and resolve the issue. We will keep this site up to date, once we have more information.'
+previewContent: 'We are experiencing a significant outage affecting our WMS/WMTS services. All hands are on deck to diagnose and resolve the issue. We will post an update here, once we have more information.'
 
 outline: [2, 3]
 ---
