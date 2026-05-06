@@ -1,7 +1,7 @@
 ---
 type: 'danger'
-title: 'Major incident'
-content: 'We are experiencing a significant outage affecting our WMS/WMTS services. All hands are on deck to diagnose and resolve the issue. The next update will be posted at XX:XX or as significant progress is made.'
+previewTitle: 'Major incident'
+previewContent: 'We are experiencing a significant outage affecting our WMS/WMTS services. All hands are on deck to diagnose and resolve the issue. The next update will be posted at XX:XX or as significant progress is made.'
 
 outline: [2, 3]
 ---
@@ -12,20 +12,20 @@ Templates:
 ✅ Normal status: Status info is at the bottom of the start page
 
 type: "info"
-title: "All Systems Operational"
-content: "No ongoing incidents - all services are functioning as expected."
+previewTitle: "All Systems Operational"
+previewContent: "No ongoing incidents - all services are functioning as expected."
 
 ⚠️ Minor incident: Status info as a yellow banner at the top of the start page
 
 type: "warning"
-title: "Minor incident"
-content: "We are currently investigating degraded performance in [Service XY]. Some users may experience intermittent issues. Updates will be posted as more information becomes available."
+previewTitle: "Minor incident"
+previewContent: "We are currently investigating degraded performance in [Service XY]. Some users may experience intermittent issues. Updates will be posted as more information becomes available."
 
 🚨 Major incident: Status info as a red banner at the top of the start page
 
 type: "danger"
-title: "Major incident"
-content: "We are experiencing a significant outage affecting [Service XY]. All hands are on deck to diagnose and resolve the issue. The next update will be posted at XX:XX or as significant progress is made."
+previewTitle: "Major incident"
+previewContent: "We are experiencing a significant outage affecting [Service XY]. All hands are on deck to diagnose and resolve the issue. The next update will be posted at XX:XX or as significant progress is made."
 --->
 
 # Status Page
