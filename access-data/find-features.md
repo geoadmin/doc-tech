@@ -4,6 +4,11 @@ Find features in a specific layer by searching for a matching attribute.
 
 <ApiCodeBlock url="https://api3.geo.admin.ch/rest/services/ech/MapServer/find" method="GET" />
 
+::: warning
+A maximum of 200 features can be retrieved per request.
+To download a larger number of features or entire datasets, use the file-based [STAC API](/download-data/stac-api/overview.md).
+:::
+
 ## Request Details
 
 To interact with the find features service, you need to provide specific parameters in your request.
