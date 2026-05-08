@@ -1,7 +1,7 @@
 ---
-type: 'info'
-previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected.'
+type: 'danger'
+previewTitle: 'Major incident'
+previewContent: 'We are experiencing a significant outage affecting WMS and WMTS services. All hands are on deck to diagnose and resolve the issue. The next update will be posted at 12:00 or once significant progress is made.'
 
 outline: [2, 3]
 ---
@@ -43,6 +43,13 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 }} **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.previewContent }}
 
 ## Incident History
+
+### [2026-05-08] Issues with WMS and WMTS services again
+
+#### [2026-05-08 08:40] Again issues with WMS and WMTS on PROD
+
+We are currently having issues with the WMS and WMTS services. Users might experience interruption when viewing maps in the mapviewer or when using the services direclty.
+We are working on a fix of the issues.
 
 ### [2026-05-06] Issues with WMS and WMTS services
 
