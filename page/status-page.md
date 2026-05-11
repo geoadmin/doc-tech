@@ -1,7 +1,7 @@
 ---
-type: 'danger'
-previewTitle: 'Major incident'
-previewContent: 'We are experiencing a significant outage affecting WMS and WMTS services. We currently managed to have a more or less usual behavior of the mapviewer and the WMTS service. Users of our WMS service, who use the service directly or for their 3rd party applications might experience problems though. We apologize for the related inconveniences. The issue persists, but we are working on it as fast as possible. The next update will be posted at 14:00 or as significant progress is made.'
+type: 'info'
+previewTitle: 'All Systems Operational'
+previewContent: 'No ongoing incidents - all services are functioning as expected.'
 
 outline: [2, 3]
 ---
