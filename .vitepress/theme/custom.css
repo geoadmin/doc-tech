@@ -143,10 +143,6 @@ figcaption {
     width: 100%;
 }
 
-.status-container p {
-    padding: 1rem 0;
-}
-
 .status-warning {
     background-color: var(--vp-custom-block-warning-bg);
     color: var(--vp-custom-block-warning-text);
@@ -177,12 +173,22 @@ figcaption {
     display: block;
 }
 
+.status-content > p {
+    padding: 1rem 0;
+}
+
 .status-content-title {
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .status-content-text {
     font-weight: normal;
+}
+
+.status-content-link {
+    margin-left: 1rem;
+    text-decoration: underline;
 }
 
 @media (min-width: 960px) {

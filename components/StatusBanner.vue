@@ -22,6 +22,7 @@ const isWarning = props.status.type === 'warning'
             <p>
                 <span class="status-content-title">{{ props.status.previewTitle }} - </span>
                 <span class="status-content-text">{{ props.status.previewContent }}</span>
+                <span class="status-content-link">More info -></span>
             </p>
         </a>
     </div>
