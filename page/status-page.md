@@ -46,9 +46,25 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ### [2026-05-08] Issues with WMS and WMTS services again
 
+#### [2026-05-11 12:15] Back to normal
+
+The reasons for the increase of load of our EFS were identified and mitigated.
+Mainly this was due to a very high number of metadata operations in the file system.
+Those resulted from recent changes and only surfaced under high load.
+We adapted server side configurations to mitigate this, which in turn reduced the load on our EFS back to normal.
+We could mount the EFS to the WMS service and now everything is back to normal.
+
+#### [2026-05-08 17:30] quasi stable state for the weekend achieved
+
+Main issue was that our EFS (elastic file system) mounted in the WMS and WMTS services was experiencing to high loads.
+Among other ("invisible") stabilization measures we unmounted the file system for the WMS service.
+This reduced the load significantly so that most mapviewer users would not experience problems over the weekend.
+In a few cases - consuming raster layers via the WMS services, e.g. in 3rd party applications - problems are to be expected.
+Sorry for the related inconveniences.
+
 #### [2026-05-08 08:40] Again issues with WMS and WMTS on PROD
 
-We are currently having issues with the WMS and WMTS services. Users might experience interruption when viewing maps in the mapviewer or when using the services direclty.
+We are currently having issues with the WMS and WMTS services. Users might experience interruption when viewing maps in the mapviewer or when using the services directly.
 We are working on a fix of the issues.
 
 ### [2026-05-06] Issues with WMS and WMTS services
