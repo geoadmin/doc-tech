@@ -16,7 +16,7 @@
         "shiki": "^4.0.2",
         "tsx": "^4.19.4",
         "vitepress": "1.6.4",
-        "vitepress-mermaid-renderer": "1.1.24"
+        "vitepress-mermaid-renderer": "1.1.26"
     },
     "type": "module",
     "engines": {
