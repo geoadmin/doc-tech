@@ -53,6 +53,7 @@ export default defineConfig({
         head.push(['meta', { property: 'og:title', content: ogTitle }])
         return head
     },
+    cleanUrls: true,
     ignoreDeadLinks: 'localhostLinks',
     vite: {
         build: {
