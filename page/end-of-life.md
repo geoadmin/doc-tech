@@ -1,11 +1,46 @@
 ---
-previewTitle: 'Changes on available data formats in ch.bfs.generalisierte-grenzen_agglomerationen_g1'
-previewContent: 'Information about new and deprecated assets'
+previewTitle: 'Reorganization of MeteoSwiss collections, decommissions Swiss Geological Survey'
+previewContent: 'Detail information about upcoming changes'
 ---
 
 # End-of-Life
 
 Announcements of changes in our systems and in our provided data sets, latest first.
+
+## [2026-07-01] Reorganization of some MeteoSwiss collections, decommissions Swiss Geological Survey
+
+- MeteoSwiss has reorganized the data downloads for climate normals and hail hazard data. With that the following previous data collections are outdated and will therefore be decommissioned soon, while the corresponding maps on mapviewer and the portrayal services remain published:
+
+| Previous data collection (deprecated!) | New data collection | New data assets/formats  |
+| :--------------------------------------| :-------------------| :-----------------------:| 
+|*ch.meteoschweiz.hagelgefaehrdung-korngroesse_100_jahre* | ch.meteoschweiz.ogd-radar-derived-grid | [NetCDF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-radar-derived-grid/archive-ch/ogd-radar-derived-grid-archive.returnperiod100yleha1_ch01r.swiss.lv95_20020101000000_20020101000000.nc) / [COG TIFF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-radar-derived-grid/archive-ch/ogd-radar-derived-grid-archive.returnperiod100yleha1_ch01r.swiss.lv95_20020101000000_20020101000000.tif) |
+|*ch.meteoschweiz.hagelgefaehrdung-korngroesse_10_jahre* | ch.meteoschweiz.ogd-radar-derived-grid | [NetCDF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-radar-derived-grid/archive-ch/ogd-radar-derived-grid-archive.returnperiod010yleha1_ch01r.swiss.lv95_20020101000000_20020101000000.nc) / [COG TIFF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-radar-derived-grid/archive-ch/ogd-radar-derived-grid-archive.returnperiod010yleha1_ch01r.swiss.lv95_20020101000000_20020101000000.tif) |
+|*ch.meteoschweiz.hagelgefaehrdung-korngroesse_20_jahre* | ch.meteoschweiz.ogd-radar-derived-grid | [NetCDF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-radar-derived-grid/archive-ch/ogd-radar-derived-grid-archive.returnperiod020yleha1_ch01r.swiss.lv95_20020101000000_20020101000000.nc) / [COG TIFF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-radar-derived-grid/archive-ch/ogd-radar-derived-grid-archive.returnperiod020yleha1_ch01r.swiss.lv95_20020101000000_20020101000000.tif) |
+|*ch.meteoschweiz.hagelgefaehrdung-korngroesse_50_jahre* | ch.meteoschweiz.ogd-radar-derived-grid | [NetCDF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-radar-derived-grid/archive-ch/ogd-radar-derived-grid-archive.returnperiod050yleha1_ch01r.swiss.lv95_20020101000000_20020101000000.nc) / [COG TIFF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-radar-derived-grid/archive-ch/ogd-radar-derived-grid-archive.returnperiod050yleha1_ch01r.swiss.lv95_20020101000000_20020101000000.tif) |
+|*ch.meteoschweiz.klimanormwerte-niederschlag_1961_1990* | ch.meteoschweiz.ogd-climate-normals-grid | [NetCDF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.rnormy6190_ch01r.swiss.lv95_19610101000000_19610101000000.nc) / [COG TIFF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.rnormy6190_ch01r.swiss.lv95_19610101000000_19610101000000.tif) |
+|*ch.meteoschweiz.klimanormwerte-niederschlag_aktuelle_periode* | ch.meteoschweiz.ogd-climate-normals-grid | [NetCDF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.rnormy9120_ch01r.swiss.lv95_19910101000000_19910101000000.nc) / [COG TIFF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.rnormy9120_ch01r.swiss.lv95_19910101000000_19910101000000.tif) |
+|*ch.meteoschweiz.klimanormwerte-sonnenscheindauer_1961_1990* | ch.meteoschweiz.ogd-climate-normals-grid | [NetCDF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.snormy6190_ch01r.swiss.lv95_19610101000000_19610101000000.nc) / [COG TIFF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.snormy6190_ch01r.swiss.lv95_19610101000000_19610101000000.tif) |
+|*ch.meteoschweiz.klimanormwerte-sonnenscheindauer_aktuelle_periode* | ch.meteoschweiz.ogd-climate-normals-grid | [NetCDF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.snormy9120_ch01r.swiss.lv95_19910101000000_19910101000000.nc) / [COG TIFF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.snormy9120_ch01r.swiss.lv95_19910101000000_19910101000000.tif) |
+|*ch.meteoschweiz.klimanormwerte-temperatur_1961_1990* | ch.meteoschweiz.ogd-climate-normals-grid | [NetCDF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.tnormy6190_ch01r.swiss.lv95_19610101000000_19610101000000.nc) / [COG TIFF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.tnormy6190_ch01r.swiss.lv95_19610101000000_19610101000000.tif) |
+|*ch.meteoschweiz.klimanormwerte-temperatur_aktuelle_periode* | ch.meteoschweiz.ogd-climate-normals-grid | [NetCDF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.tnormy9120_ch01r.swiss.lv95_19910101000000_19910101000000.nc) / [COG TIFF](https://data.geo.admin.ch/ch.meteoschweiz.ogd-climate-normals-grid/ch/ogd-climate-normals-grid.tnormy9120_ch01r.swiss.lv95_19910101000000_19910101000000.tif) |
+
+- The layer *ch.swisstopo.geologie-geocover* will be decommissioned later in 2026 (substituted by a new product consisting of 6 new layers)
+- The following layers from Swiss Geological Survey will be removed from all FSDI services with the release of October 7th 2026:
+   - *ch.swisstopo.geologie-felslabore*
+   - *ch.swisstopo.geologie-geoevents_anfrage*
+   - *ch.swisstopo.geologie-geoevents_demnaechst*
+   - *ch.swisstopo.geologie-geologische_3dmodelle*
+   - *ch.swisstopo.geologie-geomol-temperaturverteilung_500*
+   - *ch.swisstopo.geologie-geomol-temperaturverteilung_1000*
+   - *ch.swisstopo.geologie-geomol-temperaturverteilung_1500*
+   - *ch.swisstopo.geologie-geomol-temperaturverteilung_2000*
+   - *ch.swisstopo.geologie-geomol-temperaturverteilung_3000*
+   - *ch.swisstopo.geologie-geomol-temperaturverteilung_4000*
+   - *ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk*
+   - *ch.swisstopo.geologie-geomol-temperatur_top_omalm*
+   - *ch.swisstopo.geologie-geomol-temperatur_top_omm*
+- The following layer from Swiss Geological Survey will be removed from all FSDI services with the release of December 16th 2026:
+   - *ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata*
 
 ## [2026-04-10] Changes on available data formats in ch.bfs.generalisierte-grenzen_agglomerationen_g1
 
