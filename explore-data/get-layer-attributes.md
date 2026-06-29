@@ -34,12 +34,13 @@ Here is a description of the data contained in the response.
 | `name`    | The name of the layer              |
 
 **Fields:** A list of objects, each representing an attribute of the layer. Each object contains:
-| **Field** | **Description** |
-| --------- | ---------------------------------- |
-| `name` | The technical name of the attribute (e.g., `objektart`). |
-| `type` | The data type of the attribute (e.g., `INTEGER`, `VARCHAR`, `FLOAT`). |
-| `alias` | An identifier for the attribute. |
-| `values` | A list of possible values for the attribute (if applicable). |
+
+| **Field** | **Description**                                                       |
+| --------- | --------------------------------------------------------------------- |
+| `name`    | The technical name of the attribute (e.g., `objektart`).              |
+| `type`    | The data type of the attribute (e.g., `INTEGER`, `VARCHAR`, `FLOAT`). |
+| `alias`   | An identifier for the attribute.                                      |
+| `values`  | A list of possible values for the attribute (if applicable).          |
 
 ## Examples
 

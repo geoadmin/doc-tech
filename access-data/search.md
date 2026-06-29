@@ -82,25 +82,27 @@ Here is a description of the response's data.
 | `weight`  | The `weight` attribute represents the similarity between the search query and the index. **For location search**: `weight = 100` typically indicates exact matches, `weight < 100` indicates partial/wildcard matches, `weight > 1000` indicates fuzzy search results. Since the search engine combines multiple ranking methods, weight values should be used as general guidelines only. **Important**: Absolute weight values may change without backward compatibility. |
 
 **Attributes:**
-| **Field** | **Description** |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `origin` | This attribute refers to the type of data an entry stands for. |
-| `layerBodId` | The ID of the associated layer (if any). |
-| `featureId` | If available, the object's ID can be combined with the `layerBodId` to collect more information about a feature. |
-| `detail` | The search field. |
-| `rank` | A different `rank` is associated to each origin. Results are always ordered in ascending ranks. |
-| `geom_st_box2d` | This attribute is in CH1903 / LV03 (EPSG:21781) reference system and represents the bounding box of the associated geometry. |
-| `num` | This attribute is only valid for locations with `address` `origin`. It refers to the street number. |
-| `x` and `y` | These attributes represent the coordinates of an entry. If an object's entry is a line or a polygon, those coordinates will always be on the underlying geometry. |
-| `label` | The HTML label for an entry. |
+
+| **Field**       | **Description**                                                                                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `origin`        | This attribute refers to the type of data an entry stands for.                                                                                                    |
+| `layerBodId`    | The ID of the associated layer (if any).                                                                                                                          |
+| `featureId`     | If available, the object's ID can be combined with the `layerBodId` to collect more information about a feature.                                                  |
+| `detail`        | The search field.                                                                                                                                                 |
+| `rank`          | A different `rank` is associated to each origin. Results are always ordered in ascending ranks.                                                                   |
+| `geom_st_box2d` | This attribute is in CH1903 / LV03 (EPSG:21781) reference system and represents the bounding box of the associated geometry.                                      |
+| `num`           | This attribute is only valid for locations with `address` `origin`. It refers to the street number.                                                               |
+| `x` and `y`     | These attributes represent the coordinates of an entry. If an object's entry is a line or a polygon, those coordinates will always be on the underlying geometry. |
+| `label`         | The HTML label for an entry.                                                                                                                                      |
 
 **Links (for address results):**
-| **Field** | **Description** |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `links` | An array of related resources for address search results. Each link contains: |
-| `rel` | The relationship type, typically "related". |
-| `title` | The layer ID of the related resource (e.g., "ch.swisstopo.amtliches-gebaeudeadressverzeichnis", "ch.bfs.gebaeude_wohnungs_register"). |
-| `href` | The URL path to access the related feature resource. The `<featureid>` placeholder contains the actual feature ID. |
+
+| **Field** | **Description**                                                                                                                       |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `links`   | An array of related resources for address search results. Each link contains:                                                         |
+| `rel`     | The relationship type, typically "related".                                                                                           |
+| `title`   | The layer ID of the related resource (e.g., "ch.swisstopo.amtliches-gebaeudeadressverzeichnis", "ch.bfs.gebaeude_wohnungs_register"). |
+| `href`    | The URL path to access the related feature resource. The `<featureid>` placeholder contains the actual feature ID.                    |
 
 ::: tip
 For address search results, it is recommended to use the `links` provided in the response to get additional feature information instead of constructing feature URLs manually. The links point to related resources such as the official building address directory and building/dwelling register.
