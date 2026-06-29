@@ -34,8 +34,9 @@ The map viewer comes in two flavors:
   <iframe src="https://map.geo.admin.ch/#/map?lang=en&center=2600992.01,1197480.32&z=6&topic=ech&layers=&bgLayer=ch.swisstopo.pixelkarte-farbe" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
 
 - `https://map.geo.admin.ch/#/embed`: A simplified version with less menus suitable for embedding the map viewer on your webpage.
-See [the tutorial about HTML iframes](/map-viewer/embed-in-an-iframe) for details.
+  See [the tutorial about HTML iframes](/map-viewer/embed-in-an-iframe) for details.
   <iframe src="https://map.geo.admin.ch/#/embed?lang=en&center=2600992.01,1197480.32&z=6&topic=ech&layers=&bgLayer=ch.swisstopo.pixelkarte-farbe" style="border: 0;width: 400px;height: 300px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
+
 :::
 
 ## Parameter Overview
