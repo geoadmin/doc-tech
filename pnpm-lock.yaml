@@ -28,13 +28,13 @@ importers:
         version: 4.3.1
       tsx:
         specifier: ^4.22.4
-        version: 4.23.0
+        version: 4.23.1
       vitepress:
         specifier: 1.6.4
         version: 1.6.4(@algolia/client-search@5.53.0)(@types/node@24.13.3)(postcss@8.5.15)(search-insights@2.17.3)
       vitepress-mermaid-renderer:
-        specifier: 1.1.27
-        version: 1.1.27(mermaid@11.14.0)(vue@3.5.35)
+        specifier: 1.1.28
+        version: 1.1.28(mermaid@11.14.0)(vue@3.5.35)
 
 packages:
 
@@ -1470,8 +1470,8 @@ packages:
     resolution: {integrity: sha512-JfJeIHke7y2egdGGgRAvpCwYFUsHlM2gPcrVOxFkznt/4uzQ7HFmvE63iFHVLBJNDuyDOQgijDK/tXH/f6Msjg==}
     engines: {node: '>=6.10'}
 
-  tsx@4.23.0:
-    resolution: {integrity: sha512-eUdUIaCr963q2h5u3+QwvYp0+eqPvn+egeqZUm0hwERCqqx1E3kK5ehbGCvqSE5MQAULr67ww0cA3jKc3YkM1w==}
+  tsx@4.23.1:
+    resolution: {integrity: sha512-GQHnkIfxyx1wYCOS/wonik5MVRZU9hi1TEZmzGZSCJB1y9YgoZ8H6itNE/u4suE+yLmOzuE4E5S4TZ/ZX2wcWQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -1537,8 +1537,8 @@ packages:
       terser:
         optional: true
 
-  vitepress-mermaid-renderer@1.1.27:
-    resolution: {integrity: sha512-VFAV3lSlOhfCq11ythkan4YRwJWNH/XZ/XqbQ/FZp/EYeGZtxlHA/LQWfr8ZyMAurzLVtv1oc2eu1xISU+3XzA==}
+  vitepress-mermaid-renderer@1.1.28:
+    resolution: {integrity: sha512-cEZAIaTr5TEEsdKJZSkUtOz8ZH3hPHIXU8jkEI3RnxsnphN84QR6TuTJEIxmX4wceMFkw26nDZ86Z9gFiG6hJw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       mermaid: ^11.0.0
@@ -3006,7 +3006,7 @@ snapshots:
 
   ts-dedent@2.3.0: {}
 
-  tsx@4.23.0:
+  tsx@4.23.1:
     dependencies:
       esbuild: 0.28.1
     optionalDependencies:
@@ -3060,7 +3060,7 @@ snapshots:
       '@types/node': 24.13.3
       fsevents: 2.3.3
 
-  vitepress-mermaid-renderer@1.1.27(mermaid@11.14.0)(vue@3.5.35):
+  vitepress-mermaid-renderer@1.1.28(mermaid@11.14.0)(vue@3.5.35):
     dependencies:
       mermaid: 11.14.0
       vue: 3.5.35
