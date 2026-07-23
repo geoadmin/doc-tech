@@ -1,5 +1,5 @@
 ---
-previewTitle: 'Reorganization of MeteoSwiss collections, decommissions Swiss Geological Survey'
+previewTitle: 'Changes on collection ch.blw.landwirtschaftliche-zonengrenzen'
 previewContent: 'Detail information about upcoming changes'
 ---
 
