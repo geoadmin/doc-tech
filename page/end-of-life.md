@@ -7,6 +7,11 @@ previewContent: 'Detail information about upcoming changes'
 
 Announcements of changes in our systems and in our provided data sets, latest first.
 
+## [2026-07-23] Changes on collection ch.blw.landwirtschaftliche-zonengrenzen
+
+- the collection _ch.blw.landwirtschaftliche-zonengrenzen_ now offers a new [Geopackage](https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen/items/landwirtschaftliche-zonengrenzen?.language=en&.asset=asset-landwirtschaftliche-zonengrenzen_2056-gpkg) asset, besides the [INTERLIS](https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen/items/landwirtschaftliche-zonengrenzen?.language=en&.asset=asset-landwirtschaftliche-zonengrenzen_2056-xtf-zip) transfer format
+- the other existing assets on this collection ([File Geodatabase](https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen/items/landwirtschaftliche-zonengrenzen?.language=en&.asset=asset-landwirtschaftliche-zonengrenzen_2056-gdb-zip) and [Shapefile](https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen/items/landwirtschaftliche-zonengrenzen?.language=en&.asset=asset-landwirtschaftliche-zonengrenzen_2056-shp-zip)) are deprecated and will be decommissioned soon
+
 ## [2026-07-01] Reorganization of some MeteoSwiss collections, decommissions Swiss Geological Survey
 
 - MeteoSwiss has reorganized the data downloads for climate normals and hail hazard data. With that the following previous data collections are outdated and will therefore be decommissioned soon, while the corresponding maps on mapviewer and the portrayal services remain published:
