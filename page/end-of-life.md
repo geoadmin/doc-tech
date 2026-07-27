@@ -1,5 +1,5 @@
 ---
-previewTitle: 'Changes on collection ch.blw.landwirtschaftliche-zonengrenzen'
+previewTitle: 'Replacement of BFE layer, changes on a BLW data collection'
 previewContent: 'Detail information about upcoming changes'
 ---
 
