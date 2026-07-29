@@ -9,12 +9,12 @@ Announcements of changes in our systems and in our provided data sets, latest fi
 
 ## [2026-07-27] Planned removal of layer ch.bfe.energiestaedte-2000watt-areale
 
-The layer _ch.bfe.energiestaedte-2000watt-areale_ will be removed from chsdi services with the release of October 7th. The layer will be replaced by a new layer, _ch.bfe.energiestaedte-nachhaltige_areale_, which will presumably be published with ith the release of August 26th.
+The layer _ch.bfe.energiestaedte-2000watt-areale_ will be removed from chsdi services with the release of October 7th. The layer will be replaced by a new layer, _ch.bfe.energiestaedte-nachhaltige_areale_, which will presumably be published with the release of August 26th.
 
 ## [2026-07-23] Changes on collection ch.blw.landwirtschaftliche-zonengrenzen 
 
 - the collection _ch.blw.landwirtschaftliche-zonengrenzen_ now offers a new [Geopackage](https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen/items/landwirtschaftliche-zonengrenzen?.language=en&.asset=asset-landwirtschaftliche-zonengrenzen_2056-gpkg) asset, besides the [INTERLIS](https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen/items/landwirtschaftliche-zonengrenzen?.language=en&.asset=asset-landwirtschaftliche-zonengrenzen_2056-xtf-zip) transfer format
-- the other existing assets on this collection ([File Geodatabase](https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen/items/landwirtschaftliche-zonengrenzen?.language=en&.asset=asset-landwirtschaftliche-zonengrenzen_2056-gdb-zip) and [Shapefile](https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen/items/landwirtschaftliche-zonengrenzen?.language=en&.asset=asset-landwirtschaftliche-zonengrenzen_2056-shp-zip)) are deprecated and will be decommissioned soon
+- the other existing assets on this collection ([File Geodatabase](https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen/items/landwirtschaftliche-zonengrenzen?.language=en&.asset=asset-landwirtschaftliche-zonengrenzen_2056-gdb-zip) and [Shapefile](https://data.geo.admin.ch/browser/index.html#/collections/ch.blw.landwirtschaftliche-zonengrenzen/items/landwirtschaftliche-zonengrenzen?.language=en&.asset=asset-landwirtschaftliche-zonengrenzen_2056-shp-zip)) are deprecated and will be removed soon
 
 ## [2026-07-01] Reorganization of some MeteoSwiss collections, decommissions Swiss Geological Survey
 
