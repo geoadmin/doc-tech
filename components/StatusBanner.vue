@@ -16,7 +16,7 @@ const isWarning = props.status.type === 'warning'
 <template>
     <div :class="[isWarning ? 'status-warning' : 'status-danger']">
         <a
-            :href="withBase('/page/status-page')"
+            :href="withBase('/page/status-page.html')"
             class="status-content"
         >
             <p>

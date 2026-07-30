@@ -11,20 +11,25 @@ Technical documentation for services made available by geo.admin.ch.
 
 To build and run the site locally:
 
-1. Make sure Node.js v22 or higher is installed (`node -v`). If you have `nvm` installed you should have automatically the correct version due to `.nvmrc`
-2. Optional: Activate a suitable Node version, e.g. with `nvm use stable`
-   ℹ️ Use `nvm list` to see all available Node versions
-3. Run `pnpm install` to locally install all the necessary packages
-4. Run `pnpm run docs:dev` and visit http://localhost:5173/ in your web browser
+1. Make sure Node.js v22 or higher is installed (`node -v`). If you have `nvm` installed you should have automatically the correct version due to `.nvmrc`.
+2. Run `make setup` to locally install all the necessary packages.
+3. Run `make serve` and open http://localhost:5173/ in your web browser.
 
 ## Development
 
 This project uses the [prettier](https://prettier.io/) package for formatting.
 
-You can automatically run prettier with these commands:
+To check formatting:
 
-1. `pnpm run format`
-2. `pnpm run format:check`
+```sh
+make format-check
+```
+
+To format your files:
+
+```sh
+make format
+```
 
 ## How to Add a Release Note
 

@@ -105,7 +105,7 @@ onUnmounted(() => {
         <h4>Data Updates</h4>
         <span>Changes in the data available through our services:</span>
         <a :href="withBase(lastRelease.url)">Latest Release</a>
-        <a :href="withBase('/releases/release-notes')">All Releases</a>
+        <a :href="withBase('/releases/release-notes.html')">All Releases</a>
       </div>
     </div>
   </div>
@@ -114,11 +114,11 @@ onUnmounted(() => {
     <div class="home-container-col">
       <h4>{{announcementsPreview.frontmatter.previewTitle}}</h4>
       <span v-html="md.render(announcementsPreview.frontmatter.previewContent)"></span>
-      <a :href="withBase('/page/end-of-life')">Learn more</a>
+      <a :href="withBase('/page/end-of-life.html')">Learn more</a>
     </div>
   </div>
 </div>
 <div class="home-status-container" v-if="statusPreview.frontmatter.type === 'info'">
   <span class="status-content-text" v-html="md.render('✅ ' +  statusPreview.frontmatter.previewContent + ' ')"></span>
-  <a :href="withBase('/page/status-page')">Learn more</a>
+  <a :href="withBase('/page/status-page.html')">Learn more</a>
 </div>
