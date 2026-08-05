@@ -1,6 +1,6 @@
 # Vector Tiles
 
-This service delivers vector map tiles and styles through a RESTful API, implementing the [MapLibre Style Specification](https://maplibre.org/maplibre-style-spec/).
+This service delivers vector map tiles and styles through a RESTful API. The vector tiles are provided according to the [Mapbox Vector Tile Specification](https://mapbox.github.io/vector-tile-spec/) while the map styles implement the [MapLibre Style Specification](https://maplibre.org/maplibre-style-spec/), ensuring compatibility with MapLibre-based clients and other applications supporting the specification.
 
 ::: tip
 [The corresponding page on geo.admin.ch](https://www.geo.admin.ch/en/vector-tiles-service-available-services-and-data) lists the available datasets and styles.
