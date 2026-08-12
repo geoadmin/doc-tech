@@ -2,18 +2,24 @@
 
 This service provides 3D tiles through a RESTful API, implementing the [Cesium 3D Tiles specification](https://github.com/CesiumGS/3d-tiles).
 
+Start with the `tileset.json` file for a dataset. The manifest contains the content URLs
+and the hierarchy that a 3D Tiles client requires. The content format depends on the
+dataset.
+
+The following direct B3DM request applies to datasets that publish B3DM content:
+
 <ApiCodeBlock url="https://3d.geo.admin.ch/<LayerName>/<Version>/<Time>/<Z>/<X>/<Y>.b3dm" method="GET" />
 
 Use the following parameters to define your request:
 
-| Parameter      | Example                          | Description                                                                                                                                                                             |
-| -------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| layerName      | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer. Possible values are: `ch.swisstopo.swissbuildings3d.3d`, `ch.swisstopo.swisstlm3d.3d`, `ch.swisstopo.swissnames3d.3d`, `ch.swisstopo.vegetation.3d` |
-| Version        | v1                               | The API version                                                                                                                                                                         |
-| Time (optional | 20250501                         | Date of tileset generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned.                                                                        |
-| Z              | 7                                | Zoom level                                                                                                                                                                              |
-| X              | 54                               | Tile column index                                                                                                                                                                       |
-| Y              | 21                               | Tile row index                                                                                                                                                                          |
+| Parameter       | Example                          | Description                                                                                                      |
+| --------------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| layerName       | ch.swisstopo.swissbuildings3d.3d | The technical name of a 3D layer that publishes B3DM content                                                     |
+| Version         | v1                               | The API version                                                                                                  |
+| Time (optional) | 20250501                         | Date of tileset generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned. |
+| Z               | 7                                | Zoom level                                                                                                       |
+| X               | 54                               | Tile column index                                                                                                |
+| Y               | 21                               | Tile row index                                                                                                   |
 
 A 3D tile request for swissBUILDINGS3D dataset:
 
@@ -61,6 +67,21 @@ example='{
   }
 }'
 />
+
+## swissNAMES3D labels
+
+The swissNAMES3D label dataset uses 3D Tiles 1.1. Use its stable manifest URL:
+
+<ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.swissnames3d.3d/v2/tileset.json" method="GET" />
+
+The manifest references revisioned GLB content. Resolve each content URL from the
+manifest. Do not construct GLB URLs directly.
+
+The GLB content exposes these feature metadata properties:
+
+- `text`, `type`, `sourceId`, and `tier`
+- `fontSize`, `heightOffset`, and `maxDistance`
+- `longitude`, `latitude`, `groundHeight`, and `labelHeight`
 
 ## Example: Cesium
 
