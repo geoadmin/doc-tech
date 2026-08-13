@@ -14,7 +14,7 @@ Use the following parameters to define your request:
 
 | Parameter       | Example                          | Description                                                                                                      |
 | --------------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| layerName       | ch.swisstopo.swissbuildings3d.3d | The technical name of a 3D layer that publishes B3DM content                                                     |
+| layerName       | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer                                                                               |
 | Version         | v1                               | The API version                                                                                                  |
 | Time (optional) | 20250501                         | Date of tileset generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned. |
 | Z               | 7                                | Zoom level                                                                                                       |
