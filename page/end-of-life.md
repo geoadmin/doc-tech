@@ -13,6 +13,7 @@ Announcements of changes in our systems and in our provided data sets, latest fi
 - the layer _ch.bafu.alpweiden-herdenschutzhunde_ has been replaced by a new layer _ch.bafu.alpweiden-mit_herdenschutzhunden_ with this release. It's currently still available with it's data status frozen from spring 2026, but will be removed from chsdi services (especially also WMTS) with a later release. The new layer _ch.bafu.alpweiden-mit_herdenschutzhunden_ is continuously updated automatically and therefore available via mapviewer, WMS, API and STAC, but not via WMTS.
 - as previously announced the layer _ch.swisstopo.geologie-geocover_ will be removed with a later release. It's being substituted by 6 new layers representing swisstopo's product [swissGEOCOVER2D](https://www.swisstopo.admin.ch/en/geological-model-2d-geocover). These new layers are now available (see releasenotes).
 - The data collections _ch.bfs.betriebszaehlungen-arbeitsstaetten_, _ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente_ and _ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner_ have been replaced by 2 new data collections _ch.bfs.betriebszaehlungen_ and _ch.bfs.statistik-bevoelkerung_haushalte_. They will therefore soon be removed from service STAC while the corresponding layers in mapviewer, WM(T)S and API stay in place.
+- after some symbology changes on the 8 _ch.bazl.laermbelastungskataster-zivilflugplaetze*_ layers the corresponding WMS layer group had to be removed due to technical reasons.
 
 ## [2026-07-27] Planned removal of layer ch.bfe.energiestaedte-2000watt-areale
 
