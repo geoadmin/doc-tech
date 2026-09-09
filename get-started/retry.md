@@ -1,4 +1,4 @@
-# Retrying failed requests
+# Retrying Failed Requests
 
 For any request that you want to retry automatically, we recommend that you do
 so using a truncated exponential backoff algorithm with jitter.
@@ -15,7 +15,7 @@ throttled or otherwise permanently dropped. To mitigate this
 we recommend you implement retries using a truncated exponential backoff
 algorithm with jitter.
 
-## Truncated exponential backoff algorithm with jitter
+## Truncated Exponential Backoff Algorithm With Jitter
 
 Here is an example of algorithm that implements the recommended retry strategy:
 
@@ -52,7 +52,7 @@ request is part of an automated dataset upload, it may be reasonable to retry
 for several hours (possibly with a larger `max_delay`) before giving up and
 alerting a human operator.
 
-## Permanent failures
+## Permanent Failures
 
 Some failures are permanent and there is no point in retrying the request that
 triggered them (e.g. if you received an HTTP 403 response because you are not
@@ -60,14 +60,14 @@ allowed to perform a certain action, retrying will not help). It is your
 responsibility to verify the exact response code semantics based on our
 documentation before deciding whether to retry.
 
-## Third party libraries
+## Third Party Libraries
 
 You are welcome to use a third party library to implement your retry strategy
 but it is your responsibility to verify it actually implements a truncated
 exponential backoff algorithm with jitter with reasonable parametres under your
 control.
 
-## Further information
+## Further Information
 
 If you have questions about this topic or need assistance in picking appropriate
 values in the above algorithm when implementing clients for our systems, you are
