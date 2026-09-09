@@ -74,6 +74,10 @@ The swissNAMES3D label dataset uses 3D Tiles 1.1. Use its stable manifest URL:
 
 <ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.swissnames3d.3d/v2/tileset.json" method="GET" />
 
+Use the timestamped manifest URL to select revision `20260817`:
+
+<ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.swissnames3d.3d/v2/20260817/tileset.json" method="GET" />
+
 The manifest references revisioned GLB content. Resolve each content URL from the
 manifest. Do not construct GLB URLs directly.
 
