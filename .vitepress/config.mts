@@ -78,7 +78,10 @@ export default defineConfig({
             {
                 text: 'Get Started',
                 collapsed: false,
-                items: [{ text: 'Overview', link: '/get-started/overview' }],
+                items: [
+                    { text: 'Overview', link: '/get-started/overview' },
+                    { text: 'Retrying failed requests', link: '/get-started/retry' },
+                ],
             },
             {
                 text: 'Explore Data',
