@@ -70,7 +70,7 @@ welcome to [contact us](/page/get-help).
 You can also find further information in the following references:
 
 - [Wikipedia: Exponential Backoff](https://en.wikipedia.org/wiki/Exponential_backoff#Truncated_exponential_backoff)
-- [Google SRE Book: Adressing Cascading Failures: Retries](https://sre.google/sre-book/addressing-cascading-failures/#retires)
+- [Google SRE Book: Addressing Cascading Failures: Retries](https://sre.google/sre-book/addressing-cascading-failures/#retires)
 - [AWS: Exponential Backoff And Jitter](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/)
 - [Google Cloud IAM: Retry failed requests](https://docs.cloud.google.com/iam/docs/retry-strategy)
 - [Google: Building Secure and Reliable Systems: Mitigating Denial-of-Service Attacks: Client Retry Behavior](https://google.github.io/building-secure-and-reliable-systems/raw/ch10.html#client_retry_behavior)
