@@ -40,11 +40,11 @@ The `deadline` value defines how long to keep retrying automatically until you
 cancel the request. You should pick a value appropriate to your use case. One
 way to think about it is "how long to keep trying until we need to involve a
 human?". For example, if you are fetching a tile to display in an interactive
-application, there is probably no point retrying for 3 minutes as the user will
-have given up or retried manually before that point. On the other hand, if the
-request is part of an automated dataset upload, it may be reasonable to retry
-for several hours (possibly with a larger `max_delay`) before giving up and
-alerting a human operator.
+application, there is probably no point retrying for three minutes as the user
+will have given up or retried manually before that point. On the other hand, if
+the request is part of an automated dataset upload, it may be reasonable to
+retry for several hours (possibly with a larger `max_delay`) before giving up
+and alerting a human operator.
 
 ## Permanent Failures
 
