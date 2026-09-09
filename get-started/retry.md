@@ -20,18 +20,12 @@ algorithm with jitter.
 Here is an example of algorithm that implements the recommended retry strategy:
 
 1. Send a request.
-
 2. Upon retryable failure, wait 1 + `jitter` seconds before retrying.
-
 3. Upon retryable failure, wait 2 + `jitter` seconds before retrying.
-
 4. Upon retryable failure, wait 4 + `jitter` seconds before retrying.
-
 5. Upon retryable failure, wait 8 + `jitter` seconds before retrying.
-
 6. And so on, with a delay of min(2<sup>n</sup>, `max_delay`) + `jitter`
    seconds at each iteration.
-
 7. After `deadline` seconds, stop retrying the request.
 
 The `jitter` value must be picked randomly at each iteration. In this example,
