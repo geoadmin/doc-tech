@@ -80,7 +80,7 @@ export default defineConfig({
                 collapsed: false,
                 items: [
                     { text: 'Overview', link: '/get-started/overview' },
-                    { text: 'Retrying failed requests', link: '/get-started/retry' },
+                    { text: 'Retrying Failed Requests', link: '/get-started/retry' },
                 ],
             },
             {
