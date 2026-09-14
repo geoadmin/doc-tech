@@ -1,5 +1,5 @@
 ---
-previewTitle: 'Announcements with data release 2026-08-26'
+previewTitle: 'Announcement regarding BFS collections'
 previewContent: 'Detail information and updates about upcoming changes'
 ---
 
@@ -7,7 +7,7 @@ previewContent: 'Detail information and updates about upcoming changes'
 
 Announcements of changes in our systems and in our provided data sets, latest first.
 
-## [2026-09-15] Announcements with data release 2026-08-26
+## [2026-09-15] Announcement regarding BFS collections
 
 - The data collections _ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude_ and _ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen_ have been reorganized and replaced by a new data collection _ch.bfs.statistik-gebaeude_wohnungen_. They will therefore soon be removed from service STAC while the corresponding layers in mapviewer, WM(T)S and API stay in place.
 
