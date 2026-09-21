@@ -1,7 +1,7 @@
 ---
-type: 'info'
-previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected.'
+type: 'warning'
+previewTitle: 'Internal disruption affecting automatic data updates'
+previewContent: 'Several layers on *.geo.admin.ch are currently not being updated as usual. We will inform you as soon as the disruption is resolved.'
 
 outline: [2, 3]
 ---
@@ -44,6 +44,43 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.previewContent }}
 
 ## Incident History
+
+### [2026-09-21] Disruption of automatic data updates
+
+#### [2026-09-21 15:55] Disruption of automatic data updates noticed
+
+We are currently experiencing an internal disruption affecting certain automatic update processes.
+Several layers on \*.geo.admin.ch are affected, including the following layers, which are normally updated daily:
+
+- ch.swisstopo-vd.geometa-\*
+- ch.swisstopo.amtliches-gebaeudeadressverzeichnis
+- ch.swisstopo.amtliches-strassenverzeichnis
+- ch.astra.baulinien-nationalstrassen
+- astra_sperrungen_umleitungen
+- ch.bafu.klima-co2_ausstoss_gebaeude
+- ch.bakom.radio-fernsehsender
+- ch.bakom.standorte-mobilfunkanlagen
+- ch.bav.kataster-belasteter-standorte-oev
+- ch.bazl.kataster-belasteter-standorte-zivilflugplaetze
+- ch.bazl.einschraenkungen-drohnen
+- ch.bazl.hindernisbegrenzungsflaechen-kataster
+- ch.bazl.hindernisbegrenzungsflaechen-perimeter
+- ch.bfe.energieberatungsstellen
+- ch.bfe.energiestaedte
+- ch.bfe.energiestaedte-2000watt-areale
+- ch.bfe.erneuerbarheizen
+- ch.bfe.erneuerbarheizen-mehrfamilienhaeuser
+- ch.meteoschweiz.globalstrahlung-monatlich
+- ch.bfe.photovoltaik-grossanlagen
+- ch.bfe.thermische-netze
+- ch.bfs.gebaeude_wohnungs_register_waermequelle_heizung
+- ch.bfs.gebaeude_wohnungs_register
+- ch.vbs.bundestankstellen-bebeco
+- ch.vbs.kataster-belasteter-standorte-militaer
+
+As a result, certain datasets are currently not being updated in the system as usual.
+
+We regret this disruption and will inform you as soon as it has been resolved. Thank you for your understanding.
 
 ### [2026-05-08] Issues with WMS and WMTS services again
 
