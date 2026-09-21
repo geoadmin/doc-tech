@@ -77,6 +77,15 @@ Several layers on \*.geo.admin.ch are affected, including the following layers, 
 - ch.bfs.gebaeude_wohnungs_register
 - ch.vbs.bundestankstellen-bebeco
 - ch.vbs.kataster-belasteter-standorte-militaer
+- ch.swisstopo.swisseo_vhi_v100
+- ch.swisstopo.swisseo_vhi_v100_vegetation
+- ch.swisstopo.swisseo_s2-sr_v100
+- ch.swisstopo.swisseo_s2-sr_v200
+- ch.swisstopo.swisseo_ndvi_z_v100
+- ch.swisstopo.swisseo_ndvi_diff_v100
+- ch.swisstopo.fixpunkte-lfp1
+- ch.swisstopo.fixpunkte-hfp1
+- Rapidmapping layers
 
 As a result, certain datasets are currently not being updated in the system as usual.
 
