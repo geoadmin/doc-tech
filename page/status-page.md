@@ -65,6 +65,7 @@ Several layers on \*.geo.admin.ch are affected, including the following layers, 
 - ch.bazl.einschraenkungen-drohnen
 - ch.bazl.hindernisbegrenzungsflaechen-kataster
 - ch.bazl.hindernisbegrenzungsflaechen-perimeter
+- ch.bazl.uas-aktivitaetszonen
 - ch.bfe.energieberatungsstellen
 - ch.bfe.energiestaedte
 - ch.bfe.energiestaedte-2000watt-areale
