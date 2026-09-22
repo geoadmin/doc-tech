@@ -1,7 +1,7 @@
 ---
-type: 'warning'
-previewTitle: 'Internal disruption affecting automatic data updates'
-previewContent: 'Several layers on *.geo.admin.ch are currently not being updated as usual. We will inform you as soon as the disruption is resolved.'
+type: 'info'
+previewTitle: 'All Systems Operational'
+previewContent: 'No ongoing incidents - all services are functioning as expected.'
 
 outline: [2, 3]
 ---
@@ -46,6 +46,14 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 ## Incident History
 
 ### [2026-09-21] Disruption of automatic data updates
+
+#### [2026-09-22 12:45] Disruption resolved
+
+The root cause of the disruption has been identified and resolved.
+Automatic update processes are functioning normally again.
+The affected layers will be updated at their next regularly scheduled update.
+
+We apologize for the inconvenience and thank you for your understanding.
 
 #### [2026-09-21 15:55] Disruption of automatic data updates noticed
 
