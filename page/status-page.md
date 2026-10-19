@@ -1,7 +1,7 @@
 ---
-type: 'info'
-previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected.'
+type: 'warning'
+previewTitle: 'Minor incident'
+previewContent: 'We are currently investigating degraded performance in WMS. Some users may experience intermittent issues. Updates will be posted as more information becomes available.'
 
 outline: [2, 3]
 ---
@@ -44,6 +44,28 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.previewContent }}
 
 ## Incident History
+
+### [2026-10-16] Degraded performance of the WMS service
+
+#### [2026-10-19 08:00] Working on a robust fix
+
+The load on our backend is still higher than usual, and we are working on a robust fix.
+In the meantime, users might experience slower responses or occasional errors for some requests.
+
+Thank you for your understanding, and sorry for the inconvenience.
+
+#### [2026-10-16 17:30] Countermeasures in place, WMS service working again
+
+As a countermeasure, we have temporarily scaled up the backend and paused some data processing jobs.
+Since then, the WMS service is working again.
+
+#### [2026-10-16 15:40] Some WMS requests fail
+
+Our WMS service is having trouble handling the load for certain requests, and some WMS requests fail.
+
+#### [2026-10-16 07:00] High load on our backend started
+
+Since about 07:00, our backend has been under unusually high load.
 
 ### [2026-09-21] Disruption of automatic data updates
 
