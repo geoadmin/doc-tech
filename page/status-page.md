@@ -47,6 +47,12 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ### [2026-10-16] Degraded performance of the WMS service
 
+#### [2026-10-19 10:45] One cause identified and fixed
+
+We have identified one cause of the degraded performance, which was triggered by an automated data update, and we have fixed it.
+The WMS service should gradually return to normal performance.
+We will keep monitoring it closely over the next hours to check whether there are other causes.
+
 #### [2026-10-19 08:00] Working on a robust fix
 
 The load on our backend is still higher than usual, and we are working on a robust fix.
