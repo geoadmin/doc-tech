@@ -1,7 +1,7 @@
 ---
-type: 'warning'
-previewTitle: 'Minor incident'
-previewContent: 'We are currently investigating degraded performance in WMS. Some users may experience intermittent issues. Updates will be posted as more information becomes available.'
+type: 'info'
+previewTitle: 'All Systems Operational'
+previewContent: 'No ongoing incidents - all services are functioning as expected.'
 
 outline: [2, 3]
 ---
@@ -46,6 +46,16 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 ## Incident History
 
 ### [2026-10-16] Degraded performance of the WMS service
+
+#### [2026-10-19 12:35] Incident resolved
+
+We found no other causes of the degraded performance.
+The WMS service has been running normally again since about 10:00.
+
+The issue mainly concerned the WMS layer `ch.swisstopo.amtliches-strassenverzeichnis`, but it also affected the performance of other WMS layers.
+The tooltips of the layer `ch.swisstopo.amtliches-strassenverzeichnis` on [map.geo.admin.ch](https://map.geo.admin.ch) were also affected.
+
+We apologize for the inconvenience and thank you for your understanding.
 
 #### [2026-10-19 10:45] One cause identified and fixed
 
