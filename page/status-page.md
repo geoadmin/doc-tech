@@ -1,7 +1,7 @@
 ---
-type: 'info'
-previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected.'
+type: 'warning'
+previewTitle: 'Minor incident'
+previewContent: 'We are currently investigating degraded performance in the service-feedback, responsible for generating the profiles of the lines. Some users may experience intermittent issues. Updates will be posted as more information becomes available. Thank you in advance for your patience.'
 
 outline: [2, 3]
 ---
@@ -44,6 +44,12 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.previewContent }}
 
 ## Incident History
+
+### [2026-10-20] Degraded performance of service-alti
+
+#### [2026-10-16 06:05] E2E test failing
+
+We found that the E2E tets of the service failed. Actively searching for the source of the problem.
 
 ### [2026-10-16] Degraded performance of the WMS service
 
