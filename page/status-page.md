@@ -1,7 +1,7 @@
 ---
-type: 'info'
-previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected.'
+type: 'warning'
+previewTitle: 'Minor incident'
+previewContent: 'We are currently investigating issues with the Alti service. The service might not work as expected. Updates will be posted as more information becomes available.'
 
 outline: [2, 3]
 ---
@@ -44,6 +44,13 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.previewContent }}
 
 ## Incident History
+
+### [2026-10-20] Alti service not working
+
+#### [2026-10-20 06:00] Investigating failures of the Alti service
+
+Our nightly tests of the Alti service are failing, and the service might not work as expected.
+We are investigating the issue.
 
 ### [2026-10-16] Degraded performance of the WMS service
 
