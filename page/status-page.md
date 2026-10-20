@@ -47,6 +47,13 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ### [2026-10-20] Alti service not working
 
+#### [2026-10-20 13:00] Cause identified, fix being rolled out
+
+Late this morning, we identified the cause of the problem and started rolling out a long-term fix.
+It will take a few hours until the fix is fully rolled out across the service, and in the meantime users might still experience some issues.
+
+Thank you for your patience.
+
 #### [2026-10-20 06:00] Investigating failures of the Alti service
 
 Our nightly tests of the Alti service are failing, and the service might not work as expected.
