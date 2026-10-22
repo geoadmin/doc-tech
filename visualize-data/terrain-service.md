@@ -32,10 +32,10 @@ The `layer.json` file provides metadata that describes the availability and stru
 | --------------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
 | Time (optional) | 20250101 | Date of tile generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent metadata is returned. |
 
-Example of a metadata request for the date `20250101`:
+Example of a metadata request for the most recent Terrain publication:
 
 <ExampleCodeBlock
-request="curl --compressed https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/20250101/layer.json"
+request="curl --compressed https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/layer.json"
 example='{
   "attribution": "Put something there",
   "available": [...],
@@ -50,6 +50,11 @@ example='{
   "version": "3924.0.0"
 }'
 />
+
+If you want to fix your request to a specific data publication. Follwing Times are available:
+
+- 20201203
+- 20250101
 
 ## Example: Cesium
 

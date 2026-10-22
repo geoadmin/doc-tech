@@ -39,34 +39,34 @@ It can be used directly by [CesiumJS](https://github.com/CesiumGS/cesium).
 | Time (optional) | 20250728                         | Date of tile generation in ISO-8601 (YYYYMMDD). If you omit this parameter, the most recent tile is returned.                                                                           |
 | layerName       | ch.swisstopo.swissbuildings3d.3d | The technical name of the 3D layer. Possible values are: `ch.swisstopo.swissbuildings3d.3d`, `ch.swisstopo.swisstlm3d.3d`, `ch.swisstopo.swissnames3d.3d`, `ch.swisstopo.vegetation.3d` |
 
-A metadata request for the Vegetation dataset:
+### Metadata requests to get the most recent datasets
 
-<ExampleCodeBlock
-request="curl https://3d.geo.admin.ch/ch.swisstopo.vegetation.3d/v1/tileset.json"
-example='{
-  "asset": {
-    "version": "1.0",
-    "extras": {
-      "ion": {
-        "georeferenced": true,
-        "movable": false
-      }
-    }
-  },
-  "geometricError": 54.7213621044866,
-  "root": {
-    "boundingVolume": {
-      "region": [
-        0.10395173048091878, 0.799669540091651, 0.18307746929258154,
-        0.83441919811829, -10003.500000067055, 2799.070391970873
-      ]
-    },
-    "geometricError": 54.7213621044866,
-    "refine": "ADD",
-    "children": [...]
-  }
-}'
-/>
+You can always get the most recent version of the dataset simply by omitting the _Time_. On updates of the data, this metadata will be updated as well:
+
+- Vegetation
+  <ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.vegetation.3d/v1/tileset.json" method="GET" />
+- Buildings
+  <ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.swissbuildings3d.3d/v1/tileset.json" method="GET" />
+- Other buildings such as bridges and cablecars
+  <ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.swisstlm3d.3d/v1/tileset.json" method="GET" />
+- Names
+  <ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.swissnames3d.3d/v2/tileset.json" method="GET" />
+
+### Metadata requests to get a specific publication of a dataset
+
+When you want to stick to a specific publication of a dataset, you have to specify the _Time_ you want to fix.
+F.ex. Buildings published the 20th June 2026:
+
+<ApiCodeBlock url="https://3d.geo.admin.ch/ch.swisstopo.swissnames3d.3d/v1/20260520/tileset.json" method="GET" />
+
+Here a list of publication dates of the 3D Tiles datasets:
+
+| Dataset         | Version | LayerName                        | Available timestamps                   |
+| --------------- | ------- | -------------------------------- | -------------------------------------- |
+| Vegetation      | v1      | ch.swisstopo.vegetation.3d       | 20240412, 20250728                     |
+| Buildings       | v1      | ch.swisstopo.swissbuildings3d.3d | 20260520, 20251121, 20240918, 20230303 |
+| Other buildings | v1      | ch.swisstopo.swisstlm3d.3d       | 20260520, 20250501, 20240224, 20230303 |
+| Names           | v2      | ch.swisstopo.swissnames3d.3d     | 20260817                               |
 
 ## swissNAMES3D labels
 
