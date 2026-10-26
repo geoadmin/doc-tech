@@ -1,11 +1,41 @@
 ---
-previewTitle: 'Announcement regarding BFS collections'
+previewTitle: 'Announcements with data release 2026-10-28'
 previewContent: 'Detail information and updates about upcoming changes'
 ---
 
 # End-of-Life
 
 Announcements of changes in our systems and in our provided data sets, latest first.
+
+## [2026-10-28] Announcements with data release 2026-10-28
+
+- the layers _ch.swisstopo.swisseo_s2-sr_v100_, _ch.swisstopo.swisseo_vhi_v100_ and _ch.swisstopo.swisseo_vhi_v100_vegetation_ will be removed from chsdi and stac services by the end of 2026 and replaced by the following second generation layers from the swisseo-series: _ch.swisstopo.swisseo_s2-sr_v200_, _ch.swisstopo.swisseo_vhi_v200_ and _ch.swisstopo.swisseo_vhi_v200_vegetation_
+- the layer _ch.swisstopo.rapidmapping_ will be removed from service wms and data.geo.admin.ch in Q1 2027. It will be fully replaced by the stac data collection _ch.swisstopo.spezialbefliegungen_. For further information please consult [rapidmapping.admin.ch](https://www.swisstopo.admin.ch/en/service-rapid-mapping)
+- the .gdb.zip (file-geodatabase) and .shp.zip (shapefile) assets of the collections _ch.astra.mountainbikeland_, _ch.astra.skatingland_, _ch.astra.veloland_ and _ch.astra.wanderland_ will be removed soon from service stac. Please use the new .gpkg (ogc geopackage) assets instead
+- the following layers have been removed from chsdi services as previously announced:
+               - _ch.bfe.energiestaedte-2000watt-areale_
+               - _ch.swisstopo.geologie-felslabore_
+               - _ch.swisstopo.geologie-geoevents_anfrage_
+               - _ch.swisstopo.geologie-geoevents_demnaechst_
+               - _ch.swisstopo.geologie-geologische_3dmodelle_
+               - _ch.swisstopo.geologie-geomol-temperaturverteilung_500_
+               - _ch.swisstopo.geologie-geomol-temperaturverteilung_1000_
+               - _ch.swisstopo.geologie-geomol-temperaturverteilung_1500_
+               - _ch.swisstopo.geologie-geomol-temperaturverteilung_2000_
+               - _ch.swisstopo.geologie-geomol-temperaturverteilung_3000_
+               - _ch.swisstopo.geologie-geomol-temperaturverteilung_4000_
+               - _ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk_
+               - _ch.swisstopo.geologie-geomol-temperatur_top_omalm_
+               - _ch.swisstopo.geologie-geomol-temperatur_top_omm_
+- the following data collections have been removed from service stac as previously announced:
+               - _ch.bfs.betriebszaehlungen-arbeitsstaetten_
+               - _ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente_
+               - _ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude_
+               - _ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen_
+               - _ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner_
+- the layer _ch.bafu.alpweiden-herdenschutzhunde_ has been replaced by a new layer _ch.bafu.alpweiden-mit_herdenschutzhunden_ with this release. It's currently still available with it's data status frozen from spring 2026, but will be removed from chsdi services (especially also WMTS) with a later release. The new layer _ch.bafu.alpweiden-mit_herdenschutzhunden_ is continuously updated automatically and therefore available via mapviewer, WMS, API and STAC, but not via WMTS.
+- as previously announced the layer _ch.swisstopo.geologie-geocover_ will be removed with a later release. It's being substituted by 6 new layers representing swisstopo's product [swissGEOCOVER2D](https://www.swisstopo.admin.ch/en/geological-model-2d-geocover). These new layers are now available (see releasenotes).
+- as previously announced the layer _ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata_ will be removed from chsdi services with the release of December 16th 2026
 
 ## [2026-09-15] Announcement regarding BFS collections
 
