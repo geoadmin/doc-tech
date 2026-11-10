@@ -1,5 +1,6 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import fs from 'fs'
+import llmstxt from 'vitepress-plugin-llms'
 
 export default defineConfig({
     title: '*.geo.admin.ch',
@@ -55,6 +56,24 @@ export default defineConfig({
     },
     ignoreDeadLinks: 'localhostLinks',
     vite: {
+        plugins: [
+            // Generates llms.txt, llms-full.txt and one .md file per page for AI agents.
+            llmstxt({
+                domain: 'https://docs.geo.admin.ch',
+                // Release notes have numeric titles, which the plugin cannot read.
+                ignoreFiles: ['releases/**'],
+                details: `## Rules for AI agents and generated code
+
+- Use identify, find and search for interactive use only: one user, one map click or one query.
+- Do not loop over a grid of bounding boxes to export a layer. We block clients that do this.
+- To get all features of a layer, download the dataset from the STAC API: https://data.geo.admin.ch/api/stac/v1/collections
+- The STAC collection ID can differ from the layer ID. Example: layer ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude is in collection ch.bfs.statistik-gebaeude_wohnungen. The layer legend links to the download: https://api3.geo.admin.ch/rest/services/api/MapServer/{layerId}/legend
+- Send a User-Agent header with your application name and a contact (e-mail or URL).
+- If you get HTTP 429, wait and retry with exponential backoff: https://docs.geo.admin.ch/get-started/retry.html. If you get HTTP 403, stop.
+- Terms of use and fair use: https://www.geo.admin.ch/en/general-terms-of-use-fsdi
+- High volume or special needs: contact info@geo.admin.ch before you start.`,
+            }),
+        ],
         build: {
             // We add this to avoid the warning '(!) Some chunks are larger than 500 kB after minification.'
             chunkSizeWarningLimit: 1000,
