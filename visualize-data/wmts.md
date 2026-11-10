@@ -14,16 +14,12 @@ We only support the `GetCapabilities` and `GetTile` operation through a RESTful 
 
 The GetCapabilities document provides information about the service, along with layer description, both in German and French.
 
-<ApiCodeBlock url="https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=<Lang>" method="GET" />
+<ApiCodeBlock url="https://wmts.geo.admin.ch/EPSG/<EPSG>/1.0.0/WMTSCapabilities.xml?lang=<Lang>" method="GET" />
 
 | **Parameter**   | **Description**                                                                                                                                                                       |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EPSG            | EPSG code of the projection, see [Supported Projections](#supported-projections). We recommend `2056` (LV95).                                                                         |
 | Lang (optional) | Specifies the language for the service response. Supported values: `de` (German), `fr` (French), `it` (Italian), `rm` (Rumantsch), `en` (English). Defaults to `de` if not specified. |
-
-:::warning
-If no EPSG code is specified, the WMTS service defaults to the outdated CH1903 / MN03 reference frame (EPSG:21781). To ensure you receive tiles in the correct reference frame, always include the desired EPSG in the URL. For example:
-https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml
-:::
 
 ### Supported Projections
 
@@ -57,17 +53,17 @@ Notes:
 
 Use the following parameters to define your request:
 
-| **Parameter**   | **Example**                | **Description**                                                                                                                                                                                                                                                                                                                                                        |
-| --------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version         | 1.0.0                      | WMTS protocol version                                                                                                                                                                                                                                                                                                                                                  |
-| Layername       | ch.bfs.arealstatistik-1997 | The technical layer name. See the `<ows:Identifier>` tag of the layer in the [WMTS GetCapabilities document](#getcapabilities).                                                                                                                                                                                                                                        |
-| StyleName       | default                    | Only `default` is supported.                                                                                                                                                                                                                                                                                                                                           |
-| Time            | 2010, 2010-01              | Date of tile generation in (ISO-8601) or logical value like `current`. A list of available values is provided in the [GetCapabilities](//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml) document under the `<Dimension` tag. We recommend to use the value under the \<Default\> tag. Note that these values might change frequently - **check for updates regularly**. |
-| TileMatrixSet   | 2056 (constant)            | EPSG code for LV95/CH1903+                                                                                                                                                                                                                                                                                                                                             |
-| TileSetId       | 22                         | Zoom level (see table below)                                                                                                                                                                                                                                                                                                                                           |
-| TileCol         | 284                        |                                                                                                                                                                                                                                                                                                                                                                        |
-| TileRow         | 236                        |                                                                                                                                                                                                                                                                                                                                                                        |
-| FormatExtension | png                        | Mostly png, except for some raster layer (pixelkarte and SWISSIMAGE)                                                                                                                                                                                                                                                                                                   |
+| **Parameter**   | **Example**                | **Description**                                                                                                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version         | 1.0.0                      | WMTS protocol version                                                                                                                                                                                                                                                                                                                                                            |
+| Layername       | ch.bfs.arealstatistik-1997 | The technical layer name. See the `<ows:Identifier>` tag of the layer in the [WMTS GetCapabilities document](#getcapabilities).                                                                                                                                                                                                                                                  |
+| StyleName       | default                    | Only `default` is supported.                                                                                                                                                                                                                                                                                                                                                     |
+| Time            | 2010, 2010-01              | Date of tile generation in (ISO-8601) or logical value like `current`. A list of available values is provided in the [GetCapabilities](//wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml) document under the `<Dimension` tag. We recommend to use the value under the \<Default\> tag. Note that these values might change frequently - **check for updates regularly**. |
+| TileMatrixSet   | 2056 (constant)            | EPSG code for LV95/CH1903+                                                                                                                                                                                                                                                                                                                                                       |
+| TileSetId       | 22                         | Zoom level (see table below)                                                                                                                                                                                                                                                                                                                                                     |
+| TileCol         | 284                        |                                                                                                                                                                                                                                                                                                                                                                                  |
+| TileRow         | 236                        |                                                                                                                                                                                                                                                                                                                                                                                  |
+| FormatExtension | png                        | Mostly png, except for some raster layer (pixelkarte and SWISSIMAGE)                                                                                                                                                                                                                                                                                                             |
 
 With the `tileOrigin` in the top left corner of the bounding box:
 
@@ -129,12 +125,12 @@ Notes:
 Example of a GetTile request:
 
 ```bash
-curl -o demo.jpg https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/21781/20/58/70.jpeg
+curl -o demo.jpg https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/2056/20/70/58.jpeg
 ```
 
 The output image:
 
-<img src="https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/21781/20/58/70.jpeg" />
+<img src="https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/2056/20/70/58.jpeg" />
 
 ## Cache Update
 
