@@ -49,7 +49,7 @@ Notes:
 
 ## GetTile
 
-<ApiCodeBlock url="http://wmts.geo.admin.ch/<Version>/<LayerBodId>/<StyleName>/<Time>/<TileMatrixSet>/<TileSetId>/<TileCol>/<TileRow>.<FormatExtension>" method="GET" />
+<ApiCodeBlock url="http://wmts.geo.admin.ch/<Version>/<Layername>/<StyleName>/<Time>/<TileMatrixSet>/<TileSetId>/<TileCol>/<TileRow>.<FormatExtension>" method="GET" />
 
 Use the following parameters to define your request:
 
