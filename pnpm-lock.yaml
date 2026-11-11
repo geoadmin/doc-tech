@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@types/node':
-        specifier: 24.19.2
-        version: 24.19.2
+        specifier: 26.6.6
+        version: 26.6.6
       fast-glob:
         specifier: ^3.3.3
         version: 3.3.3
@@ -31,7 +31,7 @@ importers:
         version: 4.23.15
       vitepress:
         specifier: 1.6.4
-        version: 1.6.4(@algolia/client-search@5.53.0)(@types/node@24.19.2)(postcss@8.5.16)(search-insights@2.17.3)
+        version: 1.6.4(@algolia/client-search@5.53.0)(@types/node@26.6.6)(postcss@8.5.16)(search-insights@2.17.3)
       vitepress-mermaid-renderer:
         specifier: 1.2.3
         version: 1.2.3(mermaid@11.14.0)(vue@3.5.35)
@@ -804,8 +804,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@24.19.2':
-    resolution: {integrity: sha512-93d49wCWJkCyN87MxLpNN6KXPCwFw7bVUg79mGUV1OS40JGWwVCr8n61DXCSqz7CV6/VfPkb7xec7uP2M+QHWQ==}
+  '@types/node@26.6.6':
+    resolution: {integrity: sha512-MzQj+8Kx3XI40OmUAE6Qoh58ZMNstNNMwn2nfd3qWsfe7nDNSqJNzes4njhz6AHwrSHOffSLwXU6yb474Q4aog==}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
@@ -1723,8 +1723,8 @@ packages:
   uc.micro@3.0.0:
     resolution: {integrity: sha512-U3PppEkleoTnIfi8BozMx3yju3qc/L6SwqWo2Sw+54PX+PX0q9I+r1Um5HCmqD7n9VDX5/v3vQH/AjA6deDdtw==}
 
-  undici-types@7.24.6:
-    resolution: {integrity: sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==}
+  undici-types@8.9.0:
+    resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
 
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
@@ -2483,9 +2483,9 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@24.19.2':
+  '@types/node@26.6.6':
     dependencies:
-      undici-types: 7.24.6
+      undici-types: 8.9.0
 
   '@types/trusted-types@2.0.7':
     optional: true
@@ -2501,9 +2501,9 @@ snapshots:
       d3-selection: 3.0.0
       d3-transition: 3.0.1(d3-selection@3.0.0)
 
-  '@vitejs/plugin-vue@5.2.4(vite@5.4.21(@types/node@24.19.2))(vue@3.5.35)':
+  '@vitejs/plugin-vue@5.2.4(vite@5.4.21(@types/node@26.6.6))(vue@3.5.35)':
     dependencies:
-      vite: 5.4.21(@types/node@24.19.2)
+      vite: 5.4.21(@types/node@26.6.6)
       vue: 3.5.35
 
   '@vue/compiler-core@3.5.35':
@@ -3644,7 +3644,7 @@ snapshots:
 
   uc.micro@3.0.0: {}
 
-  undici-types@7.24.6: {}
+  undici-types@8.9.0: {}
 
   unified@11.0.5:
     dependencies:
@@ -3697,13 +3697,13 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@5.4.21(@types/node@24.19.2):
+  vite@5.4.21(@types/node@26.6.6):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.15
       rollup: 4.61.1
     optionalDependencies:
-      '@types/node': 24.19.2
+      '@types/node': 26.6.6
       fsevents: 2.3.3
 
   vitepress-mermaid-renderer@1.2.3(mermaid@11.14.0)(vue@3.5.35):
@@ -3730,7 +3730,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vitepress@1.6.4(@algolia/client-search@5.53.0)(@types/node@24.19.2)(postcss@8.5.16)(search-insights@2.17.3):
+  vitepress@1.6.4(@algolia/client-search@5.53.0)(@types/node@26.6.6)(postcss@8.5.16)(search-insights@2.17.3):
     dependencies:
       '@docsearch/css': 3.8.2
       '@docsearch/js': 3.8.2(@algolia/client-search@5.53.0)(search-insights@2.17.3)
@@ -3739,7 +3739,7 @@ snapshots:
       '@shikijs/transformers': 2.5.0
       '@shikijs/types': 2.5.0
       '@types/markdown-it': 14.1.2
-      '@vitejs/plugin-vue': 5.2.4(vite@5.4.21(@types/node@24.19.2))(vue@3.5.35)
+      '@vitejs/plugin-vue': 5.2.4(vite@5.4.21(@types/node@26.6.6))(vue@3.5.35)
       '@vue/devtools-api': 7.7.9
       '@vue/shared': 3.5.35
       '@vueuse/core': 12.8.2
@@ -3748,7 +3748,7 @@ snapshots:
       mark.js: 8.11.1
       minisearch: 7.2.0
       shiki: 2.5.0
-      vite: 5.4.21(@types/node@24.19.2)
+      vite: 5.4.21(@types/node@26.6.6)
       vue: 3.5.35
     optionalDependencies:
       postcss: 8.5.16
