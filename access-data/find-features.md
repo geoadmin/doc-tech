@@ -7,6 +7,9 @@ Find features in a specific layer by searching for a matching attribute.
 ::: warning
 A maximum of 200 features can be retrieved per request.
 To download a larger number of features or entire datasets, use the file-based [STAC API](/download-data/stac-api/overview.md).
+
+Do not send requests over a grid of bounding boxes to export a layer. We block clients that do this.
+This also applies to scripts that AI agents generate. See [Fair Use](/get-started/overview.md#fair-use).
 :::
 
 ## Request Details

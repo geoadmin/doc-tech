@@ -18,6 +18,23 @@ Where available we link to more detailed specifications, for example to our [STA
 The access and use of the data or the services is free of charge, subject to the provisions on fair use, see our [Terms of Use](https://www.geo.admin.ch/en/general-terms-of-use-fsdi).
 :::
 
+## Fair Use
+
+Our services are shared by all users. Please follow these rules:
+
+- Use `identify`, `find` and `search` for interactive use: one user, one map click or one query.
+- Do not send requests over a grid of bounding boxes to export a layer. We block clients that do this.
+- To get all features of a layer, download the dataset with the [STAC API](/download-data/stac-api/overview).
+  The STAC collection ID can differ from the layer ID. The [layer legend](/explore-data/get-layer-legend) links to the download.
+- Send a `User-Agent` header with the name of your application and a contact (e-mail or URL).
+- If you get HTTP status `429`, wait and retry with [exponential backoff](/get-started/retry). If you get `403`, stop.
+- For a high number of requests, contact [webgis@swisstopo.ch](mailto:webgis@swisstopo.ch) before you start.
+
+### AI Agents
+
+AI agents can read the same rules in [llms.txt](/llms.txt).
+If you generate code with an AI agent, make sure that the code follows these rules.
+
 ## Available Layers
 
 To use our APIs you often must know a layer’s technical name, e.g., ch.bfs.gebaeude_wohnungs_register. We recommend the following three resources to look up these names:
