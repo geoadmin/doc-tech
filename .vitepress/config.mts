@@ -62,6 +62,8 @@ export default defineConfig({
                 domain: 'https://docs.geo.admin.ch',
                 // Release notes have numeric titles, which the plugin cannot read.
                 ignoreFiles: ['releases/**'],
+                // The same rules are in get-started/overview.md and in the CloudFront llms.txt
+                // of geoadmin/infra-terraform-bgdi. Change them together.
                 details: `## Rules for AI agents and generated code
 
 - Use identify, find and search for interactive use only: one user, one map click or one query.
