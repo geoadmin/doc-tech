@@ -22,9 +22,8 @@ The access and use of the data or the services is free of charge, subject to the
 
 Our services are shared by all users. Please follow these rules:
 
-- Use `identify`, `find` and `search` for interactive use: one user, one map click or one query.
-- Do not send requests over a grid of bounding boxes to export a layer. We block clients that do this.
-- To get all features of a layer, download the dataset with the [STAC API](/download-data/stac-api/overview).
+- Use [`identify`](/access-data/identify-features), [`find`](/access-data/find-features) and [`search`](/access-data/search) for interactive use: one user, one map click or one query.
+- To download entire datasets or large numbers of features, do not send many small bounding-box queries to endpoints for single features, such as `identify`. We block clients that do this. Use the [STAC API](/download-data/stac-api/overview) instead.
   The STAC collection ID can differ from the layer ID. The [layer legend](/explore-data/get-layer-legend) links to the download.
 - Send a `User-Agent` header with the name of your application and a contact (e-mail or URL).
 - If you get HTTP status `429`, wait and retry with [exponential backoff](/get-started/retry). If you get `403`, stop.
