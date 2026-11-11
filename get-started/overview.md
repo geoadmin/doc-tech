@@ -28,7 +28,7 @@ Our services are shared by all users. Please follow these rules:
   The STAC collection ID can differ from the layer ID. The [layer legend](/explore-data/get-layer-legend) links to the download.
 - Send a `User-Agent` header with the name of your application and a contact (e-mail or URL).
 - If you get HTTP status `429`, wait and retry with [exponential backoff](/get-started/retry). If you get `403`, stop.
-- For a high number of requests, contact [info@geo.admin.ch](mailto:info@geo.admin.ch) before you start.
+- For a high number of requests, contact [webgis@swisstopo.ch](mailto:webgis@swisstopo.ch) before you start.
 
 ### AI Agents
 
