@@ -1,7 +1,7 @@
 ---
-type: 'danger'
-previewTitle: 'Major incident'
-previewContent: 'We are experiencing a significant outage affecting adress search results in Switzerland. All hands are on deck to diagnose and resolve the issue. The next update will be posted at 12:00 or as significant progress is made.'
+type: 'info'
+previewTitle: 'All Systems Operational'
+previewContent: 'No ongoing incidents - all services are functioning as expected.'
 
 outline: [2, 3]
 ---
@@ -47,7 +47,17 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 
 ### [2026-11-18] Search results of adresses in switzerland are not available
 
-#### [2026-11-18 08:00] Investigating data and results of the search-service
+#### [2026-11-18 10:30] Incident resolved
+
+Impact: From about 07:15 on 18.11.2026, the address search on map.geo.admin.ch (and in the search API) found almost no Swiss addresses. The layer "Official Directory of Building Addresses" (ch.swisstopo.amtliches-gebaeudeadressverzeichnis) showed only addresses in Liechtenstein. Search was fixed around 09:00, and the address layer was fully back by about 10:30.
+
+Cause: During the daily automated update of the address data, a processing step lost the Swiss addresses. This happened on the first run after an update of the data-processing software. The source data itself was complete and correct.
+
+Solution: We restored the search index and the address data from the last correct version (16.11.2026) and refreshed the map cache. The automatic update stays paused until the processing step is fixed and an extra check prevents incomplete data from being published.
+
+We apologize for the inconvenience caused and thank you for your understanding.
+
+#### [2026-11-18 07:30] Investigating data and results of the search-service
 
 We are trying to identify the cause of the incident.
 
