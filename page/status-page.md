@@ -1,7 +1,7 @@
 ---
-type: 'info'
-previewTitle: 'All Systems Operational'
-previewContent: 'No ongoing incidents - all services are functioning as expected.'
+type: 'danger'
+previewTitle: 'Major incident'
+previewContent: 'We are experiencing a significant outage affecting adress search results in Switzerland. All hands are on deck to diagnose and resolve the issue. The next update will be posted at 12:00 or as significant progress is made.'
 
 outline: [2, 3]
 ---
@@ -44,6 +44,12 @@ This page provides the latest status updates for all \*.geo.admin.ch web service
 **{{ $frontmatter.previewTitle }}**: {{ $frontmatter.previewContent }}
 
 ## Incident History
+
+### [2026-11-18] Search results of adresses in switzerland are not available
+
+#### [2026-11-18 08:00] Investigating data and results of the search-service
+
+We are trying to identify the cause of the incident.
 
 ### [2026-10-20] Alti service not working
 
