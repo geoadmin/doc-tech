@@ -1,11 +1,21 @@
 ---
-previewTitle: 'Announcements with data release 2026-10-28'
+previewTitle: 'Announcement regarding GeoCover'
 previewContent: 'Detail information and updates about upcoming changes'
 ---
 
 # End-of-Life
 
 Announcements of changes in our systems and in our provided data sets, latest first.
+
+## [2026-11-19] Announcement regarding GeoCover
+
+- as previously announced the layer _ch.swisstopo.geologie-geocover_ will be removed from chsdi services with the release of December 16th 2026. It's substituted by the following 6 layers of swisstopo's product [swissGEOCOVER2D](https://www.swisstopo.admin.ch/en/geological-model-2d-geocover), which are already available:
+  - _ch.swisstopo.geologie-swissgeocover2d_bedrock_
+  - _ch.swisstopo.geologie-swissgeocover2d_lines_
+  - _ch.swisstopo.geologie-swissgeocover2d_points_
+  - _ch.swisstopo.geologie-swissgeocover2d_surfaces_
+  - _ch.swisstopo.geologie-swissgeocover2d_tecto_lines_
+  - _ch.swisstopo.geologie-swissgeocover2d_unconsolidated_
 
 ## [2026-10-28] Announcements with data release 2026-10-28
 
