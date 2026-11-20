@@ -8,7 +8,7 @@
         "format:check": "prettier --check ."
     },
     "devDependencies": {
-        "@types/node": "24.19.2",
+        "@types/node": "26.6.6",
         "fast-glob": "^3.3.3",
         "gray-matter": "^4.0.3",
         "markdown-it": "15.0.3",
