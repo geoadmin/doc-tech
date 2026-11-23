@@ -1,6 +1,6 @@
 ---
-previewTitle: 'Announcement regarding GeoCover'
-previewContent: 'Detail information and updates about upcoming changes'
+previewTitle: 'swissGEOCOVER2D replaces GeoCover'
+previewContent: 'Layer ch.swisstopo.geologie-geocover will be replaced with six layers from swissGEOCOVER2D.'
 ---
 
 # End-of-Life
