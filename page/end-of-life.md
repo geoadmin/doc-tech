@@ -1,11 +1,15 @@
 ---
-previewTitle: 'swissGEOCOVER2D replaces GeoCover'
-previewContent: 'Layer ch.swisstopo.geologie-geocover will be replaced with six layers from swissGEOCOVER2D.'
+previewTitle: 'Announcement concerning download of ch.bfe.ladestellen-elektromobilitaet'
+previewContent: 'Changes for download of ch.bfe.ladestellen-elektromobilitaet'
 ---
 
 # End-of-Life
 
 Announcements of changes in our systems and in our provided data sets, latest first.
+
+## [2026-11-25] Announcement concerning download of ch.bfe.ladestellen-elektromobilitaet
+
+- The current JSON download available via opendata.swiss and directly via data.geo.admin.ch will be removed by or shortly after the chsdi release of December 16th 2026 and replaced by the API endpoints available here at [Recharge-my-car.ch API](https://www.bfe.admin.ch/en/recharge-my-car-api). For further information please contact [ich-tanke-strom@bfe.admin.ch](mailto:ich-tanke-strom@bfe.admin.ch)
 
 ## [2026-11-19] Announcement regarding GeoCover
 
